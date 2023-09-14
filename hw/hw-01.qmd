@@ -1,0 +1,30 @@
+---
+title: "第1周课后作业"
+author: 曾永艺
+date: 2023-09-15
+# editor: visual
+---
+
+<br>
+
+-   🕐 明确是否选修这门课程
+
+    + 若不选修，请尽快在
+[**{{厦门大学教学服务平台}}**](https://jw.xmu.edu.cn/) 上提出退课（申请）
+    + 若确定选修本门课程，请于2023年9月17日24:00前通过 [**{{坚果云链接}}**](https://send2me.cn/5hUS5QCM/T0yehXZAbqqzlw)
+回答几道问题
+
+
+<hr>
+
+-   🕑 初步了解 RStudio 的工作界面，并大致浏览下 [**{{rstudio-IDE-cheatsheet}}**](/slides/lec-01/docs/rstudio-IDE-cheatsheet.pdf)
+
+-   🕒 在 RStudio 命令窗口中键入 `help(mean)` 和 `help(files)`，了解 R 帮助文档的整体结构
+
+-   🕓 到前面课件中提到的那些 [**{{网络社区}}**](/slides/lec-01/L01_Introduction.html#53) 随意逛逛
+
+<hr>
+
+-   🕔 完成课前预习（具体任务下周一前我会在 QQ 课程群上通知）
+
+<br>

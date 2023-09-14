@@ -39,15 +39,15 @@ image: /slides/lec-01/imgs/ds4b_rating.png
 
 ## 2. 课堂讲义
 
-🖥️ [第1讲 课程简介](/slides/lec-01/L01_Introduction.htm)
+🖥️ [第1讲 课程简介](/slides/lec-01/L01_Introduction.html)
 
 :::{.callout-note}
-课堂**讲义 PDF 版**会于课前发布在 QQ 课程群内，请有需要的同学自行下载或观看。
+同学们可根据需要自行从以上 **网页格式** 的讲义打印生成 [**PDF 版** 讲义](/slides/lec-01/docs/L01_Introduction.pdf)。
 :::
 
 ## 3. 随堂练习
 
-⌨️ 见课堂讲义
+无
 
 ## 4. 课后作业
 
