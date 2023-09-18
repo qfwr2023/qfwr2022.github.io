@@ -2,26 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://qfwr2023.netlify.app/hw/hw-01.html</loc>
-    <lastmod>2023-09-14T16:00:14.460Z</lastmod>
+    <lastmod>2023-09-18T12:03:52.741Z</lastmod>
   </url>
   <url>
     <loc>https://qfwr2023.netlify.app/schedule.html</loc>
-    <lastmod>2023-09-14T16:00:13.584Z</lastmod>
+    <lastmod>2023-09-18T12:03:51.813Z</lastmod>
   </url>
   <url>
     <loc>https://qfwr2023.netlify.app/project/team-project.html</loc>
-    <lastmod>2023-09-14T16:00:12.540Z</lastmod>
-  </url>
-  <url>
-    <loc>https://qfwr2023.netlify.app/index.html</loc>
-    <lastmod>2023-09-14T16:00:10.748Z</lastmod>
+    <lastmod>2023-09-18T12:03:50.577Z</lastmod>
   </url>
   <url>
     <loc>https://qfwr2023.netlify.app/weeks/week-01.html</loc>
-    <lastmod>2023-09-14T16:00:12.108Z</lastmod>
+    <lastmod>2023-09-18T12:03:49.605Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/index.html</loc>
+    <lastmod>2023-09-18T12:03:47.085Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/weeks/week-02.html</loc>
+    <lastmod>2023-09-18T12:03:50.117Z</lastmod>
   </url>
   <url>
     <loc>https://qfwr2023.netlify.app/weeks.html</loc>
-    <lastmod>2023-09-14T16:00:13.096Z</lastmod>
+    <lastmod>2023-09-18T12:03:51.325Z</lastmod>
   </url>
 </urlset>
