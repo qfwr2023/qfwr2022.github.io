@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>量化金融与金融编程</title>
+    <meta charset="utf-8" />
+    <meta name="author" content=" 曾永艺" />
+    <meta name="date" content="2023-09-18" />
+    <script src="../libs/header-attrs/header-attrs.js"></script>
+    <link href="../libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="../libs/tile-view/tile-view.js"></script>
+    <link href="../libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <link href="../libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="../libs/panelset/panelset.js"></script>
+    <link href="../libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <script src="../libs/clipboard/clipboard.min.js"></script>
+    <link href="../libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="../libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"<i class=\"fa fa-copy\"><\/i>","success":"<i class=\"fa fa-check\" style=\"color: #90BE6D\"><\/i>","error":"<i class=\"fa fa-times-circle\" style=\"color: #F94144\"><\/i>"})</script>
+    <link href="../libs/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="../libs/font-awesome/css/v4-shims.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../libs/zen-styles-v2.3-rev.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# 量化金融与金融编程
+]
+.subtitle[
+## L02 ggplot2 数据可视化 | 课前预习
+]
+.author[
+### <br>曾永艺
+]
+.institute[
+### 厦门大学管理学院
+]
+.date[
+### <br>2023-09-18
+]
+
+---
+
+class: middle, hide_logo
+background-image: url(imgs/logo-ggplot2.png)
+background-size: 10em
+background-position: 90% 50%
+
+
+
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 50px;
+height: 50px;
+z-index: 0;
+background-image: url(imgs/logo-sm.png);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:0.5em;right:0.5em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
+        .forEach(function (slide) {
+          const logo = document.createElement('a')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = 'https://qfwr2022.netlify.app'
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
+
+- ## 一图胜千言
+
+- ## The Layered Grammar of Graphics
+  
+- ## 将数据映射为几何对象的图形属性
+
+- ## 统计变换、位置调整、坐标、分面
+
+- ## 标签、标注、标度、主题等
+
+---
+
+### 一图胜千言
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/datasaurus-1.png" width="85%" style="display: block; margin: auto;" /&gt;
+
+---
+class: inverse, center, middle
+background-image: url(imgs/logo-ggplot2.svg)
+background-size: 12%
+background-position: 14% 50%
+
+# `ggplot2`&lt;sup&gt;.font60[v3.4.3]&lt;/sup&gt; 快速入门
+
+---
+layout: true
+
+### .bold[1 The Layered Grammar of Graphics]
+
+---
+
+.font130[_Data Visualization_：将.bold[数据]映射为.bold[几何对象的美学属性]]
+
+--
+
+.font110[
+
+- 数据（.red[data]）：我们想要可视化的对象，包含变量
+- 几何对象（.red[geom]etries)：用来呈现数据的几何图形对象，如点、条形、线条等
+- 美学属性（.red[aes]thetic）：几何对象的视觉属性，如`x`坐标和`y`坐标位置、颜色、形状等
+
+]
+
+--
+
+&lt;img src="imgs/visualization-stat-point.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+.font130[`ggplot2` 的语法模板]
+
+--
+
+.code150[
+
+
+```r
+*ggplot(data = &lt;DATA&gt;) +
+* &lt;GEOM_FUNCTION&gt;(
+*    mapping = aes(&lt;MAPPINGS&gt;),
+     stat = &lt;STAT&gt;, 
+     position = &lt;POSITION&gt;
+  ) +
+  &lt;COORDINATE_FUNCTION&gt; +
+  &lt;FACET_FUNCTION&gt;
+```
+]
+
+---
+layout: true
+
+### .bold[2 将.red[数据]映射为几何对象的美学属性]
+
+---
+
+
+```r
+library(tidyverse)
+```
+
+--
+
+
+```r
+mpg  # print(mpg)
+```
+
+```
+#&gt; # A tibble: 234 × 11
+#&gt;   manufacturer model displ  year   cyl trans      drv     cty   hwy fl    class  
+#&gt;   &lt;chr&gt;        &lt;chr&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;  
+#&gt; 1 audi         a4      1.8  1999     4 auto(l5)   f        18    29 p     compact
+#&gt; 2 audi         a4      1.8  1999     4 manual(m5) f        21    29 p     compact
+#&gt; 3 audi         a4      2    2008     4 manual(m6) f        20    31 p     compact
+#&gt; # ℹ 231 more rows
+```
+
+--
+
+
+```r
+# 查看ggplot2包内置数据集mpg的帮助文档
+?mpg  # help(mpg)
+```
+
+--
+
+1. `displ`: a car's engine size, in litres.
+2. `hwy`: a car's fuel efficiency on the highway, in miles per gallon (mpg). 
+3. `class`: "type" of car  
+...
+
+---
+layout: true
+
+### .bold[2 将数据.red[映射为几何对象的美学属性]]
+
+---
+count: false
+
+
+```r
+ggplot()
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/mapping1-1-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+count: false
+
+
+```r
+ggplot(data = mpg)                           # 数据集
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/mapping1-2-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+count: false
+
+
+```r
+ggplot(data = mpg,                           # 数据集
+       mapping = aes(x = displ, y = hwy))    # 映射：变量 -&gt; x坐标和y坐标
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/mapping1-3-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+count: false
+
+
+```r
+ggplot(data = mpg,                           # 数据集
+       mapping = aes(x = displ, y = hwy)) +  # 映射：变量 -&gt; x坐标和y坐标
+  geom_point()                               # 几何对象
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/mapping1-4-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+```r
+ggplot(data = mpg) + 
+  geom_point(
+*   mapping = aes(x = displ, y = hwy, colour = class)  # 3个映射
+  )
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/mapping2-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+```r
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy, shape = class))
+```
+
+```
+#&gt; Warning: The shape palette can deal with a maximum of 6 discrete values because more than
+#&gt; 6 becomes difficult to discriminate; you have 7. Consider specifying shapes
+#&gt; manually if you must have them.
+```
+
+```
+#&gt; Warning: Removed 62 rows containing missing values (`geom_point()`).
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/mapping3-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+.font120[
+- R内置有25个形状（shape），在`ggplot2`中可用名字或数字进行设定
+]
+.pull-left[
+&lt;img src="L02_Visualization_Prepare_files/figure-html/shapes-name-1.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+]
+
+--
+
+.pull-right[
+&lt;img src="L02_Visualization_Prepare_files/figure-html/shapes-id-1.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+]
+
+--
+
+.font120[
+- 设定图形属性相关的说明文档 .content-box-yellow.font80[`vignette("ggplot2-specs")`]
+]
+
+---
+
+
+```r
+ggplot(data = mpg) + 
+  geom_point(
+    mapping = aes(x = displ, y = hwy), 
+*   shape = "triangle", size = 3, colour = "red", alpha = 0.3
+    # 变量无关（“大家都一样”，即非映射）的几何对象图形属性应在aes()外进行设定
+  )
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/mapping4-1.png" width="55%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+```r
+# layered!
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+* geom_smooth(mapping = aes(x = displ, y = hwy))  # layered!
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/mapping5-1.png" width="58%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+```r
+ggplot(
+  data = mpg,
+* mapping = aes(x = displ, y = hwy)  # 共用映射，提前至ggplot()中
+) +
+  geom_point() +
+  geom_smooth()
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/mapping6-1.png" width="56%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+```r
+*ggplot(mpg, aes(displ, hwy)) +       # 省略常用参数名
+* geom_point(aes(colour = class)) +  # 图层自用映射
+* geom_smooth(data = filter(mpg, class == "pickup"))  # 不同的数据集
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/mapping7-1.png" width="65%" style="display: block; margin: auto;" /&gt;
+
+---
+layout: true
+
+### .bold[3 .red[统计变换]、位置调整、坐标、分面]
+
+---
+
+
+```r
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut))
+```
+
+--
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/stat2-1.png" width="65%" style="display: block; margin: auto;" /&gt;
+
+.red.font110[Where comes the "count" in y-axis? 😅]
+
+---
+
+&lt;img src="imgs/visualization-stat-bar.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+--
+
+.font110[下面的代码会得到和使用 `geom_bar()` 相同的结果]
+
+
+```r
+ggplot(data = diamonds) + 
+* stat_count(mapping = aes(x = cut))
+```
+
+---
+
+
+```r
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, 
+                         y = after_stat(prop),   # ?aes_eval
+                         group = 1))             # ?aes_group_order
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/stat3-2-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+```r
+ggplot(data = diamonds %&gt;% group_by(cut) %&gt;% count()) +  # 数据分组汇总计算
+  geom_bar(
+    mapping = aes(x = cut, y = n),
+*   stat = "identity"
+  )
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/stat4-1.png" width="58%" style="display: block; margin: auto;" /&gt;
+
+---
+layout: true
+
+### .bold[3 统计变换、.red[位置调整]、坐标、分面]
+
+---
+
+```r
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, fill = clarity))
+# geom_bar()默认的position = "stack"
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/pos1-1.png" width="65%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+```r
+ggplot(data = diamonds) + 
+  geom_bar(
+    mapping = aes(x = cut, fill = clarity),
+*   position = "dodge"  # position = position_dodge(width = 0.9)
+  )
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/pos2-1.png" width="58%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+```r
+ggplot(data = mpg) + 
+  geom_point(
+    mapping = aes(x = displ, y = hwy),
+*   position = "jitter"   # same as `ggplot() + geom_jitter()`
+  )
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/pos3-1.png" width="58%" style="display: block; margin: auto;" /&gt;
+
+---
+layout: true
+
+### .bold[3 统计变换、位置调整、.red[坐标]、分面]
+
+---
+
+
+```r
+ggplot(data = mpg, mapping = aes(x = class, y = hwy)) + 
+  geom_boxplot() +
+* coord_flip()  # ggplot2 3.3.0后直接调换x，y参数即可
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/coord1-1.png" width="65%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+```r
+bar &lt;- ggplot(data = diamonds) +  # 将图形对象存为变量bar，可在Environment标签页中检查其内容
+  geom_bar(
+    mapping = aes(x = cut, fill = cut), show.legend = FALSE, width = 1
+  ) + 
+  theme(aspect.ratio = 1) + labs(x = NULL, y = NULL)
+*bar + coord_polar()
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/coord2-1.png" width="35%" style="display: block; margin: auto;" /&gt;
+
+
+---
+layout: true
+
+### .bold[3 统计变换、位置调整、坐标、.red[分面]]
+
+---
+
+
+```r
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point(data = mutate(mpg, class = NULL), colour = "grey") +
+  geom_point() + 
+* facet_wrap(vars(class), nrow = 2) # facet_wrap(~ class, nrow = 2)
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/facet1-1.png" width="65%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+```r
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point(data = transform(mpg, cyl = NULL), colour = "grey") +
+  geom_point() + 
+* facet_grid(rows = vars(drv), cols = vars(cyl))  # facet_grid(drv ~ cyl)
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/facet2-1.png" width="65%" style="display: block; margin: auto;" /&gt;
+
+---
+layout: true
+
+### .bold[4 .red[标签]、标注、标度、主题等]
+
+---
+
+
+```r
+ggplot(mpg, aes(displ, hwy)) +
+  geom_point(aes(colour = class)) +
+  geom_smooth(se = FALSE) +
+* labs(  # 标题、小标题等
+*   title = "Fuel efficiency",
+*   subtitle = "... generally decreases with engine size",
+*   caption = "Data from fueleconomy.gov"
+* )
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/labs1-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+```r
+ggplot(mpg, aes(displ, hwy)) +
+  geom_point(aes(colour = class)) +
+  geom_smooth(se = FALSE) +
+* labs( # 图形属性 = 标签
+*   x = "Engine displacement (L)",
+*   y = "Highway fuel economy (mpg)",
+*   colour = "Car type"
+* )
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/labs2-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+layout: true
+
+### .bold[4 标签、.red[标注]、标度、主题等]
+
+---
+
+
+```r
+# 生成辅助数据集
+best &lt;- mpg %&gt;%
+  group_by(class) %&gt;%
+  filter(row_number(desc(hwy)) == 1)
+```
+
+--
+
+.pull-left[
+
+
+```r
+ggplot(mpg, aes(displ, hwy)) +
+  geom_point(aes(colour = class)) +
+* geom_text(
+    aes(label = model), 
+    data = best
+  )
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/label1-1.png" width="85%" style="display: block; margin: auto;" /&gt;
+
+]
+
+--
+
+.pull-right[
+
+
+```r
+ggplot(mpg, aes(displ, hwy)) +
+  geom_point(aes(colour = class)) +
+* geom_label(
+    aes(label = model), data = best, 
+    nudge_y = 2, alpha = 0.5
+  )
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/label2-1.png" width="85%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+
+```r
+ggplot(mpg, aes(displ, hwy)) +
+  geom_point(aes(colour = class)) +
+* geom_point(size = 3, shape = 1, data = best) +
+* ggrepel::geom_label_repel(aes(label = model), data = best)  # install ggrepel
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/label3-1.png" width="65%" style="display: block; margin: auto;" /&gt;
+
+---
+layout: true
+
+### .bold[4 标签、标注、.red[标度]、主题等]
+
+---
+
+
+```r
+ggplot(diamonds, aes(carat, price)) +
+  geom_bin2d() + 
+* scale_x_log10() +
+* scale_y_log10()
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/scale1-1.png" width="65%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+```r
+ggplot(mpg, aes(displ, hwy)) +
+  geom_point() +
+* scale_y_continuous(
+    name = "Highway fuel economy (mpg)",
+    breaks = seq(0, 50, by = 10),
+    limits = c(0, 50)
+  )
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/scale2-1.png" width="55%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+```r
+ggplot(mpg, aes(displ, hwy)) +
+  geom_point(aes(colour = drv, shape = drv)) +
+* scale_colour_brewer(palette = "Set1")   # RColorBrewer::display.brewer.all()
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/scale3-1.png" width="65%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+```r
+ggplot(mpg, aes(displ, hwy, colour = class)) +
+  geom_point() +
+* theme(legend.position = "bottom") +
+  guides(
+*   colour = guide_legend(nrow = 1, override.aes = list(size = 3))
+  )
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/scale4-1.png" width="55%" style="display: block; margin: auto;" /&gt;
+
+---
+layout: true
+
+### .bold[4 标签、标注、标度、.red[主题]等]
+
+---
+
+.pull-left[
+
+```r
+ggplot(mpg, aes(displ, hwy)) +
+  geom_point(aes(colour = class)) +
+  geom_smooth(se = FALSE) +
+* theme_minimal()
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/theme1-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+--
+
+.pull-right[
+
+```r
+ggplot(mpg, aes(displ, hwy)) +
+  geom_point(aes(colour = class)) +
+  geom_smooth(se = FALSE) +
+* ggthemes::theme_stata()   # install it!
+```
+
+&lt;img src="L02_Visualization_Prepare_files/figure-html/theme2-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+.code80[
+
+```r
+theme(line, rect, text, title, aspect.ratio, axis.title, axis.title.x,
+      axis.title.x.top, axis.title.x.bottom, axis.title.y, axis.title.y.left,
+      axis.title.y.right, axis.text, axis.text.x, axis.text.x.top,
+      axis.text.x.bottom, axis.text.y, axis.text.y.left, axis.text.y.right,
+      axis.ticks, axis.ticks.x, axis.ticks.x.top, axis.ticks.x.bottom, axis.ticks.y,
+      axis.ticks.y.left, axis.ticks.y.right, axis.ticks.length, axis.ticks.length.x,
+      axis.ticks.length.x.top, axis.ticks.length.x.bottom, axis.ticks.length.y,
+      axis.ticks.length.y.left, axis.ticks.length.y.right, axis.line, axis.line.x,
+      axis.line.x.top, axis.line.x.bottom, axis.line.y, axis.line.y.left,
+      axis.line.y.right, legend.background, legend.margin, legend.spacing,
+      legend.spacing.x, legend.spacing.y, legend.key, legend.key.size,
+      legend.key.height, legend.key.width, legend.text, legend.text.align,
+      legend.title, legend.title.align, legend.position, legend.direction,
+      legend.justification, legend.box, legend.box.just, legend.box.margin,
+      legend.box.background, legend.box.spacing, panel.background, panel.border,
+      panel.spacing, panel.spacing.x, panel.spacing.y, panel.grid, panel.grid.major,
+      panel.grid.minor, panel.grid.major.x, panel.grid.major.y, panel.grid.minor.x,
+      panel.grid.minor.y, panel.ontop, plot.background, plot.title,
+      plot.title.position, plot.subtitle, plot.caption, plot.caption.position,
+      plot.tag, plot.tag.position, plot.margin, strip.background, strip.background.x,
+      strip.background.y, strip.clip, strip.placement, strip.text, strip.text.x,
+      strip.text.x.bottom, strip.text.x.top, strip.text.y, strip.text.y.left,
+      strip.text.y.right, strip.switch.pad.grid, strip.switch.pad.wrap, ...,
+      complete = FALSE, validate = TRUE)
+```
+]
+
+---
+layout: false
+class: center middle
+background-image: url(imgs/xaringan.png)
+background-size: 12%
+background-position: 50% 40%
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;hr color='#f00' size='2px' width='80%'&gt;
+&lt;br&gt;
+.Large.red[_**本网页版讲义的制作由 R 包 [{{`xaringan`}}](https://github.com/yihui/xaringan) 赋能！**_]
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="../libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
