@@ -2,7 +2,7 @@
 title: "第 2 周"
 subtitle: "ggplot2数据可视化"
 author: 曾永艺
-date: 2022-09-22
+date: 2023-09-22
 categories: [预习, 讲义, 随堂练习, 作业]
 image: /slides/lec-02/imgs/ggplot-etc.png
 # editor: visual
@@ -20,7 +20,7 @@ image: /slides/lec-02/imgs/ggplot-etc.png
   - 统计变换、位置调整、坐标、分面
   - 标签、标注、标度、主题等
 
-* `ggplot2` extensions, 如 `patchwork` 包
+* `ggplot2` extensions 及其它, 如 `patchwork` 、`plotly`包
 
 <hr>
 
@@ -40,7 +40,7 @@ image: /slides/lec-02/imgs/ggplot-etc.png
 
 ## 2. 课堂讲义
 
-🖥️ [~~第2讲 ggplot2数据可视化（待上传）~~](/slides/lec-02/L02_Visualization.html)
+🖥️ [第2讲 ggplot2数据可视化](/slides/lec-02/L02_Visualization.html)
 
 ## 3. 随堂练习
 
@@ -48,7 +48,7 @@ image: /slides/lec-02/imgs/ggplot-etc.png
 
 ## 4. 课后作业
 
-✍️ [~~课后作业（待上传）~~](/hw/hw-02.qmd)
+✍️ [课后作业](/hw/hw-02.qmd)
 
 <br>
 
