@@ -7,18 +7,53 @@
     "text": "🕐 明确是否选修这门课程\n\n若不选修，请尽快在 {{厦门大学教学服务平台}} 上提出退课（申请）\n若确定选修本门课程，请于2023年9月17日24:00前通过 {{坚果云链接}} 回答几道问题\n\n\n\n\n🕑 初步了解 RStudio 的工作界面，并大致浏览下 {{rstudio-IDE-cheatsheet}}\n🕒 在 RStudio 命令窗口中键入 help(mean) 和 help(files)，了解 R 帮助文档的整体结构\n🕓 到前面课件中提到的那些 {{网络社区}} 随意逛逛\n\n\n\n🕔 完成课前预习（具体任务下周一前我会在 QQ 课程群上通知）"
   },
   {
-    "objectID": "schedule.html",
-    "href": "schedule.html",
-    "title": "课程安排",
+    "objectID": "weeks.html",
+    "href": "weeks.html",
+    "title": "每周列表",
     "section": "",
-    "text": "注释\n\n\n\n本页包含本课程周次安排、教学主题、课前准备、讲义、课后作业、小组项目等方面的 概要信息以及相应的链接。 随着本学期教学进度的推进，本表格将逐步增补、调整并完善。\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n周次\n日期\n主题\n准备\n讲义\n练习\n作业\n小组项目\n\n\n\n\n1\n2023-09-15\n课程简介\n📖\n🖥️\n\n✍️\n\n\n\n2\n2023-09-22\nggplot2 数据可视化\n📖"
+    "text": "以下是每周授课相关资料 / 资源（包括课前准备/预习、讲义、练习、课后作业等）的信息列表， 同学们既可以随意浏览或者用主题进行筛选，也可以直接根据目标周数点击打开对应的网页一探究竟。\n\n\n\n   \n     \n     \n       排序方式\n       缺省\n         \n          日期 - 日期升序\n        \n         \n          日期 - 日期降序\n        \n         \n          标题\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\n第 2 周\n\n\nggplot2数据可视化\n\n\n\n\n预习\n\n\n讲义\n\n\n随堂练习\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-09-22\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 1 周\n\n\n课程简介\n\n\n\n\n准备\n\n\n讲义\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-09-15\n\n\n曾永艺\n\n\n\n\n\n\n无匹配项"
   },
   {
-    "objectID": "project/team-project.html",
-    "href": "project/team-project.html",
-    "title": "小组研究项目说明",
+    "objectID": "weeks/week-02.html",
+    "href": "weeks/week-02.html",
+    "title": "第 2 周",
     "section": "",
-    "text": "重要\n\n\n\n待补充详细信息。\n\n\n\n1. 小组成员\n\n\n1.1 设计目标\n\n\n1.2 分组流程\n\n\n1.3 分组结果\n\n\n\n2. 任务说明\n\n\n2.1 备选研究项目\n\n\n2.2 小组最终选题\n\n\n\n3. 时间安排\n\n\n\n4. 作业提交与展示\n\n\n4.1 中期进展汇报\n\n\n4.2 最终研究成果提交说明\n\n\n4.3 展示与分享\n\n\n\n5. 作业评分"
+    "text": "“一图胜千言”。R 语言有着强大的数据可视化（制图）功能，很多人学习 R 语言编程主要就是冲着这一点来的。在本讲中我们将侧重介绍影响力巨大的 ggplot2 包，并涵盖以下几方面的内容："
+  },
+  {
+    "objectID": "weeks/week-02.html#课前准备",
+    "href": "weeks/week-02.html#课前准备",
+    "title": "第 2 周",
+    "section": "1. 课前准备",
+    "text": "1. 课前准备\n\n\n\n📖 预习 R for Data Science, 2e 一书关于数据可视化的两章，即 2 Data visualization 和 10 Layers。\n\n\n\n\n\n\n提示\n\n\n\n此书第1版有中文翻译版 《R数据科学》出版，上述两章大致对应的章节为“第1章 使用ggplot2进行数据可视化”。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。\n\n\n🖥️ 我准备的基于 xaringan包 的 网页版讲义，供同学们参考。"
+  },
+  {
+    "objectID": "weeks/week-02.html#课堂讲义",
+    "href": "weeks/week-02.html#课堂讲义",
+    "title": "第 2 周",
+    "section": "2. 课堂讲义",
+    "text": "2. 课堂讲义\n🖥️ 第2讲 ggplot2数据可视化"
+  },
+  {
+    "objectID": "weeks/week-02.html#随堂练习",
+    "href": "weeks/week-02.html#随堂练习",
+    "title": "第 2 周",
+    "section": "3. 随堂练习",
+    "text": "3. 随堂练习\n⌨️ 见课堂讲义"
+  },
+  {
+    "objectID": "weeks/week-02.html#课后作业",
+    "href": "weeks/week-02.html#课后作业",
+    "title": "第 2 周",
+    "section": "4. 课后作业",
+    "text": "4. 课后作业\n✍️ 课后作业"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "_Quantitative Finance with R_",
+    "section": "",
+    "text": "这是厦门大学管理学院 2023-2024 学年秋季学期“量化金融与金融编程”课的课程主页， 将主要展示课程 准备 | 预习、课堂讲义 | 随堂练习、课后作业、 小组研究项目 等方面的信息和资源。\n希望同学们通过课程学习，能在  语言金融编程领域实现 from Zero to Hero 的升级！\n \n  \n   \n  \n    \n     网站\n  \n  \n    \n     Github"
   },
   {
     "objectID": "weeks/week-01.html",
@@ -56,52 +91,24 @@
     "text": "4. 课后作业\n✍️ 课后作业"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "_Quantitative Finance with R_",
+    "objectID": "project/team-project.html",
+    "href": "project/team-project.html",
+    "title": "小组研究项目说明",
     "section": "",
-    "text": "这是厦门大学管理学院 2023-2024 学年秋季学期“量化金融与金融编程”课的课程主页， 将主要展示课程 准备 | 预习、课堂讲义 | 随堂练习、课后作业、 小组研究项目 等方面的信息和资源。\n希望同学们通过课程学习，能在  语言金融编程领域实现 from Zero to Hero 的升级！\n \n  \n   \n  \n    \n     网站\n  \n  \n    \n     Github"
+    "text": "重要\n\n\n\n待补充详细信息。\n\n\n\n1. 小组成员\n\n\n1.1 设计目标\n\n\n1.2 分组流程\n\n\n1.3 分组结果\n\n\n\n2. 任务说明\n\n\n2.1 备选研究项目\n\n\n2.2 小组最终选题\n\n\n\n3. 时间安排\n\n\n\n4. 作业提交与展示\n\n\n4.1 中期进展汇报\n\n\n4.2 最终研究成果提交说明\n\n\n4.3 展示与分享\n\n\n\n5. 作业评分"
   },
   {
-    "objectID": "weeks/week-02.html",
-    "href": "weeks/week-02.html",
-    "title": "第 2 周",
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "课程安排",
     "section": "",
-    "text": "“一图胜千言”。R 语言有着强大的数据可视化（制图）功能，很多人学习 R 语言编程主要就是冲着这一点来的。在本讲中我们将侧重介绍影响力巨大的 ggplot2 包，并涵盖以下几方面的内容："
+    "text": "注释\n\n\n\n本页包含本课程周次安排、教学主题、课前准备、讲义、课后作业、小组项目等方面的 概要信息以及相应的链接。 随着本学期教学进度的推进，本表格将逐步增补、调整并完善。\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n周次\n日期\n主题\n准备\n讲义\n练习\n作业\n小组项目\n\n\n\n\n1\n2023-09-15\n课程简介\n📖\n🖥️\n\n✍️\n\n\n\n2\n2023-09-22\nggplot2 数据可视化\n📖\n🖥️\n⌨️\n✍️"
   },
   {
-    "objectID": "weeks/week-02.html#课前准备",
-    "href": "weeks/week-02.html#课前准备",
-    "title": "第 2 周",
-    "section": "1. 课前准备",
-    "text": "1. 课前准备\n\n\n\n📖 预习 R for Data Science, 2e 一书关于数据可视化的两章，即 2 Data visualization 和 10 Layers。\n\n\n\n\n\n\n提示\n\n\n\n此书第1版有中文翻译版 《R数据科学》出版，上述两章大致对应的章节为“第1章 使用ggplot2进行数据可视化”。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。\n\n\n🖥️ 我准备的基于 xaringan包 的 网页版讲义，供同学们参考。"
-  },
-  {
-    "objectID": "weeks/week-02.html#课堂讲义",
-    "href": "weeks/week-02.html#课堂讲义",
-    "title": "第 2 周",
-    "section": "2. 课堂讲义",
-    "text": "2. 课堂讲义\n🖥️ 第2讲 ggplot2数据可视化（待上传）"
-  },
-  {
-    "objectID": "weeks/week-02.html#随堂练习",
-    "href": "weeks/week-02.html#随堂练习",
-    "title": "第 2 周",
-    "section": "3. 随堂练习",
-    "text": "3. 随堂练习\n⌨️ 见课堂讲义"
-  },
-  {
-    "objectID": "weeks/week-02.html#课后作业",
-    "href": "weeks/week-02.html#课后作业",
-    "title": "第 2 周",
-    "section": "4. 课后作业",
-    "text": "4. 课后作业\n✍️ 课后作业（待上传）"
-  },
-  {
-    "objectID": "weeks.html",
-    "href": "weeks.html",
-    "title": "每周列表",
-    "section": "",
-    "text": "以下是每周授课相关资料 / 资源（包括课前准备/预习、讲义、练习、课后作业等）的信息列表， 同学们既可以随意浏览或者用主题进行筛选，也可以直接根据目标周数点击打开对应的网页一探究竟。\n\n\n\n   \n     \n     \n       排序方式\n       缺省\n         \n          日期 - 日期升序\n        \n         \n          日期 - 日期降序\n        \n         \n          标题\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\n第 1 周\n\n\n课程简介\n\n\n\n\n准备\n\n\n讲义\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-09-15\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 2 周\n\n\nggplot2数据可视化\n\n\n\n\n预习\n\n\n讲义\n\n\n随堂练习\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2022-09-22\n\n\n曾永艺\n\n\n\n\n\n\n无匹配项"
+    "objectID": "hw/hw-02.html#footnotes",
+    "href": "hw/hw-02.html#footnotes",
+    "title": "第2周课后复习与作业",
+    "section": "脚注",
+    "text": "脚注\n\n\n若英文看起来实在吃力 😵， 这本书的第一版有中文翻译版，请同学们自行学习对应章节。我个人建议同学们（等网上商城打折时）购买实体书，放在案头作学习参考。↩︎"
   }
 ]
