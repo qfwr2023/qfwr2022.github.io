@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>量化金融与金融编程</title>
+    <meta charset="utf-8" />
+    <meta name="author" content=" 曾永艺" />
+    <meta name="date" content="2023-10-06" />
+    <script src="../libs/header-attrs/header-attrs.js"></script>
+    <link href="../libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="../libs/tile-view/tile-view.js"></script>
+    <link href="../libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <link href="../libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="../libs/panelset/panelset.js"></script>
+    <link href="../libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <link href="../libs/animate.css/animate.xaringan.css" rel="stylesheet" />
+    <script src="../libs/clipboard/clipboard.min.js"></script>
+    <link href="../libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="../libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"<i class=\"fa fa-copy\"><\/i>","success":"<i class=\"fa fa-check\" style=\"color: #90BE6D\"><\/i>","error":"<i class=\"fa fa-times-circle\" style=\"color: #F94144\"><\/i>"})</script>
+    <link href="../libs/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="../libs/font-awesome/css/v4-shims.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../libs/zen-styles-v2.3-rev.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# 量化金融与金融编程
+]
+.subtitle[
+## L03 <code>rmarkdown</code> 与 Quarto | 课前预习
+]
+.author[
+### <br>曾永艺
+]
+.institute[
+### 厦门大学管理学院
+]
+.date[
+### <br>2023-10-06
+]
+
+---
+
+class: inverse, center, middle, hide_logo
+background-image: url(imgs/logo-quarto.png)
+background-size: 5.5em
+background-position: 15% 50%
+
+
+
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 50px;
+height: 50px;
+z-index: 0;
+background-image: url(imgs/logo-sm.png);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:0.5em;right:0.5em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
+        .forEach(function (slide) {
+          const logo = document.createElement('a')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = 'https://qfwr2022.netlify.app'
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
+
+# 1. Quarto 概览
+
+---
+layout: true
+background-image: url(imgs/logo-quarto2.png)
+background-size: 7.5em
+background-position: 8.5% 5%
+
+### [{{&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;nbsp;&amp;nbsp;&lt;sup&gt;.font70[1.3.433]&lt;/sup&gt;}}](https://quarto.org/)
+
+---
+
+&gt; .font110.bold[_Open source tools for scientific and technical publishing_]
+
+--
+
+.font50[&lt;br&gt;]
+
+.font120.bold[
+
+- Author using [Jupyter](https://jupyter.org/) notebooks or with plain text markdown in your favorite editor.
+
+- Create dynamic content with Python, R, Julia, and Observable.
+
+- Publish reproducible, production quality articles, presentations, websites, blogs, and books in HTML, PDF, MS Word, ePub, and more.
+
+- Write using [Pandoc](https://pandoc.org/) markdown, including equations, citations, crossrefs, figure panels, callouts, advanced layout, and more.
+
+- Share knowledge and insights organization-wide by publishing to Posit Connect, Confluence, or other publishing systems.
+
+]
+
+---
+
+&gt; .font110.bold[_Open source tools for scientific and technical publishing_]
+
+&lt;img src="imgs/workflow-quarto.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+layout: false
+class: inverse, center, middle, hide_logo
+background-image: url(imgs/logo-quarto.png)
+background-size: 5.5em
+background-position: 15% 50%
+
+# 2. Quarto 动态文档构成
+
+---
+layout: true
+
+### &gt;&gt; YAML 文件头
+
+---
+
+.font110[
+- YAML 文件头处于两个 `---` 之间
+- [YAML](https://yaml.org/)：_YAML Ain't Markup Language_，易于读写的层次化数据
+- Quarto 使用 YAML 文件头来提供 metadata 以及控制渲染和样式等方面的参数
+]
+
+--
+
+.pull-left.code100[
+```yaml
+---
+title: "Penguins, meet Quarto!"
+subtitle: 企鹅遇上Quarto！💘
+author: "曾永艺"
+date: today
+format: 
+  html:
+    toc: true
+    code-fold: true
+editor: visual
+---
+```
+]
+
+--
+
+.pull-right.font120[
+
+&lt;br&gt;
+
+- [{{一文看懂 YAML}}](https://zhuanlan.zhihu.com/p/145173920) 🎯
+
+- [{{Quarto HTML Options}}](https://quarto.org/docs/reference/formats/html.html)
+
+- **RStudio**'s [{{YAML Intelligence}}](https://quarto.org/docs/tools/rstudio.html#yaml-intelligence)
+
+]
+
+---
+layout: true
+
+### &gt;&gt; Markdown 文本 .font80[&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp; .red[[{{rstudio-visual-markdown-editing}}](https://rstudio.github.io/visual-markdown-editing/)] 🤩]
+
+---
+
+.font110[
+- 用 [.bold[{{扩展的 Markdown 语法}}]](https://qfwr2023.netlify.app/readings/markdown-basics.html)  <svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M593.8 59.1H46.2C20.7 59.1 0 79.8 0 105.2v301.5c0 25.5 20.7 46.2 46.2 46.2h547.7c25.5 0 46.2-20.7 46.1-46.1V105.2c0-25.4-20.7-46.1-46.2-46.1zM338.5 360.6H277v-120l-61.5 76.9-61.5-76.9v120H92.3V151.4h61.5l61.5 76.9 61.5-76.9h61.5v209.2zm135.3 3.1L381.5 256H443V151.4h61.5V256H566z"/></svg> 来写说明性文本（<svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M593.8 59.1H46.2C20.7 59.1 0 79.8 0 105.2v301.5c0 25.5 20.7 46.2 46.2 46.2h547.7c25.5 0 46.2-20.7 46.1-46.1V105.2c0-25.4-20.7-46.1-46.2-46.1zM338.5 360.6H277v-120l-61.5 76.9-61.5-76.9v120H92.3V151.4h61.5l61.5 76.9 61.5-76.9h61.5v209.2zm135.3 3.1L381.5 256H443V151.4h61.5V256H566z"/></svg>是用来格式化纯文本文件的轻量级语法，其设计哲学就是使得文本既容易写又容易读）。
+]
+
+--
+
+&lt;img src="imgs/markdown-example.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+layout: true
+
+### &gt;&gt; 代码块
+
+---
+
+.font100[
+1. 插入代码块：使用快捷键 .kbd[Ctrl+Alt+I]（也可使用编辑器工具栏上的 Insert 按钮 或者 手工输入代码段标记符```` ```{r} ```` 和```` ``` ````）
+2. 设置代码块标签名和[{{代码块选项}}](https://quarto.org/docs/reference/cells/cells-knitr.html)（也可在通过 `knitr::opts_chunk$set()` 或者 YAML 文件头设置全局选项——当同个选项多处设置时，局部设置优先），善用RStudio**智能补全**功能
+3. 编写 <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> 代码
+4. 运行代码：使用快捷键 .kbd[Ctrl+Shift+Enter] | .kbd[Ctrl+Enter] 或者 点击.green[▶]按钮
+]
+
+--
+
+&lt;img src="imgs/code-chunk.png" width="96%" style="display: block; margin: auto;" /&gt;
+
+--
+
+.font100[
+- 行内代码
+
+```r
+  这份数据中包含了`r nrow(diamonds)`颗钻石的信息。其中只有`r nrow(diamonds) - nrow(smaller)`颗
+钻石大于2.5克拉。其余钻石的分布如下图所示。
+```
+]
+
+---
+layout: false
+class: inverse, center, middle, hide_logo
+background-image: url(imgs/logo-quarto.png)
+background-size: 5.5em
+background-position: 10% 50%
+
+# 3. Quarto 工作流
+
+---
+
+### &gt;&gt; 工作流
+
+.pull-left.font100[
+
+1. 创建项目文件夹
+
+2. 打开新的 .qmd 文档：`File &gt; New File &gt; Quarto Document ...`
+
+    - **Document** | Presentation | Interactive
+    
+    - 修改 Title 和 Author，设置输出格式为 **Html**、Engine 为 **Knitr** 等
+
+3. **存盘 ↔ 根据需要编辑修改模板文档**
+
+4. `Render` .qmd 文档，生成目标输出文档
+
+5. 在 RStudio 窗口中预览结果
+
+6. 在 Background Jobs 窗口中检查文档创建过程记录
+
+7. 使用和 .qmd 文档一并存储的目标输出文档
+
+8. 将报告发布到网络服务器（可选步骤）
+]
+
+
+.pull-right[
+&lt;br&gt;
+
+&lt;img src="imgs/workflow-template.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+layout: false
+class: center middle
+background-image: url(imgs/logo-xaringan.png)
+background-size: 12%
+background-position: 50% 40%
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;hr color='#f00' size='2px' width='80%'&gt;
+&lt;br&gt;
+.Large.red[_**本网页版讲义的制作由 R 包 [{{`xaringan`}}](https://github.com/yihui/xaringan) 赋能！**_]
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="../libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
