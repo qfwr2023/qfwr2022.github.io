@@ -67,6 +67,8 @@ website:
           href: weeks/week-01.qmd
         - text: "第2周 ggplot2数据可视化"
           href: weeks/week-02.qmd
+        - text: "第3周 rmarkdown与Quarto"
+          href: weeks/week-03.qmd
         - text: "......"
   page-navigation: true
   page-footer:
