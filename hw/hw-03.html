@@ -8,7 +8,7 @@
 
 <meta name="author" content="曾永艺">
 
-<title>Quantitative Finance with R - 第 3 周</title>
+<title>Quantitative Finance with R - 第3周课后作业</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../weeks/week-02.html" rel="prev">
 <link href="../favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -131,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week-03.html">第3周 rmarkdown与Quarto</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">第3周课后作业</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -163,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-03.html" class="sidebar-item-text sidebar-link active">
+  <a href="../weeks/week-03.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">第3周 rmarkdown与Quarto</span></a>
   </div>
 </li>
@@ -176,31 +175,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">该页面内容</h2>
-   
-  <ul>
-  <li><a href="#课前准备" id="toc-课前准备" class="nav-link active" data-scroll-target="#课前准备">1. 课前准备</a></li>
-  <li><a href="#课堂讲义" id="toc-课堂讲义" class="nav-link" data-scroll-target="#课堂讲义">2. 课堂讲义</a></li>
-  <li><a href="#随堂练习" id="toc-随堂练习" class="nav-link" data-scroll-target="#随堂练习">3. 随堂练习</a></li>
-  <li><a href="#课后作业" id="toc-课后作业" class="nav-link" data-scroll-target="#课后作业">4. 课后作业</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">第 3 周</h1>
-<p class="subtitle lead"><code>rmarkdown</code> 与 Quarto</p>
-  <div class="quarto-categories">
-    <div class="quarto-category">预习</div>
-    <div class="quarto-category">讲义</div>
-    <div class="quarto-category">随堂练习</div>
-    <div class="quarto-category">作业</div>
-  </div>
-  </div>
+<h1 class="title">第3周课后作业</h1>
+</div>
 
 
 
@@ -227,72 +210,55 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <hr>
-<p>在上一讲课后作业中同学们通过代码脚本文档 <code>L02_coding_practice.R</code> 完成编程作业并直接提交，但如果不运行同学们的代码，我将很难得知代码能否正常运行及其运行结果；同时通过注释方式添加说明性文字或给文档逻辑分节也显得笨拙和不够美观。那么，有没有更好的解决方案呢？答案就是本讲将要介绍的“动态文档”（dynamic documents）——它允许你将代码、代码输出、文字等有机地组合在一起，并可方便地转化为多种类型的输出格式（如网页、PDF、docx、幻灯片等）。</p>
-<p>本讲主要涵盖以下几方面的内容：</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+注释
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>必做部分，需在截止日期前完成上传！</p>
+</div>
+</div>
 <ul>
-<li><p>R Markdown 与 Quarto 简介</p></li>
-<li><p>Quarto 动态文档组成</p>
+<li><p><strong>自由组队，两人一组，共同完成课后作业：</strong></p>
+<ol type="1">
+<li><p><strong>从 L02 课件中挑出 3 ~ 4 个你们感兴趣的数据可视化代码段，就其制作两种类型的展示文档：</strong></p>
 <ul>
-<li>YAML 文件头</li>
-<li>Markdown 文本</li>
-<li>代码块</li>
+<li><a href="https://quarto.org/docs/output-formats/html-basics.html">{{<code>Quarto|HTML</code>}}</a> 或 <a href="https://prettydoc.statr.me/themes.html">{{<code>prettydoc</code>}}</a> -&gt; 📂 <em>L03_HW/docs/</em></li>
+<li><a href="https://quarto.org/docs/presentations/revealjs/">{{<code>Quarto|Revealjs</code>}}</a> 或 <a href="https://slides.yihui.org/xaringan/zh-CN.html">{{<code>xaringan</code>}}</a> -&gt; 📂 <em>L03_HW/slides/</em></li>
 </ul></li>
-<li><p>Quarto 工作流与随堂练习</p></li>
-<li><p>补充：<code>prettydoc</code>、<code>tufte</code> 和 <code>xaringan</code> …</p></li>
+<li><p>记得<strong>多尝试各种选项设置</strong>，同时<strong>在文档内加上相应的说明性文字</strong>（如解释代码或输出图形，其余内容可自由发挥，丰俭由人啦 😁）</p></li>
+<li><p>作业共同署名（<code>author: 姓名 + 姓名</code>）</p></li>
+<li><p>确认两份文档运行无误后将文件夹📂 <em>L03_HW</em> <strong>打包为 .zip 格式压缩文档</strong>，由其中<strong>一位</strong>同学<strong>于2023年10月15日22:00前</strong>将压缩包提交至 <a href="https://send2me.cn/KFJc2IN9/Q8Kvv8EApjAO-Q">{{坚果云链接}}</a></p></li>
+</ol></li>
 </ul>
 <hr>
-<section id="课前准备" class="level2">
-<h2 class="anchored" data-anchor-id="课前准备">1. 课前准备</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>📖 预习 <a href="https://r4ds.hadley.nz/"><em>R for Data Science, 2e</em></a>关于如何使用 Quarto 记录数据科学研究过程并展示与沟通研究结果的内容，即 <a href="https://r4ds.hadley.nz/quarto"><strong>29 Quarto </strong></a>。</p>
-<div class="callout callout-style-simple callout-tip">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
-<p>此书第1版有中文翻译版 <a href="https://www.ituring.com.cn/book/2113">《R数据科学》</a>出版，上述内容大致对应“第20章 R Markdown” 和 “第23章 R Markdown工作流”（但使用 R Markdown 而非 Quarto）。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。</p>
+<div class="callout-title-container flex-fill">
+注释
 </div>
 </div>
-</div>
-</div><div class="column" style="width:40%;">
-<div style="text-align:right">
-<p><img src="https://r4ds.hadley.nz/cover.jpg" class="cover" width="80%"></p>
+<div class="callout-body-container callout-body">
+<p>相信同学们现在对 <code>rmarkdown</code> 和 Quarto 有了初步的认识，下面列出一些学习资料，同学们可进一步学习精进 🏆</p>
 </div>
 </div>
-</div>
-<p>📖 阅读 <a href="../readings/markdown-basics.html">Markdown基础</a> 一文。</p>
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>此文主要翻译自 Quarto 官方文档 <a href="https://quarto.org/docs/authoring/markdown-basics.html">Markdown Basics</a> 并经小幅改写。</p>
-</div>
-</div>
-</div>
-<p>🖥️ 我准备的基于 <code>xaringan</code>包 的 <a href="../slides/lec-03-prep/L03_Quarto_Prep.html">网页版讲义</a>，供同学们参考。</p>
-</section>
-<section id="课堂讲义" class="level2">
-<h2 class="anchored" data-anchor-id="课堂讲义">2. 课堂讲义</h2>
-<p>🖥️<a href="../slides/lec-03/L03_Quarto.html">第3讲 <code>rmarkdown</code> 与 Quarto</a></p>
-</section>
-<section id="随堂练习" class="level2">
-<h2 class="anchored" data-anchor-id="随堂练习">3. 随堂练习</h2>
-<p>⌨️ 本讲将有比较长时间的随堂编程练习，请同学们带上自己的笔记本电脑 （也可找上编程小伙伴，坐在一起结队练习效果可能更佳，😁）。</p>
-</section>
-<section id="课后作业" class="level2">
-<h2 class="anchored" data-anchor-id="课后作业">4. 课后作业</h2>
-<p>✍️ <a href="../hw/hw-03.html">课后作业</a></p>
+<ul>
+<li><p>📖 <strong>教材</strong><br> <a href="https://r4ds.hadley.nz/">{{<em>R for Data Science, 2e</em>}}</a> 一书关于 Quarto 的第29章和第30章<br> （大致对应中文翻译版<a href="https://www.ituring.com.cn/book/2113">《R数据科学》</a>的第20、22和23章）</p></li>
+<li><p>🏡 <strong>官网</strong><br> <a href="https://quarto.org/"><strong>{{Quarto}}</strong></a> / <a href="https://rmarkdown.rstudio.com/"><strong>{{R Markdown}}</strong></a></p></li>
+<li><p>📝 <strong>速查</strong><br> <a href="https://qfwr2023.netlify.app/slides/lec-03/docs/quarto-cheatsheet.pdf"><strong>{{Quarto}}</strong></a> / <a href="https://qfwr2023.netlify.app/slides/lec-03/docs/rmarkdown-cheatsheet.pdf"><strong>{{R Markdown}}</strong></a></p></li>
+<li><p>📖 <a href="https://bookdown.org/yihui/rmarkdown/">{{<em>R Markdown: The Definitive Guide</em>}}</a> 和 <a href="https://bookdown.org/yihui/rmarkdown-cookbook/">{{<em>R Markdown Cookbook</em>}}</a></p></li>
+</ul>
 <p><br></p>
-<!-- ::: {style="font-size:0.875em; text-align:right"} -->
-<!-- 回到 [课程安排](../schedule.qmd) ⏎ -->
-<!-- ::: -->
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -659,15 +625,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../weeks/week-02.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">第2周 ggplot2数据可视化</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
