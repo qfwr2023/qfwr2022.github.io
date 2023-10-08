@@ -62,8 +62,7 @@ image: /slides/lec-03-prep/imgs/horst_qmd_render_schema.png
 
 ## 2. 课堂讲义
 
-🖥️
-[第3讲 `rmarkdown` 与 Quarto 🐝]
+🖥️[第3讲 `rmarkdown` 与 Quarto](/slides/lec-03/L03_Quarto.html)
 
 ## 3. 随堂练习
 
@@ -72,7 +71,7 @@ image: /slides/lec-03-prep/imgs/horst_qmd_render_schema.png
 
 ## 4. 课后作业
 
-✍️ [课后作业 🐝]
+✍️ [课后作业](/hw/hw-03.qmd)
 
 <br>
 
