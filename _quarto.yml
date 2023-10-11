@@ -67,8 +67,12 @@ website:
           href: weeks/week-01.qmd
         - text: "第2周 ggplot2数据可视化"
           href: weeks/week-02.qmd
-        - text: "第3周 rmarkdown与Quarto"
-          href: weeks/week-03.qmd
+        - text: "[第3周 中秋节假期停课]"
+        - text: "第4周 rmarkdown与Quarto"
+          href: weeks/week-04.qmd
+        - text: "第5周 dplyr数据处理 I"
+          href: weeks/week-05.qmd
+        - text: "第6周 dplyr数据处理 II"
         - text: "......"
   page-navigation: true
   page-footer:
