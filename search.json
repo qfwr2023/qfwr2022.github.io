@@ -133,55 +133,6 @@
     "text": "这是厦门大学管理学院 2023-2024 学年秋季学期“量化金融与金融编程”课的课程主页， 将主要展示课程 准备 | 预习、课堂讲义 | 随堂练习、课后作业、 小组研究项目 等方面的信息和资源。\n希望同学们通过课程学习，能在  语言金融编程领域实现 from Zero to Hero 的升级！\n \n  \n   \n  \n    \n     网站\n  \n  \n    \n     Github"
   },
   {
-    "objectID": "weeks/week-03.html",
-    "href": "weeks/week-03.html",
-    "title": "第 3 周",
-    "section": "",
-    "text": "在上一讲课后作业中同学们通过代码脚本文档 L02_coding_practice.R 完成编程作业并直接提交，但如果不运行同学们的代码，我将很难得知代码能否正常运行及其运行结果；同时通过注释方式添加说明性文字或给文档逻辑分节也显得笨拙和不够美观。那么，有没有更好的解决方案呢？答案就是本讲将要介绍的“动态文档”（dynamic documents）——它允许你将代码、代码输出、文字等有机地组合在一起，并可方便地转化为多种类型的输出格式（如网页、PDF、docx、幻灯片等）。\n本讲主要涵盖以下几方面的内容："
-  },
-  {
-    "objectID": "weeks/week-03.html#课前准备",
-    "href": "weeks/week-03.html#课前准备",
-    "title": "第 3 周",
-    "section": "1. 课前准备",
-    "text": "1. 课前准备\n\n\n📖 预习 R for Data Science, 2e关于如何使用 Quarto 记录数据科学研究过程并展示与沟通研究结果的内容，即 29 Quarto 。\n\n\n\n\n\n\n此书第1版有中文翻译版 《R数据科学》出版，上述内容大致对应“第20章 R Markdown” 和 “第23章 R Markdown工作流”（但使用 R Markdown 而非 Quarto）。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。\n\n\n\n\n\n\n\n\n\n📖 阅读 Markdown基础 一文。\n\n\n\n\n\n\n此文主要翻译自 Quarto 官方文档 Markdown Basics 并经小幅改写。\n\n\n\n🖥️ 我准备的基于 xaringan包 的 网页版讲义，供同学们参考。"
-  },
-  {
-    "objectID": "weeks/week-03.html#课堂讲义",
-    "href": "weeks/week-03.html#课堂讲义",
-    "title": "第 3 周",
-    "section": "2. 课堂讲义",
-    "text": "2. 课堂讲义\n🖥️第3讲 rmarkdown 与 Quarto"
-  },
-  {
-    "objectID": "weeks/week-03.html#随堂练习",
-    "href": "weeks/week-03.html#随堂练习",
-    "title": "第 3 周",
-    "section": "3. 随堂练习",
-    "text": "3. 随堂练习\n⌨️ 本讲将有比较长时间的随堂编程练习，请同学们带上自己的笔记本电脑 （也可找上编程小伙伴，坐在一起结队练习效果可能更佳，😁）。"
-  },
-  {
-    "objectID": "weeks/week-03.html#课后作业",
-    "href": "weeks/week-03.html#课后作业",
-    "title": "第 3 周",
-    "section": "4. 课后作业",
-    "text": "4. 课后作业\n✍️ 课后作业"
-  },
-  {
-    "objectID": "project/team-project.html",
-    "href": "project/team-project.html",
-    "title": "小组研究项目说明",
-    "section": "",
-    "text": "重要\n\n\n\n待补充详细信息。\n\n\n\n1. 小组成员\n\n\n1.1 设计目标\n\n\n1.2 分组流程\n\n\n1.3 分组结果\n\n\n\n2. 任务说明\n\n\n2.1 备选研究项目\n\n\n2.2 小组最终选题\n\n\n\n3. 时间安排\n\n\n\n4. 作业提交与展示\n\n\n4.1 中期进展汇报\n\n\n4.2 最终研究成果提交说明\n\n\n4.3 展示与分享\n\n\n\n5. 作业评分"
-  },
-  {
-    "objectID": "weeks.html",
-    "href": "weeks.html",
-    "title": "每周列表",
-    "section": "",
-    "text": "以下是每周授课相关资料 / 资源（包括课前准备/预习、讲义、练习、课后作业等）的信息列表， 同学们既可以随意浏览或者用主题进行筛选，也可以直接根据目标周数点击打开对应的网页一探究竟。\n\n\n\n   \n     \n     \n       排序方式\n       缺省\n         \n          日期 - 日期升序\n        \n         \n          日期 - 日期降序\n        \n         \n          标题\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\n第 3 周\n\n\nrmarkdown 与 Quarto\n\n\n\n\n预习\n\n\n讲义\n\n\n随堂练习\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-10-08\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 2 周\n\n\nggplot2数据可视化\n\n\n\n\n预习\n\n\n讲义\n\n\n随堂练习\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-09-22\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 1 周\n\n\n课程简介\n\n\n\n\n准备\n\n\n讲义\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-09-15\n\n\n曾永艺\n\n\n\n\n\n\n无匹配项"
-  },
-  {
     "objectID": "weeks/week-02.html",
     "href": "weeks/week-02.html",
     "title": "第 2 周",
@@ -215,6 +166,90 @@
     "title": "第 2 周",
     "section": "4. 课后作业",
     "text": "4. 课后作业\n✍️ 课后作业"
+  },
+  {
+    "objectID": "weeks/week-04.html",
+    "href": "weeks/week-04.html",
+    "title": "第 4 周",
+    "section": "",
+    "text": "在上一讲课后作业中同学们通过代码脚本文档 L02_coding_practice.R 完成编程作业并直接提交，但如果不运行同学们的代码，我将很难得知代码能否正常运行及其运行结果；同时通过注释方式添加说明性文字或给文档逻辑分节也显得笨拙和不够美观。那么，有没有更好的解决方案呢？答案就是本讲将要介绍的“动态文档”（dynamic documents）——它允许你将代码、代码输出、文字等有机地组合在一起，并可方便地转化为多种类型的输出格式（如网页、PDF、docx、幻灯片等）。\n本讲主要涵盖以下几方面的内容："
+  },
+  {
+    "objectID": "weeks/week-04.html#课前准备",
+    "href": "weeks/week-04.html#课前准备",
+    "title": "第 4 周",
+    "section": "1. 课前准备",
+    "text": "1. 课前准备\n\n\n📖 预习 R for Data Science, 2e关于如何使用 Quarto 记录数据科学研究过程并展示与沟通研究结果的内容，即 29 Quarto 。\n\n\n\n\n\n\n此书第1版有中文翻译版 《R数据科学》出版，上述内容大致对应“第20章 R Markdown” 和 “第23章 R Markdown工作流”（但使用 R Markdown 而非 Quarto）。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。\n\n\n\n\n\n\n\n\n\n📖 阅读 Markdown基础 一文。\n\n\n\n\n\n\n此文主要翻译自 Quarto 官方文档 Markdown Basics 并经小幅改写。\n\n\n\n🖥️ 我准备的基于 xaringan包 的 网页版讲义，供同学们参考。"
+  },
+  {
+    "objectID": "weeks/week-04.html#课堂讲义",
+    "href": "weeks/week-04.html#课堂讲义",
+    "title": "第 4 周",
+    "section": "2. 课堂讲义",
+    "text": "2. 课堂讲义\n🖥️第3讲 rmarkdown 与 Quarto"
+  },
+  {
+    "objectID": "weeks/week-04.html#随堂练习",
+    "href": "weeks/week-04.html#随堂练习",
+    "title": "第 4 周",
+    "section": "3. 随堂练习",
+    "text": "3. 随堂练习\n⌨️ 本讲将有比较长时间的随堂编程练习，请同学们带上自己的笔记本电脑 （也可找上编程小伙伴，坐在一起结队练习效果可能更佳，😁）。"
+  },
+  {
+    "objectID": "weeks/week-04.html#课后作业",
+    "href": "weeks/week-04.html#课后作业",
+    "title": "第 4 周",
+    "section": "4. 课后作业",
+    "text": "4. 课后作业\n✍️ 课后作业"
+  },
+  {
+    "objectID": "weeks.html",
+    "href": "weeks.html",
+    "title": "每周列表",
+    "section": "",
+    "text": "以下是每周授课相关资料 / 资源（包括课前准备/预习、讲义、练习、课后作业等）的信息列表， 同学们既可以随意浏览或者用主题进行筛选，也可以直接根据目标周数点击打开对应的网页一探究竟。\n\n\n\n   \n     \n     \n       排序方式\n       缺省\n         \n          日期 - 日期升序\n        \n         \n          日期 - 日期降序\n        \n         \n          标题\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\n第 5 周\n\n\ndplyr数据处理 I\n\n\n\n\n预习\n\n\n随堂练习\n\n\n讲义\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-10-13\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 4 周\n\n\nrmarkdown 与 Quarto\n\n\n\n\n预习\n\n\n讲义\n\n\n随堂练习\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-10-08\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 2 周\n\n\nggplot2数据可视化\n\n\n\n\n预习\n\n\n讲义\n\n\n随堂练习\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-09-22\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 1 周\n\n\n课程简介\n\n\n\n\n准备\n\n\n讲义\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-09-15\n\n\n曾永艺\n\n\n\n\n\n\n无匹配项"
+  },
+  {
+    "objectID": "project/team-project.html",
+    "href": "project/team-project.html",
+    "title": "小组研究项目说明",
+    "section": "",
+    "text": "重要\n\n\n\n待补充详细信息。\n\n\n\n1. 小组成员\n\n\n1.1 设计目标\n\n\n1.2 分组流程\n\n\n1.3 分组结果\n\n\n\n2. 任务说明\n\n\n2.1 备选研究项目\n\n\n2.2 小组最终选题\n\n\n\n3. 时间安排\n\n\n\n4. 作业提交与展示\n\n\n4.1 中期进展汇报\n\n\n4.2 最终研究成果提交说明\n\n\n4.3 展示与分享\n\n\n\n5. 作业评分"
+  },
+  {
+    "objectID": "weeks/week-05.html",
+    "href": "weeks/week-05.html",
+    "title": "第 5 周",
+    "section": "",
+    "text": "“净土宇宙 🌌”的核心数据结构为 tibble（即由行（样本）和列（变量）构成的表格型数据），dplyr 包基于数据操作语法（A Grammar of Data Manipulation）构建出一组用来操作 tibble 对象的核心函数——它们就是我们在接下来两次课中需要学习、理解并掌握的知识。\n本讲主要涵盖以下几方面的内容（加粗字体为本次课的讲授内容）："
+  },
+  {
+    "objectID": "weeks/week-05.html#课前准备",
+    "href": "weeks/week-05.html#课前准备",
+    "title": "第 5 周",
+    "section": "1. 课前准备",
+    "text": "1. 课前准备\n\n\n📖 预习 R for Data Science, 2e 第一部分 Whole game 中关于数据处理的章节，即 4 Data transformation 。\n\n\n\n\n\n\n此书第1版有中文翻译版 《R数据科学》出版，上述内容大致对应“第3章 使用 dplyr 进行数据转换”和“第13章 使用 magrittr 进行管道操作”。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。\n\n\n\n\n\n\n\n\n\n由于上课内容较多，而上课时间有限，上课节奏预计较快，有些内容甚至会一带而过，请同学们务必腾出时间来过一遍上述预习章节的内容。\n\n\n\n\n\n\n\n\n\n🖥️ 我准备的基于 xaringan包 的 网页版讲义，供同学们参考。"
+  },
+  {
+    "objectID": "weeks/week-05.html#课堂讲义",
+    "href": "weeks/week-05.html#课堂讲义",
+    "title": "第 5 周",
+    "section": "2. 课堂讲义",
+    "text": "2. 课堂讲义\n🖥️ [第4讲 dplyr数据处理 🐝︎ ]"
+  },
+  {
+    "objectID": "weeks/week-05.html#随堂练习",
+    "href": "weeks/week-05.html#随堂练习",
+    "title": "第 5 周",
+    "section": "3. 随堂练习",
+    "text": "3. 随堂练习\n⌨️ [见课堂讲义——并非动手编程练习，思维体操而已 🐝︎ ]"
+  },
+  {
+    "objectID": "weeks/week-05.html#课后作业",
+    "href": "weeks/week-05.html#课后作业",
+    "title": "第 5 周",
+    "section": "4. 课后作业",
+    "text": "4. 课后作业\n✍️ [课后作业 🐝︎ ]"
   },
   {
     "objectID": "weeks/week-01.html",
@@ -256,7 +291,7 @@
     "href": "schedule.html",
     "title": "课程安排",
     "section": "",
-    "text": "注释\n\n\n\n本页包含本课程周次安排、教学主题、课前准备、讲义、课后作业、小组项目等方面的 概要信息以及相应的链接。 随着本学期教学进度的推进，本表格将逐步增补、调整并完善。\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n周次\n日期\n主题\n准备\n讲义\n练习\n作业\n小组项目\n\n\n\n\n1\n2023-09-15\n课程简介\n📖\n🖥️\n\n✍️\n\n\n\n2\n2023-09-22\nggplot2 数据可视化\n📖\n🖥️\n⌨️\n✍️\n\n\n\n3\n2023-10-08\nrmarkdown 与 Quarto\n📖\n🖥️\n⌨️\n✍️"
+    "text": "注释\n\n\n\n本页包含本课程周次安排、教学主题、课前准备、讲义、课后作业、小组项目等方面的 概要信息以及相应的链接。 随着本学期教学进度的推进，本表格将逐步增补、调整并完善。\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n周次\n日期\n主题\n准备\n讲义\n练习\n作业\n小组项目\n\n\n\n\n1\n2023-09-15\n课程简介\n📖\n🖥️\n\n✍️\n\n\n\n2\n2023-09-22\nggplot2 数据可视化\n📖\n🖥️\n⌨️\n✍️\n\n\n\n3\n2023-09-29\n🥮 中秋节假期停课\n\n\n\n\n\n\n\n4\n2023-10-08\nrmarkdown 与 Quarto\n📖\n🖥️\n⌨️\n✍️\n\n\n\n5\n2023-10-13\ndplyr 数据处理 I\n📖"
   },
   {
     "objectID": "hw/hw-02.html#footnotes",
