@@ -55,16 +55,15 @@ image: /slides/lec-04-prep/imgs/dplyr-rows-cols.png
 
 ## 2. 课堂讲义
 
-🖥️
-[第4讲 dplyr数据处理 🐝︎ ]
+🖥️[第4讲 dplyr数据处理](/slides/lec-04/L04_Transformation.html)
 
 ## 3. 随堂练习
 
-⌨️ [见课堂讲义——并非动手编程练习，思维体操而已 🐝︎ ]
+⌨️ [见课堂讲义——并非动手编程练习，思维体操而已]
 
 ## 4. 课后作业
 
-✍️ [课后作业 🐝︎ ]
+✍️ [课后作业](/hw/hw-04.qmd)
 
 <br>
 

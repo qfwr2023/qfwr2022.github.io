@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>第4讲 dplyr数据处理</title>
+    <meta charset="utf-8" />
+    <meta name="author" content=" 曾永艺" />
+    <meta name="date" content="2023-10-13" />
+    <script src="../libs/header-attrs/header-attrs.js"></script>
+    <link href="../libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="../libs/tile-view/tile-view.js"></script>
+    <link href="../libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <link href="../libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="../libs/panelset/panelset.js"></script>
+    <script src="../libs/freezeframe/freezeframe.min.js"></script>
+    <script src="../libs/xaringanExtra-freezeframe/freezeframe-init.js"></script>
+    <script id="xaringanExtra-freezeframe-options" type="application/json">{"selector":"img[src$=\"gif\"]","trigger":"click","overlay":false,"responsive":false,"warnings":true}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"a0f179f6b47243038d29cbd3a536d71c","expires":7}</script>
+    <script src="../libs/himalaya/himalaya.js"></script>
+    <script src="../libs/js-cookie/js.cookie.js"></script>
+    <link href="../libs/editable/editable.css" rel="stylesheet" />
+    <script src="../libs/editable/editable.js"></script>
+    <link href="../libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <link href="../libs/animate.css/animate.xaringan.css" rel="stylesheet" />
+    <script src="../libs/clipboard/clipboard.min.js"></script>
+    <link href="../libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="../libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"<i class=\"fa fa-copy\"><\/i>","success":"<i class=\"fa fa-check\" style=\"color: #90BE6D\"><\/i>","error":"<i class=\"fa fa-times-circle\" style=\"color: #F94144\"><\/i>"})</script>
+    <link href="../libs/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="../libs/font-awesome/css/v4-shims.min.css" rel="stylesheet" />
+    <link href="../libs/countdown/countdown.css" rel="stylesheet" />
+    <script src="../libs/countdown/countdown.js"></script>
+    <script src="../libs/htmlwidgets/htmlwidgets.js"></script>
+    <link href="../libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+    <script src="../libs/datatables-binding/datatables.js"></script>
+    <script src="../libs/jquery/jquery-3.6.0.min.js"></script>
+    <link href="../libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="../libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+    <script src="../libs/dt-core/js/jquery.dataTables.min.js"></script>
+    <link href="../libs/crosstalk/css/crosstalk.min.css" rel="stylesheet" />
+    <script src="../libs/crosstalk/js/crosstalk.min.js"></script>
+    <link rel="stylesheet" href="../libs/zen-styles-v2.3-rev.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# 量化金融与金融编程
+]
+.subtitle[
+## L4 <code>dplyr</code><sup>.font80[1.1.3]</sup> 数据处理
+]
+.author[
+### <br>曾永艺
+]
+.institute[
+### 厦门大学管理学院
+]
+.date[
+### <br>2023-10-13
+]
+
+---
+
+class: middle, hide_logo
+background-image: url(imgs/logo-dplyr.png)
+background-size: 25%
+background-position: 19% 30%
+
+
+
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 50px;
+height: 50px;
+z-index: 0;
+background-image: url(imgs/logo-sm.png);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:0.5em;right:0.5em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
+        .forEach(function (slide) {
+          const logo = document.createElement('a')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = 'https://qfwr2022.netlify.app'
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
+
+.pull-left.font120.bold.center[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+_A Grammar of &lt;br&gt;Data Manipulation_
+&lt;br&gt;&lt;br&gt;
+]
+
+--
+ 
+.pull-right.font150.bold[
+
+1. 样本处理
+
+2. 变量处理
+
+3. 汇总
+
+4. 分组和行式处理
+
+5. 用 `%&gt;%` 连接多个操作
+
+6. 合并多个数据集
+
+7. 操作数据库和 `data.table`
+
+]
+
+
+---
+
+
+```r
+library(tidyverse)
+library(nycflights13)
+
+data(package = "nycflights13")
+# 包含airlines、airports、flights、planes、weather等5个数据集
+```
+
+--
+
+
+```r
+flights  # just print() it
+```
+
+```
+#&gt; # A tibble: 336,776 × 19
+#&gt;    year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time arr_delay
+#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;
+#&gt; 1  2013     1     1      517            515         2      830            819        11
+#&gt; 2  2013     1     1      533            529         4      850            830        20
+#&gt; 3  2013     1     1      542            540         2      923            850        33
+#&gt; # ℹ 336,773 more rows
+#&gt; # ℹ 10 more variables: carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;,
+#&gt; #   dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;,
+#&gt; #   time_hour &lt;dttm&gt;
+```
+--
+
+&gt; * `A tibble: 336,776 x 19`
+&gt; * `&lt;int&gt;` | `&lt;dbl&gt;` | `&lt;chr&gt;` | `&lt;dttm&gt;` | `&lt;lgl&gt;` | `&lt;fctr&gt;` | `&lt;date&gt;` 分别表示变量为 integer | double | character | date-time | logical | factor | date 类型的向量
+
+--
+
+
+```r
+?flights  # 打开flights数据集的帮助文档以进一步了解数据集，如变量的定义
+```
+
+---
+
+
+```r
+glimpse(flights)  # 数据一瞥
+```
+
+```
+#&gt; Rows: 336,776
+#&gt; Columns: 19
+#&gt; $ year           &lt;int&gt; 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013,…
+#&gt; $ month          &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…
+#&gt; $ day            &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…
+#&gt; $ dep_time       &lt;int&gt; 517, 533, 542, 544, 554, 554, 555, 557, 557, 558, 558, 558, 558, …
+#&gt; $ sched_dep_time &lt;int&gt; 515, 529, 540, 545, 600, 558, 600, 600, 600, 600, 600, 600, 600, …
+#&gt; $ dep_delay      &lt;dbl&gt; 2, 4, 2, -1, -6, -4, -5, -3, -3, -2, -2, -2, -2, -2, -1, 0, -1, 0…
+#&gt; $ arr_time       &lt;int&gt; 830, 850, 923, 1004, 812, 740, 913, 709, 838, 753, 849, 853, 924,…
+#&gt; $ sched_arr_time &lt;int&gt; 819, 830, 850, 1022, 837, 728, 854, 723, 846, 745, 851, 856, 917,…
+#&gt; $ arr_delay      &lt;dbl&gt; 11, 20, 33, -18, -25, 12, 19, -14, -8, 8, -2, -3, 7, -14, 31, -4,…
+#&gt; $ carrier        &lt;chr&gt; "UA", "UA", "AA", "B6", "DL", "UA", "B6", "EV", "B6", "AA", "B6",…
+#&gt; $ flight         &lt;int&gt; 1545, 1714, 1141, 725, 461, 1696, 507, 5708, 79, 301, 49, 71, 194…
+#&gt; $ tailnum        &lt;chr&gt; "N14228", "N24211", "N619AA", "N804JB", "N668DN", "N39463", "N516…
+#&gt; $ origin         &lt;chr&gt; "EWR", "LGA", "JFK", "JFK", "LGA", "EWR", "EWR", "LGA", "JFK", "L…
+#&gt; $ dest           &lt;chr&gt; "IAH", "IAH", "MIA", "BQN", "ATL", "ORD", "FLL", "IAD", "MCO", "O…
+#&gt; $ air_time       &lt;dbl&gt; 227, 227, 160, 183, 116, 150, 158, 53, 140, 138, 149, 158, 345, 3…
+#&gt; $ distance       &lt;dbl&gt; 1400, 1416, 1089, 1576, 762, 719, 1065, 229, 944, 733, 1028, 1005…
+#&gt; $ hour           &lt;dbl&gt; 5, 5, 5, 5, 6, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 6, 6, 6, 6, 6, 6,…
+#&gt; $ minute         &lt;dbl&gt; 15, 29, 40, 45, 0, 58, 0, 0, 0, 0, 0, 0, 0, 0, 0, 59, 0, 0, 0, 0,…
+#&gt; $ time_hour      &lt;dttm&gt; 2013-01-01 05:00:00, 2013-01-01 05:00:00, 2013-01-01 05:00:00, 2…
+```
+--
+
+
+```r
+View(flights)     # 在 RStudio 数据浏览器中打开数据集
+# tibble::view() 调用 utils::View() 并不可见地返回原数据集，便于 %&gt;% 操作，但速度好像慢很多
+```
+
+---
+layout: false
+class: hide_logo
+
+## .font150[🤔] 想想 
+
+&lt;style type="text/css"&gt;
+#special_timer.running {
+  background-color: black;
+  background-image: url(imgs/bg-stars.gif);
+}
+#special_timer.finished {
+  background-color: black;
+  background-image: url(imgs/bg-sqfw.gif);
+  background-size: cover;
+}
+#special_timer.running .countdown-digits {
+  color: #fdf6e3;
+}
+#special_timer.finished .countdown-digits {
+  color: #fdf6e3;
+}
+&lt;/style&gt;
+
+<div class="countdown" id="special_timer" data-warn-when="10" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+
+.font150[对于如下由**行**（样本）和**列**（变量）构成的数据集 / 数据表我们可以进行哪些方面的操作呢？]
+
+.font80[
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-aa991625dc511221c720" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-aa991625dc511221c720">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"],[2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013,2013],[3,4,4,5,5,5,6,6,7,8,9,10,10,10,10,11,11,11,12,12],[19,10,15,4,13,14,4,25,11,25,30,6,9,17,18,3,6,19,23,29],[null,null,959,1628,1551,1723,1529,1729,1857,1852,811,1021,701,806,1308,1610,1614,1910,1651,722],[null,null,0,-12,-4,-2,0,149,-3,12,11,-4,-9,6,-2,-5,-11,-10,51,-2],[null,null,13,-32,-30,2,7,179,-16,0,20,-37,-9,7,5,-20,-21,2,61,-7],[null,null,46,80,79,204,186,119,322,47,51,276,107,329,117,116,40,70,83,163],["MQ","EV","EV","MQ","DL","AA","UA","UA","DL","EV","US","DL","AA","AA","EV","DL","9E","9E","9E","UA"],["LGA","LGA","JFK","LGA","JFK","JFK","EWR","LGA","JFK","EWR","LGA","JFK","LGA","JFK","LGA","JFK","JFK","JFK","JFK","EWR"],["CMH","IAD","IAD","DTW","DTW","IAH","IAH","ORD","SEA","RIC","DCA","LAS","ORD","LAX","CVG","ATL","BOS","PIT","RDU","TPA"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>year<\/th>\n      <th>month<\/th>\n      <th>day<\/th>\n      <th>dep_time<\/th>\n      <th>dep_delay<\/th>\n      <th>arr_delay<\/th>\n      <th>air_time<\/th>\n      <th>carrier<\/th>\n      <th>origin<\/th>\n      <th>dest<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"dom":"tip","columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+]
+
+---
+class: inverse, center, middle
+
+# 1. 样本处理
+
+.font150[(manipulate cases)]
+
+---
+layout: true
+
+### &gt;&gt; 样本筛选：`filter()`
+
+---
+
+.full-width[.content-box-blue.bold.font120[`filter(.data, ...)`：提取数据集 `.data` 中变量取值满足设定条件的样本]]
+
+--
+
+
+```r
+filter(flights, month == 1, day == 1)
+*# 注意：条件表达式中的是 ==，而不是 =
+```
+
+```
+#&gt; # A tibble: 842 × 19
+#&gt;    year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time arr_delay
+#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;
+#&gt; 1  2013     1     1      517            515         2      830            819        11
+#&gt; 2  2013     1     1      533            529         4      850            830        20
+#&gt; 3  2013     1     1      542            540         2      923            850        33
+#&gt; # ℹ 839 more rows
+#&gt; # ℹ 10 more variables: carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;,
+#&gt; #   dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;,
+#&gt; #   time_hour &lt;dttm&gt;
+```
+
+--
+
+
+```r
+# 在 R 基础包中的实现方法
+flights[flights$month == 1 &amp; flights$day == 1, ]
+subset(flights, month == 1 &amp; day == 1)
+```
+
+
+```r
+flights[month == 1 &amp; day == 1, ]  # 注意：这样写是错滴
+```
+
+```
+#&gt; Error in month == 1: comparison (==) is possible only for atomic and list types
+```
+
+---
+
+.full-width[.content-box-blue.bold.font120.note[dplyr 包中的函数（如 `filter()` ）并不会直接修改输入数据集 `.data`]]
+
+--
+
+.full-width[.content-box-blue.bold.font120.warning[你必须自行存储修改后的数据集 💾]]
+
+
+```r
+dec25 &lt;- filter(flights, month == 12, day == 25)
+dec25
+```
+
+```
+*#&gt; # A tibble: 719 × 19
+#&gt;    year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time arr_delay
+#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;
+#&gt; 1  2013    12    25      456            500        -4      649            651        -2
+#&gt; 2  2013    12    25      524            515         9      805            814        -9
+#&gt; 3  2013    12    25      542            540         2      832            850       -18
+#&gt; # ℹ 716 more rows
+#&gt; # ℹ 10 more variables: carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;,
+#&gt; #   dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;,
+#&gt; #   time_hour &lt;dttm&gt;
+```
+
+```r
+flights  # 输入数据集仍然保持不变
+```
+
+```
+*#&gt; # A tibble: 336,776 × 19
+#&gt;    year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time arr_delay
+#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;
+#&gt; 1  2013     1     1      517            515         2      830            819        11
+#&gt; 2  2013     1     1      533            529         4      850            830        20
+#&gt; 3  2013     1     1      542            540         2      923            850        33
+#&gt; # ℹ 336,773 more rows
+#&gt; # ℹ 10 more variables: carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;,
+#&gt; #   dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;,
+#&gt; #   time_hour &lt;dttm&gt;
+```
+
+---
+
+.full-width[.content-box-blue.bold.font120.note[`filter()` 会用到的比较运算符和逻辑运算符]]
+
+```r
+  1. &lt;    &gt;     &lt;=    &gt;=    ==    !=          # ?Comparison
+  
+  2. &amp;    |     !     xor()                   # ?base::Logic
+  
+  3. 其它的如：%in%、is.na()、between()、near()、if_any()、if_all() 等
+```
+--
+
+.full-width[.content-box-blue.bold.font120.note[`filter()` 默认以 `&amp;` 的方式组合多个条件参数，...]]
+
+--
+
+
+```r
+filter(flights, month &gt;= 11, day == 25)    # 等效于
+filter(flights, month &gt;= 11 &amp; day == 25)
+```
+
+--
+
+.full-width[.content-box-blue.bold.font120.note[... 其它逻辑组合方式（如`|`）则需自行设定]]
+
+---
+layout: false
+class: hide_logo
+
+## .font150[🤔] 想想 
+
+&lt;style type="text/css"&gt;
+#special_timer.running {
+  background-color: black;
+  background-image: url(imgs/bg-stars.gif);
+}
+#special_timer.finished {
+  background-color: black;
+  background-image: url(imgs/bg-sqfw.gif);
+  background-size: cover;
+}
+#special_timer.running .countdown-digits {
+  color: #fdf6e3;
+}
+#special_timer.finished .countdown-digits {
+  color: #fdf6e3;
+}
+&lt;/style&gt;
+
+<div class="countdown" id="special_timer" data-warn-when="10" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:2em;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+.font150.bold.red[怎样挑出11月和12月的航班样本呢？]
+
+&lt;br&gt;
+.panelset.font120[
+
+.panel[.panel-name[备选代码]
+.font110[
+
+1) `filter(flights, month == 11 | 12)`
+
+2) `filter(flights, month == (11 | 12))`
+
+3) `filter(flights, month == 11 | month == 12)`
+
+]
+]
+
+.panel[.panel-name[结果1]
+.code90[
+
+```r
+filter(flights, month == 11 | 12)
+```
+
+```
+#&gt; # A tibble: 336,776 × 19
+#&gt;    year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time arr_delay
+#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;
+#&gt; 1  2013     1     1      517            515         2      830            819        11
+#&gt; 2  2013     1     1      533            529         4      850            830        20
+#&gt; 3  2013     1     1      542            540         2      923            850        33
+#&gt; # ℹ 336,773 more rows
+#&gt; # ℹ 10 more variables: carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;,
+#&gt; #   dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;,
+#&gt; #   time_hour &lt;dttm&gt;
+```
+]
+]
+
+.panel[.panel-name[结果2]
+.code90[
+
+```r
+filter(flights, month == (11 | 12))
+```
+
+```
+#&gt; # A tibble: 27,004 × 19
+#&gt;    year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time arr_delay
+#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;
+#&gt; 1  2013     1     1      517            515         2      830            819        11
+#&gt; 2  2013     1     1      533            529         4      850            830        20
+#&gt; 3  2013     1     1      542            540         2      923            850        33
+#&gt; # ℹ 27,001 more rows
+#&gt; # ℹ 10 more variables: carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;,
+#&gt; #   dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;,
+#&gt; #   time_hour &lt;dttm&gt;
+```
+]
+]
+
+.panel[.panel-name[结果3]
+.code90[
+
+```r
+filter(flights, month == 11 | month == 12)
+# filter(flights, month %in% c(11, 12))
+```
+
+```
+#&gt; # A tibble: 55,403 × 19
+#&gt;    year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time arr_delay
+#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;
+#&gt; 1  2013    11     1        5           2359         6      352            345         7
+#&gt; 2  2013    11     1       35           2250       105      123           2356        87
+#&gt; 3  2013    11     1      455            500        -5      641            651       -10
+#&gt; # ℹ 55,400 more rows
+#&gt; # ℹ 10 more variables: carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;,
+#&gt; #   dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;,
+#&gt; #   time_hour &lt;dttm&gt;
+```
+]
+]
+
+]
+
+---
+layout: true
+
+### &gt;&gt; 样本筛选：其它函数
+
+---
+
+.font120[
+
+* `slice(.data, ..., .by = NULL, .preserve = FALSE)`：按照整数向量给出的索引位置选择样本，正（.red[负]）整数表示保留（.red[移除]）的样本，如 `slice(mtcars, 5:n())`
+
+* `slice_head(.data, ..., n, prop, by = NULL)` 和 `slice_tail()` 选择数据集开始 / 结尾的样本 &amp;emsp;&amp;emsp; .red[vs. `utils::head() / tail()`?]
+
+* `slice_sample(.data, ..., n, prop, by = NULL, weight_by = NULL, replace = FALSE)` 随机选择样本
+
+* `slice_min(.data, order_by, ..., n, prop, by = NULL, with_ties = TRUE, na_rm = FALSE)` 和 `slice_max()` 选择 `order_by` 参数指定的变量或其函数取值最大或最小的样本
+
+* `distinct(.data, ..., .keep_all = FALSE)`：移除（指定变量或其函数）取值重复的样本 &amp;emsp;&amp;emsp; .red[≈ `base::unique()`]
+
+]
+
+.footnote.red[注: 在 dplyr&lt;sup&gt;v1.0.0&lt;/sup&gt; 之后 `top\_n()`、`top\_frac()`、`sample\_n()` 和 `sample\_frac()` 等函数已被相应的 `slice\_*()` 函数所替代]
+
+---
+layout: true
+
+### &gt;&gt; 样本排序：`arrange()`
+
+---
+
+.full-width[.content-box-blue.bold.font120[`arrange(.data, ...)`：根据指定变量的取值对数据集 `.data` 的样本排序]]
+
+--
+
+
+```r
+arrange(flights, year, month, day, dep_time)
+```
+
+```
+#&gt; # A tibble: 336,776 × 19
+#&gt;    year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time arr_delay
+#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;
+#&gt; 1  2013     1     1      517            515         2      830            819        11
+#&gt; 2  2013     1     1      533            529         4      850            830        20
+#&gt; 3  2013     1     1      542            540         2      923            850        33
+#&gt; # ℹ 336,773 more rows
+#&gt; # ℹ 10 more variables: carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;,
+#&gt; #   dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;,
+#&gt; #   time_hour &lt;dttm&gt;
+```
+
+--
+
+
+```r
+arrange(flights, desc(dep_delay))  # 加入 desc() 反向排序：从大到小
+```
+
+```
+#&gt; # A tibble: 336,776 × 19
+#&gt;    year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time arr_delay
+#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;
+#&gt; 1  2013     1     9      641            900      1301     1242           1530      1272
+#&gt; 2  2013     6    15     1432           1935      1137     1607           2120      1127
+#&gt; 3  2013     1    10     1121           1635      1126     1239           1810      1109
+#&gt; # ℹ 336,773 more rows
+#&gt; # ℹ 10 more variables: carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;,
+#&gt; #   dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;,
+#&gt; #   time_hour &lt;dttm&gt;
+```
+
+---
+
+.full-width[.content-box-blue.bold.font120.note[不像 dplyr 包中的其它函数，`arrange(.data, ..., .by_group = FALSE)` 会忽略数据集的分组信息，除非明确加入分组变量或设定 `.by_group = TRUE`]]
+
+--
+
+.full-width[.content-box-blue.bold.font120.note[缺失值总是排在最后 &lt;sup&gt;.red[*]&lt;/sup&gt; ]]
+
+--
+.pull-left[
+
+```r
+df &lt;- tibble(x = c(1, 3, 2, NA))
+arrange(df, x)
+```
+
+```
+#&gt; # A tibble: 4 × 1
+#&gt;       x
+#&gt;   &lt;dbl&gt;
+#&gt; 1     1
+#&gt; 2     2
+#&gt; 3     3
+*#&gt; 4    NA
+```
+]
+
+--
+.pull-right[
+
+```r
+df &lt;- tibble(x = c(1, 3, 2, NA))
+arrange(df, desc(x))
+```
+
+```
+#&gt; # A tibble: 4 × 1
+#&gt;       x
+#&gt;   &lt;dbl&gt;
+#&gt; 1     3
+#&gt; 2     2
+#&gt; 3     1
+*#&gt; 4    NA
+```
+]
+
+--
+
+.footnote.red[*：`base::sort()` 和 `base::order()` 通过参数 `na.last` 来控制把缺失值放在哪里或删除，并通过参数 `decreasing` 来控制排序方向。]
+
+---
+layout: false
+class: inverse, center, middle
+
+# 2. 变量处理
+
+.font150[(manipulate variables)]
+
+---
+layout: true
+
+### &gt;&gt; 变量选取：`select(.data, ...)`
+
+---
+
+
+```r
+select(flights, month, day, dep_time, sched_dep_time, dep_delay)  # 枚举式：变量名，无需""
+```
+
+```
+#&gt; # A tibble: 336,776 × 5
+#&gt;   month   day dep_time sched_dep_time dep_delay
+#&gt;   &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;
+#&gt; 1     1     1      517            515         2
+#&gt; 2     1     1      533            529         4
+#&gt; 3     1     1      542            540         2
+#&gt; # ℹ 336,773 more rows
+```
+
+--
+
+
+```r
+select(flights, 2, 3, 4, 5, 6)  # 枚举式：表示变量位置的数字，结果同上，但不推荐
+```
+
+--
+
+```r
+select(flights, month:dep_delay)  # 用 : 选择连在一起的变量
+select(flights, 2:6)
+```
+
+--
+
+```r
+select(flights, !(month:dep_delay))  # 变量前的 ! 或 - 表示剔除
+```
+
+```
+#&gt; # A tibble: 336,776 × 14
+#&gt;    year arr_time sched_arr_time arr_delay carrier flight tailnum origin dest  air_time
+#&gt;   &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt; &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;    &lt;dbl&gt;
+#&gt; 1  2013      830            819        11 UA        1545 N14228  EWR    IAH        227
+#&gt; 2  2013      850            830        20 UA        1714 N24211  LGA    IAH        227
+#&gt; 3  2013      923            850        33 AA        1141 N619AA  JFK    MIA        160
+#&gt; # ℹ 336,773 more rows
+#&gt; # ℹ 4 more variables: distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;
+```
+
+---
+
+.full-width[.content-box-blue.bold.font110.note[`select()` 的帮助函数，已析出到 `tidyselect` 包中，`?select_helpers`]]
+
+  1. `starts_with("abc")`：选取变量名以 `abc` 开头的变量
+  2. `ends_with("xyz")`：选取变量名以 `xyz` 结束的变量
+  3. `contains("ijk")`：选取变量名包含 `ijk` 的变量
+  4. `matches("(.)\\1")`：选取变量名中出现重复字符的变量
+  5. `num_range("x", 1:3)`：选取变量 `x1`、`x2` 和 `x3`
+  6. `any_of(x) | all_of(x)`：选择整数向量 `x` 指定位置或*字符向量* `x` 直接指定的变量
+  7. `last_col(offset = 0L)`：选择从最后算起的第 `offset+1` 个的变量
+  8. `everything()`：全部变量，通常放在最后
+  9. `where(fn)`：选择满足断言函数 `fn` 条件的变量，如 `select(data, where(is.integer))`
+
+--
+
+.full-width[.content-box-blue.bold.font110.note[`select()`：可混合使用各种方法]]
+
+
+```r
+select(flights, year:day, ends_with("_delay") | starts_with("dep_"), tailnum)
+```
+
+```
+#&gt; # A tibble: 336,776 × 7
+#&gt;    year month   day dep_delay arr_delay dep_time tailnum
+#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;int&gt; &lt;chr&gt;  
+#&gt; 1  2013     1     1         2        11      517 N14228 
+#&gt; 2  2013     1     1         4        20      533 N24211 
+#&gt; 3  2013     1     1         2        33      542 N619AA 
+#&gt; # ℹ 336,773 more rows
+```
+
+---
+layout: false
+
+### &gt;&gt; 变量重命名：`select()`、`rename()` 和 `rename_with()`
+
+
+```r
+select(flights, nian = year, yue = month, ri = day)  # 选取变量的同时重命名变量
+```
+
+```
+#&gt; # A tibble: 336,776 × 3
+#&gt;    nian   yue    ri
+#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;
+#&gt; 1  2013     1     1
+#&gt; 2  2013     1     1
+#&gt; 3  2013     1     1
+#&gt; # ℹ 336,773 more rows
+```
+
+--
+
+
+```r
+# select() 只保留指定的变量，而 rename(.data, ...) 则会保留全部变量
+rename(flights, nian = year, yue = month, ri = day) %&gt;% dim()
+```
+
+```
+#&gt; [1] 336776     19
+```
+
+--
+
+
+```r
+# rename_with(.data, .fn, .cols = everything(), ...)
+rename_with(flights, toupper, 1:3)
+```
+
+```
+#&gt; # A tibble: 336,776 × 19
+#&gt;    YEAR MONTH   DAY dep_time sched_dep_time dep_delay arr_time sched_arr_time arr_delay
+#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;
+#&gt; 1  2013     1     1      517            515         2      830            819        11
+#&gt; 2  2013     1     1      533            529         4      850            830        20
+#&gt; 3  2013     1     1      542            540         2      923            850        33
+#&gt; # ℹ 336,773 more rows
+#&gt; # ℹ 10 more variables: carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;,
+#&gt; #   dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;,
+#&gt; #   time_hour &lt;dttm&gt;
+```
+
+---
+layout: false
+
+### &gt;&gt; 变量次序调整：`select()` 和 `relocate()`
+
+
+```r
+select(flights, dest, year:day, ends_with("_delay"), everything())
+```
+
+```
+#&gt; # A tibble: 336,776 × 19
+#&gt;   dest   year month   day dep_delay arr_delay dep_time sched_dep_time arr_time
+#&gt;   &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;    &lt;int&gt;
+#&gt; 1 IAH    2013     1     1         2        11      517            515      830
+#&gt; 2 IAH    2013     1     1         4        20      533            529      850
+#&gt; 3 MIA    2013     1     1         2        33      542            540      923
+#&gt; # ℹ 336,773 more rows
+#&gt; # ℹ 10 more variables: sched_arr_time &lt;int&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;,
+#&gt; #   origin &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;,
+#&gt; #   time_hour &lt;dttm&gt;
+```
+
+--
+
+
+```r
+relocate(flights, dest, year:day, ends_with("_delay"))  # 结果同上
+```
+
+--
+
+
+```r
+# relocate(.data, ..., .before = NULL, .after = NULL)
+relocate(flights, ends_with("_delay"), .after = day)
+```
+
+```
+#&gt; # A tibble: 336,776 × 19
+#&gt;    year month   day dep_delay arr_delay dep_time sched_dep_time arr_time sched_arr_time
+#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;    &lt;int&gt;          &lt;int&gt;
+#&gt; 1  2013     1     1         2        11      517            515      830            819
+#&gt; 2  2013     1     1         4        20      533            529      850            830
+#&gt; 3  2013     1     1         2        33      542            540      923            850
+#&gt; # ℹ 336,773 more rows
+#&gt; # ℹ 10 more variables: carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;, origin &lt;chr&gt;,
+#&gt; #   dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;,
+#&gt; #   time_hour &lt;dttm&gt;
+```
+
+---
+layout: true
+
+### &gt;&gt; 生成新变量：`mutate()`
+
+---
+
+.full-width[.content-box-blue.bold.font120[`mutate(.data, ...)`：生成新变量 .red[&lt;sup&gt; *&lt;/sup&gt;]]]
+--
+
+
+```r
+flights_sml &lt;- select(flights, year:day, ends_with("_delay"), air_time)
+```
+--
+
+
+```r
+mutate(flights_sml,
+  gain = arr_delay - dep_delay,
+  hours = air_time / 60,
+  gain_per_hour = gain / hours    # 可直接引用新生成的变量
+)
+```
+
+```
+#&gt; # A tibble: 336,776 × 9
+#&gt;    year month   day dep_delay arr_delay air_time  gain hours gain_per_hour
+#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;         &lt;dbl&gt;
+#&gt; 1  2013     1     1         2        11      227     9  3.78          2.38
+#&gt; 2  2013     1     1         4        20      227    16  3.78          4.23
+#&gt; 3  2013     1     1         2        33      160    31  2.67         11.6 
+#&gt; # ℹ 336,773 more rows
+```
+
+--
+.footnote.red[*：完整参数版为 `mutate(.data, ..., .by = NULL, .keep = c("all", "used", "unused", "none"), .before = NULL, .after = NULL)`（其中：`.keep`、`.before`和`.after`为 dplyr&lt;sup&gt;v1.0.0&lt;/sup&gt; 新增参数，dplyr&lt;sup&gt;v1.1.0&lt;/sup&gt; 又新增实验性参数 `.by`）；&lt;br&gt;2. 假如你只想保留新生成的变量，那就~~使用 `transmute()` 或~~设定 `mutate()` 参数 `.keep = "none"`。]
+
+---
+
+.full-width[.content-box-blue.bold.font120[`mutate()`：支持向量化函数 &lt;sup&gt;.red[*]&lt;/sup&gt;]]
+
+.code75[
+
+```r
+*MATH
+  +, - , *, /, ^, %/%, %%    # arithmetic ops
+  log(), log2(), log10()     # logs
+  &lt;, &lt;=, &gt;, &gt;=, !=, ==       # logical comparisons
+*CUMULATIVE AGGREGATES        # vignette("window-functions")
+  dplyr::cumall()|cumany()   # cumulative all() | any()
+  cummax()|cummin()          # cumulative max() | min()
+  dplyr::cummean()           # cumulative mean()
+  cumprod()|cumsum()         # cumulative prod() | sum()
+*OFFSETS
+  dplyr::lag()|lead()        # offset elements by 1 | -1
+*RANKINGS                     # ?ranking
+  dplyr::min_rank()          # rank with ties = min
+  dplyr::ntile()             # bins into n bins
+  dplyr::row_number()        # rank with ties = "first"
+*MISC
+  pmax()|pmin()              # element-wise max() | min()
+  dplyr::recode()            # vectorized switch()
+  dplyr::if_else()           # vectorized if() + else()
+  dplyr::case_when()         # multi-case if_else()
+```
+]
+
+.footnote.red[*：当然也支持返回“标量”的汇总函数，如 `mean()`，会将标量直接扩展至需要的长度。]
+
+---
+
+.full-width[.content-box-blue.bold.font120[多列操作 👉 .font80[ `vignette("colwise")`]]]
+
+.code90[
+
+```r
+# ?scoped
+# *_all() 作用于每个变量
+# *_at()  作用于用 vars() 函数、字符向量或位置向量指定的变量
+# *_if()  作用于 .predicate 函数取值为 TRUE 的变量
+mutate_all(.tbl, .funs, ...)
+mutate_at(.tbl, .vars, .funs, ...)
+mutate_if(.tbl, .predicate, .funs, ...)
+# summarize()、group_by()、arrange()、filter()、rename()等也存在类似的变体函数
+```
+]
+
+--
+
+.font110.bold.note[dplyr&lt;sup&gt;v1.0.0&lt;/sup&gt; 使用更具优势的 `across(.cols = everything(), .fns = NULL, ..., .names = NULL, .unpack = FALSE)` 来替代上述为数众多的变体函数]
+
+
+```r
+mutate(flights_sml, across(dep_delay:air_time, \(x) x / 60))  # 匿名函数
+```
+
+```
+#&gt; # A tibble: 336,776 × 6
+#&gt;    year month   day dep_delay arr_delay air_time
+#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+#&gt; 1  2013     1     1    0.0333     0.183     3.78
+#&gt; 2  2013     1     1    0.0667     0.333     3.78
+#&gt; 3  2013     1     1    0.0333     0.55      2.67
+#&gt; # ℹ 336,773 more rows
+```
+
+---
+layout: false
+class: inverse, center, middle
+
+# 3. 汇总
+
+.font150[(summarize / reframe)]
+
+---
+layout: true
+
+### &gt;&gt; 汇总：`summarize()`
+
+---
+
+.font120[
+- `summarize(.data, ..., .by = NULL, .groups = NULL)` 函数生成新的数据框，每个汇总函数占一列，每个分组占用一行；
+
+- 如果 `.data` 是[分组数据框 👇](#56)，则每个分组变量还会占一列；此时，还可用 dplyr&lt;sup&gt;v1.0.0&lt;/sup&gt; 新增的实验性参数 `.groups = c("drop_last", "drop", "keep", "rowwise")` 来控制新生成结果数据框的分组结构；
+
+- 如果只想对 `.data` 进行一次性的分组汇总（不保留分组结构），则可使用 dplyr&lt;sup&gt;v1.1.0&lt;/sup&gt; 新增的实验性分组参数 `.by`。
+]
+
+
+```r
+summarize(
+  flights, 
+  mean_delay = mean(dep_delay, na.rm = TRUE), 
+  sd_delay   = sd(dep_delay, na.rm = TRUE)
+)
+```
+
+```
+#&gt; # A tibble: 1 × 2
+#&gt;   mean_delay sd_delay
+#&gt;        &lt;dbl&gt;    &lt;dbl&gt;
+#&gt; 1       12.6     40.2
+```
+
+---
+
+.font120.note[`summarize()` 支持返回“标量”的汇总函数&lt;sup&gt;.red[*]&lt;/sup&gt;，示例如下：]
+
+
+```r
+*COUNTS
+  dplyr::n()                # number of values/rows
+  dplyr::n_distinct()       # number of uniques
+  sum(!is.na())             # number of non-NA’s
+*LOCATION
+  mean() | median()         # mean | median
+*POSITION/ORDER
+  dplyr::first()            # first value
+  dplyr::last()             # last value
+  dplyr::nth()              # value in n-th location of vector
+*RANK
+  quantile()                # nth quantile
+  min() | max()             # minimum value | maximum value
+*SPREAD
+  IQR()                     # Inter-Quartile Range
+  mad()                     # median absolute deviation
+  sd()                      # standard deviation
+  var()                     # variance
+```
+
+.footnote.red[*：dplyr&lt;sup&gt;v1.0.0&lt;/sup&gt; 扩展了 `summarize()` 的灵活性（允许其返回包含多个元素的向量甚至是多行多列的数据框），但 dplyr&lt;sup&gt;v1.1.0&lt;/sup&gt; 在此应用情景下会提示改用实验性的 `reframe()`。]
+
+---
+layout: true
+
+### &gt;&gt; 灵活汇总：`reframe()`
+
+---
+
+.pull-left[
+
+```r
+quantile_df &lt;- function(x, probs) {
+  tibble(x = quantile(x, probs, 
+                      na.rm = TRUE), 
+         probs = probs)
+}
+
+flights %&gt;% 
+  summarize(
+    across(c(dep_delay, arr_delay), 
+           ~ quantile_df(
+               .x, seq(0, 1, 0.25)
+             ),
+           .unpack = TRUE
+    )
+  )
+```
+
+```
+#&gt; Warning: Returning more (or less) than 1 row per `summarise()` group was deprecated in dplyr
+#&gt; 1.1.0.
+#&gt; ℹ Please use `reframe()` instead.
+#&gt; ℹ When switching from `summarise()` to `reframe()`, remember that `reframe()` always
+#&gt;   returns an ungrouped data frame and adjust accordingly.
+#&gt; Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.
+```
+
+```
+#&gt; # A tibble: 5 × 4
+#&gt;   dep_delay_x dep_delay_probs arr_delay_x arr_delay_probs
+#&gt;         &lt;dbl&gt;           &lt;dbl&gt;       &lt;dbl&gt;           &lt;dbl&gt;
+#&gt; 1         -43            0            -86            0   
+#&gt; 2          -5            0.25         -17            0.25
+#&gt; 3          -2            0.5           -5            0.5 
+#&gt; 4          11            0.75          14            0.75
+#&gt; 5        1301            1           1272            1
+```
+]
+
+--
+
+.pull-right[
+
+```r
+flights %&gt;% 
+* reframe(
+    across(c(dep_delay, arr_delay), 
+           ~ quantile_df(
+               .x, seq(0, 1, 0.25)
+             ),
+           .unpack = TRUE
+    )
+  )
+```
+
+```
+#&gt; # A tibble: 5 × 4
+#&gt;   dep_delay_x dep_delay_probs arr_delay_x arr_delay_probs
+#&gt;         &lt;dbl&gt;           &lt;dbl&gt;       &lt;dbl&gt;           &lt;dbl&gt;
+#&gt; 1         -43            0            -86            0   
+#&gt; 2          -5            0.25         -17            0.25
+#&gt; 3          -2            0.5           -5            0.5 
+#&gt; 4          11            0.75          14            0.75
+#&gt; 5        1301            1           1272            1
+```
+]
+
+---
+layout: false
+class: inverse, center, middle
+
+# 4. 分组和行式处理
+
+.font150[(grouping and rowwise)]
+
+---
+layout: true
+
+### &gt;&gt; 分组处理：`group_by()` .font80[👉 `vignette("grouping")`]
+
+---
+
+.font100[
+- `group_by(.data, ..., .add = FALSE, .drop = group_by_drop_default(.data))` 将数据框及其扩展转变为分组数据框（`grouped_df`）
+]
+
+--
+
+.pull-left[
+
+
+```r
+by_day &lt;- group_by(flights, 
+                   year, month, day)
+class(by_day)
+```
+
+```
+#&gt; [1] "grouped_df" "tbl_df"     "tbl"       
+#&gt; [4] "data.frame"
+```
+
+
+```r
+by_day
+```
+
+```
+#&gt; # A tibble: 336,776 × 19
+*#&gt; # Groups:   year, month, day [365]
+#&gt;    year month   day dep_time sched_dep_time
+#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;
+#&gt; 1  2013     1     1      517            515
+#&gt; 2  2013     1     1      533            529
+#&gt; 3  2013     1     1      542            540
+#&gt; # ℹ 336,773 more rows
+#&gt; # ℹ 14 more variables: dep_delay &lt;dbl&gt;,
+#&gt; #   arr_time &lt;int&gt;, sched_arr_time &lt;int&gt;,
+#&gt; #   arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;,
+#&gt; #   flight &lt;int&gt;, tailnum &lt;chr&gt;,
+#&gt; #   origin &lt;chr&gt;, dest &lt;chr&gt;,
+#&gt; #   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, …
+```
+
+]
+
+--
+
+.pull-right[
+
+.font100.bold.note[获取分组元数据的相关函数]
+
+
+```r
+by_day %&gt;% group_vars()
+```
+
+```
+#&gt; [1] "year"  "month" "day"
+```
+
+```r
+by_day %&gt;% group_data()
+```
+
+```
+#&gt; # A tibble: 365 × 4
+#&gt;    year month   day       .rows
+#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;list&lt;int&gt;&gt;
+#&gt; 1  2013     1     1       [842]
+#&gt; 2  2013     1     2       [943]
+#&gt; 3  2013     1     3       [914]
+#&gt; # ℹ 362 more rows
+```
+
+```r
+# group_keys() / 
+# group_rows() / group_indices()
+# group_size() / n_groups()
+```
+]
+
+---
+
+.pull-left.code90[
+
+
+```r
+*# 分组汇总
+# 返回结果默认情况下会去除最低一级分组，
+# 并有相应的提示信息，除非设定参数 
+# .groups = 'keep'
+summarize(
+  by_day, 
+  mean_delay = mean(
+    dep_delay, na.rm = TRUE
+  )
+)
+```
+
+```
+#&gt; `summarise()` has grouped output by
+#&gt; 'year', 'month'. You can override using
+#&gt; the `.groups` argument.
+```
+
+```
+#&gt; # A tibble: 365 × 4
+*#&gt; # Groups:   year, month [12]
+#&gt;    year month   day mean_delay
+#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;      &lt;dbl&gt;
+#&gt; 1  2013     1     1       11.5
+#&gt; 2  2013     1     2       13.9
+#&gt; 3  2013     1     3       11.0
+#&gt; # ℹ 362 more rows
+```
+]
+
+--
+
+.pull-right.code90[
+
+
+```r
+# 假如你觉得 group_by() + summarize()
+# 不够强大，你还可以使用实验性的 
+# purrr-style 函数，如 group_map()/
+# *_modify()/*_walk() 等
+group_modify(
+  by_day,
+  ~ broom::tidy( # what's this?!
+      lm(arr_delay ~ dep_delay, 
+         data=.x)
+    )
+)
+```
+
+```
+#&gt; # A tibble: 730 × 8
+*#&gt; # Groups:   year, month, day [365]
+#&gt;    year month   day term        estimate
+#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;          &lt;dbl&gt;
+#&gt; 1  2013     1     1 (Intercept)    0.910
+#&gt; 2  2013     1     1 dep_delay      1.03 
+#&gt; 3  2013     1     2 (Intercept)   -1.32 
+#&gt; # ℹ 727 more rows
+#&gt; # ℹ 3 more variables: std.error &lt;dbl&gt;,
+#&gt; #   statistic &lt;dbl&gt;, p.value &lt;dbl&gt;
+```
+]
+
+
+---
+layout: true
+
+### &gt;&gt; 分组处理：`.by / by` 参数 .font80[👉 `?dplyr_by`]
+
+---
+
+.font120[
+- `group_by()` 对数据框的分组设定会影响后续 dplyr 包函数的处理方式与结果，特别是 `summarize()`、`reframe()`、`mutate()`、`filter()`、`slice*()`等；如果你不需要基于分组进行后续操作，需先用 `ungroup(x, ...)` 函数来取消对数据集 `x`（基于指定变量 `...`）的分组设定
+]
+
+--
+
+.font120.bold[
+- dplyr&lt;sup&gt;v1.1.0&lt;/sup&gt; 新增了实验性分组参数 `.by / by`，只对 `.data` 进行一次性的临时分组（且不保留分组结构）
+]
+
+--
+
+.pull-left.code90[
+
+```r
+summarize(
+* group_by(flights,
+*          year, month, day),
+  mean_delay = mean(
+    dep_delay, na.rm = TRUE
+  )
+)
+```
+
+```
+#&gt; # A tibble: 365 × 4
+#&gt; # Groups:   year, month [12]
+#&gt;    year month   day mean_delay
+#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;      &lt;dbl&gt;
+#&gt; 1  2013     1     1       11.5
+#&gt; 2  2013     1     2       13.9
+#&gt; 3  2013     1     3       11.0
+#&gt; # ℹ 362 more rows
+```
+]
+
+.pull-right.code90[
+
+
+```r
+summarize(
+  flights, 
+  mean_delay = mean(
+    dep_delay, na.rm = TRUE
+  ),
+* .by = c(year, month, day)
+)
+```
+
+```
+#&gt; # A tibble: 365 × 4
+#&gt;    year month   day mean_delay
+#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;      &lt;dbl&gt;
+#&gt; 1  2013     1     1       11.5
+#&gt; 2  2013     1     2       13.9
+#&gt; 3  2013     1     3       11.0
+#&gt; # ℹ 362 more rows
+```
+]
+
+---------------------|------------------------------------
+Grouping only affects a single verb	| Grouping is persistent across multiple verbs
+Selects variables with tidy-select  |	Computes expressions with data-masking
+Summaries use existing order of group keys | Summaries sort group keys in ascending order
+
+  + To prevent surprising results, you can't use `.by` on an existing grouped data frame.
+
+- &lt;https://github.com/tidyverse/dplyr/releases/tag/v1.1.0&gt;
+  + The most useful reason to do this is because `.by` only affects a single operation. In the example above, an ungrouped data frame went into the `summarize()` call, so an ungrouped data frame will come out; with `.by`, you never need to remember to `ungroup()` afterwards and you never need to use the `.groups` argument.
+  + Additionally, using `summarize()` with `.by` will never sort the results by the group key, unlike with `group_by()`. Instead, the results are returned using the existing ordering of the groups from the original data. We feel this is more predictable, better maintains any ordering you might have already applied with a previous call to `arrange()`, and provides a way to maintain the current ordering without having to resort to factors.
+  + This feature was inspired by `data.table`, where the equivalent syntax looks like: `starwars[, .(mean_height = mean(height)), by = .(species, homeworld)]`
+  + `with_groups()` is superseded in favor of `.by` (#6582).
+
+
+---
+layout: true
+
+### &gt;&gt; 行式处理：`rowwise()`
+
+---
+
+.font110[
+
+- `rowwise(data, ...)` 允许你对数据框的每一行进行运算，当不存在相应的向量化函数时，进行逐行式运算可以让你避免编写显性循环的代码
+- 和 `group_by()` 类似，`rowwise()` 并不更改数据框的结构，而是让后续的 dplyr 函数操作按逐行式进行
+- `rowwise()` 返回的是一种特殊的行分组数据框（`rowwise_df`，每行一组），绝大多数的 dplyr 函数会保留数据框的行分组信息（返回 `grouped_df` 的 `summarize()` 函数是个例外）；你可以通过 `ungroup()` 或 `as_tibble()` 函数来取消行分组，或通过 `group_by()` 函数转变为 `grouped_df`
+
+]
+
+--
+
+.pull-left[
+
+
+```r
+flights_rw &lt;- rowwise(flights_sml)
+class(flights_rw)
+```
+
+```
+#&gt; [1] "rowwise_df" "tbl_df"     "tbl"       
+#&gt; [4] "data.frame"
+```
+
+
+```r
+flights_rw
+```
+
+```
+#&gt; # A tibble: 336,776 × 6
+*#&gt; # Rowwise: 
+#&gt;    year month   day dep_delay arr_delay air_time
+#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+#&gt; 1  2013     1     1         2        11      227
+#&gt; 2  2013     1     1         4        20      227
+#&gt; 3  2013     1     1         2        33      160
+#&gt; # ℹ 336,773 more rows
+```
+]
+
+--
+
+.pull-right[
+
+```r
+# long time to run
+mutate(
+  flights_rw, 
+  max_delay = 
+*   max(c_across(ends_with("_delay")))
+)
+```
+
+```
+#&gt; # A tibble: 336,776 × 7
+*#&gt; # Rowwise: 
+#&gt;    year month   day dep_delay arr_delay
+#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+#&gt; 1  2013     1     1         2        11
+#&gt; 2  2013     1     1         4        20
+#&gt; 3  2013     1     1         2        33
+#&gt; # ℹ 336,773 more rows
+#&gt; # ℹ 2 more variables: air_time &lt;dbl&gt;,
+#&gt; #   max_delay &lt;dbl&gt;
+```
+
+]
+
+---
+
+.full-width[.content-box-blue.bold.font120[一个稍微复杂（但思路类似的）例子]]
+
+.pull-left[
+
+
+```r
+nest_flights &lt;- nest_by(
+  flights_sml, year, month, day)
+nest_flights
+```
+
+```
+#&gt; # A tibble: 365 × 4
+*#&gt; # Rowwise:  year, month, day
+#&gt;    year month   day               data
+#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;list&lt;tibble[,3]&gt;&gt;
+#&gt; 1  2013     1     1          [842 × 3]
+#&gt; 2  2013     1     2          [943 × 3]
+#&gt; 3  2013     1     3          [914 × 3]
+#&gt; 4  2013     1     4          [915 × 3]
+#&gt; 5  2013     1     5          [720 × 3]
+#&gt; # ℹ 360 more rows
+```
+
+]
+
+--
+
+.pull-right[
+
+
+```r
+*mutate(
+  nest_flights, 
+  mean_delay = mean(
+    data$dep_delay, na.rm = TRUE
+  ),
+  .keep = "none"
+)
+```
+
+```
+#&gt; # A tibble: 365 × 4
+*#&gt; # Rowwise:  year, month, day
+#&gt;    year month   day mean_delay
+#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt;      &lt;dbl&gt;
+#&gt; 1  2013     1     1      11.5 
+#&gt; 2  2013     1     2      13.9 
+#&gt; 3  2013     1     3      11.0 
+#&gt; 4  2013     1     4       8.95
+#&gt; 5  2013     1     5       5.73
+#&gt; # ℹ 360 more rows
+```
+
+]
+
+--
+
+.font100[👉 `vignette("rowwise")`]
+
+---
+layout: false
+class: inverse, center, middle
+background-image: url(imgs/logo-magrittr.png), url(imgs/bg.png)
+background-size: 10%, 100%
+background-position: 15% 40%, 0% 100%
+
+# 5. 用 `%&gt;%` 连接多个操作
+
+.font150[(chaining multiple operations with the pipe `%&gt;%`)]
+
+---
+layout: true
+
+### &gt;&gt; 管道运算符：`%&gt;%`
+
+---
+.full-width[.content-box-blue.bold.font120[不用&amp;nbsp;`%&gt;%`&amp;nbsp;的代码]]
+
+.pull-left[
+
+```r
+by_dest &lt;- group_by(flights, dest)
+
+delay &lt;- summarize(
+  by_dest,
+  count = n(),
+  dist = mean(distance, na.rm = TRUE),
+  delay = mean(arr_delay, na.rm = TRUE)
+)
+
+delay &lt;- filter(delay, 
+                count &gt; 20, 
+                dest != "HNL")
+
+ggplot(delay, 
+       aes(x = dist, y = delay)) +
+  geom_point(aes(size = count), 
+             alpha = 1/3) +
+  geom_smooth(se = FALSE)
+```
+]
+
+&lt;br&gt;&lt;br&gt;
+
+.pull-right[
+
+&lt;img src="L04_Transformation_files/figure-html/unnamed-chunk-57-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+.full-width[.content-box-blue.bold.font120[使用&amp;nbsp;`%&gt;%`&amp;nbsp;的代码（&amp;nbsp;`%&gt;%`&amp;nbsp;来自&amp;nbsp;`magrittr`&amp;nbsp;包，快捷键为&amp;nbsp;`Ctrl+Shift+M`&amp;nbsp;）]]
+
+.pull-left[
+
+```r
+# 用 %&gt;% 改写前一页的代码
+flights %&gt;% 
+  group_by(dest) %&gt;% 
+  summarize(
+    count = n(),
+    dist = mean(distance, na.rm = TRUE),
+    delay = mean(arr_delay, na.rm = TRUE)
+  ) %&gt;% 
+  filter(count &gt; 20, dest != "HNL") %&gt;% 
+  ggplot(aes(x = dist, y = delay)) +
+    geom_point(aes(size = count), 
+               alpha = 1/3) +
+    geom_smooth(se = FALSE)
+```
+]
+
+--
+
+.pull-right.font110[
+
+* 让函数兼容管道操作符有助于实现 `tidyverse` 的[{{核心原则}}](https://design.tidyverse.org/unifying.html)
+
+* 使用 `%&gt;%` 编写的代码关注动词（如数据变换操作）而非名词（操作对象），这使得代码更容易写，更容易读，也更容易修改
+
+* `dplyr` 包的函数具备这样的特性：`f(.data01, ...)  -&gt; .data02`，“数据进，数据出”，更适用于管道操作
+
+* `dplyr` 包会在后台自动将 `x %&gt;% f(y)` 转变为 `f(x, y)`，将 `x %&gt;% f(y, .)` 转变为 `f(y, x)`，将 `x %&gt;% f(y, z = .)`  转变为 `f(y, z = x)` ……
+
+]
+
+---
+.full-width[.content-box-blue.bold.font120[使用&amp;nbsp;`%&gt;%`&amp;nbsp;的例子，once more，✈️]]
+
+
+```r
+flights %&gt;% 
+  group_by(year, month, day) %&gt;% 
+  summarize(mean_delay = mean(dep_delay, na.rm = TRUE)) %&gt;% 
+  mutate(date = lubridate::make_date(year, month, day)) %&gt;% 
+  ggplot() + geom_line(aes(x = date, y = mean_delay))
+```
+
+&lt;img src="L04_Transformation_files/figure-html/unnamed-chunk-59-1.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+.full-width[.content-box-blue.bold.font120[yet again .red[but with R's native forward pipe operator `|&gt;`]]]
+
+
+```r
+not_cancelled &lt;- flights |&gt;  
+  filter(!is.na(dep_delay), !is.na(arr_delay))
+
+not_cancelled |&gt; 
+  group_by(year, month, day) |&gt; 
+  summarize(
+*   first = dep_time |&gt; min(),
+*   last  = dep_time %&gt;% max,
+    avg_delay1 = mean(arr_delay),
+    avg_delay2 = mean(arr_delay[arr_delay &gt; 0]) # average pos delay
+  )
+```
+
+```
+#&gt; # A tibble: 365 × 7
+#&gt; # Groups:   year, month [12]
+#&gt;    year month   day first  last avg_delay1 avg_delay2
+#&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;      &lt;dbl&gt;      &lt;dbl&gt;
+#&gt; 1  2013     1     1   517  2356      12.7        32.5
+#&gt; 2  2013     1     2    42  2354      12.7        32.0
+#&gt; 3  2013     1     3    32  2349       5.73       27.7
+#&gt; # ℹ 362 more rows
+```
+
+---
+layout: false
+class: hide_logo
+
+## 🙋‍♂️ Your Turn! 
+
+<div class="countdown" id="special_timer" data-warn-when="10" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:3em;">
+<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+
+.panelset.font120[
+
+.panel[.panel-name[Nested?]
+利用管道操作符 `%&gt;%` 改写以下 \# 重嵌套的代码：
+.code90[
+
+```r
+summarize(
+  select(
+    group_by(starwars, species, sex),
+    height, mass
+  ),
+  height = mean(height, na.rm = TRUE),
+  mass = mean(mass, na.rm = TRUE)
+)
+```
+
+```
+#&gt; # A tibble: 41 × 4
+#&gt; # Groups:   species [38]
+#&gt;   species  sex   height  mass
+#&gt;   &lt;chr&gt;    &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;
+#&gt; 1 Aleena   male      79    15
+#&gt; 2 Besalisk male     198   102
+#&gt; 3 Cerean   male     198    82
+#&gt; # ℹ 38 more rows
+```
+]
+]
+
+.panel[.panel-name[Piped!]
+.code90[
+
+```r
+starwars %&gt;% 
+  group_by(species, sex) %&gt;% 
+  select(height, mass) %&gt;% 
+  summarize(
+    height = mean(height, na.rm = TRUE),
+    mass   = mean(mass, na.rm = TRUE)
+  )
+```
+
+```
+#&gt; # A tibble: 41 × 4
+#&gt; # Groups:   species [38]
+#&gt;   species  sex   height  mass
+#&gt;   &lt;chr&gt;    &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;
+#&gt; 1 Aleena   male      79    15
+#&gt; 2 Besalisk male     198   102
+#&gt; 3 Cerean   male     198    82
+#&gt; # ℹ 38 more rows
+```
+]
+]
+
+]
+
+---
+layout: false
+class: inverse, center, middle
+
+# 课后复习
+
+---
+class: middle
+
+.font130[
+
+🕐 复习 📖 [**{{_R for Data Science, 2e_}}**](https://r4ds.had.nz/) 一书第一部分 _Whole game_ 中关于数据处理的章节，即 [**4 Data transformation**](https://r4ds.hadley.nz/data-transform) 并**（结队）完成课后练习**
+  &gt; 👉 课后习题参考答案链接&lt;br&gt;
+  &gt; &amp;emsp; [{{R for Data Science (2e): Solutions to Exercises}}](https://mine-cetinkaya-rundel.github.io/r4ds-solutions/data-transform.html)
+
+🕑 下载（打印） 📰 [**{{dplyr的cheatsheet}}**](docs/dplyr-cheatsheet.pdf) 并阅读之
+
+🕒 `browseVignettes(package = "dplyr")` 📝，阅读：
+
+&gt; .code80[
+
+```
+Introduction to dplyr
+Column-wise operations
+Grouped data
+Row-wise operations
+Window functions
+```
+]
+
+]
+
+---
+class: center, middle, hide_logo
+background-image: url(imgs/xaringan.png)
+background-size: 12%
+background-position: 50% 40%
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;hr color='#f00' size='2px' width='80%'&gt;
+&lt;br&gt;
+.Large.red[_**本网页版讲义的制作由 R 包 [{{`xaringan`}}](https://github.com/yihui/xaringan) 赋能！**_]
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="../libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
