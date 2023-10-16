@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="曾永艺">
 
-<title>Quantitative Finance with R - 每周列表</title>
+<title>Quantitative Finance with R - 第 6 周</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,28 +24,26 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./weeks/week-01.html" rel="next">
-<link href="./favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../weeks/week-05.html" rel="prev">
+<link href="../favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -65,52 +64,21 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "搜索"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-weeks-listings .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-weeks-listings'] = new List('listing-weeks-listings', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./favicon.png" alt="Quantitative Finance with R" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../favicon.png" alt="Quantitative Finance with R" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title"><em>Quantitative Finance with R</em></span>
     </a>
   </div>
@@ -121,21 +89,21 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
+    <a class="nav-link" href="../index.html" rel="" target="">
  <span class="menu-text"><strong>课程主页</strong></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./schedule.html" rel="" target=""><i class="bi bi-calendar-day-fill" role="img">
+    <a class="nav-link" href="../schedule.html" rel="" target=""><i class="bi bi-calendar-day-fill" role="img">
 </i> 
  <span class="menu-text"><strong>课程安排</strong></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./weeks.html" rel="" target="" aria-current="page"><i class="bi bi-book" role="img">
+    <a class="nav-link active" href="../weeks.html" rel="" target="" aria-current="page"><i class="bi bi-book" role="img">
 </i> 
  <span class="menu-text"><strong>每周资料</strong></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./project/team-project.html" rel="" target=""><i class="bi bi-trophy" role="img">
+    <a class="nav-link" href="../project/team-project.html" rel="" target=""><i class="bi bi-trophy" role="img">
 </i> 
  <span class="menu-text"><strong>小组项目</strong></span></a>
   </li>  
@@ -158,27 +126,114 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week-06.html">第6周 dplyr数据处理 II</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">每周列表</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">第1周 课程简介</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">第2周 ggplot2数据可视化</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+ <span class="menu-text">[第3周 中秋节假期停课]</span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">第4周 rmarkdown与Quarto</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">第5周 dplyr数据处理 I</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week-06.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">第6周 dplyr数据处理 II</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+ <span class="menu-text">......</span>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">类别</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">所有 <span class="quarto-category-count">(5)</span></div><div class="category" data-category="作业">作业 <span class="quarto-category-count">(5)</span></div><div class="category" data-category="准备">准备 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="讲义">讲义 <span class="quarto-category-count">(5)</span></div><div class="category" data-category="随堂练习">随堂练习 <span class="quarto-category-count">(4)</span></div><div class="category" data-category="预习">预习 <span class="quarto-category-count">(4)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">该页面内容</h2>
+   
+  <ul>
+  <li><a href="#课前准备" id="toc-课前准备" class="nav-link active" data-scroll-target="#课前准备">1. 课前准备</a></li>
+  <li><a href="#课堂讲义" id="toc-课堂讲义" class="nav-link" data-scroll-target="#课堂讲义">2. 课堂讲义</a></li>
+  <li><a href="#随堂练习" id="toc-随堂练习" class="nav-link" data-scroll-target="#随堂练习">3. 随堂练习</a></li>
+  <li><a href="#课后作业" id="toc-课后作业" class="nav-link" data-scroll-target="#课后作业">4. 课后作业</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">每周列表</h1>
-</div>
+<h1 class="title">第 6 周</h1>
+<p class="subtitle lead">dplyr数据处理 II</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">预习</div>
+    <div class="quarto-category">随堂练习</div>
+    <div class="quarto-category">讲义</div>
+    <div class="quarto-category">作业</div>
+  </div>
+  </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">发布者</div>
+    <div class="quarto-title-meta-contents">
+             <p>曾永艺 </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">发布日期</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2023年10月16日</p>
+    </div>
+  </div>
   
     
   </div>
@@ -186,259 +241,71 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div style="font-size:1.2rem">
-<p>以下是每周授课相关资料 / 资源（包括课前准备/预习、讲义、练习、课后作业等）的信息列表， 同学们既可以随意浏览或者用主题进行筛选，也可以直接根据目标周数点击打开对应的网页一探究竟。</p>
-</div>
-<div id="listing-weeks-listings" class="quarto-listing quarto-listing-container-default">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-weeks-listings-sort" class="form-select" aria-label="排序方式" onchange="window['quarto-listings']['listing-weeks-listings'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">排序方式</option>
-       <option value="index" data-direction="asc">缺省</option>
-         <option value="listing-date-sort" data-direction="asc">
-          日期 - 日期升序
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          日期 - 日期降序
-        </option>
-         <option value="listing-title" data-direction="asc">
-          标题
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="预习,随堂练习,讲义,作业" data-listing-date-sort="1697414400000" data-listing-file-modified-sort="1697464349623" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="./weeks/week-06.html"> <img src="./slides/lec-04-prep-II/imgs/dplyr-join.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./weeks/week-06.html">
-<h3 class="no-anchor listing-title">
-第 6 周
-</h3>
-<div class="listing-subtitle">
-dplyr数据处理 II
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('预习'); return false;">
-预习
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('随堂练习'); return false;">
-随堂练习
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('讲义'); return false;">
-讲义
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('作业'); return false;">
-作业
-</div>
-</div>
-<a href="./weeks/week-06.html">
-<div class="listing-description">
-“净土宇宙 🌌”的核心数据结构为 <code>tibble</code>（即由行（样本）和列（变量）构成的表格型数据），dplyr 包基于<strong>数据操作语法</strong>（<em>A Grammar of Data Manipulation</em>）构建出一组用来操作 <code>tibble</code> 对象的核心函数——它们就是我们在接下来两次课中需要学习、理解并掌握的知识。
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./weeks/week-06.html">
-<div class="listing-date">
-2023-10-16
-</div>
-<div class="listing-author">
-曾永艺
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="预习,随堂练习,讲义,作业" data-listing-date-sort="1697155200000" data-listing-file-modified-sort="1697464349623" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="./weeks/week-05.html"> <img src="./slides/lec-04-prep/imgs/dplyr-rows-cols.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./weeks/week-05.html">
-<h3 class="no-anchor listing-title">
-第 5 周
-</h3>
-<div class="listing-subtitle">
-dplyr数据处理 I
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('预习'); return false;">
-预习
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('随堂练习'); return false;">
-随堂练习
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('讲义'); return false;">
-讲义
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('作业'); return false;">
-作业
-</div>
-</div>
-<a href="./weeks/week-05.html">
-<div class="listing-description">
-“净土宇宙 🌌”的核心数据结构为 <code>tibble</code>（即由行（样本）和列（变量）构成的表格型数据），dplyr 包基于<strong>数据操作语法</strong>（<em>A Grammar of Data Manipulation</em>）构建出一组用来操作 <code>tibble</code> 对象的核心函数——它们就是我们在接下来两次课中需要学习、理解并掌握的知识。
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./weeks/week-05.html">
-<div class="listing-date">
-2023-10-13
-</div>
-<div class="listing-author">
-曾永艺
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="预习,讲义,随堂练习,作业" data-listing-date-sort="1696723200000" data-listing-file-modified-sort="1697464349623" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="./weeks/week-04.html"> <img src="./slides/lec-03-prep/imgs/horst_qmd_render_schema.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./weeks/week-04.html">
-<h3 class="no-anchor listing-title">
-第 4 周
-</h3>
-<div class="listing-subtitle">
-<code>rmarkdown</code> 与 Quarto
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('预习'); return false;">
-预习
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('讲义'); return false;">
-讲义
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('随堂练习'); return false;">
-随堂练习
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('作业'); return false;">
-作业
-</div>
-</div>
-<a href="./weeks/week-04.html">
-<div class="listing-description">
-在上一讲课后作业中同学们通过代码脚本文档 <code>L02_coding_practice.R</code> 完成编程作业并直接提交，但如果不运行同学们的代码，我将很难得知代码能否正常运行及其运行结果；同时通过注释方式添加说明性文字…
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./weeks/week-04.html">
-<div class="listing-date">
-2023-10-08
-</div>
-<div class="listing-author">
-曾永艺
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="预习,讲义,随堂练习,作业" data-listing-date-sort="1695340800000" data-listing-file-modified-sort="1697464349623" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="./weeks/week-02.html"> <img src="./slides/lec-02/imgs/ggplot-etc.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./weeks/week-02.html">
-<h3 class="no-anchor listing-title">
-第 2 周
-</h3>
-<div class="listing-subtitle">
-ggplot2数据可视化
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('预习'); return false;">
-预习
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('讲义'); return false;">
-讲义
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('随堂练习'); return false;">
-随堂练习
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('作业'); return false;">
-作业
-</div>
-</div>
-<a href="./weeks/week-02.html">
-<div class="listing-description">
-“一图胜千言”。R 语言有着强大的数据可视化（制图）功能，很多人学习 R 语言编程主要就是冲着这一点来的。在本讲中我们将侧重介绍影响力巨大的 <code>ggplot2</code> 包，并涵盖以下几方面的内容：
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./weeks/week-02.html">
-<div class="listing-date">
-2023-09-22
-</div>
-<div class="listing-author">
-曾永艺
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="准备,讲义,作业" data-listing-date-sort="1694736000000" data-listing-file-modified-sort="1697464349623" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="./weeks/week-01.html"> <img src="./slides/lec-01/imgs/ds4b_rating.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./weeks/week-01.html">
-<h3 class="no-anchor listing-title">
-第 1 周
-</h3>
-<div class="listing-subtitle">
-课程简介
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('准备'); return false;">
-准备
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('讲义'); return false;">
-讲义
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('作业'); return false;">
-作业
-</div>
-</div>
-<a href="./weeks/week-01.html">
-<div class="listing-description">
-作为“量化金融与金融编程”课程的开学第一课，本讲的主要目的在于向学生介绍为什么要开设本门课程、教学设计以及如何才能学好这门课程，方便同学们作出理性的选课决定。授课将主要涵盖以下三方面的内容：
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./weeks/week-01.html">
-<div class="listing-date">
-2023-09-15
-</div>
-<div class="listing-author">
-曾永艺
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-无匹配项
-</div>
-</div>
-<!-- other contents showed after -->
+<hr>
+<p>“净土宇宙 🌌”的核心数据结构为 <code>tibble</code>（即由行（样本）和列（变量）构成的表格型数据），dplyr 包基于<strong>数据操作语法</strong>（<em>A Grammar of Data Manipulation</em>）构建出一组用来操作 <code>tibble</code> 对象的核心函数——它们就是我们在接下来两次课中需要学习、理解并掌握的知识。</p>
+<p>本讲主要涵盖以下几方面的内容（加粗字体为本次课的讲授内容）：</p>
+<ol type="1">
+<li>样本处理</li>
+<li>变量处理</li>
+<li>汇总</li>
+<li>分组和行式处理</li>
+<li>用 <code>%&gt;%</code> 连接多个操作</li>
+<li><strong>合并多个数据集</strong></li>
+<li><strong>操作数据库和 <code>data.table</code></strong></li>
+</ol>
+<hr>
+<section id="课前准备" class="level2">
+<h2 class="anchored" data-anchor-id="课前准备">1. 课前准备</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>📖 预习 <a href="https://r4ds.hadley.nz/"><em>R for Data Science, 2e</em></a> 第三部分 <em>Transform</em> 中关于数据集合并的章节，即 <a href="https://r4ds.hadley.nz/joins"><strong>20 Joins</strong></a>。</p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>此书第1版有中文翻译版 <a href="https://www.ituring.com.cn/book/2113">《R数据科学》</a>出版，上述内容大致对应“第9章 使用 <code>dplyr</code> 处理关系数据”。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>由于上课内容较多，而上课时间有限，上课节奏预计较快，有些内容甚至会一带而过，请同学们务必腾出时间来过一遍上述预习章节的内容。</p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+<div style="text-align:right">
+<p><img src="https://r4ds.hadley.nz/cover.jpg" class="cover" width="80%"></p>
+</div>
+</div>
+</div>
+<p>🖥️ 我准备的基于 <code>xaringan</code>包 的 <a href="../slides/lec-04-prep-II/L04_Transformation_Prep_II.html">网页版讲义</a>，供同学们参考。</p>
+</section>
+<section id="课堂讲义" class="level2">
+<h2 class="anchored" data-anchor-id="课堂讲义">2. 课堂讲义</h2>
+<p>🖥️[第4讲 dplyr数据处理 🐝]</p>
+</section>
+<section id="随堂练习" class="level2">
+<h2 class="anchored" data-anchor-id="随堂练习">3. 随堂练习</h2>
+<p>⌨️ [见课堂讲义 🐝]</p>
+</section>
+<section id="课后作业" class="level2">
+<h2 class="anchored" data-anchor-id="课后作业">4. 课后作业</h2>
+<p>✍️ [课后作业 🐝]</p>
+<p><br></p>
+<!-- ::: {style="font-size:0.875em; text-align:right"} -->
+<!-- 回到 [课程安排](../schedule.qmd) ⏎ -->
+<!-- 🐝 -->
+<!-- ::: -->
 
 
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -807,11 +674,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../weeks/week-05.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">第5周 dplyr数据处理 I</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./weeks/week-01.html" class="pagination-link">
-        <span class="nav-page-text">第1周 课程简介</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
