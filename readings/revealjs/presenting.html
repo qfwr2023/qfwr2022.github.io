@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-Hans" xml:lang="zh-Hans"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Quantitative Finance with R - 幻灯片演示</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "没有结果",
+    "search-matching-documents-text": "匹配的文档",
+    "search-copy-link-title": "复制搜索链接",
+    "search-hide-matches-text": "隐藏其它匹配结果",
+    "search-more-match-text": "更多匹配结果",
+    "search-more-matches-text": "更多匹配结果",
+    "search-clear-button-title": "清除",
+    "search-detached-cancel-button-title": "取消",
+    "search-submit-button-title": "提交",
+    "search-label": "搜索"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../favicon.png" alt="Quantitative Finance with R" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title"><em>Quantitative Finance with R</em></span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="搜索"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="切换导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html" rel="" target="">
+ <span class="menu-text"><strong>课程主页</strong></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../schedule.html" rel="" target=""><i class="bi bi-calendar-day-fill" role="img">
+</i> 
+ <span class="menu-text"><strong>课程安排</strong></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../weeks.html" rel="" target="" aria-current="page"><i class="bi bi-book" role="img">
+</i> 
+ <span class="menu-text"><strong>每周资料</strong></span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../project/team-project.html" rel="" target=""><i class="bi bi-trophy" role="img">
+</i> 
+ <span class="menu-text"><strong>小组项目</strong></span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://qfwr2023.netlify.app" rel="" target=""><i class="bi bi-globe" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/qfwr2023" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="切换深色模式"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">幻灯片演示</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../weeks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">每周列表</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../weeks/week-01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">第1周 课程简介</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../weeks/week-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">第2周 ggplot2数据可视化</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+ <span class="menu-text">[第3周 中秋节假期停课]</span>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../weeks/week-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">第4周 rmarkdown与Quarto</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../weeks/week-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">第5周 dplyr数据处理 I</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../weeks/week-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">第6周 dplyr数据处理 II</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+ <span class="menu-text">......</span>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">该页面内容</h2>
+   
+  <ul>
+  <li><a href="#概述" id="toc-概述" class="nav-link active" data-scroll-target="#概述">概述</a></li>
+  <li><a href="#导航菜单" id="toc-导航菜单" class="nav-link" data-scroll-target="#导航菜单">导航菜单</a></li>
+  <li><a href="#概览模式" id="toc-概览模式" class="nav-link" data-scroll-target="#概览模式">概览模式</a></li>
+  <li><a href="#幻灯片缩放" id="toc-幻灯片缩放" class="nav-link" data-scroll-target="#幻灯片缩放">幻灯片缩放</a></li>
+  <li><a href="#演示者视图" id="toc-演示者视图" class="nav-link" data-scroll-target="#演示者视图">演示者视图</a></li>
+  <li><a href="#幻灯片编号" id="toc-幻灯片编号" class="nav-link" data-scroll-target="#幻灯片编号">幻灯片编号</a></li>
+  <li><a href="#打印为pdf" id="toc-打印为pdf" class="nav-link" data-scroll-target="#打印为pdf">打印为PDF</a>
+  <ul class="collapse">
+  <li><a href="#打印选项" id="toc-打印选项" class="nav-link" data-scroll-target="#打印选项">打印选项</a></li>
+  </ul></li>
+  <li><a href="#预览链接" id="toc-预览链接" class="nav-link" data-scroll-target="#预览链接">预览链接</a></li>
+  <li><a href="#幻灯片音效" id="toc-幻灯片音效" class="nav-link" data-scroll-target="#幻灯片音效">幻灯片音效</a></li>
+  <li><a href="#自动放映" id="toc-自动放映" class="nav-link" data-scroll-target="#自动放映">自动放映</a>
+  <ul class="collapse">
+  <li><a href="#幻灯片计时" id="toc-幻灯片计时" class="nav-link" data-scroll-target="#幻灯片计时">幻灯片计时</a></li>
+  </ul></li>
+  <li><a href="#发布" id="toc-发布" class="nav-link" data-scroll-target="#发布">发布</a></li>
+  <li><a href="#导航选项" id="toc-导航选项" class="nav-link" data-scroll-target="#导航选项">导航选项</a></li>
+  <li><a href="#板书" id="toc-板书" class="nav-link" data-scroll-target="#板书">板书</a>
+  <ul class="collapse">
+  <li><a href="#恢复板书" id="toc-恢复板书" class="nav-link" data-scroll-target="#恢复板书">恢复板书</a></li>
+  <li><a href="#板书选项" id="toc-板书选项" class="nav-link" data-scroll-target="#板书选项">板书选项</a></li>
+  </ul></li>
+  <li><a href="#同步演示" id="toc-同步演示" class="nav-link" data-scroll-target="#同步演示">同步演示</a></li>
+  <li><a href="#了解更多" id="toc-了解更多" class="nav-link" data-scroll-target="#了解更多">了解更多</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">幻灯片演示</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="概述" class="level2">
+<h2 class="anchored" data-anchor-id="概述">概述</h2>
+<p>本文介绍进行 Reveal 幻灯片演示的方法。演示者可使用以下键盘快捷键完成基本的导航：</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>动作</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>下一页幻灯片</td>
+<td><kbd>→</kbd> <kbd>SPACE</kbd> <kbd>N</kbd></td>
+</tr>
+<tr class="even">
+<td>前一页幻灯片</td>
+<td><kbd>←</kbd> <kbd>P</kbd></td>
+</tr>
+<tr class="odd">
+<td>无增量分片的导航</td>
+<td><kbd>Alt →</kbd> <kbd>Alt ←</kbd></td>
+</tr>
+<tr class="even">
+<td>跳到首页 / 末页幻灯片</td>
+<td><kbd>Shift →</kbd> <kbd>Shift ←</kbd></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>在演示时，你可通过按 <kbd>F</kbd> 键进入全屏演示模式。</p>
+</div>
+</div>
+</div>
+<p>除了基本的键盘导航之外，Reveal 还支持多种高级功能，包括：</p>
+<ul>
+<li>导航菜单和概览模式</li>
+<li>演示者视图（带有演示者备注、计时器和下一页幻灯片的预览）</li>
+<li>打印为 PDF 或者发布为自包含的单个 HTML 文件</li>
+<li>在幻灯片和黑板 / 白板模式上板书</li>
+<li>同步演示（即让观众在他们各自的手机、平板或笔记本电脑上跟随由你控制的演示节奏）</li>
+</ul>
+<p>这些功能如下所述。</p>
+</section>
+<section id="导航菜单" class="level2">
+<h2 class="anchored" data-anchor-id="导航菜单">导航菜单</h2>
+<p>Quarto 包含一个内置版本的 <a href="https://github.com/denehyg/reveal.js-menu">reveal.js-menu</a> 插件。你可以使用演示文稿左下角的按钮 <kbd><img src="images/navigation-menu-icon.png" style="padding-bottom: 1px;" width="15" height="13"></kbd> 访问导航菜单。单击该按钮将打开一个幻灯片导航菜单，使得你可以轻松跳转到任何幻灯片：</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="images/navigation-menu-button.png" class="border img-fluid" alt="Screen shot of basic reveal.js slide with no overlays."></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="images/navigation-menu-open.png" class="border img-fluid" alt="Screenshot of reveal.js slide with menu plugin open on the left. The menu bar has the Slides tab open, which shows a selectable list of all of the slides in the presentation."></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>你也可以通过按下 <kbd>M</kbd>键 打开导航菜单。</p>
+</div>
+</div>
+</div>
+<p>导航菜单还包括<strong>工具</strong>窗格（Tools），可通过该窗格访问各种其他导航工具，包括全屏、演示者视图、概览模式和打印为 PDF 文档。</p>
+<p>使用以下选项自定义菜单的外观和行为：</p>
+<table class="table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 86%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>side</code></td>
+<td>将菜单显示在演示文稿的左侧或右侧（<code>left</code>或<code>right</code>，默认为 <code>left</code>）</td>
+</tr>
+<tr class="even">
+<td><code>width</code></td>
+<td>菜单的宽度（<code>normal</code>、<code>wide</code>、<code>third</code>、<code>half</code>、<code>full</code> 或任何有效的 css 长度值，默认为 <code>normal</code>）</td>
+</tr>
+<tr class="odd">
+<td><code>numbers</code></td>
+<td>将幻灯片编号添加到菜单项</td>
+</tr>
+</tbody>
+</table>
+<p>示例如下：</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">menu</span><span class="kw">:</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">side</span><span class="kw">:</span><span class="at"> right</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">width</span><span class="kw">:</span><span class="at"> wide</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>你可以通过指定选项 <code>menu: false</code> 来隐藏导航菜单按钮：</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">menu</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>注意，即使导航菜单按钮被隐藏，你仍然可以使用 <kbd>M</kbd>键 打开导航菜单。</p>
+</section>
+<section id="概览模式" class="level2">
+<h2 class="anchored" data-anchor-id="概览模式">概览模式</h2>
+<p>概览模式提供了另一种视图，显示每张幻灯片的缩略图：</p>
+<p><img src="images/overview-mode.png" class="border img-fluid" alt="Screenshot of slides shown in overview mode, showing a series of thumbnails for the slides in the presentation."></p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>你可以通过按下 <kbd>O</kbd>键来启用概览模式。</p>
+</div>
+</div>
+</div>
+</section>
+<section id="幻灯片缩放" class="level2">
+<h2 class="anchored" data-anchor-id="幻灯片缩放">幻灯片缩放</h2>
+<p>按住 <kbd>Alt</kbd>键（或者 Linux中的 <kbd>Ctrl</kbd> 键）并单击任意元素可对其进行缩放。尝试放大以下图像之一：</p>
+<iframe class="reveal-demo border" src="demo/mini/zoom.html"></iframe>
+<p>按住 <kbd>Alt</kbd>（或者 <kbd>Ctrl</kbd>），再次单击可恢复缩放。</p>
+</section>
+<section id="演示者视图" class="level2">
+<h2 class="anchored" data-anchor-id="演示者视图">演示者视图</h2>
+<p>演示者视图显示当前幻灯片以及即将播放的幻灯片、计时器以及与当前幻灯片关联的任何演示者备注：</p>
+<p><img src="images/speaker-view.png" class="border img-fluid" alt="Screenshot of reveal.js presentation in Speaker View. On the right, the active slide is shown. The left column contains three sections which show (from top to bottom): the upcoming slide, time (both elapsed and clock time), and a section where speaker notes go."></p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>你可以通过按 <kbd>S</kbd> 键启用演示者视图。</p>
+</div>
+</div>
+</div>
+<p>你可以使用类为<code>.notes</code>的div块将演示者备注添加到幻灯片中。例如：</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## 含有演示者备注的幻灯片</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>幻灯片内容</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>::: {.notes}</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>此次为演示者备注</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="幻灯片编号" class="level2">
+<h2 class="anchored" data-anchor-id="幻灯片编号">幻灯片编号</h2>
+<p>你可以使用 <code>slide-number</code> 选项将幻灯片编号添加到演示文稿中。你还可以使用 <code>show-slide-number</code> 选项控制幻灯片编号在哪些环境下显示。例如，我们可设置仅用于打印输出的幻灯片编号：</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"演示文稿"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">slide-number</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">show-slide-number</span><span class="kw">:</span><span class="at"> print</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>除了设定为简单的 <code>true</code> 或者 <code>false</code> 之外，<code>slide-number</code> 选项还可以指定格式。可用的格式包括：</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>选项值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>c/t</code></td>
+<td>当前幻灯片编号 / 总幻灯片数（默认值）</td>
+</tr>
+<tr class="even">
+<td><code>c</code></td>
+<td>只显示当前幻灯片编号</td>
+</tr>
+<tr class="odd">
+<td><code>h/v</code></td>
+<td>横向编号/纵向编号</td>
+</tr>
+<tr class="even">
+<td><code>h.v</code></td>
+<td>横向编号.纵向编号</td>
+</tr>
+</tbody>
+</table>
+<p>参见 <a href="../../readings/revealjs/advanced.html#vertical-slides">纵向幻灯片</a> 获取更多信息。</p>
+<p><code>show-slide-number</code> 选项支持以下取值：</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>选项值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>all</code></td>
+<td>在所有环境下显示幻灯片编号（默认值）</td>
+</tr>
+<tr class="even">
+<td><code>print</code></td>
+<td>只在打印为 PDF 文档时显示幻灯片编号</td>
+</tr>
+<tr class="odd">
+<td><code>speaker</code></td>
+<td>只在演示者视图下显示幻灯片编号</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="打印为pdf" class="level2">
+<h2 class="anchored" data-anchor-id="打印为pdf">打印为PDF</h2>
+<p>Reveal 演示文稿可以通过特殊的打印样式表导出为 PDF 文档。</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+注释
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>注意：此功能使用仅在 <a href="https://google.com/chrome">Google Chrome</a> 和 <a href="https://www.chromium.org/Home">Chromium</a> 中得到过验证。</p>
+</div>
+</div>
+<p>要打印为 PDF 文档，请执行以下操作：</p>
+<ul>
+<li>使用 <kbd>E</kbd>键（或使用<a href="#导航菜单">导航菜单</a>）切换到打印视图</li>
+<li>打开浏览器内的打印对话框 (<kbd>CTRL/<kbd>CMD+<kbd>P)。</kbd></kbd></kbd></li>
+<li>将<strong>目标打印机</strong>（<em>Destination</em>）设置更改为<strong>另存为 PDF</strong>（<em>Save as PDF</em>）。</li>
+<li>将<strong>布局</strong>（<em>Layout</em>）更改为<strong>横向</strong>（<em>Landscape</em>）。</li>
+<li>将<strong>边距</strong>（<em>Margins</em>）更改为<strong>无</strong>（<em>None</em>）。</li>
+<li>启用<strong>背景图形</strong>选项（<em>Background graphics</em>）。</li>
+<li>点击<strong>保存</strong>按钮（<em>Save</em>）🎉</li>
+</ul>
+<p>启用上述设置后，Chrome 打印对话框如下所示：</p>
+<p><img src="images/print-to-pdf.png" class="border img-fluid" alt="Screenshot of Chrome print dialog with the first slide/page of 27 shown on the left, and print options on the right. The Destination print option has Save as PDF selected."></p>
+<section id="打印选项" class="level3">
+<h3 class="anchored" data-anchor-id="打印选项">打印选项</h3>
+<p>有许多选项会影响打印输出，你可能需要在打印之前设置这些选项：</p>
+<table class="table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 68%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>show-notes</code></td>
+<td>包括演示者备注（<code>true</code>、<code>false</code> 或 <code>separate-page</code>）</td>
+</tr>
+<tr class="even">
+<td><code>slide-number</code></td>
+<td>包含幻灯片编号（<code>true</code> 或者 <code>false</code>）</td>
+</tr>
+<tr class="odd">
+<td><code>pdf-max-pages-per-slide</code></td>
+<td>太高而无法容纳在单个页面中的幻灯片将扩展到多个页面，你可使用该选项限制幻灯片可以扩展的最多页数</td>
+</tr>
+<tr class="even">
+<td><code>pdf-separate-fragments</code></td>
+<td>默认情况下，具有多增量分片的幻灯片将打印在单页上，如果要为每个分片创建一个页面，需将此选项设置为 <code>true</code></td>
+</tr>
+</tbody>
+</table>
+<p>例如，以下选项设定打印幻灯片时包含幻灯片编号并在单独页面上打印演示者备注：</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"演示文稿"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">show-notes</span><span class="kw">:</span><span class="at"> separate-page</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">slide-number</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="预览链接" class="level2">
+<h2 class="anchored" data-anchor-id="预览链接">预览链接</h2>
+<p>Reveal 通过设置 <code>preview-links</code> 选项可以轻松地将对外部网站的导航嵌入到幻灯片演示流程中。</p>
+<p>当你点击一个设定 <code>preview-links: true</code> 的超链接时，你将在遮盖幻灯片的 iframe 中直接导航到该链接。在下面示例图中，我们点击 <a href="https://matplotlib.org/">Matplotlib链接</a>，网站在幻灯片顶层打开（此时，你可以单击右上角的关闭按钮将其隐藏）：</p>
+<p><img src="images/matplotlib.png" class="border img-fluid" alt="Screenshot of matplotlib landing page."></p>
+<p><code>preview-link</code> 选项的可用设置值包括：</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>选项值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>auto</code></td>
+<td>在全屏演示时直接预览链接（否则以正常方式导航到新链接）</td>
+</tr>
+<tr class="even">
+<td><code>true</code></td>
+<td>总是预览链接</td>
+</tr>
+<tr class="odd">
+<td><code>false</code></td>
+<td>从不预览链接（默认值）</td>
+</tr>
+</tbody>
+</table>
+<p>例如，我们将 <code>preview-links</code> 选项设置为 <code>auto</code>：</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"演示文稿"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">preview-links</span><span class="kw">:</span><span class="at"> auto</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>你还可以针对每个链接设置此选项。如下两个链接分别启用和禁用预览模式：</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">预览链接模式</span><span class="co">](https://example.com)</span>{preview-link="true"}</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">非预览链接模式</span><span class="co">](https://example.com)</span>{preview-link="false"}</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="幻灯片音效" class="level2">
+<h2 class="anchored" data-anchor-id="幻灯片音效">幻灯片音效</h2>
+<p>在启用幻灯片音效后，当你切换幻灯片时，幻灯片会发出微妙的声音。该功能是<a href="https://github.com/yihui/xaringan/issues/214">应一位盲人用户的要求而设计的</a>，使得演示者能够听到幻灯片播放进度的听觉信号。启用幻灯片音效的方式如下：</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">slide-tone</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>随着幻灯片切换，幻灯片音调逐渐从低音C提高至高音C。对于增量幻灯片，音调保持不变。</p>
+<p>幻灯片音效的实现改编自 xaringanExtra 包中的<a href="https://github.com/gadenbuie/xaringanExtra/blob/master/docs/slide-tone/libs/slide-tone/slide-tone.js">幻灯片音效插件</a>。</p>
+</section>
+<section id="自动放映" class="level2">
+<h2 class="anchored" data-anchor-id="自动放映">自动放映</h2>
+<p>演示文稿可以配置为自动放映幻灯片，无需任何用户的输入。要启用此功能，你需要设置 <code>auto-slide</code> 选项为指定幻灯片切换的间隔（间隔以毫秒为单位）。还可以设置 <code>loop</code> 选项来指定在全部幻灯片放映完毕后是否继续循环放映。</p>
+<p>例如，我们在这里指定每 5 秒前进一页幻灯片并循环放映：</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"演示文稿"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">auto-slide</span><span class="kw">:</span><span class="at"> </span><span class="dv">5000</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">loop</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>对于自动放映的幻灯片，将会出现播放/暂停的控制按钮。如果用户与平台进行交互，自动放映会暂停。你还可以通过按 <kbd>A</kbd> 键来暂停或恢复自动放映。</p>
+<p>你可以通过设定 <code>auto-slide-stoppable: false</code> 来禁用自动放映控件并防止放映暂停。</p>
+<section id="幻灯片计时" class="level3">
+<h3 class="anchored" data-anchor-id="幻灯片计时">幻灯片计时</h3>
+<p>我们还可以通过设置特定幻灯片的 <code>autoslide</code> 属性来修改切换的持续时间，这一设置也适用于 <a href="../../readings/revealjs/advanced.html#分片" data-heading="分片">分片</a>)。例如，我们在此将该页幻灯片的自动放映时长设置为2秒：</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## 幻灯片标题 {autoslide=2000}</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="发布" class="level2">
+<h2 class="anchored" data-anchor-id="发布">发布</h2>
+<p>发布 Reveal 演示文稿有两种主要方式：</p>
+<ol type="1">
+<li><p>发布为 PDF 文档——参阅前述 <a href="#打印为pdf">打印为 PDF</a> 一节，了解有关如何执行此操作的详细信息。</p></li>
+<li><p>发布为 HTML 文件。对于 HTML 文档，将演示文稿作为自包含单个文件分发通常最为方便。为此，可指定 <code>embed-resources</code> 选项：</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"演示文稿"</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">embed-resources</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>文档所依赖的图像、CSS 样式和其他资源都将包含在 Quarto 创建的 HTML 文件中。</p></li>
+</ol>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>请注意，设定 <code>embed-resources</code> 选项可能会使幻灯片文档的渲染速度慢几秒钟，因此你最好在准备发布时才启用 <code>embed-resources</code> 选项。另请注意，Reveal 插件 <a href="#板书">Chalkboard</a> 不兼容 <code>embed-resources</code>——启用 <a href="#板书">Chalkboard</a> 插件后，<code>embed-resources: true</code> 将导致错误。</p>
+</div>
+</div>
+</div>
+<p>有关发布 Reveal 演示文稿（包括 GitHub Pages 和 Posit Connect）的其他方法的详细信息，请参阅<a href="https://quarto.org/docs/publishing/">发布 HTML文档</a>。</p>
+</section>
+<section id="导航选项" class="level2">
+<h2 class="anchored" data-anchor-id="导航选项">导航选项</h2>
+<p>Reveal 演示文稿提供了多个导航提示以及控制它们的相应选项：</p>
+<table class="table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 80%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>controls</code></td>
+<td>显示用于浏览幻灯片的箭头控件（默认为 <code>auto</code>，即当存在纵向幻灯片或幻灯片嵌入到 iframe 中时显示控件）。</td>
+</tr>
+<tr class="even">
+<td><code>progress</code></td>
+<td>在底部显示进度条（默认为 <code>true</code>）</td>
+</tr>
+<tr class="odd">
+<td><code>history</code></td>
+<td>将幻灯片页面切换推送到浏览器的历史记录（默认为 <code>true</code>，这意味着浏览器的前进/后退按钮可用于导航）</td>
+</tr>
+<tr class="even">
+<td><code>hash-type</code></td>
+<td>用于幻灯片的 URL 哈希的类型（默认为 <code>title</code>，即根据幻灯片标题计算得到，也可以指定为 <code>number</code>）</td>
+</tr>
+</tbody>
+</table>
+<p>例如，以下设置隐藏进度条并指定我们要使用浏览器历史记录：</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"演示文档"</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">progress</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">history</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="板书" class="level2">
+<h2 class="anchored" data-anchor-id="板书">板书</h2>
+<p>Quarto 包含一个内置版本的 <a href="https://github.com/rajgoel/reveal.js-plugins/tree/master/chalkboard">Reveal.js-chalkboard</a> 插件。指定 <code>chalkboard: true</code> 将启用该插件。该插件使你能够在幻灯片上层的笔记画布上进行板书和/或在演示文稿中打开一个空白黑板：</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"演示文稿"</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">chalkboard</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>请注意，Reveal的 <a href="#板书">Chalkboard</a> 插件与 <code>embed-resources</code> 输出不兼容—— 当启用 <a href="#板书">Chalkboard</a> 插件后，设置 <code>embed-resources: true</code> 将导致错误。</p>
+</div>
+</div>
+</div>
+<p>以下是笔记画布和黑板激活后的样子：</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="images/drawing-canvas.png" class="border img-fluid" alt="Slide with notes canvas activated has a panel on the left to select colors, and a menu bar at the bottom with a paintbrush. One of the words in the slide header has been underlined with the brush in blue."></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="images/chalkboard.png" class="border img-fluid" alt="Screenshot of chalboard canvas with color selector on the left, and paintbrush tool at the bottom. The background is dark, and the equation 'y = mx + b' has been drawn in white with a chalky texture."></p>
+</div>
+</div>
+</div>
+<p>要打开和关闭笔记画布，请使用按钮 <kbd><img src="images/canvas-icon.png" width="19" height="17"></kbd> 或者 <kbd>C</kbd>键。</p>
+<p>要打开和关闭黑板，请使用按钮 <kbd><img src="images/chalkboard-icon.png" width="19" height="17"></kbd> 或者 <kbd>B</kbd>键。。</p>
+<p>以下是与笔记画布和黑板相关的全部快捷键：</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>行为</th>
+<th>键盘快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>打开/关闭笔记画布</td>
+<td><kbd>C</kbd></td>
+</tr>
+<tr class="even">
+<td>打开/关闭黑板</td>
+<td><kbd>B</kbd></td>
+</tr>
+<tr class="odd">
+<td>重置全部板书</td>
+<td><kbd>BACKSPACE</kbd></td>
+</tr>
+<tr class="even">
+<td>清除幻灯片上的板书</td>
+<td><kbd>DEL</kbd></td>
+</tr>
+<tr class="odd">
+<td>向前循环板书颜色</td>
+<td><kbd>X</kbd></td>
+</tr>
+<tr class="even">
+<td>向后循环板书颜色</td>
+<td><kbd>Y</kbd></td>
+</tr>
+<tr class="odd">
+<td>下载板书</td>
+<td><kbd>D</kbd></td>
+</tr>
+</tbody>
+</table>
+<p>以下鼠标和触摸手势可用于与板书交互：</p>
+<ul>
+<li><p>单击左下角的按钮可切换笔记画布或黑板</p></li>
+<li><p>单击左侧的颜色选择器可更改颜色（仅当笔记画布或黑板处于活动状态时，颜色选择器才可见）</p></li>
+<li><p>点击右侧上/下箭头可切换多个黑板（上/下箭头仅适用于黑板）</p></li>
+<li><p>单击鼠标左键并拖动以在笔记画布或黑板上书写</p></li>
+<li><p>单击鼠标右键并拖动以擦除以前的绘图</p></li>
+<li><p>触摸并移动以在笔记画布或黑板上书写</p></li>
+<li><p>触摸并按住半秒钟，然后移动以擦除之前的板书</p></li>
+</ul>
+<section id="恢复板书" class="level3">
+<h3 class="anchored" data-anchor-id="恢复板书">恢复板书</h3>
+<p>按 <kbd>D</kbd> 键会将当前的活动板书下载到 JSON 文件中。然后，你可以通过设置 <code>src</code> 选项在展示演示文稿时恢复这些板书。例如：</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"展示文稿"</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">chalkboard</span><span class="kw">:</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">src</span><span class="kw">:</span><span class="at"> drawings.json</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="板书选项" class="level3">
+<h3 class="anchored" data-anchor-id="板书选项">板书选项</h3>
+<p>以下选项可用于自定义板书的行为和外观：</p>
+<table class="table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>theme</code></td>
+<td>可设置为 <code>chalkboard</code>（默认值）或者 <code>whiteboard</code></td>
+</tr>
+<tr class="even">
+<td><code>boardmarker-width</code></td>
+<td>记号笔粗细（值越大，线越粗，默认为<code>3</code>）</td>
+</tr>
+<tr class="odd">
+<td><code>chalk-width</code></td>
+<td>粉笔粗细（值越大，线越粗，默认为<code>7</code>）</td>
+</tr>
+<tr class="even">
+<td><code>chalk-effect</code></td>
+<td>粉笔效果（取值范围 <code>[0.0, 1.0]</code>，默认为全效的 <code>1.0</code>）</td>
+</tr>
+<tr class="odd">
+<td><code>src</code></td>
+<td>之前下载板书的文件名（按 <kbd>D</kbd>键 下载）</td>
+</tr>
+<tr class="even">
+<td><code>read-only</code></td>
+<td>是否可更改板书文件（默认为 <code>false</code>）</td>
+</tr>
+<tr class="odd">
+<td><code>buttons</code></td>
+<td>在幻灯片底部增加板书按钮（默认为 <code>true</code>）</td>
+</tr>
+<tr class="even">
+<td><code>transition</code></td>
+<td>幻灯片切换的持续时间（以毫秒为单位），切换完成后可在笔记画布上板书</td>
+</tr>
+</tbody>
+</table>
+<p>例如，以下设置指定要使用 <code>whiteboard</code> 主题并用较粗的记号笔，同时隐藏每页幻灯片底部的板书按钮：</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"演示文稿"</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">chalkboard</span><span class="kw">:</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> whiteboard</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">boardmarker-width</span><span class="kw">:</span><span class="at"> </span><span class="dv">5</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">buttons</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>如果已全局禁用板书按钮，你仍然可以使用 <code>chalkboard-buttons</code> 属性有选择地为特定幻灯片启用板书按钮。例如：</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## 幻灯片标题 {chalkboard-buttons="true"}</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>你还可以用 <code>chalkboard-buttons="false"</code> 来关闭单个幻灯片的板书按钮。</p>
+</section>
+</section>
+<section id="同步演示" class="level2">
+<h2 class="anchored" data-anchor-id="同步演示">同步演示</h2>
+<p>Quarto 包含 <a href="https://github.com/reveal/multiplex">Reveal Multiplex</a> 插件的内置版本。multiplex 插件允许你的让观众在他们各自的手机、平板或笔记本电脑上跟随由你控制的演示节奏。当你更改主演示文稿中的幻灯片时，每个人都会跟随并在自己的设备上看到相同的内容。</p>
+<p>创建支持 multiplex 的 Reveal 演示文稿非常简单，你只需设定 <code>multiplex: true</code> 选项：</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"演示文稿"</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">multiplex</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Quarto 渲染演示文稿将创建两个 HTML 文件：</p>
+<table class="table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>文件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>presentation.html</code></td>
+<td>这是你在线发布给目标受众查看的文件</td>
+</tr>
+<tr class="even">
+<td><code>presentation-speaker.html</code></td>
+<td>这是给你展示用的文件，该文件可以保存在你的计算机上而无需发布</td>
+</tr>
+</tbody>
+</table>
+<p>演示文稿的两个版本将会保持同步，即当演示者切换幻灯片时，观众也会切换到同一页幻灯片。</p>
+<section id="同步演示服务器" class="level3 unlisted">
+<h3 class="unlisted anchored" data-anchor-id="同步演示服务器">同步演示服务器</h3>
+<p>multiplex服务器在幕后发挥作用，用来在演示文稿的观众版本和演示者版本之间同步幻灯片放映事件。注意，同步服务器实际上并不会看到任何幻灯片内容，它仅用来同步事件。</p>
+<p>在默认情况下，由 Revealjs 团队创建和托管的 <a href="https://reveal-Multiplex.glitch.me/">服务器</a> 被用来实现同步演示。当你设定 <code>multiplex: true</code> 时，将默认使用此服务器。</p>
+<section id="运行自己的服务器" class="level4">
+<h4 class="anchored" data-anchor-id="运行自己的服务器">运行自己的服务器</h4>
+<p>如果你想运行自己的服务器版本，其源代码位于：<a href="https://github.com/reveal/Multiplex/blob/master/index.js" class="uri">https://github.com/reveal/Multiplex/blob/master/index.js</a>。</p>
+<p>安装后你就可以将 multiplex 配置为使用该替代服务器，如下所示：</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"演示文稿"</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">multiplex</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">url</span><span class="kw">:</span><span class="at"> </span><span class="st">'https://myserver.example.com/</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="st">---</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>请注意，Quarto 在后台调用 multiplex 服务器来为你的演示文稿提供 ID 和密钥。如果你想设置自己的 ID 和密钥，可以在 <a href="https://reveal-Multiplex.glitch.me/" class="uri">https://reveal-Multiplex.glitch.me/</a>（或使用你的自定义托管服务器 URL）执行此操作，并在 YAML 中明确提供它们：</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"演示文稿"</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">multiplex</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">id</span><span class="kw">:</span><span class="at"> </span><span class="st">'1ea875674b17ca76'</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">secret</span><span class="kw">:</span><span class="at"> </span><span class="st">'13652805320794272084'</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>请注意，<code>secret</code> 值将仅包含在演示文稿的演示者版本中。</p>
+</section>
+</section>
+</section>
+<section id="了解更多" class="level2">
+<h2 class="anchored" data-anchor-id="了解更多">了解更多</h2>
+<p>参阅以下文章以了解有关 Reveal 使用的更多信息：</p>
+<ul>
+<li><a href="../../readings/revealjs/index.html">Reveal基础</a> 涵盖了创建演示文稿的基本流程。</li>
+<li><a href="../../readings/revealjs/advanced.html">高级Reveal</a> 深入研究 切换、动画、高级布局与定位以及可用于自定义演示文稿的其他选项。</li>
+<li><a href="../../readings/revealjs/themes.html">Reveal主题</a> 讨论如何使用和自定义现有主题以及如何创建全新主题。</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "已复制");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "已复制");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp("https:\/\/qfwr2023\.netlify\.app\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          // default icon
+          link.classList.add("external");
+      }
+    }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ © Copyright 2023, Yongyi Zeng
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">用❤️发电， 用<a href="https://quarto.org/"><img src="../../images/logo-quarto.png" style="height:1.2em" alt="Quarto"></a>搭建</div>
+  </div>
+</footer>
+
+
+
+</body></html>

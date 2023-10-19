@@ -1,59 +1,219 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://qfwr2023.netlify.app/readings/markdown-basics.html</loc>
-    <lastmod>2023-10-16T13:52:59.547Z</lastmod>
-  </url>
-  <url>
-    <loc>https://qfwr2023.netlify.app/hw/hw-03.html</loc>
-    <lastmod>2023-10-16T13:52:57.831Z</lastmod>
+    <loc>https://qfwr2023.netlify.app/index.html</loc>
+    <lastmod>2023-10-19T04:09:03.563Z</lastmod>
   </url>
   <url>
     <loc>https://qfwr2023.netlify.app/hw/hw-02.html</loc>
-    <lastmod>2023-10-16T13:52:56.883Z</lastmod>
+    <lastmod>2023-10-19T04:09:02.867Z</lastmod>
   </url>
   <url>
-    <loc>https://qfwr2023.netlify.app/schedule.html</loc>
-    <lastmod>2023-10-16T13:52:55.875Z</lastmod>
-  </url>
-  <url>
-    <loc>https://qfwr2023.netlify.app/weeks/week-01.html</loc>
-    <lastmod>2023-10-16T13:52:54.923Z</lastmod>
-  </url>
-  <url>
-    <loc>https://qfwr2023.netlify.app/weeks/week-02.html</loc>
-    <lastmod>2023-10-16T13:52:53.855Z</lastmod>
-  </url>
-  <url>
-    <loc>https://qfwr2023.netlify.app/weeks/week-04.html</loc>
-    <lastmod>2023-10-16T13:52:52.867Z</lastmod>
+    <loc>https://qfwr2023.netlify.app/hw/hw-03.html</loc>
+    <lastmod>2023-10-19T04:09:02.067Z</lastmod>
   </url>
   <url>
     <loc>https://qfwr2023.netlify.app/weeks.html</loc>
-    <lastmod>2023-10-16T13:52:48.815Z</lastmod>
-  </url>
-  <url>
-    <loc>https://qfwr2023.netlify.app/project/team-project.html</loc>
-    <lastmod>2023-10-16T13:52:52.243Z</lastmod>
+    <lastmod>2023-10-19T04:09:01.331Z</lastmod>
   </url>
   <url>
     <loc>https://qfwr2023.netlify.app/weeks/week-05.html</loc>
-    <lastmod>2023-10-16T13:52:53.387Z</lastmod>
+    <lastmod>2023-10-19T04:09:00.135Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/weeks/week-04.html</loc>
+    <lastmod>2023-10-19T04:08:59.339Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/markdown-basics.html</loc>
+    <lastmod>2023-10-19T04:08:57.579Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/index.html</loc>
+    <lastmod>2023-10-19T04:08:56.067Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/examples/incremental-lists-3.html</loc>
+    <lastmod>2023-10-19T04:08:55.087Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/examples/footer-and-logo.html</loc>
+    <lastmod>2023-10-19T04:08:54.595Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/examples/code-echo.html</loc>
+    <lastmod>2023-10-19T04:08:54.119Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/examples/theme-dark.html</loc>
+    <lastmod>2023-10-19T04:08:53.579Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/examples/executable-code-figure-size.html</loc>
+    <lastmod>2023-10-19T04:08:53.055Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/examples/incremental-lists-2.html</loc>
+    <lastmod>2023-10-19T04:08:52.495Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/examples/background-color.html</loc>
+    <lastmod>2023-10-19T04:08:52.039Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/examples/background-no-title.html</loc>
+    <lastmod>2023-10-19T04:08:51.583Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/examples/smaller.html</loc>
+    <lastmod>2023-10-19T04:08:51.103Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/examples/image-background.html</loc>
+    <lastmod>2023-10-19T04:08:50.647Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/examples/creating-slides-1.html</loc>
+    <lastmod>2023-10-19T04:08:50.207Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/examples/incremental-lists-1.html</loc>
+    <lastmod>2023-10-19T04:08:49.619Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/examples/creating-slides-2.html</loc>
+    <lastmod>2023-10-19T04:08:49.159Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/presenting.html</loc>
+    <lastmod>2023-10-19T04:08:48.599Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/demo/index.html</loc>
+    <lastmod>2023-10-19T04:08:45.463Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/demo/mini/auto-animate.html</loc>
+    <lastmod>2023-10-19T04:08:43.463Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/demo/mini/stack.html</loc>
+    <lastmod>2023-10-19T04:08:43.031Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/demo/mini/zoom.html</loc>
+    <lastmod>2023-10-19T04:08:42.575Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/demo/mini/fragments-nested.html</loc>
+    <lastmod>2023-10-19T04:08:42.119Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/demo/mini/fragments.html</loc>
+    <lastmod>2023-10-19T04:08:40.823Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/demo/mini/absolute.html</loc>
+    <lastmod>2023-10-19T04:08:42.347Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/demo/mini/auto-animate-stack.html</loc>
+    <lastmod>2023-10-19T04:08:42.807Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/demo/mini/auto-animate-movement.html</loc>
+    <lastmod>2023-10-19T04:08:43.247Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/demo/mini/auto-animate-code.html</loc>
+    <lastmod>2023-10-19T04:08:43.863Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/advanced.html</loc>
+    <lastmod>2023-10-19T04:08:47.087Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/examples/line-highlighting-3.html</loc>
+    <lastmod>2023-10-19T04:08:48.883Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/examples/incremental-pause.html</loc>
+    <lastmod>2023-10-19T04:08:49.387Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/examples/line-highlighting-4.html</loc>
+    <lastmod>2023-10-19T04:08:49.967Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/examples/slide-with-footnotes.html</loc>
+    <lastmod>2023-10-19T04:08:50.435Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/examples/slide-with-speaker-notes.html</loc>
+    <lastmod>2023-10-19T04:08:50.875Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/examples/columns.html</loc>
+    <lastmod>2023-10-19T04:08:51.331Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/examples/tabset.html</loc>
+    <lastmod>2023-10-19T04:08:51.823Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/examples/line-highlighting-2.html</loc>
+    <lastmod>2023-10-19T04:08:52.271Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/examples/creating-slides-3.html</loc>
+    <lastmod>2023-10-19T04:08:52.731Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/examples/scrollable-and-smaller.html</loc>
+    <lastmod>2023-10-19T04:08:53.315Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/examples/line-highlighting-1.html</loc>
+    <lastmod>2023-10-19T04:08:54.343Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/examples/scrollable.html</loc>
+    <lastmod>2023-10-19T04:08:54.859Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/examples/per-slide-footer.html</loc>
+    <lastmod>2023-10-19T04:08:55.315Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/readings/revealjs/themes.html</loc>
+    <lastmod>2023-10-19T04:08:56.627Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/schedule.html</loc>
+    <lastmod>2023-10-19T04:08:58.043Z</lastmod>
   </url>
   <url>
     <loc>https://qfwr2023.netlify.app/weeks/week-06.html</loc>
-    <lastmod>2023-10-16T13:52:54.419Z</lastmod>
+    <lastmod>2023-10-19T04:08:58.791Z</lastmod>
   </url>
   <url>
-    <loc>https://qfwr2023.netlify.app/index.html</loc>
-    <lastmod>2023-10-16T13:52:56.327Z</lastmod>
+    <loc>https://qfwr2023.netlify.app/weeks/week-01.html</loc>
+    <lastmod>2023-10-19T04:08:59.719Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/weeks/week-02.html</loc>
+    <lastmod>2023-10-19T04:09:00.515Z</lastmod>
   </url>
   <url>
     <loc>https://qfwr2023.netlify.app/hw/hw-01.html</loc>
-    <lastmod>2023-10-16T13:52:57.331Z</lastmod>
+    <lastmod>2023-10-19T04:09:01.679Z</lastmod>
   </url>
   <url>
     <loc>https://qfwr2023.netlify.app/hw/hw-04.html</loc>
-    <lastmod>2023-10-16T13:52:58.335Z</lastmod>
+    <lastmod>2023-10-19T04:09:02.435Z</lastmod>
+  </url>
+  <url>
+    <loc>https://qfwr2023.netlify.app/project/team-project.html</loc>
+    <lastmod>2023-10-19T04:09:03.215Z</lastmod>
   </url>
 </urlset>
