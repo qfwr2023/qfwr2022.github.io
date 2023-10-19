@@ -1,0 +1,25 @@
+## 分片
+
+点击箭头增量显示下一个分片的内容：
+
+::: {style="margin-top: 2em; margin-left: 1em;"}
+::: fragment
+淡入
+:::
+
+::: {.fragment .fade-out}
+淡出
+:::
+
+::: {.fragment .highlight-red}
+红色突显
+:::
+
+::: {.fragment .fade-in-then-out}
+淡入，然后淡出
+:::
+
+::: {.fragment .fade-up}
+淡入的同时向上切入
+:::
+:::

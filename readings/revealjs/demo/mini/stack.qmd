@@ -1,0 +1,15 @@
+---
+format: revealjs
+---
+
+## 堆叠
+
+点击箭头进入堆叠中的下一张图片。
+
+::: r-stack
+![](images/kitten-450-300.jpeg){.fragment width="450" height="300"}
+
+![](images/kitten-300-450.jpeg){.fragment width="300" height="450"}
+
+![](images/kitten-400-400.jpeg){.fragment width="400" height="400"}
+:::

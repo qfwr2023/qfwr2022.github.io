@@ -1,0 +1,28 @@
+---
+format: 
+  revealjs:
+    width: 650
+    height: 300
+---
+
+##  {auto-animate="true"}
+
+``` r
+# 创建图片填充预设位置
+output$phonePlot <- renderPlot({
+  # 生成柱状图
+})
+```
+
+##  {auto-animate="true"}
+
+``` r
+# 创建图片填充预设位置
+output$phonePlot <- renderPlot({
+  # 生成柱状图
+  barplot(WorldPhones[,input$region]*1000, 
+          main=input$region,
+          ylab="Number of Telephones",
+          xlab="Year")
+})
+```

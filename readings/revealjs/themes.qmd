@@ -1,0 +1,192 @@
+---
+title: "Reveal主题"
+---
+
+## 使用主题
+
+{{< include _theme-basics.md >}}
+
+
+## 定制主题
+
+你可以通过将自己的 [Sass](https://sass-lang.com/) 主题文件添加到主题声明中来定制内置的主题。例如：
+
+``` yaml
+---
+title: "演示文稿"
+format:
+  revealjs: 
+    theme: [default, custom.scss]
+---
+```
+
+`custom.scss` 的内容示例如下：
+
+``` default
+/*-- scss:defaults --*/
+
+$body-bg: #191919;
+$body-color: #fff;
+$link-color: #42affa;
+
+/*-- scss:rules --*/
+
+.reveal .slide blockquote {
+  border-left: 3px solid $text-muted;
+  padding-left: 0.5em;
+}
+```
+
+主题文件使用 [Sass](https://sass-lang.com/) （CSS 的一种变体，支持变量和其他扩展功能）并划分为不同部分。
+
+- `/*-- scss:defaults --*/` 用于定义影响字体、颜色、边框等的变量（注意变量以 `$` 开头）
+
+- `/*-- scss:rules --*/` 用于创建 CSS 规则。请注意，针对 Reveal 内容的 CSS 规则通常需要使用 `.reveal .slide` 前缀才能成功覆盖主题的默认样式。
+
+请参阅 [Sass变量](#sass变量) 文档以获取可自定义内容的列表。
+
+
+## 创建主题
+
+所谓的创建新主题不过是重新定义一个或多个默认 Sass 变量（你无需重新设定你不想覆盖的变量值）并添加你所需的其他 CSS 规则。
+
+在主题中可以自行定义内容的列表，请参阅 [Sass变量](#sass变量) 文档。
+
+例如，以下是内置 `serif` 主题的源代码：
+
+``` default
+/*-- scss:defaults --*/
+
+// fonts
+$font-family-sans-serif: "Palatino Linotype", "Book Antiqua", Palatino,
+  FreeSerif, serif !default;
+
+// colors
+$body-bg: #f0f1eb !default;
+$body-color: #000 !default;
+$link-color: #51483d !default;
+$selection-bg: #26351c !default;
+
+// headings
+$presentation-heading-font: "Palatino Linotype", "Book Antiqua", Palatino,
+  FreeSerif, serif !default;
+$presentation-heading-color: #383d3d !default;
+
+/*-- scss:rules --*/
+
+.reveal a {
+  line-height: 1.3em;
+}
+```
+
+在上面的主题文件中，你应该已经注意到位于变量定义之后的 `!default` 后缀——这是为了确保使用此主题的任何人都可以覆盖该变量的取值（反之则不可覆盖）。
+
+你只需将自定义主题指定为 `theme` 选项即可使用它（所有的主题文件都隐式继承自 `default` 主题）。例如：
+
+``` yaml
+---
+title: "Presentation"
+format:
+  revealjs: 
+    theme: mytheme.scss
+---
+```
+
+以下是所有内置主题的源代码，供你查看以获取灵感和代码示例：
+
+<https://github.com/quarto-dev/quarto-cli/tree/main/src/resources/formats/revealjs/themes>
+
+
+## Sass变量
+
+以下是 Reveal 主题使用的全部 Sass 变量（及其默认值）的列表。请注意，某些变量使用其他变量进行定义，并且有些颜色变量使用 Sass 函数 `lighten()` 来创建另一种颜色的更亮的变体。
+
+### 颜色
+
+| 变量                        | 默认值                          |
+|-----------------------------|---------------------------------|
+| `$body-bg`                  | #fff                            |
+| `$body-color`               | #222                            |
+| `$text-muted`               | lighten(\$body-color, 50%)      |
+| `$link-color`               | #2a76dd                         |
+| `$link-color-hover`         | lighten(\$link-color, 15%)      |
+| `$selection-bg`             | lighten(\$link-color, 25%)      |
+| `$selection-color`          | \$body-bg                       |
+| `$light-bg-text-color`      | #222                            |
+| `$light-bg-link-color`      | #2a76dd                         |
+| `$light-bg-code-color`      | #4758ab                         |
+| `$dark-bg-text-color`       | #fff                            |
+| `$dark-bg-link-color`       | #42affa                         |
+| `$dark-bg-code-color`       | #ffa07a                         |
+
+### 字体
+
+| 变量                            | 默认值                                   |
+|---------------------------------|------------------------------------------|
+| `$font-family-sans-serif`       | "Source Sans Pro", Helvetica, sans-serif |
+| `$font-family-monospace`        | monospace                                |
+| `$presentation-font-size-root`  | 40px                                     |
+| `$presentation-font-smaller`    | 0.7                                      |
+| `$presentation-line-height`     | 1.3                                      |
+
+### 标题
+
+| 变量                                   | 默认值                               |
+|----------------------------------------|--------------------------------------|
+| `$presentation-h1-font-size`           | 2.5em                                |
+| `$presentation-h2-font-size`           | 1.6em                                |
+| `$presentation-h3-font-size`           | 1.3em                                |
+| `$presentation-h4-font-size`           | 1em                                  |
+| `$presentation-heading-font`           | \$font-family-sans-serif             |
+| `$presentation-heading-color`          | \$body-color                         |
+| `$presentation-heading-line-height`    | 1.2                                  |
+| `$presentation-heading-letter-spacing` | normal                               |
+| `$presentation-heading-text-transform` | none                                 |
+| `$presentation-heading-text-shadow`    | none                                 |
+| `$presentation-heading-font-weight`    | 600                                  |
+| `$presentation-h1-text-shadow`         | none                                 |
+
+### 代码块
+
+| 变量                              | 默认值                           |
+|-----------------------------------|----------------------------------|
+| `$code-block-bg`                  | \$body-bg                        |
+| `$code-block-border-color`        | lighten(\$body-color, 60%)       |
+| `$code-block-font-size`           | 0.55em                           |
+
+### 内联代码
+
+| 变量                              | 默认值                           |
+|-----------------------------------|--------------------------------- |
+| `$code-color`                     | var(--quarto-hl-fu-color)        |
+| `$code-bg`                        | transparent                      |
+
+### 标签页
+
+| 变量                               | 默认值                          |
+|------------------------------------|---------------------------------|
+| `$tabset-border-color`             | \$code-block-border-color       |
+
+### 布局
+
+| 变量                                   | 默认值                              |
+|----------------------------------------|-------------------------------------|
+| `$border-color`                        | lighten(\$body-color, 30%)          |
+| `$border-width`                        | 1px                                 |
+| `$border-radius`                       | 3px                                 |
+| `$presentation-block-margin`           | 12px                                |
+| `$presentation-slide-text-align`       | left                                |
+| `$presentation-title-slide-text-align` | center                              |
+
+你可能已经注意到有些 Sass 变量使用 `presentation-` 前缀，而有些则不使用。带 `presentation-` 前缀的变量专用于演示文稿，而其他变量则与用于标准 Quarto [HTML主题](https://quarto.org/docs/output-formats/html-themes.html) 的变量相同。
+
+由于所有 Quarto 主题都使用相同的 Sass 格式，因此你可以将单个主题文件用于 HTML / 网站文档以及演示文稿。
+
+
+## 了解更多
+
+参阅以下文章以了解有关 Reveal 使用的更多信息：
+
+- [Reveal基础](index.qmd) 涵盖了创建演示文稿的基本流程。
+- [幻灯片演示](presenting.qmd) 介绍了幻灯片导航、打印为 PDF、使用板书工具以及创建同步演示幻灯片。
+- [高级Reveal](advanced.qmd) 深入研究        切换、动画、高级布局与定位以及可用于自定义演示文稿的其他选项。

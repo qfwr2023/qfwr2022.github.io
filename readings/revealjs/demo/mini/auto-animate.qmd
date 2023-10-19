@@ -1,0 +1,11 @@
+##  {auto-animate="true"}
+
+::: {style="margin-top: 100px;"}
+动画内容
+:::
+
+##  {auto-animate="true"}
+
+::: {style="margin-top: 200px; font-size: 3em; color: red;"}
+动画内容
+:::

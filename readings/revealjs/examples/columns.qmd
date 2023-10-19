@@ -1,0 +1,16 @@
+---
+format: 
+  revealjs
+---
+
+:::: {.columns}
+
+::: {.column width="40%"}
+左栏内容
+:::
+
+::: {.column width="60%"}
+右栏内容
+:::
+
+::::

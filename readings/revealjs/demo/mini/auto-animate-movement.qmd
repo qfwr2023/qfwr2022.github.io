@@ -1,0 +1,16 @@
+---
+format: 
+  revealjs:
+    width: 650
+    height: 300
+---
+
+##  {auto-animate="true"}
+
+动画
+
+##  {auto-animate="true"}
+
+隐性
+
+动画

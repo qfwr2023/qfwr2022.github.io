@@ -1,0 +1,17 @@
+---
+format: 
+  revealjs:
+    incremental: true
+---
+
+## 幻灯片1，增量
+
+- 吃面
+- 饮酒
+
+## 幻灯片2，非增量
+
+::: {.nonincremental}
+- 吃面
+- 饮酒
+:::

@@ -83,7 +83,7 @@ website:
       - text: "© Copyright 2023, Yongyi Zeng"
     right: |
       用❤️发电，
-      用[![](https://quarto.org/quarto.png){fig-alt="Quarto" height=1.2em}](https://quarto.org/)搭建
+      用[![](/images/logo-quarto.png){fig-alt="Quarto" height=1.2em}](https://quarto.org/)搭建
   # comments:
   #   giscus:
   #     repo: qfwr2023/qfwr2023.github.io

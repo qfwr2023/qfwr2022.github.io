@@ -1,0 +1,7 @@
+---
+format: revealjs
+---
+
+## 海蓝色背景的幻灯片 {background-color="aquamarine"}
+
+## `#806040` 背景色的幻灯片 {background-color="#806040"}

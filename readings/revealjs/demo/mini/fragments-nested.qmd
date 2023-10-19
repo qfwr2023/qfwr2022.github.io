@@ -1,0 +1,15 @@
+---
+format: revealjs
+---
+
+### 推进幻灯片以查看三种不同的分片效果
+
+<br/>
+
+::: {.fragment .fade-in}
+::: {.fragment .highlight-red}
+::: {.fragment .semi-fade-out}
+淡入 > 变红 > 部分淡出
+:::
+:::
+:::

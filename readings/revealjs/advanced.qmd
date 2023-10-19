@@ -1,0 +1,621 @@
+---
+title: "高级Reveal"
+---
+
+## 标题幻灯片
+
+主标题幻灯片是演示文稿的第一页幻灯片，其内容是根据各种文档选项（标题、副标题、日期、作者、机构等）生成的。
+
+### 自定义背景
+
+如果你想为标题幻灯片提供自定义背景，请执行以下操作：
+
+1. 使用 `title-slide-attributes` 键提供背景选项。
+2. 在此键中，指定任何受支持的幻灯片[背景选项](index.html#幻灯片背景)，但要在它们前面添加 `data-` 前缀。
+
+例如：
+
+```yaml
+---
+title: 我的幻灯片演示
+title-slide-attributes:
+  data-background-image: /path/to/title_image.png
+  data-background-size: contain
+  data-background-opacity: "0.5"
+---
+```
+
+### 自定义模板
+
+你可以使用自己的模板完全替换默认标题幻灯片。为此，请指定一份名为 `title-slide.html` 的 [模板构件](https://quarto.org/docs/journals/templates.html#template-partials)。例如：
+
+```yaml
+title: 我的幻灯片演示
+format:
+  revealjs:
+    template-partials:
+      - title-slide.html
+```
+
+这是默认标题幻灯片模板部分的 [源代码链接](https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/formats/revealjs/pandoc/title-slide.html)。根据需要自定义此模板，然后将结果保存为 `title-slide.html`并放在你创建的演示文稿的同一文件夹中。
+
+
+## 幻灯片切换
+
+Reveal 支持切换幻灯片和更改幻灯片背景的多种动画过渡效果。默认情况下不使用过渡，但是你可以使用下面描述的选项在全局或特定幻灯片上启用它们。
+
+以下是可用的过渡类型：
+
+| 过渡       | 说明                                         |
+|------------|----------------------------------------------|
+| `none`     | 无过渡效果（立即切换）                       |
+| `fade`     | 淡入/淡出                                     |
+| `slide`    | 水平切入                                     |
+| `convex`   | 凸角切入                                     |
+| `concave`  | 凹角切入                                     |
+| `zoom`     | 缩放进入的幻灯片，使其从屏幕中心逐渐增大     |
+
+以下是设置幻灯片和背景的全局过渡样式的方法：
+
+``` yaml
+---
+title: "演示文稿"
+format:
+  revealjs:
+    transition: slide
+    background-transition: fade
+---
+```
+
+你还可以将 `transition-speed` 选项设定为 `default`、`fast` 或 `slow`：
+
+``` yaml
+---
+title: "演示文稿"
+format:
+  revealjs:
+    transition: slide
+    transition-speed: fast
+---
+```
+
+你还可以为单页幻灯片指定 `transition` 和/或`transition-speed` 选项：
+
+``` markdown
+## 幻灯片标题 {transition="fade" transition-speed="fast"}
+```
+
+你还可以分开指定进入和退出的过渡效果，例如：
+
+``` markdown
+## 幻灯片标题 {transition="fade-in slide-out"}
+```
+
+## 幻灯片可见性
+
+你可以通过给幻灯片标题增加 `visibility="hidden"` 属性来隐藏幻灯片。例如：
+
+``` markdown
+## 幻灯片标题 {visibility="hidden"}
+```
+
+### 幻灯片计数
+
+在创建演示文稿时，你可能需要提前准备些根据时间安排再决定是否展示的备选幻灯片。通过在演示文稿末尾附加几页幻灯片就可以轻松达到这一目的，但这意味着 Reveal 进度条和幻灯片编号会暗示这些备选幻灯片的存在。
+
+要从幻灯片编号系统中“隐藏”这些幻灯片，你可以设定 `visibility="uncounted"`。例如：
+
+``` markdown
+## 幻灯片1
+
+## 幻灯片2
+
+## 幻灯片3 {visibility="uncounted"}
+```
+
+
+## 演示尺寸
+
+所有演示文稿都有着“正常”尺寸，即创作它们时的分辨率。默认的“正常”尺寸为 1050 x 700，用于尽可能匹配大多数笔记本电脑的宽高比。
+
+Reveal 将根据正常大小自动等比缩放演示文稿，以确保所有内容适合给定的显示器或视窗大小，而无需更改内容的宽高比或布局。
+
+你可以使用以下选项更改幻灯片尺寸、内容周围的边距以及设置内容缩放限制：
+
+| 选项        | 说明                                                    |
+|-------------|---------------------------------------------------------|
+| `width`     | 正常宽度（默认为1050）                                  |
+| `height`    | 正常高度（默认为700）                                   |
+| `margin`    | 内容周围显示为空白的尺寸系数（默认为 0.1）              |
+| `min-scale` | 应用于内容的最小可能缩放比例（默认为 0.2）              |
+| `max-scale` | 应用于内容的最大可能缩放比例（默认为 2.0）              |
+
+
+## 绝对定位
+
+类 `absolute` 允许你将元素放置在幻灯片上的任意位置。这些元素具有 CSS 声明 `position: absolute`并且可基于幻灯片 `top`、`left`、`bottom` 和/或 `right` 边缘进行定位。
+
+例如，在这里我们给三个图像添加 `.absolute` 类，并分别指定一个不同的幻灯片位置（请注意，我们还使用 `width` 和 `height` 属性来控制它们的尺寸）：
+
+``` {.markdown .reveal-demo code-preview="demo/mini/absolute.qmd"}
+![](image1.png){.absolute top=200 left=0 width="350" height="300"}
+
+![](image2.png){.absolute top=50 right=50 width="450" height="250"}
+
+![](image3.png){.absolute bottom=0 right=50 width="300" height="300"}
+```
+
+以下属性可以和 `absolute` 类一起使用。所有这些值都可以用 CSS 单位（如 `px`、`em` 等），如果仅指定数字而没有单位（如上面的示例），则默认为像素 `px`。
+
+| 属性      | 说明                          |
+|-----------|-------------------------------|
+| `width`   | 元素的宽度                    |
+| `height`  | 元素的高度                    |
+| `top`     | 到幻灯片顶端的距离            |
+| `left`    | 到幻灯片左侧的距离            |
+| `bottom`  | 到幻灯片右侧的距离            |
+| `right`   | 到幻灯片底端的距离            |
+
+请注意，演示文稿幻灯片的默认大小为 1050 x 700。有关自定义幻灯片尺寸的详细信息，请参阅[演示尺寸](#演示尺寸)。
+
+
+## 布局辅助类
+
+Reveal 提供了一些用于控制幻灯片内容布局的辅助类。
+
+### 堆叠
+
+`r-stack` 类允许你将多个元素居中并堆叠在彼此之上。它旨在与 [分片](#分片) 一起使用从而增量显示各个元素。
+
+例如，这里我们创建一个指定类为 `.r-stack` 的 div块，然后包含 3 个图像（每个图像都设定为 `.fragment`类，以便增量显示）：
+
+``` {.markdown .reveal-demo code-preview="demo/mini/stack.qmd"}
+::: {.r-stack}
+![](image1.png){.fragment width="450" height="300"}
+
+![](image2.png){.fragment width="300" height="450"}
+
+![](image3.png){.fragment width="400" height="400"}
+:::
+```
+
+### 适合文本
+
+`r-fit-text` 类使文本在不溢出幻灯片的前提下尽可能地大。当你想要大文本而又不想手动找到正确的字体大小时，这非常有用。例如：
+
+``` markdown
+::: {.r-fit-text}
+巨大文本
+:::
+```
+
+### 垂直居中
+
+当将 `center` 类应用于幻灯片时，将通过在幻灯片顶部添加适当的间距来垂直居中幻灯片内容。元素之间的垂直距离不会被修改。例如：
+
+``` markdown
+## 调整至垂直居中的标题文本 {.center}
+
+这些文本也会一起移动
+```
+
+### 自动缩放
+
+`r-stretch` 布局辅助类会调整元素（如图像或视频）的大小，以覆盖幻灯片中剩余的垂直空间。例如，以下示例中的图像将自动调整大小以适应幻灯片标题及其前后文本之外的剩余空间：
+
+``` markdown
+## 幻灯片标题
+
+这里有个图片：
+
+![](image.png){.r-stretch}
+
+这是图片之后的文本。
+```
+
+对于仅包含单个顶级图像的幻灯片，`.r-stretch` 类会自动应用于该图像。你可以通过设置 `auto-stretch: false` 选项来禁用这一默认做法：
+
+``` yaml
+format:
+  revealjs:
+    auto-stretch: false
+```
+
+你也可以通过添加 `.nostretch` 类来禁用单页幻灯片的自动缩放功能：
+
+``` markdown
+## 幻灯片标题 {.nostretch}
+```
+
+`auto-stretch` 选项仅适用于非嵌套图像，这意味着功能块（如分片、布局面板、分栏等）或自定义 div 块中的图像将被忽略。对于自定义的 div 块，你可以通过将 `.r-stretch` 类添加到外层 div 从而获得 `auto-stretch` 功能（此时块内的图像将自动缩放）。
+
+
+## 自动动画
+
+Revealjs 可以自动为不同幻灯片中的元素设置动画。你所需要做的就是将 `auto-animate` 属性添加到两个相邻的幻灯片中，自动动画将为两页幻灯片之间的所有匹配元素添加动画效果。
+
+以下是一个简单的示例，可以让你更好地了解如何使用该功能。请注意，本示例中的幻灯片没有标题（而只有属性 `auto-animate`），但这些幻灯片也可以有标题。
+
+``` {.markdown .reveal-demo code-preview="demo/mini/auto-animate.qmd"}
+## {auto-animate=true}
+
+::: {style="margin-top: 100px;"}
+动画内容
+:::
+
+## {auto-animate=true}
+
+::: {style="margin-top: 200px; font-size: 3em; color: red;"}
+动画内容
+:::
+```
+
+此示例使用 `margin-top` 属性来移动元素，但 Reveal 在内部将使用 CSS 转换来保证元素之间的平滑变化。相同的动画方法适用于大多数可动画化的 CSS 属性，这意味着你可以转换诸如 `position`、`font-size`、`line-height`、`color`、`background-color` 和 `padding` 等属性。
+
+### 代码动画
+
+你还可以在代码块之间设置动画以显示代码的变化。例如：
+
+```` {.markdown .reveal-demo code-preview="demo/mini/auto-animate-code.qmd"}
+## {auto-animate="true"}
+
+```r
+# 创建图片填充预设位置
+output$phonePlot <- renderPlot({
+  # 生成柱状图
+})
+```
+
+## {auto-animate=true}
+
+```r
+# 创建图片填充预设位置
+output$phonePlot <- renderPlot({
+  # 生成柱状图
+  barplot(WorldPhones[,input$region]*1000, 
+          main=input$region,
+          ylab="Number of Telephones",
+          xlab="Year")
+})
+```
+````
+
+### 运动动画
+
+动画不仅限于风格的变化，自动动画还可以用于在幻灯片上添加、删除或重新排列内容时自动将元素移动到新位置——完成这些任务无需编写一行内联 CSS！例如，以下示例中两页幻灯片上的内容之间的增量显示呈现（隐性）动画效果：
+
+``` {.markdown .reveal-demo code-preview="demo/mini/auto-animate-movement.qmd"}
+## {auto-animate=true}
+
+动画
+
+## {auto-animate=true}
+
+隐性
+
+动画
+```
+
+### 元素匹配
+
+当演示者在两页自动动画的幻灯片之间导航时，Quarto 将尽力在两页幻灯片中查找匹配的元素。对于文本来说，如果文本内容和节点类型相同，Quarto 就认为它是匹配的。对于图像、视频和 iframe 来说，Quarto 将比较 `src` 属性。Quarto 还考虑元素在 DOM 中出现的顺序。
+
+在自动匹配不可行的情况下，你可以为需要自动动画效果的对象提供匹配的 `data-id` 值，其优先级自动匹配。
+
+以下是个示例，由于没有内容供 Quarto 自动匹配，我们转而赋予色块匹配的 ID。示例还使用了一些附加动画属性，如 `auto-animate-easing` 和 `auto-animate-delay`，我们将在下一小节中说明它们的用法。
+
+``` {.markdown .reveal-demo code-preview="demo/mini/auto-animate-stack.qmd"}
+## {auto-animate=true auto-animate-easing="ease-in-out"}
+
+::: {.r-hstack}
+::: {data-id="box1" auto-animate-delay="0" style="background: #2780e3; width: 200px; height: 150px; margin: 10px;"}
+:::
+
+::: {data-id="box2" auto-animate-delay="0.1" style="background: #3fb618; width: 200px; height: 150px; margin: 10px;"}
+:::
+
+::: {data-id="box3" auto-animate-delay="0.2" style="background: #e83e8c; width: 200px; height: 150px; margin: 10px;"}
+:::
+:::
+
+## {auto-animate=true auto-animate-easing="ease-in-out"}
+
+::: {.r-stack}
+::: {data-id="box1" style="background: #2780e3; width: 350px; height: 350px; border-radius: 200px;"}
+:::
+
+::: {data-id="box2" style="background: #3fb618; width: 250px; height: 250px; border-radius: 200px;"}
+:::
+
+::: {data-id="box3" style="background: #e83e8c; width: 150px; height: 150px; border-radius: 200px;"}
+:::
+:::
+```
+
+### 动画设置
+
+你可以覆盖整个演示文稿、每页幻灯片或每个元素的特定动画设置，例如缓动和持续时间。以下配置属性可用于更改特定幻灯片或元素的动画设置：
+
+| **属性**            | **默认值** | **说明**                           |
+|:--------------------|:----------:|:-----------------------------------|
+| `auto-animate-easing`    |    ease     | CSS [缓动函数](https://developer.mozilla.org/zh-CN/docs/Web/CSS/easing-function)                                                                    |
+| `auto-animate-unmatched` |    true     | 确定没有匹配的自动动画元素是否应该淡入（`false` 则为立即出现）         |
+| `auto-animate-duration`  |     1.0     | 动画持续时间（单位为秒）    |
+| `auto-animate-delay`     |      0      | 动画延迟时间（单位为秒），只能应用于特定元素，而非整个幻灯片级别       |
+| `auto-animate-id`        |  空值       | 绑定自动动画幻灯片的 id     |
+| `auto-animate-restart`   |  空值       | 解构两个相邻的自动动画幻灯片（即使具有相同的 id）                      |
+
+你可以覆盖自动动画 `-easing`、`-unmatched` 和 `-duration` 的全局默认值，如下所示：
+
+``` yaml
+---
+title: "我的演示文稿"
+format:
+  revealjs:
+    auto-animate-easing: ease-in-out
+    auto-animate-unmatched: false
+    auto-animate-duration: 0.8
+---
+```
+
+
+## 分片 {data-link="分片"}
+
+分片（_fragment_）用于突出显示或增量显示幻灯片上的各个元素。在进入下一页幻灯片之前，需要增量完成 `fragment` 类元素的展示。
+
+注意，此处讨论的分片是增量内容显示的相对高级形式——请参阅文档 [增量列表](index.html#增量列表) 以获取创建增量项目符号列表和在幻灯片中插入内容暂停的相关信息。
+
+默认的分片样式是开始不可见并淡入，可以通过向分片添加不同的类来更改样式。例如：
+
+``` {.markdown .reveal-demo code-preview="demo/mini/fragments.qmd"}
+::: {.fragment}
+淡入
+:::
+
+::: {.fragment .fade-out}
+淡出
+:::
+
+::: {.fragment .highlight-red}
+红色突显
+:::
+
+::: {.fragment .fade-in-then-out}
+淡入，然后淡出
+:::
+
+::: {.fragment .fade-up}
+淡入的同时向上切入
+:::
+```
+
+### 分片类
+
+以下是全部可用的分片类：
+
+| **类名**                  | **效果**                                    |
+|:--------------------------|:--------------------------------------------|
+| `fade-out`                | 淡入（开始时不可见）                        |
+| `fade-up`                 | 淡入的同时向上切入                          |
+| `fade-down`               | 淡入的同时向下切入                          |
+| `fade-left`               | 淡入的同时向左切入                          |
+| `fade-right`              | 淡入的同时向右切入                          |
+| `fade-in-then-out`        | 淡入，然后再淡出                            |
+| `fade-in-then-semi-out`   | 淡入，然后再淡出至 50% 透明度               |
+| `grow`                    | 放大                                        |
+| `semi-fade-out`           | 淡出至 50% 透明度                           |
+| `shrink`                  | 缩小                                        |
+| `strike`                  | 删除线                                      |
+| `highlight-red`           | 突显效果，将文本变成红色                    |
+| `highlight-green`         | 突显效果，将文本变成绿色                    |
+| `highlight-blue`          | 突显效果，将文本变成蓝色                    |
+| `highlight-current-red`   | 突显效果，将文本变成红色，然后再恢复原来颜色|
+| `highlight-current-green` | 突显效果，将文本变成绿色，然后再恢复原来颜色|
+| `highlight-current-blue`  | 突显效果，将文本变成蓝色，然后再恢复原来颜色|
+
+### 套嵌分片
+
+通过包裹可将多个分片依次应用于同一个元素。在下面示例中，第一步将淡入文本，第二步将其变成红色，第三步部分淡出：
+
+``` {.markdown .reveal-demo code-preview="demo/mini/fragments-nested.qmd"}
+::: {.fragment .fade-in}
+::: {.fragment .highlight-red}
+::: {.fragment .semi-fade-out}
+淡入 > 变红 > 部分淡出
+:::
+:::
+:::
+```
+
+### 分片顺序
+
+默认情况下，分片将按照它们在 DOM 中出现的顺序逐步呈现。可以使用 `fragment-index` 属性更改显示顺序（注意，多个元素也可以出现在同一索引处）。
+
+``` markdown
+::: {.fragment fragment-index=3}
+最后出现
+:::
+
+::: {.fragment fragment-index=1}
+最先出现
+:::
+
+::: {.fragment fragment-index=2}
+第二次序出现
+:::
+```
+
+
+## 视差背景
+
+如果你想使用视差滚动背景，请添加 `parallax-background-image` 和 `parallax-background-size` 选项。例如：
+
+``` yaml
+---
+title: "演示文稿"
+format:
+  revealjs:
+     parallax-background-image: background.png
+     parallax-background-size: "2100px 900px"
+     parallax-background-horizontal: 200
+     parallax-background-vertical: 50
+---
+```
+
+注意，`parallax-background-horizontal` 和 `parallax-background-vertical` 选项并不是必需的（如果未指定，将使用上面显示的默认值）。
+
+
+## 纵向幻灯片
+
+Reveal 默认使用经典的线性幻灯片导航。如果你愿意，也可以通过设置幻灯片导航将多页幻灯片嵌套在单页顶级幻灯片中从而创建纵向幻灯片堆栈。
+
+使用 `navigation-mode` 选项来调整 Reveal 导航行为：
+
+| 导航模式   | 行为                                                           |
+|------------|----------------------------------------------------------------|
+| `linear`   | 通过左/右箭头依次展示全部幻灯片（包括横向和纵向）              |
+| `vertical` | 通过左/右箭头（上/下箭头）依次展示横向幻灯片（纵向幻灯片），
+而空格键则会依次展示全部幻灯片（包括横向和纵向）                              |
+| `grid`     | 从纵向堆栈向左/向右步进到相邻的纵向堆栈将处于相同的纵向索引处  |
+
+如果你使用 `vertical` 或 `grid` 导航，则应使用横向轴的 1 级标题和纵向轴的 2 级标题来构建幻灯片。例如：
+
+``` markdown
+---
+title: "演示文稿"
+format:
+  revealjs:
+    navigation-mode: vertical
+---
+
+# 幻灯片 1
+
+## 幻灯片 1.1
+
+## 幻灯片 1.2
+
+# 幻灯片 2
+
+## 幻灯片 2.1
+
+## 幻灯片 2.2
+```
+
+### 幻灯片控件
+
+当你启用 `vertical` 或 `grid` 导航时，控件将为你提供视觉提示，显示在演示文稿中所处位置（例如，如果下面有纵向幻灯片，你将看到向下控件）。
+
+默认情况下，这些控件显示在演示文稿的边缘，你可以使用 `controls-layout` 选项将它们放置在右下角。你还可以设置 `controls-tutorial` 选项向演示者提供额外的视觉提示。例如：
+
+``` yaml
+---
+title: "演示文稿"
+format: 
+  revealjs:
+    navigation-mode: vertical
+    controls-layout: bottom-right
+    controls-tutorial: true
+---
+```
+
+注意，由于徽标也出现在右下角，使用 `controls-layout: bottom-right` 与 `logo` 选项不兼容。
+
+你还可以设置 `controls: false` 完全禁用控件。
+
+::: callout-warning
+相比传统线性模式，纵向幻灯片确实提供了一些额外的灵活性，但实际上常常让最终用户感到困惑（通常由于其出现出乎意料）。由于用户根本不知道纵向幻灯片的存在，他们经常会跳过这些内容。
+
+如果你的内容受益于纵向安排（例如，你不想在演示文稿的主流程中展示可选的枝节性内容），那么你就可以使用纵向模式。你只需要知道，如果你将幻灯片分发给用户，他们很有可能不会查看任何纵向内容。
+:::
+
+
+## 触控导航
+
+你可以在任何支持触控的设备上滑动以导航演示文稿。水平滑动将导致横向幻灯片之间切换，垂直滑动在纵向幻灯片之间切换。
+
+如果你想禁用此功能，可以将 `touch` 选项设置为 `false`：
+
+``` yaml
+---
+title: "演示文稿"
+format:
+  revealjs:
+    touch: false
+    controls: true
+---
+```
+
+注意，我们也会同时启用 `controls` 选项（因为手机或平板电脑上的用户无法使用键盘）。
+
+
+## Reveal插件
+
+想要使用 [Revealjs插件](https://github.com/hakimel/reveal.js/wiki/Plugins,-Tools-and-Hardware)，你需要将它们打包到带有配置文件（`plugin.yml`）的目录中。配置文件让 Quarto 知道如何将插件注入到演示文稿中（例如，要包含哪些脚本和/或 css 文件以及默认配置等）。
+
+有关示例，请参阅 Quarto Reveal 中内置插件的源代码：
+
+<https://github.com/quarto-dev/quarto-cli/tree/main/src/resources/formats/revealjs/plugins>
+
+要使用某个插件，只需在 `revealjs-plugins` 选项列表中包含对该插件目录的引用即可。例如：
+
+``` yaml
+---
+title: "Presentation"
+format:
+  revealjs:
+    revealjs-plugins:
+      - myplugin
+---
+```
+
+注意，许多最流行的 Reveal 插件已包含在 Quarto|Reveal 中，因此无需单独包含它们。内置插件包括：
+
+- [同步演示](https://github.com/reveal/multiplex)
+- [Reveal菜单](https://github.com/denehyg/reveal.js-menu)
+- [Reveal黑板](https://github.com/rajgoel/reveal.js-plugins/tree/master/chalkboard)
+- [导出为PDF](https://github.com/McShelby/reveal-pdfexport)
+
+### 示例
+
+让我们展示一个关于 [全屏插件](https://rajgoel.github.io/reveal.js-demos/fullscreen-demo.html) 的示例。以下是在 Quarto HTML 演示文稿捆绑并使用此插件的步骤：
+
+1. 使用你想要的插件名称创建一个文件夹，这里我们将其命名为 `fullscreen`。
+
+2. 将插件文件下载到创建的文件夹中。该插件只有一个名为 `plugin.js` 的 JS 文件（你可以在 [github repo **rajgoel/reveal.js-plugins**](https://raw.githubusercontent.com/rajgoel/reveal.js-plugins/master/fullscreen/plugin.js) 中找到该文件）。你可以保留原文件名或重命名它，例如 `fullscreen.js`。
+
+3. 在该文件夹中添加一个 `plugin.yml` 文件，如 [Quarto Reveal 示例](https://github.com/quarto-dev/quarto-cli/tree/main/src/resources/formats/revealjs/plugins) 中所示。
+
+    - `name` 是必填字段，应该是 JS 插件中定义的 JS 函数的名称。打开你下载的 JS 脚本来查找它。
+    - 其他字段用于标识要使用的资源。在我们的示例中，只需一个 JS 脚本，因此我们将使用 `script`。
+    
+    修改后的 `plugin.yml` 如下：
+
+    ``` yaml
+    name: RevealFullscreen
+    script: [fullscreen.js]
+    ```
+
+4. 现在将你在之前步骤创建的文件夹路径添加到文档 YAML 头的 `revealjs-plugins` 选项列表中：
+
+    ``` yaml
+    format: 
+     revealjs:
+       revealjs-plugins:
+         - fullscreen
+    ```
+
+5. 自定义插件将自动加载到你的演示文稿中，你可以在文稿中使用它。**全屏插件** 的文档显示如何通过给幻灯片上的地图元素设置 `fullscreen` 属性，对内容进行拉伸从而达到全屏效果。转换后的 `.qmd` 文件将包含全屏地图幻灯片：
+
+    ``` markdown
+    ## {fullscreen=true}
+
+    <iframe class="stretch" data-src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d61206.89156051744!2d-151.77366863890407!3d-16.50433878928727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sde!4v1467468929561"></iframe>
+    ```
+
+## 了解更多
+
+参阅以下文章以了解有关 Reveal 使用的更多信息：
+
+- [Reveal基础](index.qmd) 涵盖了创建演示文稿的基本流程。
+- [幻灯片演示](presenting.qmd) 介绍了幻灯片导航、打印为 PDF、使用板书工具以及创建同步演示幻灯片。
+- [Reveal主题](themes.qmd) 讨论如何使用和自定义现有主题以及如何创建全新主题。

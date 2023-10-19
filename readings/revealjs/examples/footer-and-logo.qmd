@@ -1,0 +1,12 @@
+---
+format:
+  revealjs:
+    logo: ../images/quarto.png
+    footer: "页脚文本"
+---
+
+## 幻灯片1
+
+每页幻灯片都共享通过 yaml 选项设定的全局页脚文本和徽标
+
+## 幻灯片2
