@@ -4,7 +4,7 @@ project:
     - "/slides/"
 
 execute:
-  freeze: auto
+  freeze: true
 
 website:
   title: "_Quantitative Finance with R_"
