@@ -8,7 +8,7 @@
 
 <meta name="author" content="曾永艺">
 
-<title>Quantitative Finance with R - 第2周课后复习与作业</title>
+<title>Quantitative Finance with R - 第6周课后作业</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -130,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">第2周课后复习与作业</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">第6周课后作业</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -239,7 +239,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">第2周课后复习与作业</h1>
+<h1 class="title">第6周课后作业</h1>
 </div>
 
 
@@ -256,7 +256,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">发布日期</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2023年9月22日</p>
+      <p class="date">2022年10月20日</p>
     </div>
   </div>
   
@@ -267,77 +267,61 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <hr>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
+<p><span style="font-size:1.2rem">1. 学习 📝 <a href="../readings/markdown-basics.html"><strong>{{Markdown基础}}</strong></a> 和 <a href="../readings/revealjs"><strong>{{Revealjs 演示文稿}}</strong></a>，<strong>完善<a href="https://qfwr2023.netlify.app/hw/hw-03">第4周的课后作业</a></strong>，并增加部分篇幅说明具体改进之处，于<strong>2023年10月26日22:00前</strong>将压缩包提交至 <a href="https://send2me.cn/rAnWP-yK/RjqyWTleU7stqA">{{坚果云链接}}</a>。</span></p>
+<p><span style="font-size:1.2rem">2. 复习 📖 <a href="https://r4ds.had.nz/"><strong>{{<em>R for Data Science, 2e</em>}}</strong></a> 一书第三部分 <em>Transform</em> 中关于连接数据集的章节，即 <a href="https://r4ds.hadley.nz/joins"><strong>20 Joins</strong></a> 并<strong>（结队）完成课后练习</strong>。</span></p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-警告
+<div class="callout-body-container">
+<ul>
+<li><span style="color:red"><strong>课后动手编程实操是掌握一门编程语言的必由之路，r4ds一书配套练习都很不错，尽管并未要求同学们提交课后编程实操作业，但希望同学们都能自觉完成，也正好检验下自己对 dplyr 包核心函数和关键知识的掌握情况</strong></span></li>
+<li><strong>课后习题参考答案链接</strong>
+<ul>
+<li>📖 <a href="https://mine-cetinkaya-rundel.github.io/r4ds-solutions/joins.html"><em><del>R for Data Science (2e): Solutions to Exercise</del></em></a></li>
+<li>📖 <a href="https://jrnold.github.io/r4ds-exercise-solutions/relational-data.html"><em>R for Data Science: Exercise Solutions</em></a></li>
+</ul></li>
+<li>若在课后编程实操中遇到什么问题或难解之处，也可在课程QQ群上贴出并讨论</li>
+</ul>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>必做部分，需在截止日期前上传完成的代码文档！</p>
+</div>
+<p><span style="font-size:1.2rem">3. 下载（打印） 📰 <a href="../slides/lec-04/docs/dplyr-cheatsheet.pdf">{{dplyr的cheatsheet}}</a> 并阅读之</span></p>
+<p><span style="font-size:1.2rem">4. <code>browseVignettes(package = "dplyr")</code> 📝，阅读：</span></p>
+<blockquote style="margin-left: 1.2rem; font-size: 1.2rem; color: black" class="blockquote">
+<strong>Row-wise operations</strong><br>
+<strong>Two-table verbs</strong>
+</blockquote>
+<hr>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>以下是<strong>第4周课后作业</strong>的初始要求（备忘）</p>
+</div>
 </div>
 </div>
 <ul>
-<li><p>🕐 <strong>根据 L2 课程讲义的打印稿，在 📑 <em>R Script</em> 中键入并完成全部代码的运行</strong></p>
+<li><p><strong>自由组队，两人一组，共同完成课后作业：</strong></p>
 <ol type="1">
-<li><strong>打开新的 R script 文件</strong>
+<li><p><strong>从 L02 课件中挑出 3 ~ 4 个你们感兴趣的数据可视化代码段，就其制作两种类型的展示文档：</strong></p>
 <ul>
-<li><code>Ctrl+Shift+N</code> 打开 -&gt; <code>Ctrl+S</code> 存盘为“<em>L02_coding_practice.R</em>”</li>
-<li>注：文件保存路径和文件名最好为英文，中间不要有空格</li>
+<li><a href="https://quarto.org/docs/output-formats/html-basics.html">{{<code>Quarto|HTML</code>}}</a> 或 <a href="https://prettydoc.statr.me/themes.html">{{<code>prettydoc</code>}}</a> -&gt; 📂 <em>L03_HW/docs/</em></li>
+<li><a href="https://quarto.org/docs/presentations/revealjs/">{{<code>Quarto|Revealjs</code>}}</a> 或 <a href="https://slides.yihui.org/xaringan/zh-CN.html">{{<code>xaringan</code>}}</a> -&gt; 📂 <em>L03_HW/slides/</em></li>
 </ul></li>
-<li><strong>输入与运行代码</strong>
-<ul>
-<li>长代码手动断行，最好不要超过80个字符</li>
-<li>灵活使用快捷键，如 <code>F1</code>（帮助）、<code>Tab</code>（代码提示与自动补全）、<code>Ctrl+A</code>（选中全部代码） -&gt; <code>Ctrl+Shift+A</code>（代码重新格式化）等</li>
-<li><code>Ctrl+Enter</code> 运行光标所在行或选中代码（<code>Ctrl+Alt+R</code> 运行全部代码，<code>Ctrl+Shift+P</code> 重新运行代码，<code>Ctrl+Alt+P</code> 运行光标前的代码）</li>
-</ul></li>
-<li><strong>注释</strong>
-<ul>
-<li>以 # 作为注释开始标记，如说明性文字、区分不同代码块（<code>Ctrl+Shift+R</code>）</li>
-<li>最后加入一段注释说明，简单说说使用 ggplot2包 的体会</li>
-</ul></li>
-<li><strong>提交代码</strong>
-<ul>
-<li>可结队编写代码，共同署名，分别提交，但<strong>注意控制雷同比例</strong></li>
-<li><strong>2023年9月28日22:00前</strong>通过 <a href="https://send2me.cn/mhGkgKHx/S_mh3x3-oCKUzg">{{坚果云链接}}</a> 直接提交代码文档</li>
-</ul></li>
+<li><p>记得<strong>多尝试各种选项设置</strong>，同时<strong>在文档内加上相应的说明性文字</strong>（如解释代码或输出图形，其余内容可自由发挥，丰俭由人啦 😁）</p></li>
+<li><p>作业共同署名（<code>author: 姓名 + 姓名</code>）</p></li>
+<li><p>确认两份文档运行无误后将文件夹📂 <em>L03_HW</em> <strong>打包为 .zip 格式压缩文档</strong>，由其中<strong>一位</strong>同学<strong>于2023年10月15日22:00前</strong>将压缩包提交至坚果云链接</p></li>
 </ol></li>
 </ul>
 <hr>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-注释
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>以下为同学们根据自己的时间安排选做部分——很多是非常棒的参考资料！😁</p>
-</div>
-</div>
-<ul>
-<li><p>🕑 请复习 📖 <a href="https://r4ds.hadley.nz/"><strong>{{<em>R for Data Science, 2e</em>}}</strong></a> 一书关于数据可视化的第2章（Data visualization）、第10章（Layers）和<strong>第12章（Communication）</strong>以及关于工作流的第3、5、7、9章<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p></li>
-<li><p>🕒 下载（打印）📰 <a href="../slides/lec-02/docs/ggplot2-cheatsheet.pdf"><strong>{{ggplot2-cheatsheet}}</strong></a> 并浏览之</p></li>
-<li><p>🕓 登录浏览 🖼 <a href="https://www.r-graph-gallery.com/index.html"><strong>{{The R Graph Gallery}}</strong></a></p></li>
-<li><p>🕔 登录浏览 📦 <a href="https://exts.ggplot2.tidyverse.org/gallery/"><strong>{{ggplot2 extentions}}</strong></a>，进一步了解 <code>ggplot2</code> 包的“生态圈”</p></li>
-<li><p>🕕 <strong>进阶内容</strong>：R 对中文字体的支持不够理想，可参考 📝 <a href="https://journal.r-project.org/archive/2015-1/qiu.pdf"><strong>{{ RJournal 的文章}}</strong></a> 以及帖子 <a href="https://cosx.org/2014/01/showtext-interesting-fonts-and-graphs"><strong>{{showtext}}</strong></a> 中提到的解决方案和有趣示例</p></li>
-</ul>
-<p><br></p>
 
 
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">脚注</h2>
-
-<ol>
-<li id="fn1"><p>若英文看起来实在吃力 😵， 这本书的第一版有中文翻译版，请同学们自行学习对应章节。我个人建议同学们（等网上商城打折时）购买实体书，放在案头作学习参考。<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
