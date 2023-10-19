@@ -1,5 +1,5 @@
 ---
-title: "高级Reveal"
+title: "高级 Reveal"
 ---
 
 ## 标题幻灯片

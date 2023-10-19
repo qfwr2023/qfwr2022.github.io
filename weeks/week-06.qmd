@@ -2,7 +2,7 @@
 title: "第 6 周"
 subtitle: "dplyr数据处理 II"
 author: 曾永艺
-date: 2023-10-16
+date: 2023-10-20
 categories: [预习, 随堂练习, 讲义, 作业]
 image: /slides/lec-04-prep-II/imgs/dplyr-join.png
 # editor: visual
@@ -54,15 +54,15 @@ image: /slides/lec-04-prep-II/imgs/dplyr-join.png
 
 ## 2. 课堂讲义
 
-🖥️[第4讲 dplyr数据处理 🐝]
+🖥️ [第4讲 dplyr数据处理](/slides/lec-04/L04_Transformation.html#80)
 
 ## 3. 随堂练习
 
-⌨️ [见课堂讲义 🐝]
+⌨️ [见课堂讲义]
 
 ## 4. 课后作业
 
-✍️ [课后作业 🐝]
+✍️ [课后作业](/hw/hw-05.qmd)
 
 <br>
 

@@ -1,0 +1,50 @@
+---
+title: "第6周课后作业"
+author: 曾永艺
+date: 2022-10-20
+# editor: visual
+---
+
+<hr>
+
+[1. 学习 📝 [**{{Markdown基础}}**](/readings/markdown-basics.qmd) 和 [**{{Revealjs 演示文稿}}**](/readings/revealjs)，**完善[第4周的课后作业](https://qfwr2023.netlify.app/hw/hw-03)**，并增加部分篇幅说明具体改进之处，于**2023年10月26日22:00前**将压缩包提交至 [{{坚果云链接}}](https://send2me.cn/rAnWP-yK/RjqyWTleU7stqA)。]{style="font-size:1.2rem"}
+
+[2. 复习 📖 [**{{_R for Data Science, 2e_}}**](https://r4ds.had.nz/) 一书第三部分 _Transform_ 中关于连接数据集的章节，即 [**20 Joins**](https://r4ds.hadley.nz/joins) 并**（结队）完成课后练习**。]{style="font-size:1.2rem"}
+
+:::{.callout-note appearance="simple"}
+- [**课后动手编程实操是掌握一门编程语言的必由之路，r4ds一书配套练习都很不错，尽管并未要求同学们提交课后编程实操作业，但希望同学们都能自觉完成，也正好检验下自己对 dplyr 包核心函数和关键知识的掌握情况**]{style="color:red"}
+- **课后习题参考答案链接** 
+  + 📖 [_~~R for Data Science (2e): Solutions to Exercise~~_](https://mine-cetinkaya-rundel.github.io/r4ds-solutions/joins.html)
+  + 📖 [_R for Data Science: Exercise Solutions_](https://jrnold.github.io/r4ds-exercise-solutions/relational-data.html)
+- 若在课后编程实操中遇到什么问题或难解之处，也可在课程QQ群上贴出并讨论
+:::
+
+[3. 下载（打印） 📰 [{{dplyr的cheatsheet}}](/slides/lec-04/docs/dplyr-cheatsheet.pdf) 并阅读之]{style="font-size:1.2rem"}
+
+[4. `browseVignettes(package = "dplyr")` 📝，阅读：]{style="font-size:1.2rem"}
+
+<blockquote style="margin-left: 1.2rem; font-size: 1.2rem; color: black">
+**Row-wise operations**  
+**Two-table verbs**
+</blockquote>
+
+
+<hr>
+
+:::{.callout-note appearance="simple"}
+以下是**第4周课后作业**的初始要求（备忘）
+:::
+
+- **自由组队，两人一组，共同完成课后作业：**
+
+  1. **从 L02 课件中挑出 3 ~ 4 个你们感兴趣的数据可视化代码段，就其制作两种类型的展示文档：**
+     - [{{`Quarto|HTML`}}](https://quarto.org/docs/output-formats/html-basics.html) 或 [{{`prettydoc`}}](https://prettydoc.statr.me/themes.html) -> 📂 *L03_HW/docs/*
+     - [{{`Quarto|Revealjs`}}](https://quarto.org/docs/presentations/revealjs/) 或 [{{`xaringan`}}](https://slides.yihui.org/xaringan/zh-CN.html) -> 📂 *L03_HW/slides/*
+  
+  2. 记得**多尝试各种选项设置**，同时**在文档内加上相应的说明性文字**（如解释代码或输出图形，其余内容可自由发挥，丰俭由人啦 😁）
+
+  3. 作业共同署名（`author: 姓名 + 姓名`）
+
+  4. 确认两份文档运行无误后将文件夹📂 *L03_HW* **打包为 .zip 格式压缩文档**，由其中**一位**同学**于2023年10月15日22:00前**将压缩包提交至坚果云链接
+
+<hr>

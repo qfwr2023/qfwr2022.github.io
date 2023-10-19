@@ -74,7 +74,16 @@ website:
           href: weeks/week-05.qmd
         - text: "第6周 dplyr数据处理 II"
           href: weeks/week-06.qmd
-        - text: "......"
+        - text: "......<br><br>"
+        - text: "---"
+        - text: "<br>阅读资料一：Markdown 基础"
+          href: readings/markdown-basics.qmd
+        - section: "阅读资料二：Revealjs 演示"
+          contents:
+            - readings/revealjs/index.qmd
+            - readings/revealjs/presenting.qmd
+            - readings/revealjs/themes.qmd
+            - readings/revealjs/advanced.qmd
   page-navigation: true
   page-footer:
     background: light

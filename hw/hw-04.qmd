@@ -7,7 +7,7 @@ date: 2022-10-13
 
 <hr>
 
-[1. 复习 `r emo::ji("book")` [**{{_R for Data Science, 2e_}}**](https://r4ds.had.nz/) 一书第一部分 _Whole game_ 中关于数据处理的章节，即 [**4 Data transformation**](https://r4ds.hadley.nz/data-transform) 并**（结队）完成课后练习**。]{style="font-size:1.2rem"}
+[1. 复习 📖 [**{{_R for Data Science, 2e_}}**](https://r4ds.had.nz/) 一书第一部分 _Whole game_ 中关于数据处理的章节，即 [**4 Data transformation**](https://r4ds.hadley.nz/data-transform) 并**（结队）完成课后练习**。]{style="font-size:1.2rem"}
 
 :::{.callout-note appearance="simple"}
 - [**课后动手编程实操是掌握一门编程语言的必由之路，r4ds一书配套练习都很不错，尽管并未要求同学们提交课后编程实操作业，但希望同学们都能自觉完成，也正好检验下自己对 dplyr 包核心函数和关键知识的掌握情况**]{style="color:red"}

@@ -1,5 +1,5 @@
 ---
-title: "Reveal主题"
+title: "Reveal 主题"
 ---
 
 ## 使用主题

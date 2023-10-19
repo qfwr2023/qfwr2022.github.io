@@ -21,7 +21,7 @@ format: revealjs
 
 ```
 
-您还可以使用 1级标题幻灯片（以`#`标识）将幻灯片划分为不同的节（section）。例如：
+你还可以使用 1级标题幻灯片（以`#`标识）将幻灯片划分为不同的节（section）。例如：
 
 
 ``` {.markdown code-preview="/readings/revealjs/examples/creating-slides-2.qmd"}
