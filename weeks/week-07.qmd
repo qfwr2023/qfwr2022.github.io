@@ -1,0 +1,77 @@
+---
+title: "第 7 周"
+subtitle: "数据导入与齐整"
+author: 曾永艺
+date: 2023-10-27
+categories: [预习, 随堂练习, 讲义, 作业]
+image: /slides/lec-05-prep/imgs/readr-tidyr.png
+# editor: visual
+---
+
+“问渠那得清如许？为有源头活水来。” 在上一讲中我们主要讲述 dplyr 包基于数据操作语法（_A Grammar of Data Manipulation_）的核心函数，并利用 nycflights13 包提供的数据集作为示例。数据操作语法想要达到其预期目标依赖于其所操作的 tibble 对象为“齐整的数据”（tidy data），而在数据科学实践中我们往往会从不同来源读取 / 导入形形色色的数据集，这就需要我们掌握 tidyverse 中与数据导入和数据齐整有关的 R 包及其核心函数。
+
+本讲主要涵盖以下几方面的内容：
+
+1\. 数据导入
+
+  * 读入矩形文本数据：`readr` 包
+  * 读入其它类型的数据
+
+2\. 数据齐整
+
+  * 齐整数据
+  * `tidyr` 包
+  * `pivot_longer()` 和 `pivot_wider()`
+  * `separate_*()` 和 `unite()`
+  * `pivot_*()` 和 `separate_*()`：一个复杂案例
+  * `unnest_*()` 和 `hoist()`
+
+<br><hr>
+
+## 1. 课前准备
+
+:::::{.columns}
+
+::::{.column width="60%"}
+
+📖 预习 [*R for Data Science, 2e*](https://r4ds.hadley.nz/) 第一部分 _Whole game_ 中关于数据导入和数据齐整的章节，即 [**8 Data import**](https://r4ds.hadley.nz/data-import) 和 [**6 Data tidying**](https://r4ds.hadley.nz/data-tidy)。
+
+:::{.callout-tip appearance="simple"}
+此书第1版有中文翻译版 [《R数据科学》](https://www.ituring.com.cn/book/2113)出版，对应章节为“第7章 使用`tibble`实现简单数据框”和“第8章 使用`readr`进行数据导入”（很遗憾，原书关于 `tidyr` 包的第12章在翻译版中并未出现，🙃）。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。
+:::
+
+:::{.callout-warning appearance="simple"}
+由于上课内容较多，而上课时间有限，上课节奏预计较快，有些内容甚至会一带而过，请同学们务必腾出时间来过一遍上述预习章节的内容。
+:::
+
+::::
+
+::::{.column width="40%"}
+:::{style="text-align:right"}
+<img src="https://r4ds.hadley.nz/cover.jpg" class="cover" width="80%"/>
+:::
+::::
+
+:::::
+
+🖥️ 我准备的基于 `xaringan`包 的 [网页版讲义](/slides/lec-05-prep/L05_Import_Tidy_Prep.html)，供同学们参考。
+
+## 2. 课堂讲义
+
+🖥️
+[第5讲 数据导入与齐整 🐝 ]
+
+## 3. 随堂练习
+
+⌨️ [见课堂讲义 🐝 ]
+
+## 4. 课后作业
+
+✍️ [课后作业 🐝 ]
+
+<br>
+
+<!-- ::: {style="font-size:0.875em; text-align:right"} -->
+<!-- 回到 [课程安排](../schedule.qmd) ⏎ -->
+<!-- 🐝 -->
+<!-- ::: -->

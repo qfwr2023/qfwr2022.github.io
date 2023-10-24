@@ -23,6 +23,8 @@ tbl-colwidths: [4,9,18,4,4,4,4,10]
 | [4](/weeks/week-04.qmd)  | 2023-10-08  | rmarkdown 与 Quarto | [📖](/weeks/week-04.qmd#课前准备) | [🖥️](/slides/lec-03/L03_Quarto.html "第3讲 rmarkdown与Quarto")| [⌨️](/weeks/week-04.qmd#随堂练习) | [✍️](/hw/hw-03.qmd "课后作业") |   |
 | [5](/weeks/week-05.qmd)  | 2023-10-13 | dplyr 数据处理 I | [📖](/weeks/week-05.qmd#课前准备) | [🖥️](/slides/lec-04/L04_Transformation.html "第4讲 dplyr数据处理")| [⌨️](/weeks/week-05.qmd#随堂练习) | [✍️](/hw/hw-04.qmd "课后作业") |   |
 | [6](/weeks/week-06.qmd)  | 2023-10-20 | dplyr 数据处理 II | [📖](/weeks/week-06.qmd#课前准备) | [🖥️](/slides/lec-04/L04_Transformation.html "第4讲 dplyr数据处理#80")| [⌨️](/weeks/week-06.qmd#随堂练习) | [✍️](/hw/hw-05.qmd "课后作业") |   |
+| [7](/weeks/week-07.qmd)  | 2023-10-27 | 数据导入与齐整 | [📖](/weeks/week-07.qmd#课前准备) |   |   |   |   |
+<!-- | 8 | 2023-11-03 | 🏃校运会🏅 停课 |   |   |   |   |   | -->
 :::
 
 <!-- 👨‍🏫 ⏳   🏆  🐝 进行中 -->

@@ -74,6 +74,9 @@ website:
           href: weeks/week-05.qmd
         - text: "第6周 dplyr数据处理 II"
           href: weeks/week-06.qmd
+        - text: "第7周 数据导入与齐整"
+          href: weeks/week-07.qmd
+        - text: "第8周 🏃校运会🏅 停课"
         - text: "......<br><br>"
         - text: "---"
         - text: "<br>阅读资料一：Markdown 基础"
