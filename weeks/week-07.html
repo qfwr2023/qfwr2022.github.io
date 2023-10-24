@@ -8,7 +8,7 @@
 
 <meta name="author" content="曾永艺">
 
-<title>Quantitative Finance with R - 第2周课后复习与作业</title>
+<title>Quantitative Finance with R - 第 7 周</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,6 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../weeks/week-06.html" rel="prev">
 <link href="../favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -130,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">第2周课后复习与作业</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week-07.html">第7周 数据导入与齐整</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -183,7 +184,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-07.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-07.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">第7周 数据导入与齐整</span></a>
   </div>
 </li>
@@ -241,15 +242,31 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">该页面内容</h2>
+   
+  <ul>
+  <li><a href="#课前准备" id="toc-课前准备" class="nav-link active" data-scroll-target="#课前准备">1. 课前准备</a></li>
+  <li><a href="#课堂讲义" id="toc-课堂讲义" class="nav-link" data-scroll-target="#课堂讲义">2. 课堂讲义</a></li>
+  <li><a href="#随堂练习" id="toc-随堂练习" class="nav-link" data-scroll-target="#随堂练习">3. 随堂练习</a></li>
+  <li><a href="#课后作业" id="toc-课后作业" class="nav-link" data-scroll-target="#课后作业">4. 课后作业</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">第2周课后复习与作业</h1>
-</div>
+<h1 class="title">第 7 周</h1>
+<p class="subtitle lead">数据导入与齐整</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">预习</div>
+    <div class="quarto-category">随堂练习</div>
+    <div class="quarto-category">讲义</div>
+    <div class="quarto-category">作业</div>
+  </div>
+  </div>
 
 
 
@@ -265,7 +282,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">发布日期</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2023年9月22日</p>
+      <p class="date">2023年10月27日</p>
     </div>
   </div>
   
@@ -275,78 +292,78 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>“问渠那得清如许？为有源头活水来。” 在上一讲中我们主要讲述 dplyr 包基于数据操作语法（<em>A Grammar of Data Manipulation</em>）的核心函数，并利用 nycflights13 包提供的数据集作为示例。数据操作语法想要达到其预期目标依赖于其所操作的 tibble 对象为“齐整的数据”（tidy data），而在数据科学实践中我们往往会从不同来源读取 / 导入形形色色的数据集，这就需要我们掌握 tidyverse 中与数据导入和数据齐整有关的 R 包及其核心函数。</p>
+<p>本讲主要涵盖以下几方面的内容：</p>
+<p>1. 数据导入</p>
+<ul>
+<li>读入矩形文本数据：<code>readr</code> 包</li>
+<li>读入其它类型的数据</li>
+</ul>
+<p>2. 数据齐整</p>
+<ul>
+<li>齐整数据</li>
+<li><code>tidyr</code> 包</li>
+<li><code>pivot_longer()</code> 和 <code>pivot_wider()</code></li>
+<li><code>separate_*()</code> 和 <code>unite()</code></li>
+<li><code>pivot_*()</code> 和 <code>separate_*()</code>：一个复杂案例</li>
+<li><code>unnest_*()</code> 和 <code>hoist()</code></li>
+</ul>
+<br>
 <hr>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
+<section id="课前准备" class="level2">
+<h2 class="anchored" data-anchor-id="课前准备">1. 课前准备</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>📖 预习 <a href="https://r4ds.hadley.nz/"><em>R for Data Science, 2e</em></a> 第一部分 <em>Whole game</em> 中关于数据导入和数据齐整的章节，即 <a href="https://r4ds.hadley.nz/data-import"><strong>8 Data import</strong></a> 和 <a href="https://r4ds.hadley.nz/data-tidy"><strong>6 Data tidying</strong></a>。</p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-警告
+<div class="callout-body-container">
+<p>此书第1版有中文翻译版 <a href="https://www.ituring.com.cn/book/2113">《R数据科学》</a>出版，对应章节为“第7章 使用<code>tibble</code>实现简单数据框”和“第8章 使用<code>readr</code>进行数据导入”（很遗憾，原书关于 <code>tidyr</code> 包的第12章在翻译版中并未出现，🙃）。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。</p>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>必做部分，需在截止日期前上传完成的代码文档！</p>
 </div>
-</div>
-<ul>
-<li><p>🕐 <strong>根据 L2 课程讲义的打印稿，在 📑 <em>R Script</em> 中键入并完成全部代码的运行</strong></p>
-<ol type="1">
-<li><strong>打开新的 R script 文件</strong>
-<ul>
-<li><code>Ctrl+Shift+N</code> 打开 -&gt; <code>Ctrl+S</code> 存盘为“<em>L02_coding_practice.R</em>”</li>
-<li>注：文件保存路径和文件名最好为英文，中间不要有空格</li>
-</ul></li>
-<li><strong>输入与运行代码</strong>
-<ul>
-<li>长代码手动断行，最好不要超过80个字符</li>
-<li>灵活使用快捷键，如 <code>F1</code>（帮助）、<code>Tab</code>（代码提示与自动补全）、<code>Ctrl+A</code>（选中全部代码） -&gt; <code>Ctrl+Shift+A</code>（代码重新格式化）等</li>
-<li><code>Ctrl+Enter</code> 运行光标所在行或选中代码（<code>Ctrl+Alt+R</code> 运行全部代码，<code>Ctrl+Shift+P</code> 重新运行代码，<code>Ctrl+Alt+P</code> 运行光标前的代码）</li>
-</ul></li>
-<li><strong>注释</strong>
-<ul>
-<li>以 # 作为注释开始标记，如说明性文字、区分不同代码块（<code>Ctrl+Shift+R</code>）</li>
-<li>最后加入一段注释说明，简单说说使用 ggplot2包 的体会</li>
-</ul></li>
-<li><strong>提交代码</strong>
-<ul>
-<li>可结队编写代码，共同署名，分别提交，但<strong>注意控制雷同比例</strong></li>
-<li><strong>2023年9月28日22:00前</strong>通过 <a href="https://send2me.cn/mhGkgKHx/S_mh3x3-oCKUzg">{{坚果云链接}}</a> 直接提交代码文档</li>
-</ul></li>
-</ol></li>
-</ul>
-<hr>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-注释
+<div class="callout-body-container">
+<p>由于上课内容较多，而上课时间有限，上课节奏预计较快，有些内容甚至会一带而过，请同学们务必腾出时间来过一遍上述预习章节的内容。</p>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>以下为同学们根据自己的时间安排选做部分——很多是非常棒的参考资料！😁</p>
+</div>
+</div><div class="column" style="width:40%;">
+<div style="text-align:right">
+<p><img src="https://r4ds.hadley.nz/cover.jpg" class="cover" width="80%"></p>
 </div>
 </div>
-<ul>
-<li><p>🕑 请复习 📖 <a href="https://r4ds.hadley.nz/"><strong>{{<em>R for Data Science, 2e</em>}}</strong></a> 一书关于数据可视化的第2章（Data visualization）、第10章（Layers）和<strong>第12章（Communication）</strong>以及关于工作流的第3、5、7、9章<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p></li>
-<li><p>🕒 下载（打印）📰 <a href="../slides/lec-02/docs/ggplot2-cheatsheet.pdf"><strong>{{ggplot2-cheatsheet}}</strong></a> 并浏览之</p></li>
-<li><p>🕓 登录浏览 🖼 <a href="https://www.r-graph-gallery.com/index.html"><strong>{{The R Graph Gallery}}</strong></a></p></li>
-<li><p>🕔 登录浏览 📦 <a href="https://exts.ggplot2.tidyverse.org/gallery/"><strong>{{ggplot2 extentions}}</strong></a>，进一步了解 <code>ggplot2</code> 包的“生态圈”</p></li>
-<li><p>🕕 <strong>进阶内容</strong>：R 对中文字体的支持不够理想，可参考 📝 <a href="https://journal.r-project.org/archive/2015-1/qiu.pdf"><strong>{{ RJournal 的文章}}</strong></a> 以及帖子 <a href="https://cosx.org/2014/01/showtext-interesting-fonts-and-graphs"><strong>{{showtext}}</strong></a> 中提到的解决方案和有趣示例</p></li>
-</ul>
+</div>
+<p>🖥️ 我准备的基于 <code>xaringan</code>包 的 <a href="../slides/lec-05-prep/L05_Import_Tidy_Prep.html">网页版讲义</a>，供同学们参考。</p>
+</section>
+<section id="课堂讲义" class="level2">
+<h2 class="anchored" data-anchor-id="课堂讲义">2. 课堂讲义</h2>
+<p>🖥️ [第5讲 数据导入与齐整 🐝 ]</p>
+</section>
+<section id="随堂练习" class="level2">
+<h2 class="anchored" data-anchor-id="随堂练习">3. 随堂练习</h2>
+<p>⌨️ [见课堂讲义 🐝 ]</p>
+</section>
+<section id="课后作业" class="level2">
+<h2 class="anchored" data-anchor-id="课后作业">4. 课后作业</h2>
+<p>✍️ [课后作业 🐝 ]</p>
 <p><br></p>
+<!-- ::: {style="font-size:0.875em; text-align:right"} -->
+<!-- 回到 [课程安排](../schedule.qmd) ⏎ -->
+<!-- 🐝 -->
+<!-- ::: -->
 
 
+</section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">脚注</h2>
-
-<ol>
-<li id="fn1"><p>若英文看起来实在吃力 😵， 这本书的第一版有中文翻译版，请同学们自行学习对应章节。我个人建议同学们（等网上商城打折时）购买实体书，放在案头作学习参考。<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -711,6 +728,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../weeks/week-06.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">第6周 dplyr数据处理 II</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
