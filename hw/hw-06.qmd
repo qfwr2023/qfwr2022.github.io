@@ -1,0 +1,26 @@
+---
+title: "第7周课后作业"
+author: 曾永艺
+date: 2022-10-27
+# editor: visual
+---
+
+<hr>
+
+
+
+[1. 复习 📖 [**{{_R for Data Science, 2e_}}**](https://r4ds.had.nz/) 一书第一部分 _Whole game_ 中关于数据导入（[**8 Data import**](https://r4ds.hadley.nz/data-import)）、数据齐整（[**6 Data tidying**](https://r4ds.hadley.nz/data-tidy)）以及 [**{{第四部分 _Import_}}**](https://r4ds.hadley.nz/import) 中的五个章节（分别为 _Spreadsheets_、_Databases_、_Arrow_、_Hierarchical data_ 和 _Web scraping_）并**（结队）完成课后练习**]{style="font-size:1.2rem"}
+
+:::{.callout-note appearance="simple"}
+- [**课后动手编程实操是掌握一门编程语言的必由之路，r4ds一书配套练习都很不错，尽管并未要求同学们提交课后编程实操作业，但希望同学们都能自觉完成，也正好检验下自己对 readr、tidyr 包核心函数和关键知识的掌握情况**]{style="color:red"}
+- 👉 **课后习题参考答案**：**_R for Data Science (2e): Solutions to Exercises_** 之 [8 Data importing](https://mine-cetinkaya-rundel.github.io/r4ds-solutions/data-import.html) / [6 Data tidying](https://mine-cetinkaya-rundel.github.io/r4ds-solutions/data-tidy.html)
+- 👉 **直接搜索**：在 [**{{_R for Data Science, 2e_}}**](https://r4ds.had.nz/) 上搜索相应函数（如`read_excel`、`separate_wider_delim`等）并进行针对性学习
+- 若在课后编程实操中遇到什么问题或难解之处，也可在课程QQ群上贴出并讨论
+:::
+
+[2. 下载（打印） 📰 [{{Data Import的cheatsheet}}](/slides/lec-05/docs/data-import-cheatsheet.pdf) 和 [{{Data Tidying的cheatsheet}}](/slides/lec-05/docs/tidyr-cheatsheet.pdf) 并阅读之]{style="font-size:1.2rem"}
+
+[3. `browseVignettes(package = c("readr", "tidyr"))` 📝]{style="font-size:1.2rem"}
+
+[4. 👨‍🏫 [**{{启动小组作业}}**](/project/team-project.qmd)]{style="font-size:1.2rem"}
+
