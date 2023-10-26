@@ -8,7 +8,7 @@
 
 <meta name="author" content="曾永艺">
 
-<title>Quantitative Finance with R - 第 5 周</title>
+<title>Quantitative Finance with R - 第7周课后作业</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../weeks/week-06.html" rel="next">
-<link href="../weeks/week-04.html" rel="prev">
 <link href="../favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -132,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week-05.html">第5周 dplyr数据处理 I</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">第7周课后作业</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -173,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-05.html" class="sidebar-item-text sidebar-link active">
+  <a href="../weeks/week-05.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">第5周 dplyr数据处理 I</span></a>
   </div>
 </li>
@@ -243,31 +241,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">该页面内容</h2>
-   
-  <ul>
-  <li><a href="#课前准备" id="toc-课前准备" class="nav-link active" data-scroll-target="#课前准备">1. 课前准备</a></li>
-  <li><a href="#课堂讲义" id="toc-课堂讲义" class="nav-link" data-scroll-target="#课堂讲义">2. 课堂讲义</a></li>
-  <li><a href="#随堂练习" id="toc-随堂练习" class="nav-link" data-scroll-target="#随堂练习">3. 随堂练习</a></li>
-  <li><a href="#课后作业" id="toc-课后作业" class="nav-link" data-scroll-target="#课后作业">4. 课后作业</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">第 5 周</h1>
-<p class="subtitle lead">dplyr数据处理 I</p>
-  <div class="quarto-categories">
-    <div class="quarto-category">预习</div>
-    <div class="quarto-category">随堂练习</div>
-    <div class="quarto-category">讲义</div>
-    <div class="quarto-category">作业</div>
-  </div>
-  </div>
+<h1 class="title">第7周课后作业</h1>
+</div>
 
 
 
@@ -283,7 +265,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">发布日期</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2023年10月13日</p>
+      <p class="date">2022年10月27日</p>
     </div>
   </div>
   
@@ -294,69 +276,27 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <hr>
-<p>“净土宇宙 🌌”的核心数据结构为 <code>tibble</code>（即由行（样本）和列（变量）构成的表格型数据），dplyr 包基于<strong>数据操作语法</strong>（<em>A Grammar of Data Manipulation</em>）构建出一组用来操作 <code>tibble</code> 对象的核心函数——它们就是我们在接下来两次课中需要学习、理解并掌握的知识。</p>
-<p>本讲主要涵盖以下几方面的内容（加粗字体为本次课的讲授内容）：</p>
-<ol type="1">
-<li><strong>样本处理</strong></li>
-<li><strong>变量处理</strong></li>
-<li><strong>汇总</strong></li>
-<li><strong>分组和行式处理</strong></li>
-<li><strong>用 <code>%&gt;%</code> 连接多个操作</strong></li>
-<li>合并多个数据集</li>
-<li>操作数据库和 <code>data.table</code></li>
-</ol>
-<hr>
-<section id="课前准备" class="level2">
-<h2 class="anchored" data-anchor-id="课前准备">1. 课前准备</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>📖 预习 <a href="https://r4ds.hadley.nz/"><em>R for Data Science, 2e</em></a> 第一部分 <em>Whole game</em> 中关于数据处理的章节，即 <a href="https://r4ds.hadley.nz/data-transform"><strong>4 Data transformation </strong></a>。</p>
-<div class="callout callout-style-simple callout-tip">
+<p><span style="font-size:1.2rem">1. 复习 📖 <a href="https://r4ds.had.nz/"><strong>{{<em>R for Data Science, 2e</em>}}</strong></a> 一书第一部分 <em>Whole game</em> 中关于数据导入（<a href="https://r4ds.hadley.nz/data-import"><strong>8 Data import</strong></a>）、数据齐整（<a href="https://r4ds.hadley.nz/data-tidy"><strong>6 Data tidying</strong></a>）以及 <a href="https://r4ds.hadley.nz/import"><strong>{{第四部分 <em>Import</em>}}</strong></a> 中的五个章节（分别为 <em>Spreadsheets</em>、<em>Databases</em>、<em>Arrow</em>、<em>Hierarchical data</em> 和 <em>Web scraping</em>）并<strong>（结队）完成课后练习</strong></span></p>
+<div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>此书第1版有中文翻译版 <a href="https://www.ituring.com.cn/book/2113">《R数据科学》</a>出版，上述内容大致对应“第3章 使用 <code>dplyr</code> 进行数据转换”和“第13章 使用 <code>magrittr</code> 进行管道操作”。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。</p>
+<ul>
+<li><span style="color:red"><strong>课后动手编程实操是掌握一门编程语言的必由之路，r4ds一书配套练习都很不错，尽管并未要求同学们提交课后编程实操作业，但希望同学们都能自觉完成，也正好检验下自己对 readr、tidyr 包核心函数和关键知识的掌握情况</strong></span></li>
+<li>👉 <strong>课后习题参考答案</strong>：<strong><em>R for Data Science (2e): Solutions to Exercises</em></strong> 之 <a href="https://mine-cetinkaya-rundel.github.io/r4ds-solutions/data-import.html">8 Data importing</a> / <a href="https://mine-cetinkaya-rundel.github.io/r4ds-solutions/data-tidy.html">6 Data tidying</a></li>
+<li>👉 <strong>直接搜索</strong>：在 <a href="https://r4ds.had.nz/"><strong>{{<em>R for Data Science, 2e</em>}}</strong></a> 上搜索相应函数（如<code>read_excel</code>、<code>separate_wider_delim</code>等）并进行针对性学习</li>
+<li>若在课后编程实操中遇到什么问题或难解之处，也可在课程QQ群上贴出并讨论</li>
+</ul>
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple callout-warning">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>由于上课内容较多，而上课时间有限，上课节奏预计较快，有些内容甚至会一带而过，请同学们务必腾出时间来过一遍上述预习章节的内容。</p>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:40%;">
-<div style="text-align:right">
-<p><img src="https://r4ds.hadley.nz/cover.jpg" class="cover" width="80%"></p>
-</div>
-</div>
-</div>
-<p>🖥️ 我准备的基于 <code>xaringan</code>包 的 <a href="../slides/lec-04-prep/L04_Transformation_Prep.html">网页版讲义</a>，供同学们参考。</p>
-</section>
-<section id="课堂讲义" class="level2">
-<h2 class="anchored" data-anchor-id="课堂讲义">2. 课堂讲义</h2>
-<p>🖥️<a href="../slides/lec-04/L04_Transformation.html">第4讲 dplyr数据处理</a></p>
-</section>
-<section id="随堂练习" class="level2">
-<h2 class="anchored" data-anchor-id="随堂练习">3. 随堂练习</h2>
-<p>⌨️ [见课堂讲义——并非动手编程练习，思维体操而已]</p>
-</section>
-<section id="课后作业" class="level2">
-<h2 class="anchored" data-anchor-id="课后作业">4. 课后作业</h2>
-<p>✍️ <a href="../hw/hw-04.html">课后作业</a></p>
-<p><br></p>
-<!-- ::: {style="font-size:0.875em; text-align:right"} -->
-<!-- 回到 [课程安排](../schedule.qmd) ⏎ -->
-<!-- ::: -->
+<p><span style="font-size:1.2rem">2. 下载（打印） 📰 <a href="../slides/lec-05/docs/data-import-cheatsheet.pdf">{{Data Import的cheatsheet}}</a> 和 <a href="../slides/lec-05/docs/tidyr-cheatsheet.pdf">{{Data Tidying的cheatsheet}}</a> 并阅读之</span></p>
+<p><span style="font-size:1.2rem">3. <code>browseVignettes(package = c("readr", "tidyr"))</code> 📝</span></p>
+<p><span style="font-size:1.2rem">4. 👨‍🏫 <a href="../project/team-project.html"><strong>{{启动小组作业}}</strong></a></span></p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -723,18 +663,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../weeks/week-04.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">第4周 rmarkdown与Quarto</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../weeks/week-06.html" class="pagination-link">
-        <span class="nav-page-text">第6周 dplyr数据处理 II</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

@@ -1,64 +1,36 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "_Quantitative Finance with R_",
+    "objectID": "weeks/week-04.html",
+    "href": "weeks/week-04.html",
+    "title": "第 4 周",
     "section": "",
-    "text": "这是厦门大学管理学院 2023-2024 学年秋季学期“量化金融与金融编程”课的课程主页， 将主要展示课程 准备 | 预习、课堂讲义 | 随堂练习、课后作业、 小组研究项目 等方面的信息和资源。\n希望同学们通过课程学习，能在  语言金融编程领域实现 from Zero to Hero 的升级！\n \n  \n   \n  \n    \n     网站\n  \n  \n    \n     Github"
+    "text": "在上一讲课后作业中同学们通过代码脚本文档 L02_coding_practice.R 完成编程作业并直接提交，但如果不运行同学们的代码，我将很难得知代码能否正常运行及其运行结果；同时通过注释方式添加说明性文字或给文档逻辑分节也显得笨拙和不够美观。那么，有没有更好的解决方案呢？答案就是本讲将要介绍的“动态文档”（dynamic documents）——它允许你将代码、代码输出、文字等有机地组合在一起，并可方便地转化为多种类型的输出格式（如网页、PDF、docx、幻灯片等）。\n本讲主要涵盖以下几方面的内容："
   },
   {
-    "objectID": "hw/hw-02.html#footnotes",
-    "href": "hw/hw-02.html#footnotes",
-    "title": "第2周课后复习与作业",
-    "section": "脚注",
-    "text": "脚注\n\n\n若英文看起来实在吃力 😵， 这本书的第一版有中文翻译版，请同学们自行学习对应章节。我个人建议同学们（等网上商城打折时）购买实体书，放在案头作学习参考。↩︎"
-  },
-  {
-    "objectID": "hw/hw-03.html",
-    "href": "hw/hw-03.html",
-    "title": "第4周课后作业",
-    "section": "",
-    "text": "注释\n\n\n\n必做部分，需在截止日期前完成上传！\n\n\n\n自由组队，两人一组，共同完成课后作业：\n\n从 L02 课件中挑出 3 ~ 4 个你们感兴趣的数据可视化代码段，就其制作两种类型的展示文档：\n\n{{Quarto|HTML}} 或 {{prettydoc}} -&gt; 📂 L03_HW/docs/\n{{Quarto|Revealjs}} 或 {{xaringan}} -&gt; 📂 L03_HW/slides/\n\n记得多尝试各种选项设置，同时在文档内加上相应的说明性文字（如解释代码或输出图形，其余内容可自由发挥，丰俭由人啦 😁）\n作业共同署名（author: 姓名 + 姓名）\n确认两份文档运行无误后将文件夹📂 L03_HW 打包为 .zip 格式压缩文档，由其中一位同学于2023年10月15日22:00前将压缩包提交至 {{坚果云链接}}\n\n\n\n\n\n\n\n\n\n注释\n\n\n\n相信同学们现在对 rmarkdown 和 Quarto 有了初步的认识，下面列出一些学习资料，同学们可进一步学习精进 🏆\n\n\n\n📖 教材 {{R for Data Science, 2e}} 一书关于 Quarto 的第29章和第30章 （大致对应中文翻译版《R数据科学》的第20、22和23章）\n🏡 官网 {{Quarto}} / {{R Markdown}}\n📝 速查 {{Quarto}} / {{R Markdown}}\n📖 {{R Markdown: The Definitive Guide}} 和 {{R Markdown Cookbook}}"
-  },
-  {
-    "objectID": "hw/hw-01.html",
-    "href": "hw/hw-01.html",
-    "title": "第1周课后作业",
-    "section": "",
-    "text": "🕐 明确是否选修这门课程\n\n若不选修，请尽快在 {{厦门大学教学服务平台}} 上提出退课（申请）\n若确定选修本门课程，请于2023年9月17日24:00前通过 {{坚果云链接}} 回答几道问题\n\n\n\n\n🕑 初步了解 RStudio 的工作界面，并大致浏览下 {{rstudio-IDE-cheatsheet}}\n🕒 在 RStudio 命令窗口中键入 help(mean) 和 help(files)，了解 R 帮助文档的整体结构\n🕓 到前面课件中提到的那些 {{网络社区}} 随意逛逛\n\n\n\n🕔 完成课前预习（具体任务下周一前我会在 QQ 课程群上通知）"
-  },
-  {
-    "objectID": "weeks/week-02.html",
-    "href": "weeks/week-02.html",
-    "title": "第 2 周",
-    "section": "",
-    "text": "“一图胜千言”。R 语言有着强大的数据可视化（制图）功能，很多人学习 R 语言编程主要就是冲着这一点来的。在本讲中我们将侧重介绍影响力巨大的 ggplot2 包，并涵盖以下几方面的内容："
-  },
-  {
-    "objectID": "weeks/week-02.html#课前准备",
-    "href": "weeks/week-02.html#课前准备",
-    "title": "第 2 周",
+    "objectID": "weeks/week-04.html#课前准备",
+    "href": "weeks/week-04.html#课前准备",
+    "title": "第 4 周",
     "section": "1. 课前准备",
-    "text": "1. 课前准备\n\n\n\n📖 预习 R for Data Science, 2e 一书关于数据可视化的两章，即 2 Data visualization 和 10 Layers。\n\n\n\n\n\n\n提示\n\n\n\n此书第1版有中文翻译版 《R数据科学》出版，上述两章大致对应的章节为“第1章 使用ggplot2进行数据可视化”。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。\n\n\n🖥️ 我准备的基于 xaringan包 的 网页版讲义，供同学们参考。"
+    "text": "1. 课前准备\n\n\n📖 预习 R for Data Science, 2e关于如何使用 Quarto 记录数据科学研究过程并展示与沟通研究结果的内容，即 29 Quarto 。\n\n\n\n\n\n\n此书第1版有中文翻译版 《R数据科学》出版，上述内容大致对应“第20章 R Markdown” 和 “第23章 R Markdown工作流”（但使用 R Markdown 而非 Quarto）。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。\n\n\n\n\n\n\n\n\n\n📖 阅读 Markdown基础 一文。\n\n\n\n\n\n\n此文主要翻译自 Quarto 官方文档 Markdown Basics 并经小幅改写。\n\n\n\n🖥️ 我准备的基于 xaringan包 的 网页版讲义，供同学们参考。"
   },
   {
-    "objectID": "weeks/week-02.html#课堂讲义",
-    "href": "weeks/week-02.html#课堂讲义",
-    "title": "第 2 周",
+    "objectID": "weeks/week-04.html#课堂讲义",
+    "href": "weeks/week-04.html#课堂讲义",
+    "title": "第 4 周",
     "section": "2. 课堂讲义",
-    "text": "2. 课堂讲义\n🖥️ 第2讲 ggplot2数据可视化"
+    "text": "2. 课堂讲义\n🖥️第3讲 rmarkdown 与 Quarto"
   },
   {
-    "objectID": "weeks/week-02.html#随堂练习",
-    "href": "weeks/week-02.html#随堂练习",
-    "title": "第 2 周",
+    "objectID": "weeks/week-04.html#随堂练习",
+    "href": "weeks/week-04.html#随堂练习",
+    "title": "第 4 周",
     "section": "3. 随堂练习",
-    "text": "3. 随堂练习\n⌨️ 见课堂讲义"
+    "text": "3. 随堂练习\n⌨️ 本讲将有比较长时间的随堂编程练习，请同学们带上自己的笔记本电脑 （也可找上编程小伙伴，坐在一起结队练习效果可能更佳，😁）。"
   },
   {
-    "objectID": "weeks/week-02.html#课后作业",
-    "href": "weeks/week-02.html#课后作业",
-    "title": "第 2 周",
+    "objectID": "weeks/week-04.html#课后作业",
+    "href": "weeks/week-04.html#课后作业",
+    "title": "第 4 周",
     "section": "4. 课后作业",
     "text": "4. 课后作业\n✍️ 课后作业"
   },
@@ -98,39 +70,200 @@
     "text": "4. 课后作业\n✍️ 课后作业"
   },
   {
-    "objectID": "weeks/week-06.html",
-    "href": "weeks/week-06.html",
-    "title": "第 6 周",
+    "objectID": "weeks/week-07.html",
+    "href": "weeks/week-07.html",
+    "title": "第 7 周",
     "section": "",
-    "text": "“净土宇宙 🌌”的核心数据结构为 tibble（即由行（样本）和列（变量）构成的表格型数据），dplyr 包基于数据操作语法（A Grammar of Data Manipulation）构建出一组用来操作 tibble 对象的核心函数——它们就是我们在接下来两次课中需要学习、理解并掌握的知识。\n本讲主要涵盖以下几方面的内容（加粗字体为本次课的讲授内容）："
+    "text": "“问渠那得清如许？为有源头活水来。” 在上一讲中我们主要讲述 dplyr 包基于数据操作语法（A Grammar of Data Manipulation）的核心函数，并利用 nycflights13 包提供的数据集作为示例。数据操作语法想要达到其预期目标依赖于其所操作的 tibble 对象为“齐整的数据”（tidy data），而在数据科学实践中我们往往会从不同来源读取 / 导入形形色色的数据集，这就需要我们掌握 tidyverse 中与数据导入和数据齐整有关的 R 包及其核心函数。\n本讲主要涵盖以下几方面的内容：\n1. 数据导入\n2. 数据齐整"
   },
   {
-    "objectID": "weeks/week-06.html#课前准备",
-    "href": "weeks/week-06.html#课前准备",
-    "title": "第 6 周",
+    "objectID": "weeks/week-07.html#课前准备",
+    "href": "weeks/week-07.html#课前准备",
+    "title": "第 7 周",
     "section": "1. 课前准备",
-    "text": "1. 课前准备\n\n\n📖 预习 R for Data Science, 2e 第三部分 Transform 中关于数据集合并的章节，即 20 Joins。\n\n\n\n\n\n\n此书第1版有中文翻译版 《R数据科学》出版，上述内容大致对应“第9章 使用 dplyr 处理关系数据”。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。\n\n\n\n\n\n\n\n\n\n由于上课内容较多，而上课时间有限，上课节奏预计较快，有些内容甚至会一带而过，请同学们务必腾出时间来过一遍上述预习章节的内容。\n\n\n\n\n\n\n\n\n\n🖥️ 我准备的基于 xaringan包 的 网页版讲义，供同学们参考。"
+    "text": "1. 课前准备\n\n\n📖 预习 R for Data Science, 2e 第一部分 Whole game 中关于数据导入和数据齐整的章节，即 8 Data import 和 6 Data tidying。\n\n\n\n\n\n\n此书第1版有中文翻译版 《R数据科学》出版，对应章节为“第7章 使用tibble实现简单数据框”和“第8章 使用readr进行数据导入”（很遗憾，原书关于 tidyr 包的第12章在翻译版中并未出现，🙃）。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。\n\n\n\n\n\n\n\n\n\n由于上课内容较多，而上课时间有限，上课节奏预计较快，有些内容甚至会一带而过，请同学们务必腾出时间来过一遍上述预习章节的内容。\n\n\n\n\n\n\n\n\n\n🖥️ 我准备的基于 xaringan包 的 网页版讲义，供同学们参考。"
   },
   {
-    "objectID": "weeks/week-06.html#课堂讲义",
-    "href": "weeks/week-06.html#课堂讲义",
-    "title": "第 6 周",
+    "objectID": "weeks/week-07.html#课堂讲义",
+    "href": "weeks/week-07.html#课堂讲义",
+    "title": "第 7 周",
     "section": "2. 课堂讲义",
-    "text": "2. 课堂讲义\n🖥️ 第4讲 dplyr数据处理"
+    "text": "2. 课堂讲义\n🖥️ 第5讲 数据导入与齐整"
   },
   {
-    "objectID": "weeks/week-06.html#随堂练习",
-    "href": "weeks/week-06.html#随堂练习",
-    "title": "第 6 周",
+    "objectID": "weeks/week-07.html#随堂练习",
+    "href": "weeks/week-07.html#随堂练习",
+    "title": "第 7 周",
     "section": "3. 随堂练习",
     "text": "3. 随堂练习\n⌨️ [见课堂讲义]"
   },
   {
-    "objectID": "weeks/week-06.html#课后作业",
-    "href": "weeks/week-06.html#课后作业",
-    "title": "第 6 周",
+    "objectID": "weeks/week-07.html#课后作业",
+    "href": "weeks/week-07.html#课后作业",
+    "title": "第 7 周",
     "section": "4. 课后作业",
     "text": "4. 课后作业\n✍️ 课后作业"
+  },
+  {
+    "objectID": "weeks.html",
+    "href": "weeks.html",
+    "title": "每周列表",
+    "section": "",
+    "text": "以下是每周授课相关资料 / 资源（包括课前准备/预习、讲义、练习、课后作业等）的信息列表， 同学们既可以随意浏览或者用主题进行筛选，也可以直接根据目标周数点击打开对应的网页一探究竟。\n\n\n\n   \n     \n     \n       排序方式\n       缺省\n         \n          日期 - 日期升序\n        \n         \n          日期 - 日期降序\n        \n         \n          标题\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\n第 7 周\n\n\n数据导入与齐整\n\n\n\n\n预习\n\n\n随堂练习\n\n\n讲义\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-10-27\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 6 周\n\n\ndplyr数据处理 II\n\n\n\n\n预习\n\n\n随堂练习\n\n\n讲义\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-10-20\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 5 周\n\n\ndplyr数据处理 I\n\n\n\n\n预习\n\n\n随堂练习\n\n\n讲义\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-10-13\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 4 周\n\n\nrmarkdown 与 Quarto\n\n\n\n\n预习\n\n\n讲义\n\n\n随堂练习\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-10-08\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 2 周\n\n\nggplot2数据可视化\n\n\n\n\n预习\n\n\n讲义\n\n\n随堂练习\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-09-22\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 1 周\n\n\n课程简介\n\n\n\n\n准备\n\n\n讲义\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-09-15\n\n\n曾永艺\n\n\n\n\n\n\n无匹配项"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "_Quantitative Finance with R_",
+    "section": "",
+    "text": "这是厦门大学管理学院 2023-2024 学年秋季学期“量化金融与金融编程”课的课程主页， 将主要展示课程 准备 | 预习、课堂讲义 | 随堂练习、课后作业、 小组研究项目 等方面的信息和资源。\n希望同学们通过课程学习，能在  语言金融编程领域实现 from Zero to Hero 的升级！\n \n  \n   \n  \n    \n     网站\n  \n  \n    \n     Github"
+  },
+  {
+    "objectID": "readings/revealjs/index.html",
+    "href": "readings/revealjs/index.html",
+    "title": "Revealjs 演示文稿",
+    "section": "",
+    "text": "你可以使用 revealjs 格式来创建 Revealjs演示文稿。了解 Revealjs 功能的最佳方式是通过这个 示例 演示文稿：\n\n\n\n\n如果你喜欢在独立浏览器窗口中查看演示，你可以直接点击链接。你还可以进一步查看演示的源代码以了解该示例幻灯片是如何创建的。\n有关 Revealjs 输出格式支持的所有选项的全面概述，请参阅 Revealjs格式参考。"
+  },
+  {
+    "objectID": "readings/revealjs/index.html#概览",
+    "href": "readings/revealjs/index.html#概览",
+    "title": "Revealjs 演示文稿",
+    "section": "",
+    "text": "你可以使用 revealjs 格式来创建 Revealjs演示文稿。了解 Revealjs 功能的最佳方式是通过这个 示例 演示文稿：\n\n\n\n\n如果你喜欢在独立浏览器窗口中查看演示，你可以直接点击链接。你还可以进一步查看演示的源代码以了解该示例幻灯片是如何创建的。\n有关 Revealjs 输出格式支持的所有选项的全面概述，请参阅 Revealjs格式参考。"
+  },
+  {
+    "objectID": "readings/revealjs/index.html#创建幻灯片",
+    "href": "readings/revealjs/index.html#创建幻灯片",
+    "title": "Revealjs 演示文稿",
+    "section": "创建幻灯片",
+    "text": "创建幻灯片\n在 markdown 中，幻灯片用标题来进行划分。例如，这是一个包含两张幻灯片的简单幻灯片文档（每张幻灯片都用2级标题 ## 定义）：\n---\ntitle: \"习惯\"\nauthor: \"张三\"\nformat: revealjs\n---\n\n## 早起\n\n- 关闭闹钟\n- 起床\n\n## 晚睡\n\n- 上床\n- 数羊\n你还可以使用 1级标题幻灯片（以#标识）将幻灯片划分为不同的节（section）。例如：\n---\ntitle: \"习惯\"\nauthor: \"张三\"\nformat: revealjs\n---\n\n# 早晨\n\n## 早起\n\n- 关闭闹钟\n- 起床\n\n## 早餐\n\n- 吃鸡蛋\n- 喝咖啡\n\n# 晚上\n\n## 晚餐\n\n- 吃面\n- 饮酒\n\n## 睡觉\n\n- 上床\n- 数羊\n最后，你还可以使用水平线（---）来定义幻灯片（例如，你需要一张没有标题的幻灯片）：\n---\ntitle: \"习惯\"\nauthor: \"张三\"\nformat: revealjs\n---\n\n- 关闭闹钟\n- 起床\n\n---\n\n- 上床\n- 数羊\n上述示例均使用2级标题来定义幻灯片，并用1级标题来定义节和标题幻灯片。你可以利用选项进行自定义（详情请参阅Pandoc官方文档关于构建幻灯片的内容）。\n\n标题幻灯片\n你在上面的示例中应该已经注意到，Quarto 会基于文档 YAML 选项中提供的title 和 author 字段自动创建。有时你并不需要显性的标题幻灯片（例如第一张幻灯片完全由背景图构成），此时只需删除 title 和 author 选项，从而创建没有标题幻灯片的演示文稿：\n---\nformat: revealjs\n---\n\n## 早起\n\n- 关闭闹钟\n- 起床\n\n## 晚睡\n\n- 上床\n- 数羊"
+  },
+  {
+    "objectID": "readings/revealjs/index.html#增量列表",
+    "href": "readings/revealjs/index.html#增量列表",
+    "title": "Revealjs 演示文稿",
+    "section": "增量列表",
+    "text": "增量列表\n默认情况下，幻灯片中的编号列表 / 项目符号列表会一次性同时显示。你可以通过设定 incremental 选项来全局修改其默认行为。例如：\ntitle: \"演示文档\"\nformat:\n  revealjs:\n    incremental: true   \n你还可以通过直接指定包围在 div块（以 ::: 标识） 中列表的显性类而使其成为增量或非增量列表。要使得列表成为增量列表，可执行以下设定：\n::: {.incremental}\n- 吃面\n- 饮酒\n:::\n要使列表成为非增量列表，可执行以下设定：\n::: {.nonincremental}\n- 吃面\n- 饮酒\n:::\n你还可以通过插入三个用空格分隔的点（即 . . .）在幻灯片中插入暂停（即隐藏暂停后的内容）：\n## 幻灯片（带有暂停）\n\n暂停之前的内容\n\n. . .\n\n暂停之后的内容"
+  },
+  {
+    "objectID": "readings/revealjs/index.html#多栏",
+    "href": "readings/revealjs/index.html#多栏",
+    "title": "Revealjs 演示文稿",
+    "section": "多栏",
+    "text": "多栏\n要将展示内容放在并排的多栏中，你可以使用指定类为 .columns 的 div 容器，其中嵌套两个或多个带有 .column 类和 width 属性的 div 容器：\n:::: {.columns}\n\n::: {.column width=\"40%\"}\n左栏内容\n:::\n\n::: {.column width=\"60%\"}\n右栏内容\n:::\n\n::::"
+  },
+  {
+    "objectID": "readings/revealjs/index.html#内容溢出",
+    "href": "readings/revealjs/index.html#内容溢出",
+    "title": "Revealjs 演示文稿",
+    "section": "内容溢出",
+    "text": "内容溢出\n如果幻灯片中的内容多于单个页面上可以显示的内容，那么可以使用两个幻灯片级别的类设定来缓解这一情况：\n\n设定 .smaller 类使用较小的字体，以便幻灯片上可以容纳更多文本。例如：\n## 幻灯片标题 {.smaller}\n设定 .scrollable 类，通过滚动来查看幻灯片外的内容。例如：\n## 幻灯片标题 {.scrollable}\n\n这两个选项也可以全局应用于所有幻灯片，如下所示：\n---\nformat:\n  revealjs:\n    smaller: true\n    scrollable: true\n---"
+  },
+  {
+    "objectID": "readings/revealjs/index.html#演讲者备注",
+    "href": "readings/revealjs/index.html#演讲者备注",
+    "title": "Revealjs 演示文稿",
+    "section": "演讲者备注",
+    "text": "演讲者备注\n你可以使用指定类为 .note 的 div块将演讲者备注添加到幻灯片中。例如：\n## 附有演讲者备注的幻灯片\n\n幻灯片内容\n\n::: {.notes}\n演讲者备注内容（吧啦吧啦 ~~）\n:::\n按 S 键（或使用导航菜单）来显示演示者视图，图示如下：\n\n你通常会在一个屏幕（例如笔记本电脑）上使用演示者视图，同时在另一个屏幕上演示幻灯片。"
+  },
+  {
+    "objectID": "readings/revealjs/index.html#主题",
+    "href": "readings/revealjs/index.html#主题",
+    "title": "Revealjs 演示文稿",
+    "section": "主题",
+    "text": "主题\nReveal 演示文档内置有 11 个主题（当然你也可以创建自己的主题）。主题 default 和 dark 使用相当经典的版式和配色方案，是你创建 Reveal 演示文档时一个很好的起始点。\nQuarto|revealjs 会自动套用主题 default ，你可以通过设定 theme 选项切换到其他备选主题，例如：\n---\ntitle: \"演示文档\"\nformat:\n  revealjs: \n    theme: dark\n---\n以下是可用主题的完整列表：\n\nbeige\nblood\ndark\ndefault\nleague\nmoon\nnight\nserif\nsimple\nsky\nsolarized\n\n有关自定义主题和创建全新主题的更多详细信息，请参阅 Revealjs 主题。"
+  },
+  {
+    "objectID": "readings/revealjs/index.html#批注和脚注",
+    "href": "readings/revealjs/index.html#批注和脚注",
+    "title": "Revealjs 演示文稿",
+    "section": "批注和脚注",
+    "text": "批注和脚注\n批注用来展示次要信息，以更小、更浅的字体显示在幻灯片底部。使用指定类为 aside 的 div块来创建批注。例如：\n## 幻灯片标题\n\n幻灯片内容\n\n::: aside\n用来展示更多次要信息的批注（吧啦吧啦 ~~）\n:::\n脚注与批注有着类似的视觉处理，但包括脚注编号。例如，我们在单页幻灯片上同时使用脚注和批注：\n## 附有脚注和批准的幻灯片\n\n- 绿色 ^[脚注内容]\n- 棕色\n- 紫色\n\n::: aside\n含有更多边缘信息的附加批注（吧啦吧啦 ~~）\n:::\n如果你希望在文档末尾包含脚注，请指定选项 reference-location: document：\n---\nformat:\n  revealjs:\n    reference-location: document\n---\n请注意，指定此选项，你可以通过将鼠标悬停在脚注编号上来查看相应的脚注内容。"
+  },
+  {
+    "objectID": "readings/revealjs/index.html#页脚和徽标",
+    "href": "readings/revealjs/index.html#页脚和徽标",
+    "title": "Revealjs 演示文稿",
+    "section": "页脚和徽标",
+    "text": "页脚和徽标\n你可以使用 footer 和 logo 选项在每页幻灯片的底部添加页脚文本和徽标。例如：\n---\nformat:\n  revealjs:\n    logo: logo.png\n    footer: \"页脚文本\"\n---\n你还可以通过在特定幻灯片底部添加页脚div块来为该页幻灯片添加自定义的页脚文本：\n## 幻灯片标题\n\n幻灯片内容\n\n::: footer\n自定义的页脚文本\n:::"
+  },
+  {
+    "objectID": "readings/revealjs/index.html#代码块",
+    "href": "readings/revealjs/index.html#代码块",
+    "title": "Revealjs 演示文稿",
+    "section": "代码块",
+    "text": "代码块\nQuarto HTML代码块的大多数核心功能均适用于 Reveal 演示文稿，包括代码折叠、代码复制以及选择自定义语法突显主题的功能。请注意，如果你选择深色的 Reveal 主题，则将使用默认的 Quarto 深色语法突显主题。\n\n行突出显示\n你可能想要突出显示代码输出块的特定行（或者甚至突出显示一系列演示步骤中的不同行），此时你可通过设置代码块的 code-line-numbers 属性来达到这一目的。例如：\n```{.python code-line-numbers=\"6-8\"}\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\n你还可以通过用逗号分隔来突出显示不同范围的行。例如：\n```{.python code-line-numbers=\"7,9\"}\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\n最后，你可以通过 | 分隔来渐进增量突出显示不同的代码行。例如，在下面代码中我们首先显示所有行，然后突出显示第 6 行，最后突出显示第 9 行：\n```{.python code-line-numbers=\"|6|9\"}\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\n你也可以在可执行单元格中使用相同的 code-line-numbers 选项来达到相同的效果：\n```{python}\n#| code-line-numbers: \"|6|9\"\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```"
+  },
+  {
+    "objectID": "readings/revealjs/index.html#可执行代码",
+    "href": "readings/revealjs/index.html#可执行代码",
+    "title": "Revealjs 演示文稿",
+    "section": "可执行代码",
+    "text": "可执行代码\n你可以在幻灯片上包含可执行代码块的输出，就像使用其他 Quato 文档一样。具体工作原理与其他格式输出基本相同，但也有一些特殊注意事项，说明如下：\n\n图形尺寸\n你往往需要自定义为幻灯片创建的图形的大小，以便它们能够填充整个幻灯片或者指定区域。Quarto 在这里提供了一些帮助：对于 Python 来说，Matplotlib 和 Plotly Express 的图形大小被设置为填满标题下方的幻灯片区域，而对于 R 来说，Knitr 生成图形的宽度和高度也采用类似的默认值。\n尽管如此，你可能还是需要更改给定图片尺寸的这些默认值，具体做法因图形库的不同而有所差异。以下是显性调整 Altair 图片大小的示例：\nalt.Chart(cars).mark_point().encode(\n    x='Horsepower',\n    y='Miles_per_Gallon',\n    color='Origin',\n).properties(\n    width=700,\n    height=300\n).interactive()\n\n\n显示代码\n与普通文档不同，Quarto 演示文稿中的可执行代码块在默认情况下并不显示源代码（这是由于这些代码通常会生成需要占据尽可能多垂直空间的图形）。你可以通过设置 echo 选项修改这一默认做法，如下所示：\n```{python}\n#| echo: true\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={\"projection\": \"polar\"})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\n\n\n输出位置\n默认情况下，可执行代码块的输出结果直接显示在代码之后。你可以通过设置 output-location 选项来修改此行为，具体选项如下所示：\n\n\n\n\n\n\n\nfragment\n将输出结果显示为分片（会延迟显示并随着幻灯片推进而增量展示）\n\n\nslide\n将输出结果显示在下一页幻灯片\n\n\ncolumn\n将输出结果显示为与源代码并列的分栏\n\n\ncolumn-fragment\n将输出结果显示为与源代码并列的分栏并延迟显示它，随着幻灯片的推进而增量展示\n\n\n\n例如，我们将可执行单元格的输出结果在单独的幻灯片上展示：\n```{r}\n#| echo: true\n#| output-location: slide\nlibrary(ggplot2)\nggplot(airquality, aes(Temp, Ozone)) + \n  geom_point() + \n  geom_smooth(method = \"loess\")\n```\n关于设置代码块执行结果输出方式的其他方法的更多详细信息，请参阅文档 执行选项。"
+  },
+  {
+    "objectID": "readings/revealjs/index.html#标签页",
+    "href": "readings/revealjs/index.html#标签页",
+    "title": "Revealjs 演示文稿",
+    "section": "标签页",
+    "text": "标签页\n你可以使用 Quarto 设置 标签页 的标准语法 将标签页添加到幻灯片中。例如：\n::: {.panel-tabset}\n\n### 标签页A\n\n`标签页A`的内容\n\n### 标签页B\n\n`标签页B`的内容\n\n:::\n需要注意的是，标签页幻灯片的一个突出缺点是打印为 PDF 时只有第一个标签页是可见的。"
+  },
+  {
+    "objectID": "readings/revealjs/index.html#幻灯片背景",
+    "href": "readings/revealjs/index.html#幻灯片背景",
+    "title": "Revealjs 演示文稿",
+    "section": "幻灯片背景",
+    "text": "幻灯片背景\n默认情况下，幻灯片显示在屏幕的限定区域内并允许它们均匀缩放以适应不同显示屏的尺寸。你可以通过向幻灯片标题添加 background 相关属性来给幻灯片增加满幅的背景。Quarto | Revealjs 支持四种不同类型的背景：颜色、图像、视频和 iframe（内联框架）。\n支持所有 CSS 颜色格式，包括十六进制值、关键字、rgba() 和 hsl()。例如：\n## 幻灯片标题 {background-color=\"aquamarine\"}\n你还可以使用各种类型的媒体（图像、视频或内联框架等）作为幻灯片背景，具体如下所述：\n\n\n\n\n\n\n注意，如果嵌入媒体的背景颜色与演示文稿的主题不同（例如，在浅色主题时使用深色图像），那么你还应该明确设置 background-color 选项，以便在深色背景上面的文本能以正确的颜色显示（例如，深色背景上的浅色文本）。\n\n\n\n\n图像背景\n默认情况下，背景图像会自动调整大小以覆盖整个页面。可用选项包括：\n\n\n\n属性\n默认值\n说明\n\n\n\n\nbackground-image\n\n图像的 URL；打开幻灯片时，GIF 会重新开始\n\n\nbackground-size\ncover\n参见 MDN 上的 background-size\n\n\nbackground-position\ncenter\n参见 MDN 上的 background-position\n\n\nbackground-repeat\nno-repeat\n参见 MDN 上的 background-repeat\n\n\nbackground-opacity\n1\n背景图像的不透明度（0-1 级，0为透明，1为完全不透明）\n\n\n\n示例如下：\n## 幻灯片标题 {background-color=\"black\" background-image=\"https://placekitten.com/100/100\" background-size=\"100px\" background-repeat=\"repeat\"}\n\n该幻灯片的背景图像的大小将调整为 100 像素并重复。\n由于背景图像的颜色为深色，而幻灯片的默认主题为浅色，因此我们需要把背景颜色 background-color 显性设置为黑色，以便将在叠加其上的文本显示成浅色。\n\n\n视频背景\nQuarto|Revealjs 会自动全屏播放背景视频。\n\n\n\n\n\n\n\n\n属性\n默认值\n说明\n\n\n\n\nbackground-video\n\n单个视频源或以逗号分隔的视频源列表\n\n\nbackground-video-loop\nfalse\n标识是否重复播放视频\n\n\nbackground-video-muted\nfalse\n标识是否静音播放视频\n\n\nbackground-size\ncover\ncover：等比缩放填充（必要时剪裁），contain：缩放填充（必要时填补背景色）\n\n\nbackground-opacity\n1\n不透明度（0-1级，0为透明，1为完全不透明）\n\n\n\n示例如下：\n## 幻灯片标题 {background-video=\"video.mp4\" background-video-loop=\"true\" background-video-muted=\"true\"}\n\n这个幻灯片的背景视频将会循环静音播放。\n\n\n内联框架背景\n将网页嵌入为幻灯片背景，覆盖 100% 的 reveal.js 宽度和高度。iframe 位于幻灯片后面的背景层中，因此默认情况下演示者无法与其交互。要使背景具备交互性，你需要修改 background-interactive 属性。\n\n\n\n\n\n\n\n\n属性\n默认值\n说明\n\n\n\n\nbackground-iframe\n\n拟加载内联框架的 URL 地址\n\n\nbackground-interactive\nfalse\n标识是否可与 iframe 内容进行交互（启用此功能将阻止演示者与幻灯片内容进行交互）\n\n\n\n示例如下：\n## 幻灯片标题 {background-iframe=\"https://example.com\"}\n\n\n没有标题的幻灯片背景\n你可以省略标题文本，而仅仅指定幻灯片背景信息，如：\n## {background-color=\"aquamarine\"}\n\n（没有标题的一页幻灯片）\n\n## {background-color=\"black\" background-image=\"https://placekitten.com/100/100\" background-size=\"100px\" background-repeat=\"repeat\"}\n\n（没有标题的另一页幻灯片）\n\n\n主标题幻灯片背景\n主标题幻灯片是第一页幻灯片，它是通过文档的 YAML 选项自动生成的。因此，上述方法无法为主标题幻灯片提供背景。相反，你需要执行以下操作：\n\n增加主标题幻灯片的背景选项 title-slide-attributes\n在相应背景选项的前面增加 data-\n\n例如：\n---\ntitle: My Slide Show\ntitle-slide-attributes:\n    data-background-image: /path/to/title_image.png\n    data-background-size: contain\n    data-background-opacity: \"0.5\"\n---"
+  },
+  {
+    "objectID": "readings/revealjs/index.html#了解更多",
+    "href": "readings/revealjs/index.html#了解更多",
+    "title": "Revealjs 演示文稿",
+    "section": "了解更多",
+    "text": "了解更多\n请参阅以下文章了解关于 Revealjs 的更多高级功能：\n\n幻灯片演示 介绍了幻灯片导航、打印为 PDF、使用板书工具以及创建同步演示幻灯片。\n高级Reveal 深入研究 切换、动画、高级布局与定位以及可用于自定义演示文稿的其他选项。\nReveal主题 讨论如何使用和自定义现有主题以及如何创建全新主题。"
+  },
+  {
+    "objectID": "readings/revealjs/themes.html",
+    "href": "readings/revealjs/themes.html",
+    "title": "Reveal 主题",
+    "section": "",
+    "text": "Reveal 演示文档内置有 11 个主题（当然你也可以创建自己的主题）。主题 default 和 dark 使用相当经典的版式和配色方案，是你创建 Reveal 演示文档时一个很好的起始点。\nQuarto|revealjs 会自动套用主题 default ，你可以通过设定 theme 选项切换到其他备选主题，例如：\n---\ntitle: \"演示文档\"\nformat:\n  revealjs: \n    theme: dark\n---\n以下是可用主题的完整列表：\n\nbeige\nblood\ndark\ndefault\nleague\nmoon\nnight\nserif\nsimple\nsky\nsolarized"
+  },
+  {
+    "objectID": "readings/revealjs/themes.html#使用主题",
+    "href": "readings/revealjs/themes.html#使用主题",
+    "title": "Reveal 主题",
+    "section": "",
+    "text": "Reveal 演示文档内置有 11 个主题（当然你也可以创建自己的主题）。主题 default 和 dark 使用相当经典的版式和配色方案，是你创建 Reveal 演示文档时一个很好的起始点。\nQuarto|revealjs 会自动套用主题 default ，你可以通过设定 theme 选项切换到其他备选主题，例如：\n---\ntitle: \"演示文档\"\nformat:\n  revealjs: \n    theme: dark\n---\n以下是可用主题的完整列表：\n\nbeige\nblood\ndark\ndefault\nleague\nmoon\nnight\nserif\nsimple\nsky\nsolarized"
+  },
+  {
+    "objectID": "readings/revealjs/themes.html#定制主题",
+    "href": "readings/revealjs/themes.html#定制主题",
+    "title": "Reveal 主题",
+    "section": "定制主题",
+    "text": "定制主题\n你可以通过将自己的 Sass 主题文件添加到主题声明中来定制内置的主题。例如：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs: \n    theme: [default, custom.scss]\n---\ncustom.scss 的内容示例如下：\n/*-- scss:defaults --*/\n\n$body-bg: #191919;\n$body-color: #fff;\n$link-color: #42affa;\n\n/*-- scss:rules --*/\n\n.reveal .slide blockquote {\n  border-left: 3px solid $text-muted;\n  padding-left: 0.5em;\n}\n主题文件使用 Sass （CSS 的一种变体，支持变量和其他扩展功能）并划分为不同部分。\n\n/*-- scss:defaults --*/ 用于定义影响字体、颜色、边框等的变量（注意变量以 $ 开头）\n/*-- scss:rules --*/ 用于创建 CSS 规则。请注意，针对 Reveal 内容的 CSS 规则通常需要使用 .reveal .slide 前缀才能成功覆盖主题的默认样式。\n\n请参阅 Sass变量 文档以获取可自定义内容的列表。"
+  },
+  {
+    "objectID": "readings/revealjs/themes.html#创建主题",
+    "href": "readings/revealjs/themes.html#创建主题",
+    "title": "Reveal 主题",
+    "section": "创建主题",
+    "text": "创建主题\n所谓的创建新主题不过是重新定义一个或多个默认 Sass 变量（你无需重新设定你不想覆盖的变量值）并添加你所需的其他 CSS 规则。\n在主题中可以自行定义内容的列表，请参阅 Sass变量 文档。\n例如，以下是内置 serif 主题的源代码：\n/*-- scss:defaults --*/\n\n// fonts\n$font-family-sans-serif: \"Palatino Linotype\", \"Book Antiqua\", Palatino,\n  FreeSerif, serif !default;\n\n// colors\n$body-bg: #f0f1eb !default;\n$body-color: #000 !default;\n$link-color: #51483d !default;\n$selection-bg: #26351c !default;\n\n// headings\n$presentation-heading-font: \"Palatino Linotype\", \"Book Antiqua\", Palatino,\n  FreeSerif, serif !default;\n$presentation-heading-color: #383d3d !default;\n\n/*-- scss:rules --*/\n\n.reveal a {\n  line-height: 1.3em;\n}\n在上面的主题文件中，你应该已经注意到位于变量定义之后的 !default 后缀——这是为了确保使用此主题的任何人都可以覆盖该变量的取值（反之则不可覆盖）。\n你只需将自定义主题指定为 theme 选项即可使用它（所有的主题文件都隐式继承自 default 主题）。例如：\n---\ntitle: \"Presentation\"\nformat:\n  revealjs: \n    theme: mytheme.scss\n---\n以下是所有内置主题的源代码，供你查看以获取灵感和代码示例：\nhttps://github.com/quarto-dev/quarto-cli/tree/main/src/resources/formats/revealjs/themes"
+  },
+  {
+    "objectID": "readings/revealjs/themes.html#sass变量",
+    "href": "readings/revealjs/themes.html#sass变量",
+    "title": "Reveal 主题",
+    "section": "Sass变量",
+    "text": "Sass变量\n以下是 Reveal 主题使用的全部 Sass 变量（及其默认值）的列表。请注意，某些变量使用其他变量进行定义，并且有些颜色变量使用 Sass 函数 lighten() 来创建另一种颜色的更亮的变体。\n\n颜色\n\n\n\n变量\n默认值\n\n\n\n\n$body-bg\n#fff\n\n\n$body-color\n#222\n\n\n$text-muted\nlighten($body-color, 50%)\n\n\n$link-color\n#2a76dd\n\n\n$link-color-hover\nlighten($link-color, 15%)\n\n\n$selection-bg\nlighten($link-color, 25%)\n\n\n$selection-color\n$body-bg\n\n\n$light-bg-text-color\n#222\n\n\n$light-bg-link-color\n#2a76dd\n\n\n$light-bg-code-color\n#4758ab\n\n\n$dark-bg-text-color\n#fff\n\n\n$dark-bg-link-color\n#42affa\n\n\n$dark-bg-code-color\n#ffa07a\n\n\n\n\n\n字体\n\n\n\n\n\n\n\n变量\n默认值\n\n\n\n\n$font-family-sans-serif\n“Source Sans Pro”, Helvetica, sans-serif\n\n\n$font-family-monospace\nmonospace\n\n\n$presentation-font-size-root\n40px\n\n\n$presentation-font-smaller\n0.7\n\n\n$presentation-line-height\n1.3\n\n\n\n\n\n标题\n\n\n\n\n\n\n\n变量\n默认值\n\n\n\n\n$presentation-h1-font-size\n2.5em\n\n\n$presentation-h2-font-size\n1.6em\n\n\n$presentation-h3-font-size\n1.3em\n\n\n$presentation-h4-font-size\n1em\n\n\n$presentation-heading-font\n$font-family-sans-serif\n\n\n$presentation-heading-color\n$body-color\n\n\n$presentation-heading-line-height\n1.2\n\n\n$presentation-heading-letter-spacing\nnormal\n\n\n$presentation-heading-text-transform\nnone\n\n\n$presentation-heading-text-shadow\nnone\n\n\n$presentation-heading-font-weight\n600\n\n\n$presentation-h1-text-shadow\nnone\n\n\n\n\n\n代码块\n\n\n\n变量\n默认值\n\n\n\n\n$code-block-bg\n$body-bg\n\n\n$code-block-border-color\nlighten($body-color, 60%)\n\n\n$code-block-font-size\n0.55em\n\n\n\n\n\n内联代码\n\n\n\n变量\n默认值\n\n\n\n\n$code-color\nvar(–quarto-hl-fu-color)\n\n\n$code-bg\ntransparent\n\n\n\n\n\n标签页\n\n\n\n变量\n默认值\n\n\n\n\n$tabset-border-color\n$code-block-border-color\n\n\n\n\n\n布局\n\n\n\n\n\n\n\n变量\n默认值\n\n\n\n\n$border-color\nlighten($body-color, 30%)\n\n\n$border-width\n1px\n\n\n$border-radius\n3px\n\n\n$presentation-block-margin\n12px\n\n\n$presentation-slide-text-align\nleft\n\n\n$presentation-title-slide-text-align\ncenter\n\n\n\n你可能已经注意到有些 Sass 变量使用 presentation- 前缀，而有些则不使用。带 presentation- 前缀的变量专用于演示文稿，而其他变量则与用于标准 Quarto HTML主题 的变量相同。\n由于所有 Quarto 主题都使用相同的 Sass 格式，因此你可以将单个主题文件用于 HTML / 网站文档以及演示文稿。"
+  },
+  {
+    "objectID": "readings/revealjs/themes.html#了解更多",
+    "href": "readings/revealjs/themes.html#了解更多",
+    "title": "Reveal 主题",
+    "section": "了解更多",
+    "text": "了解更多\n参阅以下文章以了解有关 Reveal 使用的更多信息：\n\nReveal基础 涵盖了创建演示文稿的基本流程。\n幻灯片演示 介绍了幻灯片导航、打印为 PDF、使用板书工具以及创建同步演示幻灯片。\n高级Reveal 深入研究 切换、动画、高级布局与定位以及可用于自定义演示文稿的其他选项。"
   },
   {
     "objectID": "readings/markdown-basics.html",
@@ -252,109 +385,60 @@
     "text": "脚注\n\n\n对中文可能不太合适，这一行中“所以”的前面出现一个多余的空格。↩︎\n嗯~~ 要解释的东西确实有点复杂，在脚注内也一时半会儿说不清楚啦。↩︎\n恐怕得加上必要的公式和代码才说得明白：\n\\[E = mc^{2}\\]\n这是用 R 代码实现的计算过程：\nE &lt;- m * c^2\n↩︎\n嗯~~ 要解释的东西确实有点复杂，用行内脚注肯定说不清楚啦。↩︎"
   },
   {
-    "objectID": "readings/revealjs/index.html",
-    "href": "readings/revealjs/index.html",
-    "title": "Revealjs 演示文稿",
+    "objectID": "hw/hw-01.html",
+    "href": "hw/hw-01.html",
+    "title": "第1周课后作业",
     "section": "",
-    "text": "你可以使用 revealjs 格式来创建 Revealjs演示文稿。了解 Revealjs 功能的最佳方式是通过这个 示例 演示文稿：\n\n\n\n\n如果你喜欢在独立浏览器窗口中查看演示，你可以直接点击链接。你还可以进一步查看演示的源代码以了解该示例幻灯片是如何创建的。\n有关 Revealjs 输出格式支持的所有选项的全面概述，请参阅 Revealjs格式参考。"
+    "text": "🕐 明确是否选修这门课程\n\n若不选修，请尽快在 {{厦门大学教学服务平台}} 上提出退课（申请）\n若确定选修本门课程，请于2023年9月17日24:00前通过 {{坚果云链接}} 回答几道问题\n\n\n\n\n🕑 初步了解 RStudio 的工作界面，并大致浏览下 {{rstudio-IDE-cheatsheet}}\n🕒 在 RStudio 命令窗口中键入 help(mean) 和 help(files)，了解 R 帮助文档的整体结构\n🕓 到前面课件中提到的那些 {{网络社区}} 随意逛逛\n\n\n\n🕔 完成课前预习（具体任务下周一前我会在 QQ 课程群上通知）"
   },
   {
-    "objectID": "readings/revealjs/index.html#概览",
-    "href": "readings/revealjs/index.html#概览",
-    "title": "Revealjs 演示文稿",
+    "objectID": "hw/hw-06.html",
+    "href": "hw/hw-06.html",
+    "title": "第7周课后作业",
     "section": "",
-    "text": "你可以使用 revealjs 格式来创建 Revealjs演示文稿。了解 Revealjs 功能的最佳方式是通过这个 示例 演示文稿：\n\n\n\n\n如果你喜欢在独立浏览器窗口中查看演示，你可以直接点击链接。你还可以进一步查看演示的源代码以了解该示例幻灯片是如何创建的。\n有关 Revealjs 输出格式支持的所有选项的全面概述，请参阅 Revealjs格式参考。"
+    "text": "1. 复习 📖 {{R for Data Science, 2e}} 一书第一部分 Whole game 中关于数据导入（8 Data import）、数据齐整（6 Data tidying）以及 {{第四部分 Import}} 中的五个章节（分别为 Spreadsheets、Databases、Arrow、Hierarchical data 和 Web scraping）并（结队）完成课后练习\n\n\n\n\n\n\n\n课后动手编程实操是掌握一门编程语言的必由之路，r4ds一书配套练习都很不错，尽管并未要求同学们提交课后编程实操作业，但希望同学们都能自觉完成，也正好检验下自己对 readr、tidyr 包核心函数和关键知识的掌握情况\n👉 课后习题参考答案：R for Data Science (2e): Solutions to Exercises 之 8 Data importing / 6 Data tidying\n👉 直接搜索：在 {{R for Data Science, 2e}} 上搜索相应函数（如read_excel、separate_wider_delim等）并进行针对性学习\n若在课后编程实操中遇到什么问题或难解之处，也可在课程QQ群上贴出并讨论\n\n\n\n\n2. 下载（打印） 📰 {{Data Import的cheatsheet}} 和 {{Data Tidying的cheatsheet}} 并阅读之\n3. browseVignettes(package = c(\"readr\", \"tidyr\")) 📝\n4. 👨‍🏫 {{启动小组作业}}"
   },
   {
-    "objectID": "readings/revealjs/index.html#创建幻灯片",
-    "href": "readings/revealjs/index.html#创建幻灯片",
-    "title": "Revealjs 演示文稿",
-    "section": "创建幻灯片",
-    "text": "创建幻灯片\n在 markdown 中，幻灯片用标题来进行划分。例如，这是一个包含两张幻灯片的简单幻灯片文档（每张幻灯片都用2级标题 ## 定义）：\n---\ntitle: \"习惯\"\nauthor: \"张三\"\nformat: revealjs\n---\n\n## 早起\n\n- 关闭闹钟\n- 起床\n\n## 晚睡\n\n- 上床\n- 数羊\n你还可以使用 1级标题幻灯片（以#标识）将幻灯片划分为不同的节（section）。例如：\n---\ntitle: \"习惯\"\nauthor: \"张三\"\nformat: revealjs\n---\n\n# 早晨\n\n## 早起\n\n- 关闭闹钟\n- 起床\n\n## 早餐\n\n- 吃鸡蛋\n- 喝咖啡\n\n# 晚上\n\n## 晚餐\n\n- 吃面\n- 饮酒\n\n## 睡觉\n\n- 上床\n- 数羊\n最后，你还可以使用水平线（---）来定义幻灯片（例如，你需要一张没有标题的幻灯片）：\n---\ntitle: \"习惯\"\nauthor: \"张三\"\nformat: revealjs\n---\n\n- 关闭闹钟\n- 起床\n\n---\n\n- 上床\n- 数羊\n上述示例均使用2级标题来定义幻灯片，并用1级标题来定义节和标题幻灯片。你可以利用选项进行自定义（详情请参阅Pandoc官方文档关于构建幻灯片的内容）。\n\n标题幻灯片\n你在上面的示例中应该已经注意到，Quarto 会基于文档 YAML 选项中提供的title 和 author 字段自动创建。有时你并不需要显性的标题幻灯片（例如第一张幻灯片完全由背景图构成），此时只需删除 title 和 author 选项，从而创建没有标题幻灯片的演示文稿：\n---\nformat: revealjs\n---\n\n## 早起\n\n- 关闭闹钟\n- 起床\n\n## 晚睡\n\n- 上床\n- 数羊"
+    "objectID": "hw/hw-03.html",
+    "href": "hw/hw-03.html",
+    "title": "第4周课后作业",
+    "section": "",
+    "text": "注释\n\n\n\n必做部分，需在截止日期前完成上传！\n\n\n\n自由组队，两人一组，共同完成课后作业：\n\n从 L02 课件中挑出 3 ~ 4 个你们感兴趣的数据可视化代码段，就其制作两种类型的展示文档：\n\n{{Quarto|HTML}} 或 {{prettydoc}} -&gt; 📂 L03_HW/docs/\n{{Quarto|Revealjs}} 或 {{xaringan}} -&gt; 📂 L03_HW/slides/\n\n记得多尝试各种选项设置，同时在文档内加上相应的说明性文字（如解释代码或输出图形，其余内容可自由发挥，丰俭由人啦 😁）\n作业共同署名（author: 姓名 + 姓名）\n确认两份文档运行无误后将文件夹📂 L03_HW 打包为 .zip 格式压缩文档，由其中一位同学于2023年10月15日22:00前将压缩包提交至 {{坚果云链接}}\n\n\n\n\n\n\n\n\n\n注释\n\n\n\n相信同学们现在对 rmarkdown 和 Quarto 有了初步的认识，下面列出一些学习资料，同学们可进一步学习精进 🏆\n\n\n\n📖 教材 {{R for Data Science, 2e}} 一书关于 Quarto 的第29章和第30章 （大致对应中文翻译版《R数据科学》的第20、22和23章）\n🏡 官网 {{Quarto}} / {{R Markdown}}\n📝 速查 {{Quarto}} / {{R Markdown}}\n📖 {{R Markdown: The Definitive Guide}} 和 {{R Markdown Cookbook}}"
   },
   {
-    "objectID": "readings/revealjs/index.html#增量列表",
-    "href": "readings/revealjs/index.html#增量列表",
-    "title": "Revealjs 演示文稿",
-    "section": "增量列表",
-    "text": "增量列表\n默认情况下，幻灯片中的编号列表 / 项目符号列表会一次性同时显示。你可以通过设定 incremental 选项来全局修改其默认行为。例如：\ntitle: \"演示文档\"\nformat:\n  revealjs:\n    incremental: true   \n你还可以通过直接指定包围在 div块（以 ::: 标识） 中列表的显性类而使其成为增量或非增量列表。要使得列表成为增量列表，可执行以下设定：\n::: {.incremental}\n- 吃面\n- 饮酒\n:::\n要使列表成为非增量列表，可执行以下设定：\n::: {.nonincremental}\n- 吃面\n- 饮酒\n:::\n你还可以通过插入三个用空格分隔的点（即 . . .）在幻灯片中插入暂停（即隐藏暂停后的内容）：\n## 幻灯片（带有暂停）\n\n暂停之前的内容\n\n. . .\n\n暂停之后的内容"
+    "objectID": "project/team-project.html",
+    "href": "project/team-project.html",
+    "title": "小组研究项目说明",
+    "section": "",
+    "text": "重要\n\n\n\n随着小组研究项目进度的推进，会调整 / 更新 / 补充相关内容。\n\n\n\n1. 小组成员\n\n\n1.1 设计目标\n\n每个小组 ~ 4 名同学\n小组成员构成多样性（如男女搭配、专业搭配等）\n促进合作，惩罚“搭便车”行为\n\n\n\n1.2 分组流程\n本学期最终选课名单上共有 23 位同学，其中：\n\n财务学系：21 位\n非财务学系：2 位\n\n本次小组分组采用自由分组方式，即由同学们自由组合，搭建研究小组：\n\n每个小组 ~ 4 名同学，男女搭配；\n小组讨论选出组长并确认组名\n将分组信息（和小组集体照一张）提交至坚果云\n\n\n\n1.3 分组结果\n根据各小组于 11月08日 反馈的信息，最终分组情况见 表 2。\n\n\n\n2. 评分规则\n\n为了让每位同学最终得到的小组研究项目成绩能更好体现小组研究项目的完成质量及其对小组研究项目的态度、投入与贡献，同时尽可能避免小组作业中可能出现的“搭便车”现象，在小组作业成绩评定方面引入小组成员互评机制。\n在完成小组研究项目之后，老师会发放问卷，要求同学们对自身及小组其他成员在小组研究项目中的表现进行评分。最终老师会在小组项目得分的基础上根据小组作业完成情况和成员互评结果进行增/减分处理，从而得到该同学小组作业的最终得分。示例说明如下：\n假设某个小组由 A、B、C、D、E 五位成员组成，小组项目得分为88分（即基准分），小组成员互评情况（+ 表示一次正面评价，- 表示一次负面评价）、加 / 减分及最终得分如 表 1 所示：\n\n\n表 1: 小组成员互评、加减分 注1 与小组作业最终得分示例\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n基准分\n加/减分\n最终得分\n\n\nA\n+\n+\n\n\n-\n88\n+0\n88\n\n\nB\n+\n+\n+\n+\n+\n88\n+12\n100\n\n\nC\n\n+\n\n-\n\n88\n+0\n88\n\n\nD\n-\n-\n-\n-\n-\n88\n-20\n68\n\n\nE\n\n\n+\n+\n\n88\n+4\n92\n\n\n\n\n注1：在确定 表 1 中的加/减分项时，老师保留根据（全班）小组作业完成情况和成员互评结果确定每个小组中每一位同学的每一个 + / - 的具体加 / 减分值的权力。\n\n\n3. 研究选题\n\n\n3.1 自选研究项目\n各小组可参考借鉴2022-2023学年秋季学期本门课程小组研究项目选题（见下），通过资料收集和小组讨论等方式自行确定拟研究项目并形成初步研究思路与计划。\n\n投资组合（天真）分散化\n周日效应（DoW effect）\n金融工程 App\n指数基金定投策略 App\n基于技术指标的量化投资策略\n基本面量化投资策略\n网络数据抓取与分析\n\n\n\n3.2 小组最终选题\n根据各小组于 11月08日 反馈的信息，最终小组选题（及小组相关信息）如 表 2 所示：\n\n\n表 2: 小组分组、选题及相关信息 [注：待补充]\n\n\n\n\n\n\n\n\n\n\n\n\n分组\n小组名\n选题\n组长\n组员1\n组员2\n组员3\n组员4\n\n\n\n\n1\n\n\n\n\n\n\n\n\n\n2\n\n\n\n\n\n\n\n\n\n3\n\n\n\n\n\n\n\n\n\n4\n\n\n\n\n\n\n\n\n\n5\n\n\n\n\n\n\n\n\n\n6\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4. 时间安排\n\n🕐 老师说明小组分组方式、小组研究项目的构想、选题、要求和时间安排等方面的信息 [注：已完成]\n🕑 各组长于 11月08日晚24:00前 提交以下信息至 {{坚果云}} [注：待完成]\n\n小组名、组长姓名\n项目选题、研究思路与预期成果\n小组成员集体照一张（标注姓名）\n\n🕒 小组制定研究计划，分工协作，积极展开项目研究 [注：待完成]\n🕓 各小组于 12月1日 上台简要报告中期研究进展 [注：待完成]\n🕔 各小组于 12月15日前 完成项目研究，提交研究成果（如研究报告、展示文档、App等） [注：待完成]\n🕕 12月29日 上台展示 / 分享小组研究项目 [注：待完成]\n\n\n5. 作业提交与展示\n[注：待补充完善，同学们若有什么问题或建议请及时向我反馈]\n\n\n5.1 中期进展汇报\n\n\n5.1.1 展示内容\n\n核心任务\n分工协作\n目前进展与下阶段安排\n问题与困难\n\n\n各组组长于 11月26日（星期日）前 将展示幻灯片打包发给我：zzyy@xmu.edu.cn\n\n\n\n5.1.2 形式\n\n上台展示\n每个小组 1 人上台\n\n\n\n5.1.3 时间\n\n12月01日随堂进行\n每组 8 分钟左右，控制好时间\n\n\n\n\n5.2 最终研究成果提交说明\n\n截止时间：12月17日（星期日）24:00\n提交至邮箱：zzyy@xmu.edu.cn\n提交内容：将下列内容放在同一个项目文件夹下，压缩为“小组研究项目_[替换为小组名].zip”， 作为邮件附件提交至指定邮箱\n\nApp (Dashboard) 和 / 或 研究报告（独立文件夹，内含运行无误的数据和代码）\n幻灯片展示报告（独立文件夹，内含运行无误的数据和代码）\n\n\n\n\n5.3 展示与分享\n\n\n5.3.1 时间\n2022年12月29日\n\n\n5.3.2 安排\n\n随堂进行\n全部小组均需上台展示，每个小组 1~2 位同学上台\n每组展示时间 &lt; 10 分钟，上台的同学需要通过提前排练控制好时间\n展示\n\n文档：qmd - Revealjs 格式 或 xaringan 格式\n篇幅：20个幻灯片左右\n内容 1. 小组如何分工协作完成任务\n内容 2. 研究成果 / 结果展示\n内容 3. 问题与经验分享"
   },
   {
-    "objectID": "readings/revealjs/index.html#多栏",
-    "href": "readings/revealjs/index.html#多栏",
-    "title": "Revealjs 演示文稿",
-    "section": "多栏",
-    "text": "多栏\n要将展示内容放在并排的多栏中，你可以使用指定类为 .columns 的 div 容器，其中嵌套两个或多个带有 .column 类和 width 属性的 div 容器：\n:::: {.columns}\n\n::: {.column width=\"40%\"}\n左栏内容\n:::\n\n::: {.column width=\"60%\"}\n右栏内容\n:::\n\n::::"
+    "objectID": "hw/hw-02.html#footnotes",
+    "href": "hw/hw-02.html#footnotes",
+    "title": "第2周课后复习与作业",
+    "section": "脚注",
+    "text": "脚注\n\n\n若英文看起来实在吃力 😵， 这本书的第一版有中文翻译版，请同学们自行学习对应章节。我个人建议同学们（等网上商城打折时）购买实体书，放在案头作学习参考。↩︎"
   },
   {
-    "objectID": "readings/revealjs/index.html#内容溢出",
-    "href": "readings/revealjs/index.html#内容溢出",
-    "title": "Revealjs 演示文稿",
-    "section": "内容溢出",
-    "text": "内容溢出\n如果幻灯片中的内容多于单个页面上可以显示的内容，那么可以使用两个幻灯片级别的类设定来缓解这一情况：\n\n设定 .smaller 类使用较小的字体，以便幻灯片上可以容纳更多文本。例如：\n## 幻灯片标题 {.smaller}\n设定 .scrollable 类，通过滚动来查看幻灯片外的内容。例如：\n## 幻灯片标题 {.scrollable}\n\n这两个选项也可以全局应用于所有幻灯片，如下所示：\n---\nformat:\n  revealjs:\n    smaller: true\n    scrollable: true\n---"
+    "objectID": "hw/hw-04.html",
+    "href": "hw/hw-04.html",
+    "title": "第5周课后作业",
+    "section": "",
+    "text": "1. 复习 📖 {{R for Data Science, 2e}} 一书第一部分 Whole game 中关于数据处理的章节，即 4 Data transformation 并（结队）完成课后练习。\n\n\n\n\n\n\n\n课后动手编程实操是掌握一门编程语言的必由之路，r4ds一书配套练习都很不错，尽管并未要求同学们提交课后编程实操作业，但希望同学们都能自觉完成，也正好检验下自己对 dplyr 包核心函数和关键知识的掌握情况\n课后习题参考答案链接\n\n📖 R for Data Science (2e): Solutions to Exercise\n📖 R for Data Science: Exercise Solutions\n\n若在课后编程实操中遇到什么问题或难解之处，也可在课程QQ群上贴出并讨论\n\n\n\n\n2. 下载（打印） 📰 {{dplyr的cheatsheet}} 并阅读之\n3. browseVignettes(package = \"dplyr\") 📝，阅读：\n\nIntroduction to dplyr\nColumn-wise operations\nGrouped data\nRow-wise operations\nWindow functions"
   },
   {
-    "objectID": "readings/revealjs/index.html#演讲者备注",
-    "href": "readings/revealjs/index.html#演讲者备注",
-    "title": "Revealjs 演示文稿",
-    "section": "演讲者备注",
-    "text": "演讲者备注\n你可以使用指定类为 .note 的 div块将演讲者备注添加到幻灯片中。例如：\n## 附有演讲者备注的幻灯片\n\n幻灯片内容\n\n::: {.notes}\n演讲者备注内容（吧啦吧啦 ~~）\n:::\n按 S 键（或使用导航菜单）来显示演示者视图，图示如下：\n\n你通常会在一个屏幕（例如笔记本电脑）上使用演示者视图，同时在另一个屏幕上演示幻灯片。"
+    "objectID": "hw/hw-05.html",
+    "href": "hw/hw-05.html",
+    "title": "第6周课后作业",
+    "section": "",
+    "text": "1. 学习 📝 {{Markdown基础}} 和 {{Revealjs 演示文稿}}，完善第4周的课后作业，并增加部分篇幅说明具体改进之处，于2023年10月26日22:00前将压缩包提交至 {{坚果云链接}}。\n2. 复习 📖 {{R for Data Science, 2e}} 一书第三部分 Transform 中关于连接数据集的章节，即 20 Joins 并（结队）完成课后练习。\n\n\n\n\n\n\n\n课后动手编程实操是掌握一门编程语言的必由之路，r4ds一书配套练习都很不错，尽管并未要求同学们提交课后编程实操作业，但希望同学们都能自觉完成，也正好检验下自己对 dplyr 包核心函数和关键知识的掌握情况\n课后习题参考答案链接\n\n📖 R for Data Science (2e): Solutions to Exercise\n📖 R for Data Science: Exercise Solutions\n\n若在课后编程实操中遇到什么问题或难解之处，也可在课程QQ群上贴出并讨论\n\n\n\n\n3. 下载（打印） 📰 {{dplyr的cheatsheet}} 并阅读之\n4. browseVignettes(package = \"dplyr\") 📝，阅读：\n\nRow-wise operations\nTwo-table verbs\n\n\n\n\n\n\n\n\n以下是第4周课后作业的初始要求（备忘）\n\n\n\n\n自由组队，两人一组，共同完成课后作业：\n\n从 L02 课件中挑出 3 ~ 4 个你们感兴趣的数据可视化代码段，就其制作两种类型的展示文档：\n\n{{Quarto|HTML}} 或 {{prettydoc}} -&gt; 📂 L03_HW/docs/\n{{Quarto|Revealjs}} 或 {{xaringan}} -&gt; 📂 L03_HW/slides/\n\n记得多尝试各种选项设置，同时在文档内加上相应的说明性文字（如解释代码或输出图形，其余内容可自由发挥，丰俭由人啦 😁）\n作业共同署名（author: 姓名 + 姓名）\n确认两份文档运行无误后将文件夹📂 L03_HW 打包为 .zip 格式压缩文档，由其中一位同学于2023年10月15日22:00前将压缩包提交至坚果云链接"
   },
   {
-    "objectID": "readings/revealjs/index.html#主题",
-    "href": "readings/revealjs/index.html#主题",
-    "title": "Revealjs 演示文稿",
-    "section": "主题",
-    "text": "主题\nReveal 演示文档内置有 11 个主题（当然你也可以创建自己的主题）。主题 default 和 dark 使用相当经典的版式和配色方案，是你创建 Reveal 演示文档时一个很好的起始点。\nQuarto|revealjs 会自动套用主题 default ，你可以通过设定 theme 选项切换到其他备选主题，例如：\n---\ntitle: \"演示文档\"\nformat:\n  revealjs: \n    theme: dark\n---\n以下是可用主题的完整列表：\n\nbeige\nblood\ndark\ndefault\nleague\nmoon\nnight\nserif\nsimple\nsky\nsolarized\n\n有关自定义主题和创建全新主题的更多详细信息，请参阅 Revealjs 主题。"
-  },
-  {
-    "objectID": "readings/revealjs/index.html#批注和脚注",
-    "href": "readings/revealjs/index.html#批注和脚注",
-    "title": "Revealjs 演示文稿",
-    "section": "批注和脚注",
-    "text": "批注和脚注\n批注用来展示次要信息，以更小、更浅的字体显示在幻灯片底部。使用指定类为 aside 的 div块来创建批注。例如：\n## 幻灯片标题\n\n幻灯片内容\n\n::: aside\n用来展示更多次要信息的批注（吧啦吧啦 ~~）\n:::\n脚注与批注有着类似的视觉处理，但包括脚注编号。例如，我们在单页幻灯片上同时使用脚注和批注：\n## 附有脚注和批准的幻灯片\n\n- 绿色 ^[脚注内容]\n- 棕色\n- 紫色\n\n::: aside\n含有更多边缘信息的附加批注（吧啦吧啦 ~~）\n:::\n如果你希望在文档末尾包含脚注，请指定选项 reference-location: document：\n---\nformat:\n  revealjs:\n    reference-location: document\n---\n请注意，指定此选项，你可以通过将鼠标悬停在脚注编号上来查看相应的脚注内容。"
-  },
-  {
-    "objectID": "readings/revealjs/index.html#页脚和徽标",
-    "href": "readings/revealjs/index.html#页脚和徽标",
-    "title": "Revealjs 演示文稿",
-    "section": "页脚和徽标",
-    "text": "页脚和徽标\n你可以使用 footer 和 logo 选项在每页幻灯片的底部添加页脚文本和徽标。例如：\n---\nformat:\n  revealjs:\n    logo: logo.png\n    footer: \"页脚文本\"\n---\n你还可以通过在特定幻灯片底部添加页脚div块来为该页幻灯片添加自定义的页脚文本：\n## 幻灯片标题\n\n幻灯片内容\n\n::: footer\n自定义的页脚文本\n:::"
-  },
-  {
-    "objectID": "readings/revealjs/index.html#代码块",
-    "href": "readings/revealjs/index.html#代码块",
-    "title": "Revealjs 演示文稿",
-    "section": "代码块",
-    "text": "代码块\nQuarto HTML代码块的大多数核心功能均适用于 Reveal 演示文稿，包括代码折叠、代码复制以及选择自定义语法突显主题的功能。请注意，如果你选择深色的 Reveal 主题，则将使用默认的 Quarto 深色语法突显主题。\n\n行突出显示\n你可能想要突出显示代码输出块的特定行（或者甚至突出显示一系列演示步骤中的不同行），此时你可通过设置代码块的 code-line-numbers 属性来达到这一目的。例如：\n```{.python code-line-numbers=\"6-8\"}\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\n你还可以通过用逗号分隔来突出显示不同范围的行。例如：\n```{.python code-line-numbers=\"7,9\"}\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\n最后，你可以通过 | 分隔来渐进增量突出显示不同的代码行。例如，在下面代码中我们首先显示所有行，然后突出显示第 6 行，最后突出显示第 9 行：\n```{.python code-line-numbers=\"|6|9\"}\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\n你也可以在可执行单元格中使用相同的 code-line-numbers 选项来达到相同的效果：\n```{python}\n#| code-line-numbers: \"|6|9\"\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```"
-  },
-  {
-    "objectID": "readings/revealjs/index.html#可执行代码",
-    "href": "readings/revealjs/index.html#可执行代码",
-    "title": "Revealjs 演示文稿",
-    "section": "可执行代码",
-    "text": "可执行代码\n你可以在幻灯片上包含可执行代码块的输出，就像使用其他 Quato 文档一样。具体工作原理与其他格式输出基本相同，但也有一些特殊注意事项，说明如下：\n\n图形尺寸\n你往往需要自定义为幻灯片创建的图形的大小，以便它们能够填充整个幻灯片或者指定区域。Quarto 在这里提供了一些帮助：对于 Python 来说，Matplotlib 和 Plotly Express 的图形大小被设置为填满标题下方的幻灯片区域，而对于 R 来说，Knitr 生成图形的宽度和高度也采用类似的默认值。\n尽管如此，你可能还是需要更改给定图片尺寸的这些默认值，具体做法因图形库的不同而有所差异。以下是显性调整 Altair 图片大小的示例：\nalt.Chart(cars).mark_point().encode(\n    x='Horsepower',\n    y='Miles_per_Gallon',\n    color='Origin',\n).properties(\n    width=700,\n    height=300\n).interactive()\n\n\n显示代码\n与普通文档不同，Quarto 演示文稿中的可执行代码块在默认情况下并不显示源代码（这是由于这些代码通常会生成需要占据尽可能多垂直空间的图形）。你可以通过设置 echo 选项修改这一默认做法，如下所示：\n```{python}\n#| echo: true\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={\"projection\": \"polar\"})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\n\n\n输出位置\n默认情况下，可执行代码块的输出结果直接显示在代码之后。你可以通过设置 output-location 选项来修改此行为，具体选项如下所示：\n\n\n\n\n\n\n\nfragment\n将输出结果显示为分片（会延迟显示并随着幻灯片推进而增量展示）\n\n\nslide\n将输出结果显示在下一页幻灯片\n\n\ncolumn\n将输出结果显示为与源代码并列的分栏\n\n\ncolumn-fragment\n将输出结果显示为与源代码并列的分栏并延迟显示它，随着幻灯片的推进而增量展示\n\n\n\n例如，我们将可执行单元格的输出结果在单独的幻灯片上展示：\n```{r}\n#| echo: true\n#| output-location: slide\nlibrary(ggplot2)\nggplot(airquality, aes(Temp, Ozone)) + \n  geom_point() + \n  geom_smooth(method = \"loess\")\n```\n关于设置代码块执行结果输出方式的其他方法的更多详细信息，请参阅文档 执行选项。"
-  },
-  {
-    "objectID": "readings/revealjs/index.html#标签页",
-    "href": "readings/revealjs/index.html#标签页",
-    "title": "Revealjs 演示文稿",
-    "section": "标签页",
-    "text": "标签页\n你可以使用 Quarto 设置 标签页 的标准语法 将标签页添加到幻灯片中。例如：\n::: {.panel-tabset}\n\n### 标签页A\n\n`标签页A`的内容\n\n### 标签页B\n\n`标签页B`的内容\n\n:::\n需要注意的是，标签页幻灯片的一个突出缺点是打印为 PDF 时只有第一个标签页是可见的。"
-  },
-  {
-    "objectID": "readings/revealjs/index.html#幻灯片背景",
-    "href": "readings/revealjs/index.html#幻灯片背景",
-    "title": "Revealjs 演示文稿",
-    "section": "幻灯片背景",
-    "text": "幻灯片背景\n默认情况下，幻灯片显示在屏幕的限定区域内并允许它们均匀缩放以适应不同显示屏的尺寸。你可以通过向幻灯片标题添加 background 相关属性来给幻灯片增加满幅的背景。Quarto | Revealjs 支持四种不同类型的背景：颜色、图像、视频和 iframe（内联框架）。\n支持所有 CSS 颜色格式，包括十六进制值、关键字、rgba() 和 hsl()。例如：\n## 幻灯片标题 {background-color=\"aquamarine\"}\n你还可以使用各种类型的媒体（图像、视频或内联框架等）作为幻灯片背景，具体如下所述：\n\n\n\n\n\n\n注意，如果嵌入媒体的背景颜色与演示文稿的主题不同（例如，在浅色主题时使用深色图像），那么你还应该明确设置 background-color 选项，以便在深色背景上面的文本能以正确的颜色显示（例如，深色背景上的浅色文本）。\n\n\n\n\n图像背景\n默认情况下，背景图像会自动调整大小以覆盖整个页面。可用选项包括：\n\n\n\n属性\n默认值\n说明\n\n\n\n\nbackground-image\n\n图像的 URL；打开幻灯片时，GIF 会重新开始\n\n\nbackground-size\ncover\n参见 MDN 上的 background-size\n\n\nbackground-position\ncenter\n参见 MDN 上的 background-position\n\n\nbackground-repeat\nno-repeat\n参见 MDN 上的 background-repeat\n\n\nbackground-opacity\n1\n背景图像的不透明度（0-1 级，0为透明，1为完全不透明）\n\n\n\n示例如下：\n## 幻灯片标题 {background-color=\"black\" background-image=\"https://placekitten.com/100/100\" background-size=\"100px\" background-repeat=\"repeat\"}\n\n该幻灯片的背景图像的大小将调整为 100 像素并重复。\n由于背景图像的颜色为深色，而幻灯片的默认主题为浅色，因此我们需要把背景颜色 background-color 显性设置为黑色，以便将在叠加其上的文本显示成浅色。\n\n\n视频背景\nQuarto|Revealjs 会自动全屏播放背景视频。\n\n\n\n\n\n\n\n\n属性\n默认值\n说明\n\n\n\n\nbackground-video\n\n单个视频源或以逗号分隔的视频源列表\n\n\nbackground-video-loop\nfalse\n标识是否重复播放视频\n\n\nbackground-video-muted\nfalse\n标识是否静音播放视频\n\n\nbackground-size\ncover\ncover：等比缩放填充（必要时剪裁），contain：缩放填充（必要时填补背景色）\n\n\nbackground-opacity\n1\n不透明度（0-1级，0为透明，1为完全不透明）\n\n\n\n示例如下：\n## 幻灯片标题 {background-video=\"video.mp4\" background-video-loop=\"true\" background-video-muted=\"true\"}\n\n这个幻灯片的背景视频将会循环静音播放。\n\n\n内联框架背景\n将网页嵌入为幻灯片背景，覆盖 100% 的 reveal.js 宽度和高度。iframe 位于幻灯片后面的背景层中，因此默认情况下演示者无法与其交互。要使背景具备交互性，你需要修改 background-interactive 属性。\n\n\n\n\n\n\n\n\n属性\n默认值\n说明\n\n\n\n\nbackground-iframe\n\n拟加载内联框架的 URL 地址\n\n\nbackground-interactive\nfalse\n标识是否可与 iframe 内容进行交互（启用此功能将阻止演示者与幻灯片内容进行交互）\n\n\n\n示例如下：\n## 幻灯片标题 {background-iframe=\"https://example.com\"}\n\n\n没有标题的幻灯片背景\n你可以省略标题文本，而仅仅指定幻灯片背景信息，如：\n## {background-color=\"aquamarine\"}\n\n（没有标题的一页幻灯片）\n\n## {background-color=\"black\" background-image=\"https://placekitten.com/100/100\" background-size=\"100px\" background-repeat=\"repeat\"}\n\n（没有标题的另一页幻灯片）\n\n\n主标题幻灯片背景\n主标题幻灯片是第一页幻灯片，它是通过文档的 YAML 选项自动生成的。因此，上述方法无法为主标题幻灯片提供背景。相反，你需要执行以下操作：\n\n增加主标题幻灯片的背景选项 title-slide-attributes\n在相应背景选项的前面增加 data-\n\n例如：\n---\ntitle: My Slide Show\ntitle-slide-attributes:\n    data-background-image: /path/to/title_image.png\n    data-background-size: contain\n    data-background-opacity: \"0.5\"\n---"
-  },
-  {
-    "objectID": "readings/revealjs/index.html#了解更多",
-    "href": "readings/revealjs/index.html#了解更多",
-    "title": "Revealjs 演示文稿",
-    "section": "了解更多",
-    "text": "了解更多\n请参阅以下文章了解关于 Revealjs 的更多高级功能：\n\n幻灯片演示 介绍了幻灯片导航、打印为 PDF、使用板书工具以及创建同步演示幻灯片。\n高级Reveal 深入研究 切换、动画、高级布局与定位以及可用于自定义演示文稿的其他选项。\nReveal主题 讨论如何使用和自定义现有主题以及如何创建全新主题。"
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "课程安排",
+    "section": "",
+    "text": "注释\n\n\n\n本页包含本课程周次安排、教学主题、课前准备、讲义、课后作业、小组项目等方面的 概要信息以及相应的链接。 随着本学期教学进度的推进，本表格将逐步增补、调整并完善。\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n周次\n日期\n主题\n准备\n讲义\n练习\n作业\n小组项目\n\n\n\n\n1\n2023-09-15\n课程简介\n📖\n🖥️\n\n✍️\n\n\n\n2\n2023-09-22\nggplot2 数据可视化\n📖\n🖥️\n⌨️\n✍️\n\n\n\n3\n2023-09-29\n🥮 中秋节假期停课\n\n\n\n\n\n\n\n4\n2023-10-08\nrmarkdown 与 Quarto\n📖\n🖥️\n⌨️\n✍️\n\n\n\n5\n2023-10-13\ndplyr 数据处理 I\n📖\n🖥️\n⌨️\n✍️\n\n\n\n6\n2023-10-20\ndplyr 数据处理 II\n📖\n🖥️\n⌨️\n✍️\n\n\n\n7\n2023-10-27\n数据导入与齐整\n📖\n🖥️\n⌨️\n✍️\n👨‍🏫 启动\n\n\n8\n2023-11-03\n🏃校运会🏅 停课"
   },
   {
     "objectID": "readings/revealjs/presenting.html",
@@ -749,121 +833,37 @@
     "text": "了解更多\n参阅以下文章以了解有关 Reveal 使用的更多信息：\n\nReveal基础 涵盖了创建演示文稿的基本流程。\n幻灯片演示 介绍了幻灯片导航、打印为 PDF、使用板书工具以及创建同步演示幻灯片。\nReveal主题 讨论如何使用和自定义现有主题以及如何创建全新主题。"
   },
   {
-    "objectID": "readings/revealjs/themes.html",
-    "href": "readings/revealjs/themes.html",
-    "title": "Reveal 主题",
+    "objectID": "weeks/week-06.html",
+    "href": "weeks/week-06.html",
+    "title": "第 6 周",
     "section": "",
-    "text": "Reveal 演示文档内置有 11 个主题（当然你也可以创建自己的主题）。主题 default 和 dark 使用相当经典的版式和配色方案，是你创建 Reveal 演示文档时一个很好的起始点。\nQuarto|revealjs 会自动套用主题 default ，你可以通过设定 theme 选项切换到其他备选主题，例如：\n---\ntitle: \"演示文档\"\nformat:\n  revealjs: \n    theme: dark\n---\n以下是可用主题的完整列表：\n\nbeige\nblood\ndark\ndefault\nleague\nmoon\nnight\nserif\nsimple\nsky\nsolarized"
+    "text": "“净土宇宙 🌌”的核心数据结构为 tibble（即由行（样本）和列（变量）构成的表格型数据），dplyr 包基于数据操作语法（A Grammar of Data Manipulation）构建出一组用来操作 tibble 对象的核心函数——它们就是我们在接下来两次课中需要学习、理解并掌握的知识。\n本讲主要涵盖以下几方面的内容（加粗字体为本次课的讲授内容）："
   },
   {
-    "objectID": "readings/revealjs/themes.html#使用主题",
-    "href": "readings/revealjs/themes.html#使用主题",
-    "title": "Reveal 主题",
-    "section": "",
-    "text": "Reveal 演示文档内置有 11 个主题（当然你也可以创建自己的主题）。主题 default 和 dark 使用相当经典的版式和配色方案，是你创建 Reveal 演示文档时一个很好的起始点。\nQuarto|revealjs 会自动套用主题 default ，你可以通过设定 theme 选项切换到其他备选主题，例如：\n---\ntitle: \"演示文档\"\nformat:\n  revealjs: \n    theme: dark\n---\n以下是可用主题的完整列表：\n\nbeige\nblood\ndark\ndefault\nleague\nmoon\nnight\nserif\nsimple\nsky\nsolarized"
-  },
-  {
-    "objectID": "readings/revealjs/themes.html#定制主题",
-    "href": "readings/revealjs/themes.html#定制主题",
-    "title": "Reveal 主题",
-    "section": "定制主题",
-    "text": "定制主题\n你可以通过将自己的 Sass 主题文件添加到主题声明中来定制内置的主题。例如：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs: \n    theme: [default, custom.scss]\n---\ncustom.scss 的内容示例如下：\n/*-- scss:defaults --*/\n\n$body-bg: #191919;\n$body-color: #fff;\n$link-color: #42affa;\n\n/*-- scss:rules --*/\n\n.reveal .slide blockquote {\n  border-left: 3px solid $text-muted;\n  padding-left: 0.5em;\n}\n主题文件使用 Sass （CSS 的一种变体，支持变量和其他扩展功能）并划分为不同部分。\n\n/*-- scss:defaults --*/ 用于定义影响字体、颜色、边框等的变量（注意变量以 $ 开头）\n/*-- scss:rules --*/ 用于创建 CSS 规则。请注意，针对 Reveal 内容的 CSS 规则通常需要使用 .reveal .slide 前缀才能成功覆盖主题的默认样式。\n\n请参阅 Sass变量 文档以获取可自定义内容的列表。"
-  },
-  {
-    "objectID": "readings/revealjs/themes.html#创建主题",
-    "href": "readings/revealjs/themes.html#创建主题",
-    "title": "Reveal 主题",
-    "section": "创建主题",
-    "text": "创建主题\n所谓的创建新主题不过是重新定义一个或多个默认 Sass 变量（你无需重新设定你不想覆盖的变量值）并添加你所需的其他 CSS 规则。\n在主题中可以自行定义内容的列表，请参阅 Sass变量 文档。\n例如，以下是内置 serif 主题的源代码：\n/*-- scss:defaults --*/\n\n// fonts\n$font-family-sans-serif: \"Palatino Linotype\", \"Book Antiqua\", Palatino,\n  FreeSerif, serif !default;\n\n// colors\n$body-bg: #f0f1eb !default;\n$body-color: #000 !default;\n$link-color: #51483d !default;\n$selection-bg: #26351c !default;\n\n// headings\n$presentation-heading-font: \"Palatino Linotype\", \"Book Antiqua\", Palatino,\n  FreeSerif, serif !default;\n$presentation-heading-color: #383d3d !default;\n\n/*-- scss:rules --*/\n\n.reveal a {\n  line-height: 1.3em;\n}\n在上面的主题文件中，你应该已经注意到位于变量定义之后的 !default 后缀——这是为了确保使用此主题的任何人都可以覆盖该变量的取值（反之则不可覆盖）。\n你只需将自定义主题指定为 theme 选项即可使用它（所有的主题文件都隐式继承自 default 主题）。例如：\n---\ntitle: \"Presentation\"\nformat:\n  revealjs: \n    theme: mytheme.scss\n---\n以下是所有内置主题的源代码，供你查看以获取灵感和代码示例：\nhttps://github.com/quarto-dev/quarto-cli/tree/main/src/resources/formats/revealjs/themes"
-  },
-  {
-    "objectID": "readings/revealjs/themes.html#sass变量",
-    "href": "readings/revealjs/themes.html#sass变量",
-    "title": "Reveal 主题",
-    "section": "Sass变量",
-    "text": "Sass变量\n以下是 Reveal 主题使用的全部 Sass 变量（及其默认值）的列表。请注意，某些变量使用其他变量进行定义，并且有些颜色变量使用 Sass 函数 lighten() 来创建另一种颜色的更亮的变体。\n\n颜色\n\n\n\n变量\n默认值\n\n\n\n\n$body-bg\n#fff\n\n\n$body-color\n#222\n\n\n$text-muted\nlighten($body-color, 50%)\n\n\n$link-color\n#2a76dd\n\n\n$link-color-hover\nlighten($link-color, 15%)\n\n\n$selection-bg\nlighten($link-color, 25%)\n\n\n$selection-color\n$body-bg\n\n\n$light-bg-text-color\n#222\n\n\n$light-bg-link-color\n#2a76dd\n\n\n$light-bg-code-color\n#4758ab\n\n\n$dark-bg-text-color\n#fff\n\n\n$dark-bg-link-color\n#42affa\n\n\n$dark-bg-code-color\n#ffa07a\n\n\n\n\n\n字体\n\n\n\n\n\n\n\n变量\n默认值\n\n\n\n\n$font-family-sans-serif\n“Source Sans Pro”, Helvetica, sans-serif\n\n\n$font-family-monospace\nmonospace\n\n\n$presentation-font-size-root\n40px\n\n\n$presentation-font-smaller\n0.7\n\n\n$presentation-line-height\n1.3\n\n\n\n\n\n标题\n\n\n\n\n\n\n\n变量\n默认值\n\n\n\n\n$presentation-h1-font-size\n2.5em\n\n\n$presentation-h2-font-size\n1.6em\n\n\n$presentation-h3-font-size\n1.3em\n\n\n$presentation-h4-font-size\n1em\n\n\n$presentation-heading-font\n$font-family-sans-serif\n\n\n$presentation-heading-color\n$body-color\n\n\n$presentation-heading-line-height\n1.2\n\n\n$presentation-heading-letter-spacing\nnormal\n\n\n$presentation-heading-text-transform\nnone\n\n\n$presentation-heading-text-shadow\nnone\n\n\n$presentation-heading-font-weight\n600\n\n\n$presentation-h1-text-shadow\nnone\n\n\n\n\n\n代码块\n\n\n\n变量\n默认值\n\n\n\n\n$code-block-bg\n$body-bg\n\n\n$code-block-border-color\nlighten($body-color, 60%)\n\n\n$code-block-font-size\n0.55em\n\n\n\n\n\n内联代码\n\n\n\n变量\n默认值\n\n\n\n\n$code-color\nvar(–quarto-hl-fu-color)\n\n\n$code-bg\ntransparent\n\n\n\n\n\n标签页\n\n\n\n变量\n默认值\n\n\n\n\n$tabset-border-color\n$code-block-border-color\n\n\n\n\n\n布局\n\n\n\n\n\n\n\n变量\n默认值\n\n\n\n\n$border-color\nlighten($body-color, 30%)\n\n\n$border-width\n1px\n\n\n$border-radius\n3px\n\n\n$presentation-block-margin\n12px\n\n\n$presentation-slide-text-align\nleft\n\n\n$presentation-title-slide-text-align\ncenter\n\n\n\n你可能已经注意到有些 Sass 变量使用 presentation- 前缀，而有些则不使用。带 presentation- 前缀的变量专用于演示文稿，而其他变量则与用于标准 Quarto HTML主题 的变量相同。\n由于所有 Quarto 主题都使用相同的 Sass 格式，因此你可以将单个主题文件用于 HTML / 网站文档以及演示文稿。"
-  },
-  {
-    "objectID": "readings/revealjs/themes.html#了解更多",
-    "href": "readings/revealjs/themes.html#了解更多",
-    "title": "Reveal 主题",
-    "section": "了解更多",
-    "text": "了解更多\n参阅以下文章以了解有关 Reveal 使用的更多信息：\n\nReveal基础 涵盖了创建演示文稿的基本流程。\n幻灯片演示 介绍了幻灯片导航、打印为 PDF、使用板书工具以及创建同步演示幻灯片。\n高级Reveal 深入研究 切换、动画、高级布局与定位以及可用于自定义演示文稿的其他选项。"
-  },
-  {
-    "objectID": "schedule.html",
-    "href": "schedule.html",
-    "title": "课程安排",
-    "section": "",
-    "text": "注释\n\n\n\n本页包含本课程周次安排、教学主题、课前准备、讲义、课后作业、小组项目等方面的 概要信息以及相应的链接。 随着本学期教学进度的推进，本表格将逐步增补、调整并完善。\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n周次\n日期\n主题\n准备\n讲义\n练习\n作业\n小组项目\n\n\n\n\n1\n2023-09-15\n课程简介\n📖\n🖥️\n\n✍️\n\n\n\n2\n2023-09-22\nggplot2 数据可视化\n📖\n🖥️\n⌨️\n✍️\n\n\n\n3\n2023-09-29\n🥮 中秋节假期停课\n\n\n\n\n\n\n\n4\n2023-10-08\nrmarkdown 与 Quarto\n📖\n🖥️\n⌨️\n✍️\n\n\n\n5\n2023-10-13\ndplyr 数据处理 I\n📖\n🖥️\n⌨️\n✍️\n\n\n\n6\n2023-10-20\ndplyr 数据处理 II\n📖\n🖥️\n⌨️\n✍️\n\n\n\n7\n2023-10-27\n数据导入与齐整\n📖"
-  },
-  {
-    "objectID": "weeks/week-07.html",
-    "href": "weeks/week-07.html",
-    "title": "第 7 周",
-    "section": "",
-    "text": "“问渠那得清如许？为有源头活水来。” 在上一讲中我们主要讲述 dplyr 包基于数据操作语法（A Grammar of Data Manipulation）的核心函数，并利用 nycflights13 包提供的数据集作为示例。数据操作语法想要达到其预期目标依赖于其所操作的 tibble 对象为“齐整的数据”（tidy data），而在数据科学实践中我们往往会从不同来源读取 / 导入形形色色的数据集，这就需要我们掌握 tidyverse 中与数据导入和数据齐整有关的 R 包及其核心函数。\n本讲主要涵盖以下几方面的内容：\n1. 数据导入\n2. 数据齐整"
-  },
-  {
-    "objectID": "weeks/week-07.html#课前准备",
-    "href": "weeks/week-07.html#课前准备",
-    "title": "第 7 周",
+    "objectID": "weeks/week-06.html#课前准备",
+    "href": "weeks/week-06.html#课前准备",
+    "title": "第 6 周",
     "section": "1. 课前准备",
-    "text": "1. 课前准备\n\n\n📖 预习 R for Data Science, 2e 第一部分 Whole game 中关于数据导入和数据齐整的章节，即 8 Data import 和 6 Data tidying。\n\n\n\n\n\n\n此书第1版有中文翻译版 《R数据科学》出版，对应章节为“第7章 使用tibble实现简单数据框”和“第8章 使用readr进行数据导入”（很遗憾，原书关于 tidyr 包的第12章在翻译版中并未出现，🙃）。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。\n\n\n\n\n\n\n\n\n\n由于上课内容较多，而上课时间有限，上课节奏预计较快，有些内容甚至会一带而过，请同学们务必腾出时间来过一遍上述预习章节的内容。\n\n\n\n\n\n\n\n\n\n🖥️ 我准备的基于 xaringan包 的 网页版讲义，供同学们参考。"
+    "text": "1. 课前准备\n\n\n📖 预习 R for Data Science, 2e 第三部分 Transform 中关于数据集合并的章节，即 20 Joins。\n\n\n\n\n\n\n此书第1版有中文翻译版 《R数据科学》出版，上述内容大致对应“第9章 使用 dplyr 处理关系数据”。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。\n\n\n\n\n\n\n\n\n\n由于上课内容较多，而上课时间有限，上课节奏预计较快，有些内容甚至会一带而过，请同学们务必腾出时间来过一遍上述预习章节的内容。\n\n\n\n\n\n\n\n\n\n🖥️ 我准备的基于 xaringan包 的 网页版讲义，供同学们参考。"
   },
   {
-    "objectID": "weeks/week-07.html#课堂讲义",
-    "href": "weeks/week-07.html#课堂讲义",
-    "title": "第 7 周",
+    "objectID": "weeks/week-06.html#课堂讲义",
+    "href": "weeks/week-06.html#课堂讲义",
+    "title": "第 6 周",
     "section": "2. 课堂讲义",
-    "text": "2. 课堂讲义\n🖥️ [第5讲 数据导入与齐整 🐝 ]"
+    "text": "2. 课堂讲义\n🖥️ 第4讲 dplyr数据处理"
   },
   {
-    "objectID": "weeks/week-07.html#随堂练习",
-    "href": "weeks/week-07.html#随堂练习",
-    "title": "第 7 周",
+    "objectID": "weeks/week-06.html#随堂练习",
+    "href": "weeks/week-06.html#随堂练习",
+    "title": "第 6 周",
     "section": "3. 随堂练习",
-    "text": "3. 随堂练习\n⌨️ [见课堂讲义 🐝 ]"
+    "text": "3. 随堂练习\n⌨️ [见课堂讲义]"
   },
   {
-    "objectID": "weeks/week-07.html#课后作业",
-    "href": "weeks/week-07.html#课后作业",
-    "title": "第 7 周",
-    "section": "4. 课后作业",
-    "text": "4. 课后作业\n✍️ [课后作业 🐝 ]"
-  },
-  {
-    "objectID": "weeks/week-04.html",
-    "href": "weeks/week-04.html",
-    "title": "第 4 周",
-    "section": "",
-    "text": "在上一讲课后作业中同学们通过代码脚本文档 L02_coding_practice.R 完成编程作业并直接提交，但如果不运行同学们的代码，我将很难得知代码能否正常运行及其运行结果；同时通过注释方式添加说明性文字或给文档逻辑分节也显得笨拙和不够美观。那么，有没有更好的解决方案呢？答案就是本讲将要介绍的“动态文档”（dynamic documents）——它允许你将代码、代码输出、文字等有机地组合在一起，并可方便地转化为多种类型的输出格式（如网页、PDF、docx、幻灯片等）。\n本讲主要涵盖以下几方面的内容："
-  },
-  {
-    "objectID": "weeks/week-04.html#课前准备",
-    "href": "weeks/week-04.html#课前准备",
-    "title": "第 4 周",
-    "section": "1. 课前准备",
-    "text": "1. 课前准备\n\n\n📖 预习 R for Data Science, 2e关于如何使用 Quarto 记录数据科学研究过程并展示与沟通研究结果的内容，即 29 Quarto 。\n\n\n\n\n\n\n此书第1版有中文翻译版 《R数据科学》出版，上述内容大致对应“第20章 R Markdown” 和 “第23章 R Markdown工作流”（但使用 R Markdown 而非 Quarto）。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。\n\n\n\n\n\n\n\n\n\n📖 阅读 Markdown基础 一文。\n\n\n\n\n\n\n此文主要翻译自 Quarto 官方文档 Markdown Basics 并经小幅改写。\n\n\n\n🖥️ 我准备的基于 xaringan包 的 网页版讲义，供同学们参考。"
-  },
-  {
-    "objectID": "weeks/week-04.html#课堂讲义",
-    "href": "weeks/week-04.html#课堂讲义",
-    "title": "第 4 周",
-    "section": "2. 课堂讲义",
-    "text": "2. 课堂讲义\n🖥️第3讲 rmarkdown 与 Quarto"
-  },
-  {
-    "objectID": "weeks/week-04.html#随堂练习",
-    "href": "weeks/week-04.html#随堂练习",
-    "title": "第 4 周",
-    "section": "3. 随堂练习",
-    "text": "3. 随堂练习\n⌨️ 本讲将有比较长时间的随堂编程练习，请同学们带上自己的笔记本电脑 （也可找上编程小伙伴，坐在一起结队练习效果可能更佳，😁）。"
-  },
-  {
-    "objectID": "weeks/week-04.html#课后作业",
-    "href": "weeks/week-04.html#课后作业",
-    "title": "第 4 周",
+    "objectID": "weeks/week-06.html#课后作业",
+    "href": "weeks/week-06.html#课后作业",
+    "title": "第 6 周",
     "section": "4. 课后作业",
     "text": "4. 课后作业\n✍️ 课后作业"
   },
@@ -903,31 +903,38 @@
     "text": "4. 课后作业\n✍️ 课后作业"
   },
   {
-    "objectID": "weeks.html",
-    "href": "weeks.html",
-    "title": "每周列表",
+    "objectID": "weeks/week-02.html",
+    "href": "weeks/week-02.html",
+    "title": "第 2 周",
     "section": "",
-    "text": "以下是每周授课相关资料 / 资源（包括课前准备/预习、讲义、练习、课后作业等）的信息列表， 同学们既可以随意浏览或者用主题进行筛选，也可以直接根据目标周数点击打开对应的网页一探究竟。\n\n\n\n   \n     \n     \n       排序方式\n       缺省\n         \n          日期 - 日期升序\n        \n         \n          日期 - 日期降序\n        \n         \n          标题\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\n第 7 周\n\n\n数据导入与齐整\n\n\n\n\n预习\n\n\n随堂练习\n\n\n讲义\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-10-27\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 6 周\n\n\ndplyr数据处理 II\n\n\n\n\n预习\n\n\n随堂练习\n\n\n讲义\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-10-20\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 5 周\n\n\ndplyr数据处理 I\n\n\n\n\n预习\n\n\n随堂练习\n\n\n讲义\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-10-13\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 4 周\n\n\nrmarkdown 与 Quarto\n\n\n\n\n预习\n\n\n讲义\n\n\n随堂练习\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-10-08\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 2 周\n\n\nggplot2数据可视化\n\n\n\n\n预习\n\n\n讲义\n\n\n随堂练习\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-09-22\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 1 周\n\n\n课程简介\n\n\n\n\n准备\n\n\n讲义\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-09-15\n\n\n曾永艺\n\n\n\n\n\n\n无匹配项"
+    "text": "“一图胜千言”。R 语言有着强大的数据可视化（制图）功能，很多人学习 R 语言编程主要就是冲着这一点来的。在本讲中我们将侧重介绍影响力巨大的 ggplot2 包，并涵盖以下几方面的内容："
   },
   {
-    "objectID": "hw/hw-05.html",
-    "href": "hw/hw-05.html",
-    "title": "第6周课后作业",
-    "section": "",
-    "text": "1. 学习 📝 {{Markdown基础}} 和 {{Revealjs 演示文稿}}，完善第4周的课后作业，并增加部分篇幅说明具体改进之处，于2023年10月26日22:00前将压缩包提交至 {{坚果云链接}}。\n2. 复习 📖 {{R for Data Science, 2e}} 一书第三部分 Transform 中关于连接数据集的章节，即 20 Joins 并（结队）完成课后练习。\n\n\n\n\n\n\n\n课后动手编程实操是掌握一门编程语言的必由之路，r4ds一书配套练习都很不错，尽管并未要求同学们提交课后编程实操作业，但希望同学们都能自觉完成，也正好检验下自己对 dplyr 包核心函数和关键知识的掌握情况\n课后习题参考答案链接\n\n📖 R for Data Science (2e): Solutions to Exercise\n📖 R for Data Science: Exercise Solutions\n\n若在课后编程实操中遇到什么问题或难解之处，也可在课程QQ群上贴出并讨论\n\n\n\n\n3. 下载（打印） 📰 {{dplyr的cheatsheet}} 并阅读之\n4. browseVignettes(package = \"dplyr\") 📝，阅读：\n\nRow-wise operations\nTwo-table verbs\n\n\n\n\n\n\n\n\n以下是第4周课后作业的初始要求（备忘）\n\n\n\n\n自由组队，两人一组，共同完成课后作业：\n\n从 L02 课件中挑出 3 ~ 4 个你们感兴趣的数据可视化代码段，就其制作两种类型的展示文档：\n\n{{Quarto|HTML}} 或 {{prettydoc}} -&gt; 📂 L03_HW/docs/\n{{Quarto|Revealjs}} 或 {{xaringan}} -&gt; 📂 L03_HW/slides/\n\n记得多尝试各种选项设置，同时在文档内加上相应的说明性文字（如解释代码或输出图形，其余内容可自由发挥，丰俭由人啦 😁）\n作业共同署名（author: 姓名 + 姓名）\n确认两份文档运行无误后将文件夹📂 L03_HW 打包为 .zip 格式压缩文档，由其中一位同学于2023年10月15日22:00前将压缩包提交至坚果云链接"
+    "objectID": "weeks/week-02.html#课前准备",
+    "href": "weeks/week-02.html#课前准备",
+    "title": "第 2 周",
+    "section": "1. 课前准备",
+    "text": "1. 课前准备\n\n\n\n📖 预习 R for Data Science, 2e 一书关于数据可视化的两章，即 2 Data visualization 和 10 Layers。\n\n\n\n\n\n\n提示\n\n\n\n此书第1版有中文翻译版 《R数据科学》出版，上述两章大致对应的章节为“第1章 使用ggplot2进行数据可视化”。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。\n\n\n🖥️ 我准备的基于 xaringan包 的 网页版讲义，供同学们参考。"
   },
   {
-    "objectID": "hw/hw-04.html",
-    "href": "hw/hw-04.html",
-    "title": "第5周课后作业",
-    "section": "",
-    "text": "1. 复习 📖 {{R for Data Science, 2e}} 一书第一部分 Whole game 中关于数据处理的章节，即 4 Data transformation 并（结队）完成课后练习。\n\n\n\n\n\n\n\n课后动手编程实操是掌握一门编程语言的必由之路，r4ds一书配套练习都很不错，尽管并未要求同学们提交课后编程实操作业，但希望同学们都能自觉完成，也正好检验下自己对 dplyr 包核心函数和关键知识的掌握情况\n课后习题参考答案链接\n\n📖 R for Data Science (2e): Solutions to Exercise\n📖 R for Data Science: Exercise Solutions\n\n若在课后编程实操中遇到什么问题或难解之处，也可在课程QQ群上贴出并讨论\n\n\n\n\n2. 下载（打印） 📰 {{dplyr的cheatsheet}} 并阅读之\n3. browseVignettes(package = \"dplyr\") 📝，阅读：\n\nIntroduction to dplyr\nColumn-wise operations\nGrouped data\nRow-wise operations\nWindow functions"
+    "objectID": "weeks/week-02.html#课堂讲义",
+    "href": "weeks/week-02.html#课堂讲义",
+    "title": "第 2 周",
+    "section": "2. 课堂讲义",
+    "text": "2. 课堂讲义\n🖥️ 第2讲 ggplot2数据可视化"
   },
   {
-    "objectID": "project/team-project.html",
-    "href": "project/team-project.html",
-    "title": "小组研究项目说明",
-    "section": "",
-    "text": "重要\n\n\n\n待补充详细信息。\n\n\n\n1. 小组成员\n\n\n1.1 设计目标\n\n\n1.2 分组流程\n\n\n1.3 分组结果\n\n\n\n2. 任务说明\n\n\n2.1 备选研究项目\n\n\n2.2 小组最终选题\n\n\n\n3. 时间安排\n\n\n\n4. 作业提交与展示\n\n\n4.1 中期进展汇报\n\n\n4.2 最终研究成果提交说明\n\n\n4.3 展示与分享\n\n\n\n5. 作业评分"
+    "objectID": "weeks/week-02.html#随堂练习",
+    "href": "weeks/week-02.html#随堂练习",
+    "title": "第 2 周",
+    "section": "3. 随堂练习",
+    "text": "3. 随堂练习\n⌨️ 见课堂讲义"
+  },
+  {
+    "objectID": "weeks/week-02.html#课后作业",
+    "href": "weeks/week-02.html#课后作业",
+    "title": "第 2 周",
+    "section": "4. 课后作业",
+    "text": "4. 课后作业\n✍️ 课后作业"
   }
 ]
