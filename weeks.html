@@ -76,7 +76,8 @@ ul.task-list li input[type="checkbox"] {
 
     const options = {
       valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
-      
+      page: 6,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
       searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
     };
 
@@ -165,7 +166,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">类别</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">所有 <span class="quarto-category-count">(6)</span></div><div class="category" data-category="作业">作业 <span class="quarto-category-count">(6)</span></div><div class="category" data-category="准备">准备 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="讲义">讲义 <span class="quarto-category-count">(6)</span></div><div class="category" data-category="随堂练习">随堂练习 <span class="quarto-category-count">(5)</span></div><div class="category" data-category="预习">预习 <span class="quarto-category-count">(5)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">类别</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">所有 <span class="quarto-category-count">(7)</span></div><div class="category" data-category="作业">作业 <span class="quarto-category-count">(7)</span></div><div class="category" data-category="准备">准备 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="讲义">讲义 <span class="quarto-category-count">(7)</span></div><div class="category" data-category="随堂练习">随堂练习 <span class="quarto-category-count">(5)</span></div><div class="category" data-category="预习">预习 <span class="quarto-category-count">(6)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -213,7 +214,48 @@ ul.task-list li input[type="checkbox"] {
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="预习,随堂练习,讲义,作业" data-listing-date-sort="1698364800000" data-listing-file-modified-sort="1698363959526" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="0" data-categories="预习,讲义,作业" data-listing-date-sort="1699574400000" data-listing-file-modified-sort="1699230410388" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="thumbnail">
+<p><a href="./weeks/week-09.html"> <img src="./slides/lec-06-prep/imgs/vector-R.png" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./weeks/week-09.html">
+<h3 class="no-anchor listing-title">
+第 9 周
+</h3>
+<div class="listing-subtitle">
+向量与函数
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('预习'); return false;">
+预习
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('讲义'); return false;">
+讲义
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('作业'); return false;">
+作业
+</div>
+</div>
+<a href="./weeks/week-09.html">
+<div class="listing-description">
+前面几讲中我们主要遨游于“净土宇宙 🌌”（<em>tidyverse</em>）中，收获探索“数据可视化”（<code>ggplot2</code> 包）、“动态文档”（<del><code>rmarkdown</code> -&gt;</del> Quarto）、数据导入（<code>readr</code> 包）-齐整（<code>tidyr</code> 包）-转换（<code>dplyr</code> 包）等领域带来的超酷体验 😎。在这一讲中我们将“稍事休整”，返回头去学习 R 语言编程方面的核心知识：<strong>向量</strong>与<strong>函…</strong>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./weeks/week-09.html">
+<div class="listing-date">
+2023-11-10
+</div>
+<div class="listing-author">
+曾永艺
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="预习,随堂练习,讲义,作业" data-listing-date-sort="1698364800000" data-listing-file-modified-sort="1699230410388" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
 <p><a href="./weeks/week-07.html"> <img src="./slides/lec-05-prep/imgs/readr-tidyr.png" class="thumbnail-image"> </a></p>
 </div>
@@ -257,7 +299,7 @@ ul.task-list li input[type="checkbox"] {
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="预习,随堂练习,讲义,作业" data-listing-date-sort="1697760000000" data-listing-file-modified-sort="1698363959526" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="2" data-categories="预习,随堂练习,讲义,作业" data-listing-date-sort="1697760000000" data-listing-file-modified-sort="1699230410388" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
 <p><a href="./weeks/week-06.html"> <img src="./slides/lec-04-prep-II/imgs/dplyr-join.png" class="thumbnail-image"> </a></p>
 </div>
@@ -301,7 +343,7 @@ dplyr数据处理 II
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="预习,随堂练习,讲义,作业" data-listing-date-sort="1697155200000" data-listing-file-modified-sort="1698363959526" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="3" data-categories="预习,随堂练习,讲义,作业" data-listing-date-sort="1697155200000" data-listing-file-modified-sort="1699230410388" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
 <p><a href="./weeks/week-05.html"> <img src="./slides/lec-04-prep/imgs/dplyr-rows-cols.png" class="thumbnail-image"> </a></p>
 </div>
@@ -345,7 +387,7 @@ dplyr数据处理 I
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="预习,讲义,随堂练习,作业" data-listing-date-sort="1696723200000" data-listing-file-modified-sort="1698363959526" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="4" data-categories="预习,讲义,随堂练习,作业" data-listing-date-sort="1696723200000" data-listing-file-modified-sort="1699230410388" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
 <p><a href="./weeks/week-04.html"> <img src="./slides/lec-03-prep/imgs/horst_qmd_render_schema.png" class="thumbnail-image"> </a></p>
 </div>
@@ -389,7 +431,7 @@ dplyr数据处理 I
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="预习,讲义,随堂练习,作业" data-listing-date-sort="1695340800000" data-listing-file-modified-sort="1698363959526" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="5" data-categories="预习,讲义,随堂练习,作业" data-listing-date-sort="1695340800000" data-listing-file-modified-sort="1699230410388" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
 <p><a href="./weeks/week-02.html"> <img src="./slides/lec-02/imgs/ggplot-etc.png" class="thumbnail-image"> </a></p>
 </div>
@@ -433,9 +475,9 @@ ggplot2数据可视化
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="准备,讲义,作业" data-listing-date-sort="1694736000000" data-listing-file-modified-sort="1698363959526" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="6" data-categories="准备,讲义,作业" data-listing-date-sort="1694736000000" data-listing-file-modified-sort="1699230410384" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
-<p><a href="./weeks/week-01.html"> <img src="./slides/lec-01/imgs/ds4b_rating.png" class="thumbnail-image"> </a></p>
+<p><a href="./weeks/week-01.html"> <img data-src="./slides/lec-01/imgs/ds4b_rating.png" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./weeks/week-01.html">
@@ -478,6 +520,9 @@ ggplot2数据可视化
 <div class="listing-no-matching d-none">
 无匹配项
 </div>
+<nav id="weeks-listings-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
 </div>
 <!-- other contents showed after -->
 
