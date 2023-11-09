@@ -1,0 +1,34 @@
+---
+title: "第9周课后作业"
+author: 曾永艺
+date: 2023-11-10
+# editor: visual
+---
+
+<hr>
+
+[1. 复习 📖 [**{{_R for Data Science, 2e_}}**](https://r4ds.had.nz/) 一书的以下章节：]{style="font-size:1.2rem; font-weight:bold"}
+
+  - [28 A field guide to base R](https://r4ds.hadley.nz/base-r) 的 28.1-28.3
+  
+  - [26 Functions](https://r4ds.hadley.nz/functions)
+
+[2. 自学 📖 [{{_R for Data Science, 2e_}}](https://r4ds.had.nz/) 一书第4部分 _Transform_ 的以下章节：]{style="font-size:1.2rem; font-weight:bold"}
+
+  - [12  Logical vectors](https://r4ds.hadley.nz/logicals)
+  
+  - [13  Numbers](https://r4ds.hadley.nz/numbers)
+  
+  - [14  Strings](https://r4ds.hadley.nz/strings)
+  
+  - [15  Regular expressions](https://r4ds.hadley.nz/regexps)
+  
+  - [16  Factors](https://r4ds.hadley.nz/factors)
+  
+  - [17  Dates and times](https://r4ds.hadley.nz/datetimes)
+  
+  - [18  Missing values](https://r4ds.hadley.nz/missing-values)
+
+:::{.callout-note appearance="simple"}
+希望同学们能自觉完成自学任务，若遇到什么问题或难解之处，可在课程QQ群上贴出并讨论
+:::
