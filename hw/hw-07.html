@@ -8,7 +8,7 @@
 
 <meta name="author" content="曾永艺">
 
-<title>Quantitative Finance with R - 第 9 周</title>
+<title>Quantitative Finance with R - 第9周课后作业</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../weeks/week-07.html" rel="prev">
 <link href="../favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -131,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week-09.html">第9周 向量与函数</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">第9周课后作业</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -193,7 +192,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-09.html" class="sidebar-item-text sidebar-link active">
+  <a href="../weeks/week-09.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">第9周 向量与函数</span></a>
   </div>
 </li>
@@ -248,30 +247,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">该页面内容</h2>
-   
-  <ul>
-  <li><a href="#课前准备" id="toc-课前准备" class="nav-link active" data-scroll-target="#课前准备">1. 课前准备</a></li>
-  <li><a href="#课堂讲义" id="toc-课堂讲义" class="nav-link" data-scroll-target="#课堂讲义">2. 课堂讲义</a></li>
-  <li><a href="#随堂练习" id="toc-随堂练习" class="nav-link" data-scroll-target="#随堂练习">3. 随堂练习</a></li>
-  <li><a href="#课后作业" id="toc-课后作业" class="nav-link" data-scroll-target="#课后作业">4. 课后作业</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">第 9 周</h1>
-<p class="subtitle lead">向量与函数</p>
-  <div class="quarto-categories">
-    <div class="quarto-category">预习</div>
-    <div class="quarto-category">讲义</div>
-    <div class="quarto-category">作业</div>
-  </div>
-  </div>
+<h1 class="title">第9周课后作业</h1>
+</div>
 
 
 
@@ -298,79 +282,33 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <hr>
-<p>前面几讲中我们主要遨游于“净土宇宙 🌌”（<em>tidyverse</em>）中，收获探索“数据可视化”（<code>ggplot2</code> 包）、“动态文档”（<del><code>rmarkdown</code> -&gt;</del> Quarto）、数据导入（<code>readr</code> 包）-齐整（<code>tidyr</code> 包）-转换（<code>dplyr</code> 包）等领域带来的超酷体验 😎。在这一讲中我们将“稍事休整”，返回头去学习 R 语言编程方面的核心知识：<strong>向量</strong>与<strong>函数</strong>。掌握这些知识也有助于我们更好理解“净土宇宙 🌌”。</p>
-<p>本讲主要涵盖以下几方面的内容：</p>
+<p><span style="font-size:1.2rem; font-weight:bold">1. 复习 📖 <a href="https://r4ds.had.nz/"><strong>{{<em>R for Data Science, 2e</em>}}</strong></a> 一书的以下章节：</span></p>
 <ul>
-<li><strong>向量</strong>
-<ul>
-<li>原子向量</li>
-<li>列表</li>
-<li>向量属性</li>
-<li>增强向量</li>
-</ul></li>
-<li><strong>函数</strong>
-<ul>
-<li>使用函数的优点</li>
-<li>编写函数的套路</li>
-<li>函数的参数</li>
-<li>函数的返回值</li>
-<li>函数的环境</li>
-<li><code>{{ tidyverse }}</code></li>
-<li>作为一等公民的函数</li>
-</ul></li>
+<li><p><a href="https://r4ds.hadley.nz/base-r">28 A field guide to base R</a> 的 28.1-28.3</p></li>
+<li><p><a href="https://r4ds.hadley.nz/functions">26 Functions</a></p></li>
 </ul>
-<hr>
-<section id="课前准备" class="level2">
-<h2 class="anchored" data-anchor-id="课前准备">1. 课前准备</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>📖 预习 <a href="https://r4ds.hadley.nz/"><em>R for Data Science, 2e</em></a> 第五部分 <em>Program</em> 中关于 <em>基础 R</em> 和 <em>函数</em> 的章节，即 <a href="https://r4ds.hadley.nz/base-r"><strong>28 A field guide to base R</strong></a> 的 <strong>28.1-28.3</strong> 和 <a href="https://r4ds.hadley.nz/functions"><strong>26 Functions</strong></a> 的 。</p>
-<div class="callout callout-style-simple callout-tip">
+<p><span style="font-size:1.2rem; font-weight:bold">2. 自学 📖 <a href="https://r4ds.had.nz/">{{<em>R for Data Science, 2e</em>}}</a> 一书第4部分 <em>Transform</em> 的以下章节：</span></p>
+<ul>
+<li><p><a href="https://r4ds.hadley.nz/logicals">12 Logical vectors</a></p></li>
+<li><p><a href="https://r4ds.hadley.nz/numbers">13 Numbers</a></p></li>
+<li><p><a href="https://r4ds.hadley.nz/strings">14 Strings</a></p></li>
+<li><p><a href="https://r4ds.hadley.nz/regexps">15 Regular expressions</a></p></li>
+<li><p><a href="https://r4ds.hadley.nz/factors">16 Factors</a></p></li>
+<li><p><a href="https://r4ds.hadley.nz/datetimes">17 Dates and times</a></p></li>
+<li><p><a href="https://r4ds.hadley.nz/missing-values">18 Missing values</a></p></li>
+</ul>
+<div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>此书第1版有中文翻译版 <a href="https://www.ituring.com.cn/book/2113">《R数据科学》</a>出版，对应章节为“第14章 函数”和“第15章 向量”。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。</p>
+<p>希望同学们能自觉完成自学任务，若遇到什么问题或难解之处，可在课程QQ群上贴出并讨论</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple callout-warning">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>由于上课内容较多，而上课时间有限（45分钟 × 2），上课节奏预计较快，有些内容甚至会一带而过，请同学们务必腾出时间来过一遍上述预习章节的内容。</p>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:40%;">
-<div style="text-align:right">
-<p><img src="https://r4ds.hadley.nz/cover.jpg" class="cover" width="80%"></p>
-</div>
-</div>
-</div>
-<p>🖥️ 我准备的基于 <code>xaringan</code>包 的 <a href="../slides/lec-06-prep/L06_Vectors_Functions_Prep.html">网页版讲义</a>，供同学们参考。</p>
-</section>
-<section id="课堂讲义" class="level2">
-<h2 class="anchored" data-anchor-id="课堂讲义">2. 课堂讲义</h2>
-<p>🖥️ <a href="../slides/lec-06/L06_Vectors_Functions.html">第6讲 向量与函数</a></p>
-</section>
-<section id="随堂练习" class="level2">
-<h2 class="anchored" data-anchor-id="随堂练习">3. 随堂练习</h2>
-<p>⌨️ [见课堂讲义]</p>
-</section>
-<section id="课后作业" class="level2">
-<h2 class="anchored" data-anchor-id="课后作业">4. 课后作业</h2>
-<p>✍️ <a href="../hw/hw-07.html">课后作业</a></p>
-<p><br></p>
-<!-- ::: {style="font-size:0.875em; text-align:right"} -->
-<!-- 回到 [课程安排](../schedule.qmd) ⏎ -->
-<!-- ::: -->
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -737,15 +675,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../weeks/week-07.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">第7周 数据导入与齐整</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
