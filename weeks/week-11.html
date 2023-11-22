@@ -8,7 +8,7 @@
 
 <meta name="author" content="曾永艺">
 
-<title>Quantitative Finance with R - 第 2 周</title>
+<title>Quantitative Finance with R - 第 11 周</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../weeks/week-04.html" rel="next">
-<link href="../weeks/week-01.html" rel="prev">
+<link href="../weeks/week-09.html" rel="prev">
 <link href="../favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -132,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week-02.html">第2周 ggplot2数据可视化</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week-11.html">第11周 迭代</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -158,7 +157,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-02.html" class="sidebar-item-text sidebar-link active">
+  <a href="../weeks/week-02.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">第2周 ggplot2数据可视化</span></a>
   </div>
 </li>
@@ -200,7 +199,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-11.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-11.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">第11周 迭代</span></a>
   </div>
 </li>
@@ -271,12 +270,11 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">第 2 周</h1>
-<p class="subtitle lead">ggplot2数据可视化</p>
+<h1 class="title">第 11 周</h1>
+<p class="subtitle lead">迭代</p>
   <div class="quarto-categories">
     <div class="quarto-category">预习</div>
     <div class="quarto-category">讲义</div>
-    <div class="quarto-category">随堂练习</div>
     <div class="quarto-category">作业</div>
   </div>
   </div>
@@ -295,7 +293,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">发布日期</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2023年9月22日</p>
+      <p class="date">2023年11月25日</p>
     </div>
   </div>
   
@@ -306,51 +304,64 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <hr>
-<p>“一图胜千言”。R 语言有着强大的数据可视化（制图）功能，很多人学习 R 语言编程主要就是冲着这一点来的。在本讲中我们将侧重介绍影响力巨大的 <code>ggplot2</code> 包，并涵盖以下几方面的内容：</p>
-<ul>
-<li><p>R 的绘图系统</p></li>
-<li><p><code>ggplot2</code> 入门</p>
-<ul>
-<li>The Layered Grammar of Graphics</li>
-<li>将数据映射为几何对象的图形属性</li>
-<li>统计变换、位置调整、坐标、分面</li>
-<li>标签、标注、标度、主题等</li>
-</ul></li>
-<li><p><code>ggplot2</code> extensions 及其它, 如 <code>patchwork</code> 、<code>plotly</code>包</p></li>
-</ul>
+<p>由于 R 中的很多内置函数都支持向量化操作，我们对已读入内存的数据进行简单的数据处理时通常不需要用到显性的 <code>for</code> 循环。但在某些特定情况下（如不存在相应的向量化函数、分组计算数据框的列汇总统计量、导入 / 输出多个文档等），循环迭代操作可能难以完全避免。R 支持传统命令式编程语言的 <code>for</code>、<code>while</code>、<code>if</code> 等控制结构，同时还支持函数式迭代范式（如 <code>apply</code> 族函数）。</p>
+<p>tidyverse 通过核心操作函数的语法设计（如 <code>readr</code> 包的 <code>vroom</code> 引擎、<code>dplyr</code> 包的 <code>group_by()</code>、<code>.by</code>/<code>by</code> 参数（<code>?dplyr_by</code>）、<code>rowwise()</code>、<code>across()</code> 和实验性的 <code>group_map()</code>/<code>group_modify()</code>/<code>group_walk()</code>/<code>group_nest()</code>/<code>group_split()</code>/<code>nest_by()</code>、<code>ggplot2</code> 包的 <code>aes()</code> 美学映射和 <code>facet_*()</code> 分面等），进一步减少需要我们手动编写显性循环迭代操作的场合。</p>
+<p>此外，tidyverse 下的 <code>purrr</code> 包提供更一致、易用、灵活且强大的函数式迭代工具，并可和 R 语言核心数据结构数据框（tidyverse 下为 tibble）的列表列（list-column）配合使用来完成更为复杂的数据处理 / 分析工作。</p>
+<p>本讲主要涵盖以下几方面的内容：</p>
+<ol type="1">
+<li><p>通常你并不需要手写循环</p></li>
+<li><p>控制流结构</p></li>
+<li><p>函数式编程</p></li>
+<li><p><code>purrr</code> 包</p></li>
+<li><p><code>purrr</code> 包 与 列表列</p></li>
+<li><p><code>purrr</code> -&gt; <code>furrr</code></p></li>
+</ol>
+<br>
 <hr>
 <section id="课前准备" class="level2">
 <h2 class="anchored" data-anchor-id="课前准备">1. 课前准备</h2>
-<div style="text-align:center">
-<p><img src="https://r4ds.hadley.nz/cover.jpg" class="cover" width="300"></p>
-</div>
-<p>📖 预习 <a href="https://r4ds.hadley.nz/"><em>R for Data Science, 2e</em></a> 一书关于数据可视化的两章，即 <strong>2 Data visualization</strong> 和 <strong>10 Layers</strong>。</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>📖 预习 <a href="https://r4ds.hadley.nz/"><em>R for Data Science, 2e</em></a> 第五部分 <em>Program</em> 中关于 <em>迭代</em> 和 <em>基础 R</em> 的章节，即 <a href="https://r4ds.hadley.nz/iteration"><strong>26 Iteration</strong></a> 和 <a href="https://r4ds.hadley.nz/base-r"><strong>27 A field guide to base R</strong></a> 的 <strong>27.4-27.5</strong>。</p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-提示
+<div class="callout-body-container">
+<p>此书第1版有中文翻译版 <a href="https://www.ituring.com.cn/book/2113">《R数据科学》</a>出版，对应章节为“第16章 使用 <code>purrr</code> 实现迭代”和“第19章 使用 <code>purrr</code> 和 <code>broom</code> 处理多个模型”（很遗憾，翻译版的第19章出现大量删减🙃，建议参阅英文原著）。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。</p>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>此书第1版有中文翻译版 <a href="https://www.ituring.com.cn/book/2113">《R数据科学》</a>出版，上述两章大致对应的章节为“第1章 使用ggplot2进行数据可视化”。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。</p>
+</div>
+<div class="callout callout-style-simple callout-warning">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>由于上课内容较多，而上课时间有限（45分钟 × 2），上课节奏预计较快，有些内容甚至会一带而过，请同学们务必腾出时间来过一遍上述预习章节的内容。</p>
 </div>
 </div>
-<p>🖥️ 我准备的基于 <code>xaringan</code>包 的 <a href="../slides/lec-02-prep/L02_Visualization_Prepare.html">网页版讲义</a>，供同学们参考。</p>
+</div>
+</div><div class="column" style="width:40%;">
+<div style="text-align:right">
+<p><img src="https://r4ds.hadley.nz/cover.jpg" class="cover" width="80%"></p>
+</div>
+</div>
+</div>
+<p>🖥️ 我准备的基于 <code>xaringan</code>包 的 <a href="../slides/lec-07-prep/L07_Iteration_Prep.html">网页版讲义</a>，供同学们参考。</p>
 </section>
 <section id="课堂讲义" class="level2">
 <h2 class="anchored" data-anchor-id="课堂讲义">2. 课堂讲义</h2>
-<p>🖥️ <a href="../slides/lec-02/L02_Visualization.html">第2讲 ggplot2数据可视化</a></p>
+<p>🖥️ [第7讲 迭代]</p>
 </section>
 <section id="随堂练习" class="level2">
 <h2 class="anchored" data-anchor-id="随堂练习">3. 随堂练习</h2>
-<p>⌨️ 见课堂讲义</p>
+<p>⌨️ [见课堂讲义]</p>
 </section>
 <section id="课后作业" class="level2">
 <h2 class="anchored" data-anchor-id="课后作业">4. 课后作业</h2>
-<p>✍️ <a href="../hw/hw-02.html">课后作业</a></p>
+<p>✍️ [课后作业]</p>
 <p><br></p>
 <!-- ::: {style="font-size:0.875em; text-align:right"} -->
 <!-- 回到 [课程安排](../schedule.qmd) ⏎ -->
@@ -726,14 +737,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../weeks/week-01.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">第1周 课程简介</span>
+      <a href="../weeks/week-09.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">第9-10周 向量与函数</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../weeks/week-04.html" class="pagination-link">
-        <span class="nav-page-text">第4周 rmarkdown与Quarto</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

@@ -1,122 +1,164 @@
 [
   {
-    "objectID": "readings/markdown-basics.html",
-    "href": "readings/markdown-basics.html",
-    "title": "Markdown 基础",
+    "objectID": "weeks/week-06.html",
+    "href": "weeks/week-06.html",
+    "title": "第 6 周",
     "section": "",
-    "text": "John Gruber 首创的 Markdown 让你用纯文本的方式来撰写带有简单格式标识的文档（当然这也使得文档更容易阅读）。Markdown 的设计哲学为：\n\nMarkdown 格式文档可按其自身样式以纯文本的方式直接发布，而不应看起来有着各式各样标签或格式化指令的标注（marked up）。— John Gruber\n\nMarkdown 存在很多种的方言（如 CommonMark、Github-Flavored Markdown 等），Quarto 主要基于 Pandoc 小幅修改并扩展的 Markdown 语法。以下将简要介绍常用的 Markdown 语法并展示其经过渲染（render）和格式化后的网页呈现结果，更多内容请参见 Pandoc 的官方文档 Markdown 。"
+    "text": "“净土宇宙 🌌”的核心数据结构为 tibble（即由行（样本）和列（变量）构成的表格型数据），dplyr 包基于数据操作语法（A Grammar of Data Manipulation）构建出一组用来操作 tibble 对象的核心函数——它们就是我们在接下来两次课中需要学习、理解并掌握的知识。\n本讲主要涵盖以下几方面的内容（加粗字体为本次课的讲授内容）："
   },
   {
-    "objectID": "readings/markdown-basics.html#引言",
-    "href": "readings/markdown-basics.html#引言",
-    "title": "Markdown 基础",
+    "objectID": "weeks/week-06.html#课前准备",
+    "href": "weeks/week-06.html#课前准备",
+    "title": "第 6 周",
+    "section": "1. 课前准备",
+    "text": "1. 课前准备\n\n\n📖 预习 R for Data Science, 2e 第三部分 Transform 中关于数据集合并的章节，即 20 Joins。\n\n\n\n\n\n\n此书第1版有中文翻译版 《R数据科学》出版，上述内容大致对应“第9章 使用 dplyr 处理关系数据”。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。\n\n\n\n\n\n\n\n\n\n由于上课内容较多，而上课时间有限，上课节奏预计较快，有些内容甚至会一带而过，请同学们务必腾出时间来过一遍上述预习章节的内容。\n\n\n\n\n\n\n\n\n\n🖥️ 我准备的基于 xaringan包 的 网页版讲义，供同学们参考。"
+  },
+  {
+    "objectID": "weeks/week-06.html#课堂讲义",
+    "href": "weeks/week-06.html#课堂讲义",
+    "title": "第 6 周",
+    "section": "2. 课堂讲义",
+    "text": "2. 课堂讲义\n🖥️ 第4讲 dplyr数据处理"
+  },
+  {
+    "objectID": "weeks/week-06.html#随堂练习",
+    "href": "weeks/week-06.html#随堂练习",
+    "title": "第 6 周",
+    "section": "3. 随堂练习",
+    "text": "3. 随堂练习\n⌨️ [见课堂讲义]"
+  },
+  {
+    "objectID": "weeks/week-06.html#课后作业",
+    "href": "weeks/week-06.html#课后作业",
+    "title": "第 6 周",
+    "section": "4. 课后作业",
+    "text": "4. 课后作业\n✍️ 课后作业"
+  },
+  {
+    "objectID": "weeks/week-02.html",
+    "href": "weeks/week-02.html",
+    "title": "第 2 周",
     "section": "",
-    "text": "John Gruber 首创的 Markdown 让你用纯文本的方式来撰写带有简单格式标识的文档（当然这也使得文档更容易阅读）。Markdown 的设计哲学为：\n\nMarkdown 格式文档可按其自身样式以纯文本的方式直接发布，而不应看起来有着各式各样标签或格式化指令的标注（marked up）。— John Gruber\n\nMarkdown 存在很多种的方言（如 CommonMark、Github-Flavored Markdown 等），Quarto 主要基于 Pandoc 小幅修改并扩展的 Markdown 语法。以下将简要介绍常用的 Markdown 语法并展示其经过渲染（render）和格式化后的网页呈现结果，更多内容请参见 Pandoc 的官方文档 Markdown 。"
+    "text": "“一图胜千言”。R 语言有着强大的数据可视化（制图）功能，很多人学习 R 语言编程主要就是冲着这一点来的。在本讲中我们将侧重介绍影响力巨大的 ggplot2 包，并涵盖以下几方面的内容："
   },
   {
-    "objectID": "readings/markdown-basics.html#段落",
-    "href": "readings/markdown-basics.html#段落",
-    "title": "Markdown 基础",
-    "section": "段落",
-    "text": "段落\n\n呈现结果Markdown语法\n\n\n段落是指后面跟着一行或多行空白行作为分隔的文本块。\n每一行文本最后的换行符将被视作空格， 所以你可以按你的意愿在段内随意换行1。\n如果你不想换行符被视为空格，而想要在行末强制换行，则需要在该行文字的最后输入两个及以上的空格（你也可以用在行末换行符的前面输入 \\ 进行转义从而得到硬换行符——这里采用的就是这种处理方式，在“如果”前一行的最后有个 \\）。\n\n\n段落是指后面跟着一行或多行空白行作为分隔的文本块。\n\n每一行文本最后的换行符将被视作空格，\n所以你可以按你的意愿在段内随意换行^[对中文可能不太合适，这一行中“所以”的前面将出现一个多余的空格）]。\\\n如果你不想换行符被视为空格，而想要在行末强制换行，则需要在该行文字的最后输入两个及以上的空格（你也可以用在行末换行符的前面输入 `\\` 进行转义从而得到硬换行符——这里采用的就是这种处理方式，在“如果”前一行的最后有个 `\\`）。"
+    "objectID": "weeks/week-02.html#课前准备",
+    "href": "weeks/week-02.html#课前准备",
+    "title": "第 2 周",
+    "section": "1. 课前准备",
+    "text": "1. 课前准备\n\n\n\n📖 预习 R for Data Science, 2e 一书关于数据可视化的两章，即 2 Data visualization 和 10 Layers。\n\n\n\n\n\n\n提示\n\n\n\n此书第1版有中文翻译版 《R数据科学》出版，上述两章大致对应的章节为“第1章 使用ggplot2进行数据可视化”。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。\n\n\n🖥️ 我准备的基于 xaringan包 的 网页版讲义，供同学们参考。"
   },
   {
-    "objectID": "readings/markdown-basics.html#标题",
-    "href": "readings/markdown-basics.html#标题",
-    "title": "Markdown 基础",
-    "section": "标题",
-    "text": "标题\n\n\n\n\n\n\n\nMarkdown语法\n呈现结果\n\n\n\n\n# 一级标题\n一级标题\n\n\n## 二级标题\n二级标题\n\n\n### 三级标题\n三级标题\n\n\n#### 四级标题\n四级标题\n\n\n##### 五级标题\n五级标题\n\n\n###### 六级标题\n六级标题"
+    "objectID": "weeks/week-02.html#课堂讲义",
+    "href": "weeks/week-02.html#课堂讲义",
+    "title": "第 2 周",
+    "section": "2. 课堂讲义",
+    "text": "2. 课堂讲义\n🖥️ 第2讲 ggplot2数据可视化"
   },
   {
-    "objectID": "readings/markdown-basics.html#行内格式化",
-    "href": "readings/markdown-basics.html#行内格式化",
-    "title": "Markdown 基础",
-    "section": "行内格式化",
-    "text": "行内格式化\n\n\n\n\n\n\n\nMarkdown语法\n呈现结果\n\n\n\n\n*斜体* / **加粗**\n斜体 / 加粗\n\n\n上标^2^ / 下标~2~\n上标2 / 下标2\n\n\n~~删除线~~\n删除线\n\n\n[下划线]{.underline}\n下划线\n\n\n`行内代码 a + b`\n行内代码 a + b"
+    "objectID": "weeks/week-02.html#随堂练习",
+    "href": "weeks/week-02.html#随堂练习",
+    "title": "第 2 周",
+    "section": "3. 随堂练习",
+    "text": "3. 随堂练习\n⌨️ 见课堂讲义"
   },
   {
-    "objectID": "readings/markdown-basics.html#链接-图像",
-    "href": "readings/markdown-basics.html#链接-图像",
-    "title": "Markdown 基础",
-    "section": "链接 & 图像",
-    "text": "链接 & 图像\n\n\n\nMarkdown语法\n呈现结果\n\n\n\n\n&lt;https://quarto.org&gt;\nhttps://quarto.org\n\n\n[Quarto](https://quarto.org)\nQuarto\n\n\n[段落]\n段落\n\n\n[文档内链接至段落标题](#段落)\n文档内链接至段落标题\n\n\n![Logo](imgs/logo.png)\n\n\n\n[![Logo](imgs/logo.png)](https://quarto.org)\n\n\n\n[![Logo](imgs/logo.png)](https://quarto.org \"quarto-logo\")\n\n\n\n[![](imgs/logo.png){fig-alt=\"logo of Q\"}](https://quarto.org)"
+    "objectID": "weeks/week-02.html#课后作业",
+    "href": "weeks/week-02.html#课后作业",
+    "title": "第 2 周",
+    "section": "4. 课后作业",
+    "text": "4. 课后作业\n✍️ 课后作业"
   },
   {
-    "objectID": "readings/markdown-basics.html#列表",
-    "href": "readings/markdown-basics.html#列表",
-    "title": "Markdown 基础",
-    "section": "列表",
-    "text": "列表\n\n无序列表\n\n\nMarkdown语法\n* 项目 1\n  + 子项目 1\n  + 子项目 2\n    - 子子项目 1\n* 项目 2                \n  连续文字 (缩进)\n\n呈现结果\n\n项目 1\n\n子项目 1\n子项目 2\n\n子子项目 1\n\n\n项目 2\n连续文字 (缩进)\n\n\n\n\n\n有序列表 1\n\n\nMarkdown语法\n1. 项目 1\n\n   连续文字 (缩进)\n\n2. 项目 2\n   i) 子项目 1\n      A.  子子项目 1\n   i) 子项目 2\n\n呈现结果\n\n项目 1\n连续文字 (缩进)\n项目 2\n\n子项目 1\n\n子子项目 1\n\n子项目 2\n\n\n\n\n\n\n有序列表 2\n\n\nMarkdown语法\n(@) 项目 1\n\n可在其他文字后连续编号的\n\n(@) 项目 2\n    i) 子项目 1\n\n呈现结果\n\n项目 1\n\n可在其他文字后连续编号的\n\n项目 2\n\n子项目 1"
+    "objectID": "weeks/week-04.html",
+    "href": "weeks/week-04.html",
+    "title": "第 4 周",
+    "section": "",
+    "text": "在上一讲课后作业中同学们通过代码脚本文档 L02_coding_practice.R 完成编程作业并直接提交，但如果不运行同学们的代码，我将很难得知代码能否正常运行及其运行结果；同时通过注释方式添加说明性文字或给文档逻辑分节也显得笨拙和不够美观。那么，有没有更好的解决方案呢？答案就是本讲将要介绍的“动态文档”（dynamic documents）——它允许你将代码、代码输出、文字等有机地组合在一起，并可方便地转化为多种类型的输出格式（如网页、PDF、docx、幻灯片等）。\n本讲主要涵盖以下几方面的内容："
   },
   {
-    "objectID": "readings/markdown-basics.html#表格",
-    "href": "readings/markdown-basics.html#表格",
-    "title": "Markdown 基础",
-    "section": "表格",
-    "text": "表格\n\nMarkdown语法呈现结果\n\n\n| 右对齐 | 左对齐 | 默认    |  居中  |\n|-------:|:-------|---------|:------:|\n|   12   |   12   |    12   |    12  |\n|  123   |  123   |   123   |   123  |\n|    1   |    1   |     1   |     1  |\n\n\n\n\n\n右对齐\n左对齐\n默认\n居中\n\n\n\n\n12\n12\n12\n12\n\n\n123\n123\n123\n123\n\n\n1\n1\n1\n1\n\n\n\n\n\n\n关于更多表格制作的 Markdown 语法可参见 Quarto 的官方文档 Tables。"
+    "objectID": "weeks/week-04.html#课前准备",
+    "href": "weeks/week-04.html#课前准备",
+    "title": "第 4 周",
+    "section": "1. 课前准备",
+    "text": "1. 课前准备\n\n\n📖 预习 R for Data Science, 2e关于如何使用 Quarto 记录数据科学研究过程并展示与沟通研究结果的内容，即 29 Quarto 。\n\n\n\n\n\n\n此书第1版有中文翻译版 《R数据科学》出版，上述内容大致对应“第20章 R Markdown” 和 “第23章 R Markdown工作流”（但使用 R Markdown 而非 Quarto）。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。\n\n\n\n\n\n\n\n\n\n📖 阅读 Markdown基础 一文。\n\n\n\n\n\n\n此文主要翻译自 Quarto 官方文档 Markdown Basics 并经小幅改写。\n\n\n\n🖥️ 我准备的基于 xaringan包 的 网页版讲义，供同学们参考。"
   },
   {
-    "objectID": "readings/markdown-basics.html#代码块",
-    "href": "readings/markdown-basics.html#代码块",
-    "title": "Markdown 基础",
-    "section": "代码块",
-    "text": "代码块\n在 Markdown 文档中使用 ``` 来分隔代码块：\n```\n1 + 1\n```\n还可以通过加上语言标识（如 python）来给代码块增加语法高亮（syntax highlight）功能：\n```python\n1 + 1\n```\nPandoc 支持超过 140 种语言的语法高亮。如果你使用的语言未被支持，可设定为 default：\n```default\n1 + 1\n```\n如果文档的输出格式为 HTML，代码块输出还存在额外的设定选项（如代码折叠、样式主题、增加复制按钮、代码链接、代码工具等），进一步细节可参见 Quarto 官方文档 HTML Code。"
+    "objectID": "weeks/week-04.html#课堂讲义",
+    "href": "weeks/week-04.html#课堂讲义",
+    "title": "第 4 周",
+    "section": "2. 课堂讲义",
+    "text": "2. 课堂讲义\n🖥️第3讲 rmarkdown 与 Quarto"
   },
   {
-    "objectID": "readings/markdown-basics.html#公式",
-    "href": "readings/markdown-basics.html#公式",
-    "title": "Markdown 基础",
-    "section": "公式",
-    "text": "公式\n你可以使用 $（$$）分隔符来创建行内的（独显的）数学公式，例如：\n\n\n\n\n\n\n\nMarkdown语法\n呈现结果\n\n\n\n\n行内数学公式：$E = mc^{2}$\n行内数学公式：\\(E=mc^{2}\\)\n\n\n独显数学公式：\n\n$$E = mc^{2}$$\n独显数学公式：\n\\[E = mc^{2}\\]\n\n\n\n如果你想要自定义 TeX 宏，可以用 $$ 分隔符包裹相应的宏定义，并将其设定为 .hidden 代码块，示例如下：\n::: {.hidden}\n$$\n \\def\\RR{{\\bf R}}\n \\def\\bold#1{{\\bf #1}}\n$$\n:::\nHTML 数学公式采用默认的 MathJax 引擎 ，此时你可以用 \\def、 \\newcommand、 \\renewcommand、 \\newenvironment、 \\renewenvironment 和 \\let 等命令来创建宏和环境。"
+    "objectID": "weeks/week-04.html#随堂练习",
+    "href": "weeks/week-04.html#随堂练习",
+    "title": "第 4 周",
+    "section": "3. 随堂练习",
+    "text": "3. 随堂练习\n⌨️ 本讲将有比较长时间的随堂编程练习，请同学们带上自己的笔记本电脑 （也可找上编程小伙伴，坐在一起结队练习效果可能更佳，😁）。"
   },
   {
-    "objectID": "readings/markdown-basics.html#图示",
-    "href": "readings/markdown-basics.html#图示",
-    "title": "Markdown 基础",
-    "section": "图示",
-    "text": "图示\nQuarto 内生支持 Mermaid 和 Graphviz 图示（diagram），这使得你很容易使用类似 markdown 的纯文本语法创建流程图、序贯图、状态图、甘特图等。例如，这里我们插入一份由 Mermaid 创建的流程图：\n\n```{mermaid}\nflowchart LR\n  A[方角矩形] --&gt; B(圆角矩形)\n  B --&gt; C{决策}\n  C --&gt; D[分支 1]\n  C --&gt; E[分支 2]\n```\n\n\n\nflowchart LR\n  A[方角矩形] --&gt; B(圆角矩形)\n  B --&gt; C{决策}\n  C --&gt; D[分支 1]\n  C --&gt; E[分支 2]\n\n\n\n\n\n你可通过 Quarto 官方文档 Diagrams 了解更多关于图示的信息。"
+    "objectID": "weeks/week-04.html#课后作业",
+    "href": "weeks/week-04.html#课后作业",
+    "title": "第 4 周",
+    "section": "4. 课后作业",
+    "text": "4. 课后作业\n✍️ 课后作业"
   },
   {
-    "objectID": "readings/markdown-basics.html#分页符",
-    "href": "readings/markdown-basics.html#分页符",
-    "title": "Markdown 基础",
-    "section": "分页符",
-    "text": "分页符\npagebreak 短代码让你在文档中插入原生的分页符（LaTeX 为 \\newpage，MS Word为分页符，而 HTML 为 page-break-after: always CSS 指令）：\n第1页\n\n{{&lt; pagebreak &gt;}}\n\n第2页"
+    "objectID": "weeks/week-05.html",
+    "href": "weeks/week-05.html",
+    "title": "第 5 周",
+    "section": "",
+    "text": "“净土宇宙 🌌”的核心数据结构为 tibble（即由行（样本）和列（变量）构成的表格型数据），dplyr 包基于数据操作语法（A Grammar of Data Manipulation）构建出一组用来操作 tibble 对象的核心函数——它们就是我们在接下来两次课中需要学习、理解并掌握的知识。\n本讲主要涵盖以下几方面的内容（加粗字体为本次课的讲授内容）："
   },
   {
-    "objectID": "readings/markdown-basics.html#块级-行内元素",
-    "href": "readings/markdown-basics.html#块级-行内元素",
-    "title": "Markdown 基础",
-    "section": "块级 / 行内元素",
-    "text": "块级 / 行内元素\n\n块级元素\n块级元素以至少三个连续的冒号 : 的围栏行作为开始（可通过 {} 加上额外的属性）并以至少三个连续的冒号 : 行作为结束。块级元素允许套嵌，但前后必须有空行作为分隔。额外的属性包括由 # 指定的唯一标识、. 指定的类以及其它由 key=\"val\" 指定的属性。示例如下：\n::::: {#special style=\"text-align:center\"}\n一些内容。\n\n::: {.warning .border}\n这里为应用 border 和 warning 类样式的文本。\n:::\n\n更多内容。\n:::::\n\n\n行内元素\n[] 包围的文本在正常情况下用来定义 链接，但如果还附加有额外的属性，那么这些文本将被视作行内元素，例如：\n[这是具有指定类 class 和属性取值 key=\"val\" 的 **行内** 文本]{.class key=\"val\"}\n当然在自定义块级元素和行内元素之后，我们通常需要进一步使用 HTML 的 CSS（层叠样式表）和/或 过滤器 来给渲染后的块级元素和行内元素增加相应的样式和/或行为。\n关于块级元素和行内元素的更多信息可参见 Pandoc 官方文档 Divs and Spans。"
+    "objectID": "weeks/week-05.html#课前准备",
+    "href": "weeks/week-05.html#课前准备",
+    "title": "第 5 周",
+    "section": "1. 课前准备",
+    "text": "1. 课前准备\n\n\n📖 预习 R for Data Science, 2e 第一部分 Whole game 中关于数据处理的章节，即 4 Data transformation 。\n\n\n\n\n\n\n此书第1版有中文翻译版 《R数据科学》出版，上述内容大致对应“第3章 使用 dplyr 进行数据转换”和“第13章 使用 magrittr 进行管道操作”。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。\n\n\n\n\n\n\n\n\n\n由于上课内容较多，而上课时间有限，上课节奏预计较快，有些内容甚至会一带而过，请同学们务必腾出时间来过一遍上述预习章节的内容。\n\n\n\n\n\n\n\n\n\n🖥️ 我准备的基于 xaringan包 的 网页版讲义，供同学们参考。"
   },
   {
-    "objectID": "readings/markdown-basics.html#标注块",
-    "href": "readings/markdown-basics.html#标注块",
-    "title": "Markdown 基础",
-    "section": "标注块",
-    "text": "标注块\n标注块有助于吸引读者关注特定内容或者清楚标明某些内容仅适用于某些特定情形。Quarto 基于 块级元素 Markdown 语法内置支持五种类型的标注：\nMarkdown语法\n::: {.callout-note appearance=\"simple\"}\nQuarto 内置五种类型的标注，包括：`note`、`tip`、`warning`、`caution`和`important`。\n:::\n呈现结果\n\n\n\n\n\n\nQuarto 内置五种类型的标注，包括：note、tip、warning、caution和important。\n\n\n\n你可通过 Quarto 官方文档 Callout Blocks 了解更多关于标注块的信息。"
+    "objectID": "weeks/week-05.html#课堂讲义",
+    "href": "weeks/week-05.html#课堂讲义",
+    "title": "第 5 周",
+    "section": "2. 课堂讲义",
+    "text": "2. 课堂讲义\n🖥️第4讲 dplyr数据处理"
   },
   {
-    "objectID": "readings/markdown-basics.html#脚注",
-    "href": "readings/markdown-basics.html#脚注",
-    "title": "Markdown 基础",
-    "section": "脚注",
-    "text": "脚注\n在本文 段落 一节中你们已经看到脚注的出现。Quarto 支持两种方式的脚注（可自由混合使用）：\n\n普通脚注\n脚注标识和脚注内容分开列示，支持多段落的脚注文本内容（需空格缩进）。示例如下：\n\n呈现结果Markdown语法\n\n\n正文内容有点复杂，所以这里需要有个脚注2。希望借助长脚注我能把这个问题解释明白3。\n\n\n正文内容有点复杂，所以这里需要有个脚注[^1]。希望借助长脚注我能把这个问题解释明白[^more]。\n\n[^1]: 嗯\\~\\~ 要解释的东西确实有点复杂，在脚注内也一时半会儿说不清楚啦。\n\n[^more]: 恐怕得加上必要的公式和代码才说得明白：\n\n    $$E = mc^{2}$$\n    \n    这是用 R 代码实现的计算过程：\n\n    ```r\n    E &lt;- m * c^2\n    ```\n\n\n\n\n\n行内脚注\n直接将脚注文本内容放在脚注 Markdown 语法标记 ^[] 的 [] 内，不支持多段落的脚注文本内容。示例如下：\n\n呈现结果Markdown语法\n\n\n正文内容有点复杂，所以这里需要有个行内注释4。我说明白了吗？\n\n\n正文内容有点复杂，所以这里需要有个行内注释^[嗯\\~\\~ 要解释的东西确实有点复杂，用行内脚注肯定说不清楚啦。]。我说明白了吗？"
+    "objectID": "weeks/week-05.html#随堂练习",
+    "href": "weeks/week-05.html#随堂练习",
+    "title": "第 5 周",
+    "section": "3. 随堂练习",
+    "text": "3. 随堂练习\n⌨️ [见课堂讲义——并非动手编程练习，思维体操而已]"
   },
   {
-    "objectID": "readings/markdown-basics.html#其它",
-    "href": "readings/markdown-basics.html#其它",
-    "title": "Markdown 基础",
-    "section": "其它",
-    "text": "其它\n\n引用和线文本块\n\n\n\n\n\n\n\nMarkdown语法\n输出\n\n\n\n\n&gt; 引用 \\\n&gt; 子在川上曰 \\\n&gt; 逝者如斯夫\n\n引用\n子在川上曰\n逝者如斯夫\n\n\n\n| 线文本块\n|   保留文本中的起始空格和\n|     换行符\n线文本块\n  保留文本中的起始空格和\n    换行符\n\n\n\n\n\n原始 HTML 和 TeX\nMarkdown 语法允许你在文档中绝大多数的地方插入原始的 HTML（如插入 &lt;br&gt; 来强制换行、&lt;a href=\"https://bing.com\"&gt;Bing&lt;/a&gt; 等）和 TeX 的内容，并在输出文档中得到渲染支持（或忽略）。\n\n\n特殊字符\n\n\n\n\n\n\n\nMarkdown语法\n输出\n\n\n\n\n连接号 (en-dash)：--\n连接号 (en-dash)：–\n\n\n破折号 (em-dash)：---\n破折号 (em-dash)：—"
+    "objectID": "weeks/week-05.html#课后作业",
+    "href": "weeks/week-05.html#课后作业",
+    "title": "第 5 周",
+    "section": "4. 课后作业",
+    "text": "4. 课后作业\n✍️ 课后作业"
   },
   {
-    "objectID": "readings/markdown-basics.html#footnotes",
-    "href": "readings/markdown-basics.html#footnotes",
-    "title": "Markdown 基础",
-    "section": "脚注",
-    "text": "脚注\n\n\n对中文可能不太合适，这一行中“所以”的前面出现一个多余的空格。↩︎\n嗯~~ 要解释的东西确实有点复杂，在脚注内也一时半会儿说不清楚啦。↩︎\n恐怕得加上必要的公式和代码才说得明白：\n\\[E = mc^{2}\\]\n这是用 R 代码实现的计算过程：\nE &lt;- m * c^2\n↩︎\n嗯~~ 要解释的东西确实有点复杂，用行内脚注肯定说不清楚啦。↩︎"
+    "objectID": "weeks.html",
+    "href": "weeks.html",
+    "title": "每周列表",
+    "section": "",
+    "text": "以下是每周授课相关资料 / 资源（包括课前准备/预习、讲义、练习、课后作业等）的信息列表， 同学们既可以随意浏览或者用主题进行筛选，也可以直接根据目标周数点击打开对应的网页一探究竟。\n\n\n\n   \n     \n     \n       排序方式\n       缺省\n         \n          日期 - 日期升序\n        \n         \n          日期 - 日期降序\n        \n         \n          标题\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\n第 11 周\n\n\n迭代\n\n\n\n\n预习\n\n\n讲义\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-11-25\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 9-10 周\n\n\n向量与函数\n\n\n\n\n预习\n\n\n讲义\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-11-10\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 7 周\n\n\n数据导入与齐整\n\n\n\n\n预习\n\n\n随堂练习\n\n\n讲义\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-10-27\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 6 周\n\n\ndplyr数据处理 II\n\n\n\n\n预习\n\n\n随堂练习\n\n\n讲义\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-10-20\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 5 周\n\n\ndplyr数据处理 I\n\n\n\n\n预习\n\n\n随堂练习\n\n\n讲义\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-10-13\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 4 周\n\n\nrmarkdown 与 Quarto\n\n\n\n\n预习\n\n\n讲义\n\n\n随堂练习\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-10-08\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 2 周\n\n\nggplot2数据可视化\n\n\n\n\n预习\n\n\n讲义\n\n\n随堂练习\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-09-22\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 1 周\n\n\n课程简介\n\n\n\n\n准备\n\n\n讲义\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-09-15\n\n\n曾永艺\n\n\n\n\n\n\n无匹配项"
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "课程安排",
+    "section": "",
+    "text": "注释\n\n\n\n本页包含本课程周次安排、教学主题、课前准备、讲义、课后作业、小组项目等方面的 概要信息以及相应的链接。 随着本学期教学进度的推进，本表格将逐步增补、调整并完善。\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n周次\n日期\n主题\n准备\n讲义\n练习\n作业\n小组项目\n\n\n\n\n1\n2023-09-15\n课程简介\n📖\n🖥️\n\n✍️\n\n\n\n2\n2023-09-22\nggplot2 数据可视化\n📖\n🖥️\n⌨️\n✍️\n\n\n\n3\n2023-09-29\n🥮 中秋节假期停课\n\n\n\n\n\n\n\n4\n2023-10-08\nrmarkdown 与 Quarto\n📖\n🖥️\n⌨️\n✍️\n\n\n\n5\n2023-10-13\ndplyr 数据处理 I\n📖\n🖥️\n⌨️\n✍️\n\n\n\n6\n2023-10-20\ndplyr 数据处理 II\n📖\n🖥️\n⌨️\n✍️\n\n\n\n7\n2023-10-27\n数据导入与齐整\n📖\n🖥️\n⌨️\n✍️\n👨‍🏫 启动\n\n\n8\n2023-11-03\n🏃校运会🏅 停课\n\n\n\n\n\n\n\n9\n2023-11-10\n向量与函数 I\n📖\n🖥️\n⌨️\n✍️\n\n\n\n10\n2023-11-17\n向量与函数 II\n\n🖥️\n⌨️\n✍️\n\n\n\n11\n2023-11-24\n迭代\n📖"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "_Quantitative Finance with R_",
+    "section": "",
+    "text": "这是厦门大学管理学院 2023-2024 学年秋季学期“量化金融与金融编程”课的课程主页， 将主要展示课程 准备 | 预习、课堂讲义 | 随堂练习、课后作业、 小组研究项目 等方面的信息和资源。\n希望同学们通过课程学习，能在  语言金融编程领域实现 from Zero to Hero 的升级！\n \n  \n   \n  \n    \n     网站\n  \n  \n    \n     Github"
   },
   {
     "objectID": "readings/revealjs/themes.html",
@@ -161,536 +203,102 @@
     "text": "了解更多\n参阅以下文章以了解有关 Reveal 使用的更多信息：\n\nReveal基础 涵盖了创建演示文稿的基本流程。\n幻灯片演示 介绍了幻灯片导航、打印为 PDF、使用板书工具以及创建同步演示幻灯片。\n高级Reveal 深入研究 切换、动画、高级布局与定位以及可用于自定义演示文稿的其他选项。"
   },
   {
-    "objectID": "hw/hw-04.html",
-    "href": "hw/hw-04.html",
-    "title": "第5周课后作业",
+    "objectID": "readings/revealjs/advanced.html",
+    "href": "readings/revealjs/advanced.html",
+    "title": "高级 Reveal",
     "section": "",
-    "text": "1. 复习 📖 {{R for Data Science, 2e}} 一书第一部分 Whole game 中关于数据处理的章节，即 4 Data transformation 并（结队）完成课后练习。\n\n\n\n\n\n\n\n课后动手编程实操是掌握一门编程语言的必由之路，r4ds一书配套练习都很不错，尽管并未要求同学们提交课后编程实操作业，但希望同学们都能自觉完成，也正好检验下自己对 dplyr 包核心函数和关键知识的掌握情况\n课后习题参考答案链接\n\n📖 R for Data Science (2e): Solutions to Exercise\n📖 R for Data Science: Exercise Solutions\n\n若在课后编程实操中遇到什么问题或难解之处，也可在课程QQ群上贴出并讨论\n\n\n\n\n2. 下载（打印） 📰 {{dplyr的cheatsheet}} 并阅读之\n3. browseVignettes(package = \"dplyr\") 📝，阅读：\n\nIntroduction to dplyr\nColumn-wise operations\nGrouped data\nRow-wise operations\nWindow functions"
+    "text": "主标题幻灯片是演示文稿的第一页幻灯片，其内容是根据各种文档选项（标题、副标题、日期、作者、机构等）生成的。\n\n\n如果你想为标题幻灯片提供自定义背景，请执行以下操作：\n\n使用 title-slide-attributes 键提供背景选项。\n在此键中，指定任何受支持的幻灯片背景选项，但要在它们前面添加 data- 前缀。\n\n例如：\n---\ntitle: 我的幻灯片演示\ntitle-slide-attributes:\n  data-background-image: /path/to/title_image.png\n  data-background-size: contain\n  data-background-opacity: \"0.5\"\n---\n\n\n\n你可以使用自己的模板完全替换默认标题幻灯片。为此，请指定一份名为 title-slide.html 的 模板构件。例如：\ntitle: 我的幻灯片演示\nformat:\n  revealjs:\n    template-partials:\n      - title-slide.html\n这是默认标题幻灯片模板部分的 源代码链接。根据需要自定义此模板，然后将结果保存为 title-slide.html并放在你创建的演示文稿的同一文件夹中。"
   },
   {
-    "objectID": "hw/hw-01.html",
-    "href": "hw/hw-01.html",
-    "title": "第1周课后作业",
+    "objectID": "readings/revealjs/advanced.html#标题幻灯片",
+    "href": "readings/revealjs/advanced.html#标题幻灯片",
+    "title": "高级 Reveal",
     "section": "",
-    "text": "🕐 明确是否选修这门课程\n\n若不选修，请尽快在 {{厦门大学教学服务平台}} 上提出退课（申请）\n若确定选修本门课程，请于2023年9月17日24:00前通过 {{坚果云链接}} 回答几道问题\n\n\n\n\n🕑 初步了解 RStudio 的工作界面，并大致浏览下 {{rstudio-IDE-cheatsheet}}\n🕒 在 RStudio 命令窗口中键入 help(mean) 和 help(files)，了解 R 帮助文档的整体结构\n🕓 到前面课件中提到的那些 {{网络社区}} 随意逛逛\n\n\n\n🕔 完成课前预习（具体任务下周一前我会在 QQ 课程群上通知）"
+    "text": "主标题幻灯片是演示文稿的第一页幻灯片，其内容是根据各种文档选项（标题、副标题、日期、作者、机构等）生成的。\n\n\n如果你想为标题幻灯片提供自定义背景，请执行以下操作：\n\n使用 title-slide-attributes 键提供背景选项。\n在此键中，指定任何受支持的幻灯片背景选项，但要在它们前面添加 data- 前缀。\n\n例如：\n---\ntitle: 我的幻灯片演示\ntitle-slide-attributes:\n  data-background-image: /path/to/title_image.png\n  data-background-size: contain\n  data-background-opacity: \"0.5\"\n---\n\n\n\n你可以使用自己的模板完全替换默认标题幻灯片。为此，请指定一份名为 title-slide.html 的 模板构件。例如：\ntitle: 我的幻灯片演示\nformat:\n  revealjs:\n    template-partials:\n      - title-slide.html\n这是默认标题幻灯片模板部分的 源代码链接。根据需要自定义此模板，然后将结果保存为 title-slide.html并放在你创建的演示文稿的同一文件夹中。"
   },
   {
-    "objectID": "hw/hw-02.html#footnotes",
-    "href": "hw/hw-02.html#footnotes",
-    "title": "第2周课后复习与作业",
-    "section": "脚注",
-    "text": "脚注\n\n\n若英文看起来实在吃力 😵， 这本书的第一版有中文翻译版，请同学们自行学习对应章节。我个人建议同学们（等网上商城打折时）购买实体书，放在案头作学习参考。↩︎"
+    "objectID": "readings/revealjs/advanced.html#幻灯片切换",
+    "href": "readings/revealjs/advanced.html#幻灯片切换",
+    "title": "高级 Reveal",
+    "section": "幻灯片切换",
+    "text": "幻灯片切换\nReveal 支持切换幻灯片和更改幻灯片背景的多种动画过渡效果。默认情况下不使用过渡，但是你可以使用下面描述的选项在全局或特定幻灯片上启用它们。\n以下是可用的过渡类型：\n\n\n\n过渡\n说明\n\n\n\n\nnone\n无过渡效果（立即切换）\n\n\nfade\n淡入/淡出\n\n\nslide\n水平切入\n\n\nconvex\n凸角切入\n\n\nconcave\n凹角切入\n\n\nzoom\n缩放进入的幻灯片，使其从屏幕中心逐渐增大\n\n\n\n以下是设置幻灯片和背景的全局过渡样式的方法：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n    transition: slide\n    background-transition: fade\n---\n你还可以将 transition-speed 选项设定为 default、fast 或 slow：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n    transition: slide\n    transition-speed: fast\n---\n你还可以为单页幻灯片指定 transition 和/或transition-speed 选项：\n## 幻灯片标题 {transition=\"fade\" transition-speed=\"fast\"}\n你还可以分开指定进入和退出的过渡效果，例如：\n## 幻灯片标题 {transition=\"fade-in slide-out\"}"
   },
   {
-    "objectID": "hw/hw-05.html",
-    "href": "hw/hw-05.html",
-    "title": "第6周课后作业",
-    "section": "",
-    "text": "1. 学习 📝 {{Markdown基础}} 和 {{Revealjs 演示文稿}}，完善第4周的课后作业，并增加部分篇幅说明具体改进之处，于2023年10月26日22:00前将压缩包提交至 {{坚果云链接}}。\n2. 复习 📖 {{R for Data Science, 2e}} 一书第三部分 Transform 中关于连接数据集的章节，即 20 Joins 并（结队）完成课后练习。\n\n\n\n\n\n\n\n课后动手编程实操是掌握一门编程语言的必由之路，r4ds一书配套练习都很不错，尽管并未要求同学们提交课后编程实操作业，但希望同学们都能自觉完成，也正好检验下自己对 dplyr 包核心函数和关键知识的掌握情况\n课后习题参考答案链接\n\n📖 R for Data Science (2e): Solutions to Exercise\n📖 R for Data Science: Exercise Solutions\n\n若在课后编程实操中遇到什么问题或难解之处，也可在课程QQ群上贴出并讨论\n\n\n\n\n3. 下载（打印） 📰 {{dplyr的cheatsheet}} 并阅读之\n4. browseVignettes(package = \"dplyr\") 📝，阅读：\n\nRow-wise operations\nTwo-table verbs\n\n\n\n\n\n\n\n\n以下是第4周课后作业的初始要求（备忘）\n\n\n\n\n自由组队，两人一组，共同完成课后作业：\n\n从 L02 课件中挑出 3 ~ 4 个你们感兴趣的数据可视化代码段，就其制作两种类型的展示文档：\n\n{{Quarto|HTML}} 或 {{prettydoc}} -&gt; 📂 L03_HW/docs/\n{{Quarto|Revealjs}} 或 {{xaringan}} -&gt; 📂 L03_HW/slides/\n\n记得多尝试各种选项设置，同时在文档内加上相应的说明性文字（如解释代码或输出图形，其余内容可自由发挥，丰俭由人啦 😁）\n作业共同署名（author: 姓名 + 姓名）\n确认两份文档运行无误后将文件夹📂 L03_HW 打包为 .zip 格式压缩文档，由其中一位同学于2023年10月15日22:00前将压缩包提交至坚果云链接"
+    "objectID": "readings/revealjs/advanced.html#幻灯片可见性",
+    "href": "readings/revealjs/advanced.html#幻灯片可见性",
+    "title": "高级 Reveal",
+    "section": "幻灯片可见性",
+    "text": "幻灯片可见性\n你可以通过给幻灯片标题增加 visibility=\"hidden\" 属性来隐藏幻灯片。例如：\n## 幻灯片标题 {visibility=\"hidden\"}\n\n幻灯片计数\n在创建演示文稿时，你可能需要提前准备些根据时间安排再决定是否展示的备选幻灯片。通过在演示文稿末尾附加几页幻灯片就可以轻松达到这一目的，但这意味着 Reveal 进度条和幻灯片编号会暗示这些备选幻灯片的存在。\n要从幻灯片编号系统中“隐藏”这些幻灯片，你可以设定 visibility=\"uncounted\"。例如：\n## 幻灯片1\n\n## 幻灯片2\n\n## 幻灯片3 {visibility=\"uncounted\"}"
   },
   {
-    "objectID": "schedule.html",
-    "href": "schedule.html",
-    "title": "课程安排",
-    "section": "",
-    "text": "注释\n\n\n\n本页包含本课程周次安排、教学主题、课前准备、讲义、课后作业、小组项目等方面的 概要信息以及相应的链接。 随着本学期教学进度的推进，本表格将逐步增补、调整并完善。\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n周次\n日期\n主题\n准备\n讲义\n练习\n作业\n小组项目\n\n\n\n\n1\n2023-09-15\n课程简介\n📖\n🖥️\n\n✍️\n\n\n\n2\n2023-09-22\nggplot2 数据可视化\n📖\n🖥️\n⌨️\n✍️\n\n\n\n3\n2023-09-29\n🥮 中秋节假期停课\n\n\n\n\n\n\n\n4\n2023-10-08\nrmarkdown 与 Quarto\n📖\n🖥️\n⌨️\n✍️\n\n\n\n5\n2023-10-13\ndplyr 数据处理 I\n📖\n🖥️\n⌨️\n✍️\n\n\n\n6\n2023-10-20\ndplyr 数据处理 II\n📖\n🖥️\n⌨️\n✍️\n\n\n\n7\n2023-10-27\n数据导入与齐整\n📖\n🖥️\n⌨️\n✍️\n👨‍🏫 启动\n\n\n8\n2023-11-03\n🏃校运会🏅 停课\n\n\n\n\n\n\n\n9\n2023-11-10\n向量与函数\n📖\n🖥️\n⌨️\n✍️"
+    "objectID": "readings/revealjs/advanced.html#演示尺寸",
+    "href": "readings/revealjs/advanced.html#演示尺寸",
+    "title": "高级 Reveal",
+    "section": "演示尺寸",
+    "text": "演示尺寸\n所有演示文稿都有着“正常”尺寸，即创作它们时的分辨率。默认的“正常”尺寸为 1050 x 700，用于尽可能匹配大多数笔记本电脑的宽高比。\nReveal 将根据正常大小自动等比缩放演示文稿，以确保所有内容适合给定的显示器或视窗大小，而无需更改内容的宽高比或布局。\n你可以使用以下选项更改幻灯片尺寸、内容周围的边距以及设置内容缩放限制：\n\n\n\n\n\n\n\n选项\n说明\n\n\n\n\nwidth\n正常宽度（默认为1050）\n\n\nheight\n正常高度（默认为700）\n\n\nmargin\n内容周围显示为空白的尺寸系数（默认为 0.1）\n\n\nmin-scale\n应用于内容的最小可能缩放比例（默认为 0.2）\n\n\nmax-scale\n应用于内容的最大可能缩放比例（默认为 2.0）"
   },
   {
-    "objectID": "weeks/week-05.html",
-    "href": "weeks/week-05.html",
-    "title": "第 5 周",
-    "section": "",
-    "text": "“净土宇宙 🌌”的核心数据结构为 tibble（即由行（样本）和列（变量）构成的表格型数据），dplyr 包基于数据操作语法（A Grammar of Data Manipulation）构建出一组用来操作 tibble 对象的核心函数——它们就是我们在接下来两次课中需要学习、理解并掌握的知识。\n本讲主要涵盖以下几方面的内容（加粗字体为本次课的讲授内容）："
+    "objectID": "readings/revealjs/advanced.html#绝对定位",
+    "href": "readings/revealjs/advanced.html#绝对定位",
+    "title": "高级 Reveal",
+    "section": "绝对定位",
+    "text": "绝对定位\n类 absolute 允许你将元素放置在幻灯片上的任意位置。这些元素具有 CSS 声明 position: absolute并且可基于幻灯片 top、left、bottom 和/或 right 边缘进行定位。\n例如，在这里我们给三个图像添加 .absolute 类，并分别指定一个不同的幻灯片位置（请注意，我们还使用 width 和 height 属性来控制它们的尺寸）：\n![](image1.png){.absolute top=200 left=0 width=\"350\" height=\"300\"}\n\n![](image2.png){.absolute top=50 right=50 width=\"450\" height=\"250\"}\n\n![](image3.png){.absolute bottom=0 right=50 width=\"300\" height=\"300\"}\n以下属性可以和 absolute 类一起使用。所有这些值都可以用 CSS 单位（如 px、em 等），如果仅指定数字而没有单位（如上面的示例），则默认为像素 px。\n\n\n\n属性\n说明\n\n\n\n\nwidth\n元素的宽度\n\n\nheight\n元素的高度\n\n\ntop\n到幻灯片顶端的距离\n\n\nleft\n到幻灯片左侧的距离\n\n\nbottom\n到幻灯片右侧的距离\n\n\nright\n到幻灯片底端的距离\n\n\n\n请注意，演示文稿幻灯片的默认大小为 1050 x 700。有关自定义幻灯片尺寸的详细信息，请参阅演示尺寸。"
   },
   {
-    "objectID": "weeks/week-05.html#课前准备",
-    "href": "weeks/week-05.html#课前准备",
-    "title": "第 5 周",
-    "section": "1. 课前准备",
-    "text": "1. 课前准备\n\n\n📖 预习 R for Data Science, 2e 第一部分 Whole game 中关于数据处理的章节，即 4 Data transformation 。\n\n\n\n\n\n\n此书第1版有中文翻译版 《R数据科学》出版，上述内容大致对应“第3章 使用 dplyr 进行数据转换”和“第13章 使用 magrittr 进行管道操作”。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。\n\n\n\n\n\n\n\n\n\n由于上课内容较多，而上课时间有限，上课节奏预计较快，有些内容甚至会一带而过，请同学们务必腾出时间来过一遍上述预习章节的内容。\n\n\n\n\n\n\n\n\n\n🖥️ 我准备的基于 xaringan包 的 网页版讲义，供同学们参考。"
+    "objectID": "readings/revealjs/advanced.html#布局辅助类",
+    "href": "readings/revealjs/advanced.html#布局辅助类",
+    "title": "高级 Reveal",
+    "section": "布局辅助类",
+    "text": "布局辅助类\nReveal 提供了一些用于控制幻灯片内容布局的辅助类。\n\n堆叠\nr-stack 类允许你将多个元素居中并堆叠在彼此之上。它旨在与 分片 一起使用从而增量显示各个元素。\n例如，这里我们创建一个指定类为 .r-stack 的 div块，然后包含 3 个图像（每个图像都设定为 .fragment类，以便增量显示）：\n::: {.r-stack}\n![](image1.png){.fragment width=\"450\" height=\"300\"}\n\n![](image2.png){.fragment width=\"300\" height=\"450\"}\n\n![](image3.png){.fragment width=\"400\" height=\"400\"}\n:::\n\n\n适合文本\nr-fit-text 类使文本在不溢出幻灯片的前提下尽可能地大。当你想要大文本而又不想手动找到正确的字体大小时，这非常有用。例如：\n::: {.r-fit-text}\n巨大文本\n:::\n\n\n垂直居中\n当将 center 类应用于幻灯片时，将通过在幻灯片顶部添加适当的间距来垂直居中幻灯片内容。元素之间的垂直距离不会被修改。例如：\n## 调整至垂直居中的标题文本 {.center}\n\n这些文本也会一起移动\n\n\n自动缩放\nr-stretch 布局辅助类会调整元素（如图像或视频）的大小，以覆盖幻灯片中剩余的垂直空间。例如，以下示例中的图像将自动调整大小以适应幻灯片标题及其前后文本之外的剩余空间：\n## 幻灯片标题\n\n这里有个图片：\n\n![](image.png){.r-stretch}\n\n这是图片之后的文本。\n对于仅包含单个顶级图像的幻灯片，.r-stretch 类会自动应用于该图像。你可以通过设置 auto-stretch: false 选项来禁用这一默认做法：\nformat:\n  revealjs:\n    auto-stretch: false\n你也可以通过添加 .nostretch 类来禁用单页幻灯片的自动缩放功能：\n## 幻灯片标题 {.nostretch}\nauto-stretch 选项仅适用于非嵌套图像，这意味着功能块（如分片、布局面板、分栏等）或自定义 div 块中的图像将被忽略。对于自定义的 div 块，你可以通过将 .r-stretch 类添加到外层 div 从而获得 auto-stretch 功能（此时块内的图像将自动缩放）。"
   },
   {
-    "objectID": "weeks/week-05.html#课堂讲义",
-    "href": "weeks/week-05.html#课堂讲义",
-    "title": "第 5 周",
-    "section": "2. 课堂讲义",
-    "text": "2. 课堂讲义\n🖥️第4讲 dplyr数据处理"
+    "objectID": "readings/revealjs/advanced.html#自动动画",
+    "href": "readings/revealjs/advanced.html#自动动画",
+    "title": "高级 Reveal",
+    "section": "自动动画",
+    "text": "自动动画\nRevealjs 可以自动为不同幻灯片中的元素设置动画。你所需要做的就是将 auto-animate 属性添加到两个相邻的幻灯片中，自动动画将为两页幻灯片之间的所有匹配元素添加动画效果。\n以下是一个简单的示例，可以让你更好地了解如何使用该功能。请注意，本示例中的幻灯片没有标题（而只有属性 auto-animate），但这些幻灯片也可以有标题。\n## {auto-animate=true}\n\n::: {style=\"margin-top: 100px;\"}\n动画内容\n:::\n\n## {auto-animate=true}\n\n::: {style=\"margin-top: 200px; font-size: 3em; color: red;\"}\n动画内容\n:::\n此示例使用 margin-top 属性来移动元素，但 Reveal 在内部将使用 CSS 转换来保证元素之间的平滑变化。相同的动画方法适用于大多数可动画化的 CSS 属性，这意味着你可以转换诸如 position、font-size、line-height、color、background-color 和 padding 等属性。\n\n代码动画\n你还可以在代码块之间设置动画以显示代码的变化。例如：\n## {auto-animate=\"true\"}\n\n```r\n# 创建图片填充预设位置\noutput$phonePlot &lt;- renderPlot({\n  # 生成柱状图\n})\n```\n\n## {auto-animate=true}\n\n```r\n# 创建图片填充预设位置\noutput$phonePlot &lt;- renderPlot({\n  # 生成柱状图\n  barplot(WorldPhones[,input$region]*1000, \n          main=input$region,\n          ylab=\"Number of Telephones\",\n          xlab=\"Year\")\n})\n```\n\n\n运动动画\n动画不仅限于风格的变化，自动动画还可以用于在幻灯片上添加、删除或重新排列内容时自动将元素移动到新位置——完成这些任务无需编写一行内联 CSS！例如，以下示例中两页幻灯片上的内容之间的增量显示呈现（隐性）动画效果：\n## {auto-animate=true}\n\n动画\n\n## {auto-animate=true}\n\n隐性\n\n动画\n\n\n元素匹配\n当演示者在两页自动动画的幻灯片之间导航时，Quarto 将尽力在两页幻灯片中查找匹配的元素。对于文本来说，如果文本内容和节点类型相同，Quarto 就认为它是匹配的。对于图像、视频和 iframe 来说，Quarto 将比较 src 属性。Quarto 还考虑元素在 DOM 中出现的顺序。\n在自动匹配不可行的情况下，你可以为需要自动动画效果的对象提供匹配的 data-id 值，其优先级自动匹配。\n以下是个示例，由于没有内容供 Quarto 自动匹配，我们转而赋予色块匹配的 ID。示例还使用了一些附加动画属性，如 auto-animate-easing 和 auto-animate-delay，我们将在下一小节中说明它们的用法。\n## {auto-animate=true auto-animate-easing=\"ease-in-out\"}\n\n::: {.r-hstack}\n::: {data-id=\"box1\" auto-animate-delay=\"0\" style=\"background: #2780e3; width: 200px; height: 150px; margin: 10px;\"}\n:::\n\n::: {data-id=\"box2\" auto-animate-delay=\"0.1\" style=\"background: #3fb618; width: 200px; height: 150px; margin: 10px;\"}\n:::\n\n::: {data-id=\"box3\" auto-animate-delay=\"0.2\" style=\"background: #e83e8c; width: 200px; height: 150px; margin: 10px;\"}\n:::\n:::\n\n## {auto-animate=true auto-animate-easing=\"ease-in-out\"}\n\n::: {.r-stack}\n::: {data-id=\"box1\" style=\"background: #2780e3; width: 350px; height: 350px; border-radius: 200px;\"}\n:::\n\n::: {data-id=\"box2\" style=\"background: #3fb618; width: 250px; height: 250px; border-radius: 200px;\"}\n:::\n\n::: {data-id=\"box3\" style=\"background: #e83e8c; width: 150px; height: 150px; border-radius: 200px;\"}\n:::\n:::\n\n\n动画设置\n你可以覆盖整个演示文稿、每页幻灯片或每个元素的特定动画设置，例如缓动和持续时间。以下配置属性可用于更改特定幻灯片或元素的动画设置：\n\n\n\n属性\n默认值\n说明\n\n\n\n\nauto-animate-easing\nease\nCSS 缓动函数\n\n\nauto-animate-unmatched\ntrue\n确定没有匹配的自动动画元素是否应该淡入（false 则为立即出现）\n\n\nauto-animate-duration\n1.0\n动画持续时间（单位为秒）\n\n\nauto-animate-delay\n0\n动画延迟时间（单位为秒），只能应用于特定元素，而非整个幻灯片级别\n\n\nauto-animate-id\n空值\n绑定自动动画幻灯片的 id\n\n\nauto-animate-restart\n空值\n解构两个相邻的自动动画幻灯片（即使具有相同的 id）\n\n\n\n你可以覆盖自动动画 -easing、-unmatched 和 -duration 的全局默认值，如下所示：\n---\ntitle: \"我的演示文稿\"\nformat:\n  revealjs:\n    auto-animate-easing: ease-in-out\n    auto-animate-unmatched: false\n    auto-animate-duration: 0.8\n---"
   },
   {
-    "objectID": "weeks/week-05.html#随堂练习",
-    "href": "weeks/week-05.html#随堂练习",
-    "title": "第 5 周",
-    "section": "3. 随堂练习",
-    "text": "3. 随堂练习\n⌨️ [见课堂讲义——并非动手编程练习，思维体操而已]"
+    "objectID": "readings/revealjs/advanced.html#分片",
+    "href": "readings/revealjs/advanced.html#分片",
+    "title": "高级 Reveal",
+    "section": "分片",
+    "text": "分片\n分片（fragment）用于突出显示或增量显示幻灯片上的各个元素。在进入下一页幻灯片之前，需要增量完成 fragment 类元素的展示。\n注意，此处讨论的分片是增量内容显示的相对高级形式——请参阅文档 增量列表 以获取创建增量项目符号列表和在幻灯片中插入内容暂停的相关信息。\n默认的分片样式是开始不可见并淡入，可以通过向分片添加不同的类来更改样式。例如：\n::: {.fragment}\n淡入\n:::\n\n::: {.fragment .fade-out}\n淡出\n:::\n\n::: {.fragment .highlight-red}\n红色突显\n:::\n\n::: {.fragment .fade-in-then-out}\n淡入，然后淡出\n:::\n\n::: {.fragment .fade-up}\n淡入的同时向上切入\n:::\n\n分片类\n以下是全部可用的分片类：\n\n\n\n\n\n\n\n类名\n效果\n\n\n\n\nfade-out\n淡入（开始时不可见）\n\n\nfade-up\n淡入的同时向上切入\n\n\nfade-down\n淡入的同时向下切入\n\n\nfade-left\n淡入的同时向左切入\n\n\nfade-right\n淡入的同时向右切入\n\n\nfade-in-then-out\n淡入，然后再淡出\n\n\nfade-in-then-semi-out\n淡入，然后再淡出至 50% 透明度\n\n\ngrow\n放大\n\n\nsemi-fade-out\n淡出至 50% 透明度\n\n\nshrink\n缩小\n\n\nstrike\n删除线\n\n\nhighlight-red\n突显效果，将文本变成红色\n\n\nhighlight-green\n突显效果，将文本变成绿色\n\n\nhighlight-blue\n突显效果，将文本变成蓝色\n\n\nhighlight-current-red\n突显效果，将文本变成红色，然后再恢复原来颜色\n\n\nhighlight-current-green\n突显效果，将文本变成绿色，然后再恢复原来颜色\n\n\nhighlight-current-blue\n突显效果，将文本变成蓝色，然后再恢复原来颜色\n\n\n\n\n\n套嵌分片\n通过包裹可将多个分片依次应用于同一个元素。在下面示例中，第一步将淡入文本，第二步将其变成红色，第三步部分淡出：\n::: {.fragment .fade-in}\n::: {.fragment .highlight-red}\n::: {.fragment .semi-fade-out}\n淡入 &gt; 变红 &gt; 部分淡出\n:::\n:::\n:::\n\n\n分片顺序\n默认情况下，分片将按照它们在 DOM 中出现的顺序逐步呈现。可以使用 fragment-index 属性更改显示顺序（注意，多个元素也可以出现在同一索引处）。\n::: {.fragment fragment-index=3}\n最后出现\n:::\n\n::: {.fragment fragment-index=1}\n最先出现\n:::\n\n::: {.fragment fragment-index=2}\n第二次序出现\n:::"
   },
   {
-    "objectID": "weeks/week-05.html#课后作业",
-    "href": "weeks/week-05.html#课后作业",
-    "title": "第 5 周",
-    "section": "4. 课后作业",
-    "text": "4. 课后作业\n✍️ 课后作业"
+    "objectID": "readings/revealjs/advanced.html#视差背景",
+    "href": "readings/revealjs/advanced.html#视差背景",
+    "title": "高级 Reveal",
+    "section": "视差背景",
+    "text": "视差背景\n如果你想使用视差滚动背景，请添加 parallax-background-image 和 parallax-background-size 选项。例如：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n     parallax-background-image: background.png\n     parallax-background-size: \"2100px 900px\"\n     parallax-background-horizontal: 200\n     parallax-background-vertical: 50\n---\n注意，parallax-background-horizontal 和 parallax-background-vertical 选项并不是必需的（如果未指定，将使用上面显示的默认值）。"
   },
   {
-    "objectID": "weeks/week-04.html",
-    "href": "weeks/week-04.html",
-    "title": "第 4 周",
-    "section": "",
-    "text": "在上一讲课后作业中同学们通过代码脚本文档 L02_coding_practice.R 完成编程作业并直接提交，但如果不运行同学们的代码，我将很难得知代码能否正常运行及其运行结果；同时通过注释方式添加说明性文字或给文档逻辑分节也显得笨拙和不够美观。那么，有没有更好的解决方案呢？答案就是本讲将要介绍的“动态文档”（dynamic documents）——它允许你将代码、代码输出、文字等有机地组合在一起，并可方便地转化为多种类型的输出格式（如网页、PDF、docx、幻灯片等）。\n本讲主要涵盖以下几方面的内容："
+    "objectID": "readings/revealjs/advanced.html#纵向幻灯片",
+    "href": "readings/revealjs/advanced.html#纵向幻灯片",
+    "title": "高级 Reveal",
+    "section": "纵向幻灯片",
+    "text": "纵向幻灯片\nReveal 默认使用经典的线性幻灯片导航。如果你愿意，也可以通过设置幻灯片导航将多页幻灯片嵌套在单页顶级幻灯片中从而创建纵向幻灯片堆栈。\n使用 navigation-mode 选项来调整 Reveal 导航行为：\n\n\n\n\n\n\n\n导航模式\n行为\n\n\n\n\nlinear\n通过左/右箭头依次展示全部幻灯片（包括横向和纵向）\n\n\nvertical\n通过左/右箭头（上/下箭头）依次展示横向幻灯片（纵向幻灯片），\n\n\n而空格键则会依次展示全部幻灯片（包括横向和纵向）\n\n\n\ngrid\n从纵向堆栈向左/向右步进到相邻的纵向堆栈将处于相同的纵向索引处\n\n\n\n如果你使用 vertical 或 grid 导航，则应使用横向轴的 1 级标题和纵向轴的 2 级标题来构建幻灯片。例如：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n    navigation-mode: vertical\n---\n\n# 幻灯片 1\n\n## 幻灯片 1.1\n\n## 幻灯片 1.2\n\n# 幻灯片 2\n\n## 幻灯片 2.1\n\n## 幻灯片 2.2\n\n幻灯片控件\n当你启用 vertical 或 grid 导航时，控件将为你提供视觉提示，显示在演示文稿中所处位置（例如，如果下面有纵向幻灯片，你将看到向下控件）。\n默认情况下，这些控件显示在演示文稿的边缘，你可以使用 controls-layout 选项将它们放置在右下角。你还可以设置 controls-tutorial 选项向演示者提供额外的视觉提示。例如：\n---\ntitle: \"演示文稿\"\nformat: \n  revealjs:\n    navigation-mode: vertical\n    controls-layout: bottom-right\n    controls-tutorial: true\n---\n注意，由于徽标也出现在右下角，使用 controls-layout: bottom-right 与 logo 选项不兼容。\n你还可以设置 controls: false 完全禁用控件。\n\n\n\n\n\n\n警告\n\n\n\n相比传统线性模式，纵向幻灯片确实提供了一些额外的灵活性，但实际上常常让最终用户感到困惑（通常由于其出现出乎意料）。由于用户根本不知道纵向幻灯片的存在，他们经常会跳过这些内容。\n如果你的内容受益于纵向安排（例如，你不想在演示文稿的主流程中展示可选的枝节性内容），那么你就可以使用纵向模式。你只需要知道，如果你将幻灯片分发给用户，他们很有可能不会查看任何纵向内容。"
   },
   {
-    "objectID": "weeks/week-04.html#课前准备",
-    "href": "weeks/week-04.html#课前准备",
-    "title": "第 4 周",
-    "section": "1. 课前准备",
-    "text": "1. 课前准备\n\n\n📖 预习 R for Data Science, 2e关于如何使用 Quarto 记录数据科学研究过程并展示与沟通研究结果的内容，即 29 Quarto 。\n\n\n\n\n\n\n此书第1版有中文翻译版 《R数据科学》出版，上述内容大致对应“第20章 R Markdown” 和 “第23章 R Markdown工作流”（但使用 R Markdown 而非 Quarto）。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。\n\n\n\n\n\n\n\n\n\n📖 阅读 Markdown基础 一文。\n\n\n\n\n\n\n此文主要翻译自 Quarto 官方文档 Markdown Basics 并经小幅改写。\n\n\n\n🖥️ 我准备的基于 xaringan包 的 网页版讲义，供同学们参考。"
+    "objectID": "readings/revealjs/advanced.html#触控导航",
+    "href": "readings/revealjs/advanced.html#触控导航",
+    "title": "高级 Reveal",
+    "section": "触控导航",
+    "text": "触控导航\n你可以在任何支持触控的设备上滑动以导航演示文稿。水平滑动将导致横向幻灯片之间切换，垂直滑动在纵向幻灯片之间切换。\n如果你想禁用此功能，可以将 touch 选项设置为 false：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n    touch: false\n    controls: true\n---\n注意，我们也会同时启用 controls 选项（因为手机或平板电脑上的用户无法使用键盘）。"
   },
   {
-    "objectID": "weeks/week-04.html#课堂讲义",
-    "href": "weeks/week-04.html#课堂讲义",
-    "title": "第 4 周",
-    "section": "2. 课堂讲义",
-    "text": "2. 课堂讲义\n🖥️第3讲 rmarkdown 与 Quarto"
+    "objectID": "readings/revealjs/advanced.html#reveal插件",
+    "href": "readings/revealjs/advanced.html#reveal插件",
+    "title": "高级 Reveal",
+    "section": "Reveal插件",
+    "text": "Reveal插件\n想要使用 Revealjs插件，你需要将它们打包到带有配置文件（plugin.yml）的目录中。配置文件让 Quarto 知道如何将插件注入到演示文稿中（例如，要包含哪些脚本和/或 css 文件以及默认配置等）。\n有关示例，请参阅 Quarto Reveal 中内置插件的源代码：\nhttps://github.com/quarto-dev/quarto-cli/tree/main/src/resources/formats/revealjs/plugins\n要使用某个插件，只需在 revealjs-plugins 选项列表中包含对该插件目录的引用即可。例如：\n---\ntitle: \"Presentation\"\nformat:\n  revealjs:\n    revealjs-plugins:\n      - myplugin\n---\n注意，许多最流行的 Reveal 插件已包含在 Quarto|Reveal 中，因此无需单独包含它们。内置插件包括：\n\n同步演示\nReveal菜单\nReveal黑板\n导出为PDF\n\n\n示例\n让我们展示一个关于 全屏插件 的示例。以下是在 Quarto HTML 演示文稿捆绑并使用此插件的步骤：\n\n使用你想要的插件名称创建一个文件夹，这里我们将其命名为 fullscreen。\n将插件文件下载到创建的文件夹中。该插件只有一个名为 plugin.js 的 JS 文件（你可以在 github repo rajgoel/reveal.js-plugins 中找到该文件）。你可以保留原文件名或重命名它，例如 fullscreen.js。\n在该文件夹中添加一个 plugin.yml 文件，如 Quarto Reveal 示例 中所示。\n\nname 是必填字段，应该是 JS 插件中定义的 JS 函数的名称。打开你下载的 JS 脚本来查找它。\n其他字段用于标识要使用的资源。在我们的示例中，只需一个 JS 脚本，因此我们将使用 script。\n\n修改后的 plugin.yml 如下：\nname: RevealFullscreen\nscript: [fullscreen.js]\n现在将你在之前步骤创建的文件夹路径添加到文档 YAML 头的 revealjs-plugins 选项列表中：\nformat: \n revealjs:\n   revealjs-plugins:\n     - fullscreen\n自定义插件将自动加载到你的演示文稿中，你可以在文稿中使用它。全屏插件 的文档显示如何通过给幻灯片上的地图元素设置 fullscreen 属性，对内容进行拉伸从而达到全屏效果。转换后的 .qmd 文件将包含全屏地图幻灯片：\n## {fullscreen=true}\n\n&lt;iframe class=\"stretch\" data-src=\"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d61206.89156051744!2d-151.77366863890407!3d-16.50433878928727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sde!4v1467468929561\"&gt;&lt;/iframe&gt;"
   },
   {
-    "objectID": "weeks/week-04.html#随堂练习",
-    "href": "weeks/week-04.html#随堂练习",
-    "title": "第 4 周",
-    "section": "3. 随堂练习",
-    "text": "3. 随堂练习\n⌨️ 本讲将有比较长时间的随堂编程练习，请同学们带上自己的笔记本电脑 （也可找上编程小伙伴，坐在一起结队练习效果可能更佳，😁）。"
-  },
-  {
-    "objectID": "weeks/week-04.html#课后作业",
-    "href": "weeks/week-04.html#课后作业",
-    "title": "第 4 周",
-    "section": "4. 课后作业",
-    "text": "4. 课后作业\n✍️ 课后作业"
-  },
-  {
-    "objectID": "weeks/week-09.html",
-    "href": "weeks/week-09.html",
-    "title": "第 9 周",
-    "section": "",
-    "text": "前面几讲中我们主要遨游于“净土宇宙 🌌”（tidyverse）中，收获探索“数据可视化”（ggplot2 包）、“动态文档”（rmarkdown -&gt; Quarto）、数据导入（readr 包）-齐整（tidyr 包）-转换（dplyr 包）等领域带来的超酷体验 😎。在这一讲中我们将“稍事休整”，返回头去学习 R 语言编程方面的核心知识：向量与函数。掌握这些知识也有助于我们更好理解“净土宇宙 🌌”。\n本讲主要涵盖以下几方面的内容："
-  },
-  {
-    "objectID": "weeks/week-09.html#课前准备",
-    "href": "weeks/week-09.html#课前准备",
-    "title": "第 9 周",
-    "section": "1. 课前准备",
-    "text": "1. 课前准备\n\n\n📖 预习 R for Data Science, 2e 第五部分 Program 中关于 基础 R 和 函数 的章节，即 28 A field guide to base R 的 28.1-28.3 和 26 Functions 的 。\n\n\n\n\n\n\n此书第1版有中文翻译版 《R数据科学》出版，对应章节为“第14章 函数”和“第15章 向量”。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。\n\n\n\n\n\n\n\n\n\n由于上课内容较多，而上课时间有限（45分钟 × 2），上课节奏预计较快，有些内容甚至会一带而过，请同学们务必腾出时间来过一遍上述预习章节的内容。\n\n\n\n\n\n\n\n\n\n🖥️ 我准备的基于 xaringan包 的 网页版讲义，供同学们参考。"
-  },
-  {
-    "objectID": "weeks/week-09.html#课堂讲义",
-    "href": "weeks/week-09.html#课堂讲义",
-    "title": "第 9 周",
-    "section": "2. 课堂讲义",
-    "text": "2. 课堂讲义\n🖥️ 第6讲 向量与函数"
-  },
-  {
-    "objectID": "weeks/week-09.html#随堂练习",
-    "href": "weeks/week-09.html#随堂练习",
-    "title": "第 9 周",
-    "section": "3. 随堂练习",
-    "text": "3. 随堂练习\n⌨️ [见课堂讲义]"
-  },
-  {
-    "objectID": "weeks/week-09.html#课后作业",
-    "href": "weeks/week-09.html#课后作业",
-    "title": "第 9 周",
-    "section": "4. 课后作业",
-    "text": "4. 课后作业\n✍️ 课后作业"
-  },
-  {
-    "objectID": "weeks/week-07.html",
-    "href": "weeks/week-07.html",
-    "title": "第 7 周",
-    "section": "",
-    "text": "“问渠那得清如许？为有源头活水来。” 在上一讲中我们主要讲述 dplyr 包基于数据操作语法（A Grammar of Data Manipulation）的核心函数，并利用 nycflights13 包提供的数据集作为示例。数据操作语法想要达到其预期目标依赖于其所操作的 tibble 对象为“齐整的数据”（tidy data），而在数据科学实践中我们往往会从不同来源读取 / 导入形形色色的数据集，这就需要我们掌握 tidyverse 中与数据导入和数据齐整有关的 R 包及其核心函数。\n本讲主要涵盖以下几方面的内容：\n1. 数据导入\n2. 数据齐整"
-  },
-  {
-    "objectID": "weeks/week-07.html#课前准备",
-    "href": "weeks/week-07.html#课前准备",
-    "title": "第 7 周",
-    "section": "1. 课前准备",
-    "text": "1. 课前准备\n\n\n📖 预习 R for Data Science, 2e 第一部分 Whole game 中关于数据导入和数据齐整的章节，即 8 Data import 和 6 Data tidying。\n\n\n\n\n\n\n此书第1版有中文翻译版 《R数据科学》出版，对应章节为“第7章 使用tibble实现简单数据框”和“第8章 使用readr进行数据导入”（很遗憾，原书关于 tidyr 包的第12章在翻译版中并未出现，🙃）。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。\n\n\n\n\n\n\n\n\n\n由于上课内容较多，而上课时间有限，上课节奏预计较快，有些内容甚至会一带而过，请同学们务必腾出时间来过一遍上述预习章节的内容。\n\n\n\n\n\n\n\n\n\n🖥️ 我准备的基于 xaringan包 的 网页版讲义，供同学们参考。"
-  },
-  {
-    "objectID": "weeks/week-07.html#课堂讲义",
-    "href": "weeks/week-07.html#课堂讲义",
-    "title": "第 7 周",
-    "section": "2. 课堂讲义",
-    "text": "2. 课堂讲义\n🖥️ 第5讲 数据导入与齐整"
-  },
-  {
-    "objectID": "weeks/week-07.html#随堂练习",
-    "href": "weeks/week-07.html#随堂练习",
-    "title": "第 7 周",
-    "section": "3. 随堂练习",
-    "text": "3. 随堂练习\n⌨️ [见课堂讲义]"
-  },
-  {
-    "objectID": "weeks/week-07.html#课后作业",
-    "href": "weeks/week-07.html#课后作业",
-    "title": "第 7 周",
-    "section": "4. 课后作业",
-    "text": "4. 课后作业\n✍️ 课后作业"
-  },
-  {
-    "objectID": "weeks/week-02.html",
-    "href": "weeks/week-02.html",
-    "title": "第 2 周",
-    "section": "",
-    "text": "“一图胜千言”。R 语言有着强大的数据可视化（制图）功能，很多人学习 R 语言编程主要就是冲着这一点来的。在本讲中我们将侧重介绍影响力巨大的 ggplot2 包，并涵盖以下几方面的内容："
-  },
-  {
-    "objectID": "weeks/week-02.html#课前准备",
-    "href": "weeks/week-02.html#课前准备",
-    "title": "第 2 周",
-    "section": "1. 课前准备",
-    "text": "1. 课前准备\n\n\n\n📖 预习 R for Data Science, 2e 一书关于数据可视化的两章，即 2 Data visualization 和 10 Layers。\n\n\n\n\n\n\n提示\n\n\n\n此书第1版有中文翻译版 《R数据科学》出版，上述两章大致对应的章节为“第1章 使用ggplot2进行数据可视化”。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。\n\n\n🖥️ 我准备的基于 xaringan包 的 网页版讲义，供同学们参考。"
-  },
-  {
-    "objectID": "weeks/week-02.html#课堂讲义",
-    "href": "weeks/week-02.html#课堂讲义",
-    "title": "第 2 周",
-    "section": "2. 课堂讲义",
-    "text": "2. 课堂讲义\n🖥️ 第2讲 ggplot2数据可视化"
-  },
-  {
-    "objectID": "weeks/week-02.html#随堂练习",
-    "href": "weeks/week-02.html#随堂练习",
-    "title": "第 2 周",
-    "section": "3. 随堂练习",
-    "text": "3. 随堂练习\n⌨️ 见课堂讲义"
-  },
-  {
-    "objectID": "weeks/week-02.html#课后作业",
-    "href": "weeks/week-02.html#课后作业",
-    "title": "第 2 周",
-    "section": "4. 课后作业",
-    "text": "4. 课后作业\n✍️ 课后作业"
-  },
-  {
-    "objectID": "weeks/week-06.html",
-    "href": "weeks/week-06.html",
-    "title": "第 6 周",
-    "section": "",
-    "text": "“净土宇宙 🌌”的核心数据结构为 tibble（即由行（样本）和列（变量）构成的表格型数据），dplyr 包基于数据操作语法（A Grammar of Data Manipulation）构建出一组用来操作 tibble 对象的核心函数——它们就是我们在接下来两次课中需要学习、理解并掌握的知识。\n本讲主要涵盖以下几方面的内容（加粗字体为本次课的讲授内容）："
-  },
-  {
-    "objectID": "weeks/week-06.html#课前准备",
-    "href": "weeks/week-06.html#课前准备",
-    "title": "第 6 周",
-    "section": "1. 课前准备",
-    "text": "1. 课前准备\n\n\n📖 预习 R for Data Science, 2e 第三部分 Transform 中关于数据集合并的章节，即 20 Joins。\n\n\n\n\n\n\n此书第1版有中文翻译版 《R数据科学》出版，上述内容大致对应“第9章 使用 dplyr 处理关系数据”。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。\n\n\n\n\n\n\n\n\n\n由于上课内容较多，而上课时间有限，上课节奏预计较快，有些内容甚至会一带而过，请同学们务必腾出时间来过一遍上述预习章节的内容。\n\n\n\n\n\n\n\n\n\n🖥️ 我准备的基于 xaringan包 的 网页版讲义，供同学们参考。"
-  },
-  {
-    "objectID": "weeks/week-06.html#课堂讲义",
-    "href": "weeks/week-06.html#课堂讲义",
-    "title": "第 6 周",
-    "section": "2. 课堂讲义",
-    "text": "2. 课堂讲义\n🖥️ 第4讲 dplyr数据处理"
-  },
-  {
-    "objectID": "weeks/week-06.html#随堂练习",
-    "href": "weeks/week-06.html#随堂练习",
-    "title": "第 6 周",
-    "section": "3. 随堂练习",
-    "text": "3. 随堂练习\n⌨️ [见课堂讲义]"
-  },
-  {
-    "objectID": "weeks/week-06.html#课后作业",
-    "href": "weeks/week-06.html#课后作业",
-    "title": "第 6 周",
-    "section": "4. 课后作业",
-    "text": "4. 课后作业\n✍️ 课后作业"
-  },
-  {
-    "objectID": "weeks/week-01.html",
-    "href": "weeks/week-01.html",
-    "title": "第 1 周",
-    "section": "",
-    "text": "作为“量化金融与金融编程”课程的开学第一课，本讲的主要目的在于向学生介绍为什么要开设本门课程、教学设计以及如何才能学好这门课程，方便同学们作出理性的选课决定。授课将主要涵盖以下三方面的内容："
-  },
-  {
-    "objectID": "weeks/week-01.html#课前准备",
-    "href": "weeks/week-01.html#课前准备",
-    "title": "第 1 周",
-    "section": "1. 课前准备",
-    "text": "1. 课前准备\n🖥️ 请同学们依照如下幻灯片的步骤说明完成 R、RStudio、R 包等相关软件的安装及配置工作："
-  },
-  {
-    "objectID": "weeks/week-01.html#课堂讲义",
-    "href": "weeks/week-01.html#课堂讲义",
-    "title": "第 1 周",
-    "section": "2. 课堂讲义",
-    "text": "2. 课堂讲义\n🖥️ 第1讲 课程简介\n\n\n\n\n\n\n注释\n\n\n\n同学们可根据需要自行从以上 网页格式 的讲义打印生成 PDF 版 讲义。"
-  },
-  {
-    "objectID": "weeks/week-01.html#随堂练习",
-    "href": "weeks/week-01.html#随堂练习",
-    "title": "第 1 周",
-    "section": "3. 随堂练习",
-    "text": "3. 随堂练习\n无"
-  },
-  {
-    "objectID": "weeks/week-01.html#课后作业",
-    "href": "weeks/week-01.html#课后作业",
-    "title": "第 1 周",
-    "section": "4. 课后作业",
-    "text": "4. 课后作业\n✍️ 课后作业"
-  },
-  {
-    "objectID": "project/team-project.html",
-    "href": "project/team-project.html",
-    "title": "小组研究项目说明",
-    "section": "",
-    "text": "重要\n\n\n\n随着小组研究项目进度的推进，会调整 / 更新 / 补充相关内容。\n\n\n\n1. 小组成员\n\n\n1.1 设计目标\n\n每个小组 ~ 4 名同学\n小组成员构成多样性（如男女搭配、专业搭配等）\n促进合作，惩罚“搭便车”行为\n\n\n\n1.2 分组流程\n本学期最终选课名单上共有 23 位同学，其中：\n\n财务学系：21 位\n非财务学系：2 位\n\n本次小组分组采用自由分组方式，即由同学们自由组合，搭建研究小组：\n\n每个小组 ~ 4 名同学，男女搭配；\n小组讨论选出组长并确认组名\n将分组信息（和小组集体照一张）提交至坚果云\n\n\n\n1.3 分组结果\n根据各小组于 11月08日 反馈的信息，最终分组情况见 表 2。\n\n\n\n2. 评分规则\n\n为了让每位同学最终得到的小组研究项目成绩能更好体现小组研究项目的完成质量及其对小组研究项目的态度、投入与贡献，同时尽可能避免小组作业中可能出现的“搭便车”现象，在小组作业成绩评定方面引入小组成员互评机制。\n在完成小组研究项目之后，老师会发放问卷，要求同学们对自身及小组其他成员在小组研究项目中的表现进行评分。最终老师会在小组项目得分的基础上根据小组作业完成情况和成员互评结果进行增/减分处理，从而得到该同学小组作业的最终得分。示例说明如下：\n假设某个小组由 A、B、C、D、E 五位成员组成，小组项目得分为88分（即基准分），小组成员互评情况（+ 表示一次正面评价，- 表示一次负面评价）、加 / 减分及最终得分如 表 1 所示：\n\n\n表 1: 小组成员互评、加减分 注1 与小组作业最终得分示例\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n基准分\n加/减分\n最终得分\n\n\nA\n+\n+\n\n\n-\n88\n+0\n88\n\n\nB\n+\n+\n+\n+\n+\n88\n+12\n100\n\n\nC\n\n+\n\n-\n\n88\n+0\n88\n\n\nD\n-\n-\n-\n-\n-\n88\n-20\n68\n\n\nE\n\n\n+\n+\n\n88\n+4\n92\n\n\n\n\n注1：在确定 表 1 中的加/减分项时，老师保留根据（全班）小组作业完成情况和成员互评结果确定每个小组中每一位同学的每一个 + / - 的具体加 / 减分值的权力。\n\n\n3. 研究选题\n\n\n3.1 自选研究项目\n各小组可参考借鉴 2022-2023 学年秋季学期本门课程小组研究项目选题（见下），通过资料收集和小组讨论等方式自行确定拟研究项目并形成初步研究思路与计划。\n\n投资组合（天真）分散化\n周日效应（DoW effect）\n金融工程 App\n指数基金定投策略 App\n基于技术指标的量化投资策略\n基本面量化投资策略\n网络数据抓取与分析\n\n\n\n3.2 小组最终选题\n根据各小组于 11月08日 反馈的信息，最终小组选题（及小组相关信息）如 表 2 所示：\n\n\n表 2: 小组分组、选题及相关信息\n\n\n\n\n\n\n\n\n\n\n\n分组\n小组名\n选题\n组长\n组员1\n组员2\n组员3\n\n\n\n\n1\n畅通无组\n机器学习×期货市场交易\n程*昂\n刘*\n杨*舒\n\n\n\n2\n大家都拿高分组\n神经网络×股票高频交易\n何*冰\n谢*露\n王*颖\n巢*韬\n\n\n3\nQuantumFinance\nApp: Black-Litterman\n刘*杨\n屈*\n丁*\n周*\n\n\n4\n欢乐斗地组\nApp: 投资组合优化器\n吴*韵\n裴*缘\n危*\n牛*喻\n\n\n5\n我的未来我做组\nApp: VolPro\n王*凤\n林*晴\n朱*坤\n卓*益\n\n\n6\n股指通\nApp: 股指天气\n赵*羚\n陈*\n宋*鸣\n\n\n\n\n\n\n\n\n4. 时间安排\n\n🕐 老师说明小组分组方式、小组研究项目的构想、选题、要求和时间安排等方面的信息 [注：已完成]\n🕑 各组长于 11月08日晚24:00前 提交以下信息至 {{坚果云}} [注：已完成]\n\n小组名、组长姓名\n项目选题、研究思路与预期成果\n小组成员集体照一张（标注姓名）\n\n🕒 小组制定研究计划，分工协作，积极展开项目研究 [注：待完成]\n🕓 各小组于 12月1日 上台简要报告中期研究进展 [注：待完成]\n🕔 各小组于 12月15日前 完成项目研究，提交研究成果（如研究报告、展示文档、App等） [注：待完成]\n🕕 12月29日 上台展示 / 分享小组研究项目 [注：待完成]\n\n\n5. 作业提交与展示\n[注：待补充完善，同学们若有什么问题或建议请及时向我反馈]\n\n\n5.1 中期进展汇报\n\n\n5.1.1 展示内容\n\n核心任务\n分工协作\n目前进展与下阶段安排\n问题与困难\n\n\n各组组长于 11月26日（星期日）前 将展示幻灯片打包发给我：zzyy@xmu.edu.cn\n\n\n\n5.1.2 形式\n\n上台展示\n每个小组 1 人上台\n\n\n\n5.1.3 时间\n\n12月01日随堂进行\n每组 8 分钟左右，控制好时间\n\n\n\n\n5.2 最终研究成果提交说明\n\n截止时间：12月17日（星期日）24:00\n提交至邮箱：zzyy@xmu.edu.cn\n提交内容：将下列内容放在同一个项目文件夹下，压缩为“小组研究项目_[替换为小组名].zip”， 作为邮件附件提交至指定邮箱\n\nApp (Dashboard) 和 / 或 研究报告（独立文件夹，内含运行无误的数据和代码）\n幻灯片展示报告（独立文件夹，内含运行无误的数据和代码）\n\n\n\n\n5.3 展示与分享\n\n\n5.3.1 时间\n2023年12月29日\n\n\n5.3.2 安排\n\n随堂进行\n全部小组均需上台展示，每个小组 1~2 位同学上台\n每组展示时间 &lt; 10 分钟，上台的同学需要通过提前排练控制好时间\n展示\n\n文档：qmd - Revealjs 格式 或 xaringan 格式\n篇幅：20个幻灯片左右\n内容 1. 小组如何分工协作完成任务\n内容 2. 研究成果 / 结果展示\n内容 3. 问题与经验分享"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "_Quantitative Finance with R_",
-    "section": "",
-    "text": "这是厦门大学管理学院 2023-2024 学年秋季学期“量化金融与金融编程”课的课程主页， 将主要展示课程 准备 | 预习、课堂讲义 | 随堂练习、课后作业、 小组研究项目 等方面的信息和资源。\n希望同学们通过课程学习，能在  语言金融编程领域实现 from Zero to Hero 的升级！\n \n  \n   \n  \n    \n     网站\n  \n  \n    \n     Github"
-  },
-  {
-    "objectID": "hw/hw-03.html",
-    "href": "hw/hw-03.html",
-    "title": "第4周课后作业",
-    "section": "",
-    "text": "注释\n\n\n\n必做部分，需在截止日期前完成上传！\n\n\n\n自由组队，两人一组，共同完成课后作业：\n\n从 L02 课件中挑出 3 ~ 4 个你们感兴趣的数据可视化代码段，就其制作两种类型的展示文档：\n\n{{Quarto|HTML}} 或 {{prettydoc}} -&gt; 📂 L03_HW/docs/\n{{Quarto|Revealjs}} 或 {{xaringan}} -&gt; 📂 L03_HW/slides/\n\n记得多尝试各种选项设置，同时在文档内加上相应的说明性文字（如解释代码或输出图形，其余内容可自由发挥，丰俭由人啦 😁）\n作业共同署名（author: 姓名 + 姓名）\n确认两份文档运行无误后将文件夹📂 L03_HW 打包为 .zip 格式压缩文档，由其中一位同学于2023年10月15日22:00前将压缩包提交至 {{坚果云链接}}\n\n\n\n\n\n\n\n\n\n注释\n\n\n\n相信同学们现在对 rmarkdown 和 Quarto 有了初步的认识，下面列出一些学习资料，同学们可进一步学习精进 🏆\n\n\n\n📖 教材 {{R for Data Science, 2e}} 一书关于 Quarto 的第29章和第30章 （大致对应中文翻译版《R数据科学》的第20、22和23章）\n🏡 官网 {{Quarto}} / {{R Markdown}}\n📝 速查 {{Quarto}} / {{R Markdown}}\n📖 {{R Markdown: The Definitive Guide}} 和 {{R Markdown Cookbook}}"
-  },
-  {
-    "objectID": "hw/hw-06.html",
-    "href": "hw/hw-06.html",
-    "title": "第7周课后作业",
-    "section": "",
-    "text": "1. 复习 📖 {{R for Data Science, 2e}} 一书第一部分 Whole game 中关于数据导入（8 Data import）、数据齐整（6 Data tidying）以及 {{第四部分 Import}} 中的五个章节（分别为 Spreadsheets、Databases、Arrow、Hierarchical data 和 Web scraping）并（结队）完成课后练习\n\n\n\n\n\n\n\n课后动手编程实操是掌握一门编程语言的必由之路，r4ds一书配套练习都很不错，尽管并未要求同学们提交课后编程实操作业，但希望同学们都能自觉完成，也正好检验下自己对 readr、tidyr 包核心函数和关键知识的掌握情况\n👉 课后习题参考答案：R for Data Science (2e): Solutions to Exercises 之 8 Data importing / 6 Data tidying\n👉 直接搜索：在 {{R for Data Science, 2e}} 上搜索相应函数（如read_excel、separate_wider_delim等）并进行针对性学习\n若在课后编程实操中遇到什么问题或难解之处，也可在课程QQ群上贴出并讨论\n\n\n\n\n2. 下载（打印） 📰 {{Data Import的cheatsheet}} 和 {{Data Tidying的cheatsheet}} 并阅读之\n3. browseVignettes(package = c(\"readr\", \"tidyr\")) 📝\n4. 👨‍🏫 {{启动小组作业}}"
-  },
-  {
-    "objectID": "hw/hw-07.html",
-    "href": "hw/hw-07.html",
-    "title": "第9周课后作业",
-    "section": "",
-    "text": "1. 复习 📖 {{R for Data Science, 2e}} 一书的以下章节：\n\n28 A field guide to base R 的 28.1-28.3\n26 Functions\n\n2. 自学 📖 {{R for Data Science, 2e}} 一书第4部分 Transform 的以下章节：\n\n12 Logical vectors\n13 Numbers\n14 Strings\n15 Regular expressions\n16 Factors\n17 Dates and times\n18 Missing values\n\n\n\n\n\n\n\n希望同学们能自觉完成自学任务，若遇到什么问题或难解之处，可在课程QQ群上贴出并讨论"
-  },
-  {
-    "objectID": "readings/revealjs/presenting.html",
-    "href": "readings/revealjs/presenting.html",
-    "title": "Reveal 演示",
-    "section": "",
-    "text": "本文介绍进行 Reveal 幻灯片演示的方法。演示者可使用以下键盘快捷键完成基本的导航：\n\n\n\n动作\n快捷键\n\n\n\n\n下一页幻灯片\n→ SPACE N\n\n\n前一页幻灯片\n← P\n\n\n无增量分片的导航\nAlt → Alt ←\n\n\n跳到首页 / 末页幻灯片\nShift → Shift ←\n\n\n\n\n\n\n\n\n\n在演示时，你可通过按 F 键进入全屏演示模式。\n\n\n\n除了基本的键盘导航之外，Reveal 还支持多种高级功能，包括：\n\n导航菜单和概览模式\n演示者视图（带有演示者备注、计时器和下一页幻灯片的预览）\n打印为 PDF 或者发布为自包含的单个 HTML 文件\n在幻灯片和黑板 / 白板模式上板书\n同步演示（即让观众在他们各自的手机、平板或笔记本电脑上跟随由你控制的演示节奏）\n\n这些功能如下所述。"
-  },
-  {
-    "objectID": "readings/revealjs/presenting.html#概述",
-    "href": "readings/revealjs/presenting.html#概述",
-    "title": "Reveal 演示",
-    "section": "",
-    "text": "本文介绍进行 Reveal 幻灯片演示的方法。演示者可使用以下键盘快捷键完成基本的导航：\n\n\n\n动作\n快捷键\n\n\n\n\n下一页幻灯片\n→ SPACE N\n\n\n前一页幻灯片\n← P\n\n\n无增量分片的导航\nAlt → Alt ←\n\n\n跳到首页 / 末页幻灯片\nShift → Shift ←\n\n\n\n\n\n\n\n\n\n在演示时，你可通过按 F 键进入全屏演示模式。\n\n\n\n除了基本的键盘导航之外，Reveal 还支持多种高级功能，包括：\n\n导航菜单和概览模式\n演示者视图（带有演示者备注、计时器和下一页幻灯片的预览）\n打印为 PDF 或者发布为自包含的单个 HTML 文件\n在幻灯片和黑板 / 白板模式上板书\n同步演示（即让观众在他们各自的手机、平板或笔记本电脑上跟随由你控制的演示节奏）\n\n这些功能如下所述。"
-  },
-  {
-    "objectID": "readings/revealjs/presenting.html#导航菜单",
-    "href": "readings/revealjs/presenting.html#导航菜单",
-    "title": "Reveal 演示",
-    "section": "导航菜单",
-    "text": "导航菜单\nQuarto 包含一个内置版本的 reveal.js-menu 插件。你可以使用演示文稿左下角的按钮  访问导航菜单。单击该按钮将打开一个幻灯片导航菜单，使得你可以轻松跳转到任何幻灯片：\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n你也可以通过按下 M键 打开导航菜单。\n\n\n\n导航菜单还包括工具窗格（Tools），可通过该窗格访问各种其他导航工具，包括全屏、演示者视图、概览模式和打印为 PDF 文档。\n使用以下选项自定义菜单的外观和行为：\n\n\n\n\n\n\n\n选项\n说明\n\n\n\n\nside\n将菜单显示在演示文稿的左侧或右侧（left或right，默认为 left）\n\n\nwidth\n菜单的宽度（normal、wide、third、half、full 或任何有效的 css 长度值，默认为 normal）\n\n\nnumbers\n将幻灯片编号添加到菜单项\n\n\n\n示例如下：\nformat:\n  revealjs:\n    menu:\n      side: right\n      width: wide\n你可以通过指定选项 menu: false 来隐藏导航菜单按钮：\nformat:\n  revealjs:\n    menu: false\n注意，即使导航菜单按钮被隐藏，你仍然可以使用 M键 打开导航菜单。"
-  },
-  {
-    "objectID": "readings/revealjs/presenting.html#概览模式",
-    "href": "readings/revealjs/presenting.html#概览模式",
-    "title": "Reveal 演示",
-    "section": "概览模式",
-    "text": "概览模式\n概览模式提供了另一种视图，显示每张幻灯片的缩略图：\n\n\n\n\n\n\n\n你可以通过按下 O键来启用概览模式。"
-  },
-  {
-    "objectID": "readings/revealjs/presenting.html#幻灯片缩放",
-    "href": "readings/revealjs/presenting.html#幻灯片缩放",
-    "title": "Reveal 演示",
-    "section": "幻灯片缩放",
-    "text": "幻灯片缩放\n按住 Alt键（或者 Linux中的 Ctrl 键）并单击任意元素可对其进行缩放。尝试放大以下图像之一：\n\n按住 Alt（或者 Ctrl），再次单击可恢复缩放。"
-  },
-  {
-    "objectID": "readings/revealjs/presenting.html#演示者视图",
-    "href": "readings/revealjs/presenting.html#演示者视图",
-    "title": "Reveal 演示",
-    "section": "演示者视图",
-    "text": "演示者视图\n演示者视图显示当前幻灯片以及即将播放的幻灯片、计时器以及与当前幻灯片关联的任何演示者备注：\n\n\n\n\n\n\n\n你可以通过按 S 键启用演示者视图。\n\n\n\n你可以使用类为.notes的div块将演示者备注添加到幻灯片中。例如：\n## 含有演示者备注的幻灯片\n\n幻灯片内容\n\n::: {.notes}\n此次为演示者备注\n:::"
-  },
-  {
-    "objectID": "readings/revealjs/presenting.html#幻灯片编号",
-    "href": "readings/revealjs/presenting.html#幻灯片编号",
-    "title": "Reveal 演示",
-    "section": "幻灯片编号",
-    "text": "幻灯片编号\n你可以使用 slide-number 选项将幻灯片编号添加到演示文稿中。你还可以使用 show-slide-number 选项控制幻灯片编号在哪些环境下显示。例如，我们可设置仅用于打印输出的幻灯片编号：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n    slide-number: true\n    show-slide-number: print\n---\n除了设定为简单的 true 或者 false 之外，slide-number 选项还可以指定格式。可用的格式包括：\n\n\n\n选项值\n说明\n\n\n\n\nc/t\n当前幻灯片编号 / 总幻灯片数（默认值）\n\n\nc\n只显示当前幻灯片编号\n\n\nh/v\n横向编号/纵向编号\n\n\nh.v\n横向编号.纵向编号\n\n\n\n参见 纵向幻灯片 获取更多信息。\nshow-slide-number 选项支持以下取值：\n\n\n\n选项值\n说明\n\n\n\n\nall\n在所有环境下显示幻灯片编号（默认值）\n\n\nprint\n只在打印为 PDF 文档时显示幻灯片编号\n\n\nspeaker\n只在演示者视图下显示幻灯片编号"
-  },
-  {
-    "objectID": "readings/revealjs/presenting.html#打印为pdf",
-    "href": "readings/revealjs/presenting.html#打印为pdf",
-    "title": "Reveal 演示",
-    "section": "打印为PDF",
-    "text": "打印为PDF\nReveal 演示文稿可以通过特殊的打印样式表导出为 PDF 文档。\n\n\n\n\n\n\n注释\n\n\n\n注意：此功能使用仅在 Google Chrome 和 Chromium 中得到过验证。\n\n\n要打印为 PDF 文档，请执行以下操作：\n\n使用 E键（或使用导航菜单）切换到打印视图\n打开浏览器内的打印对话框 (CTRL/CMD+P)。\n将目标打印机（Destination）设置更改为另存为 PDF（Save as PDF）。\n将布局（Layout）更改为横向（Landscape）。\n将边距（Margins）更改为无（None）。\n启用背景图形选项（Background graphics）。\n点击保存按钮（Save）🎉\n\n启用上述设置后，Chrome 打印对话框如下所示：\n\n\n打印选项\n有许多选项会影响打印输出，你可能需要在打印之前设置这些选项：\n\n\n\n\n\n\n\n选项\n说明\n\n\n\n\nshow-notes\n包括演示者备注（true、false 或 separate-page）\n\n\nslide-number\n包含幻灯片编号（true 或者 false）\n\n\npdf-max-pages-per-slide\n太高而无法容纳在单个页面中的幻灯片将扩展到多个页面，你可使用该选项限制幻灯片可以扩展的最多页数\n\n\npdf-separate-fragments\n默认情况下，具有多增量分片的幻灯片将打印在单页上，如果要为每个分片创建一个页面，需将此选项设置为 true\n\n\n\n例如，以下选项设定打印幻灯片时包含幻灯片编号并在单独页面上打印演示者备注：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n    show-notes: separate-page\n    slide-number: true\n---"
-  },
-  {
-    "objectID": "readings/revealjs/presenting.html#预览链接",
-    "href": "readings/revealjs/presenting.html#预览链接",
-    "title": "Reveal 演示",
-    "section": "预览链接",
-    "text": "预览链接\nReveal 通过设置 preview-links 选项可以轻松地将对外部网站的导航嵌入到幻灯片演示流程中。\n当你点击一个设定 preview-links: true 的超链接时，你将在遮盖幻灯片的 iframe 中直接导航到该链接。在下面示例图中，我们点击 Matplotlib链接，网站在幻灯片顶层打开（此时，你可以单击右上角的关闭按钮将其隐藏）：\n\npreview-link 选项的可用设置值包括：\n\n\n\n选项值\n说明\n\n\n\n\nauto\n在全屏演示时直接预览链接（否则以正常方式导航到新链接）\n\n\ntrue\n总是预览链接\n\n\nfalse\n从不预览链接（默认值）\n\n\n\n例如，我们将 preview-links 选项设置为 auto：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n    preview-links: auto\n---\n你还可以针对每个链接设置此选项。如下两个链接分别启用和禁用预览模式：\n[预览链接模式](https://example.com){preview-link=\"true\"}\n\n[非预览链接模式](https://example.com){preview-link=\"false\"}"
-  },
-  {
-    "objectID": "readings/revealjs/presenting.html#幻灯片音效",
-    "href": "readings/revealjs/presenting.html#幻灯片音效",
-    "title": "Reveal 演示",
-    "section": "幻灯片音效",
-    "text": "幻灯片音效\n在启用幻灯片音效后，当你切换幻灯片时，幻灯片会发出微妙的声音。该功能是应一位盲人用户的要求而设计的，使得演示者能够听到幻灯片播放进度的听觉信号。启用幻灯片音效的方式如下：\nformat:\n  revealjs:\n    slide-tone: true\n随着幻灯片切换，幻灯片音调逐渐从低音C提高至高音C。对于增量幻灯片，音调保持不变。\n幻灯片音效的实现改编自 xaringanExtra 包中的幻灯片音效插件。"
-  },
-  {
-    "objectID": "readings/revealjs/presenting.html#自动放映",
-    "href": "readings/revealjs/presenting.html#自动放映",
-    "title": "Reveal 演示",
-    "section": "自动放映",
-    "text": "自动放映\n演示文稿可以配置为自动放映幻灯片，无需任何用户的输入。要启用此功能，你需要设置 auto-slide 选项为指定幻灯片切换的间隔（间隔以毫秒为单位）。还可以设置 loop 选项来指定在全部幻灯片放映完毕后是否继续循环放映。\n例如，我们在这里指定每 5 秒前进一页幻灯片并循环放映：\n---\ntitle: \"演示文稿\"\nformat: \n  revealjs: \n    auto-slide: 5000\n    loop: true\n---\n对于自动放映的幻灯片，将会出现播放/暂停的控制按钮。如果用户与平台进行交互，自动放映会暂停。你还可以通过按 A 键来暂停或恢复自动放映。\n你可以通过设定 auto-slide-stoppable: false 来禁用自动放映控件并防止放映暂停。\n\n幻灯片计时\n我们还可以通过设置特定幻灯片的 autoslide 属性来修改切换的持续时间，这一设置也适用于 分片)。例如，我们在此将该页幻灯片的自动放映时长设置为2秒：\n## 幻灯片标题 {autoslide=2000}"
-  },
-  {
-    "objectID": "readings/revealjs/presenting.html#发布",
-    "href": "readings/revealjs/presenting.html#发布",
-    "title": "Reveal 演示",
-    "section": "发布",
-    "text": "发布\n发布 Reveal 演示文稿有两种主要方式：\n\n发布为 PDF 文档——参阅前述 打印为 PDF 一节，了解有关如何执行此操作的详细信息。\n发布为 HTML 文件。对于 HTML 文档，将演示文稿作为自包含单个文件分发通常最为方便。为此，可指定 embed-resources 选项：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n    embed-resources: true\n---\n文档所依赖的图像、CSS 样式和其他资源都将包含在 Quarto 创建的 HTML 文件中。\n\n\n\n\n\n\n\n请注意，设定 embed-resources 选项可能会使幻灯片文档的渲染速度慢几秒钟，因此你最好在准备发布时才启用 embed-resources 选项。另请注意，Reveal 插件 Chalkboard 不兼容 embed-resources——启用 Chalkboard 插件后，embed-resources: true 将导致错误。\n\n\n\n有关发布 Reveal 演示文稿（包括 GitHub Pages 和 Posit Connect）的其他方法的详细信息，请参阅发布 HTML文档。"
-  },
-  {
-    "objectID": "readings/revealjs/presenting.html#导航选项",
-    "href": "readings/revealjs/presenting.html#导航选项",
-    "title": "Reveal 演示",
-    "section": "导航选项",
-    "text": "导航选项\nReveal 演示文稿提供了多个导航提示以及控制它们的相应选项：\n\n\n\n\n\n\n\n选项\n说明\n\n\n\n\ncontrols\n显示用于浏览幻灯片的箭头控件（默认为 auto，即当存在纵向幻灯片或幻灯片嵌入到 iframe 中时显示控件）。\n\n\nprogress\n在底部显示进度条（默认为 true）\n\n\nhistory\n将幻灯片页面切换推送到浏览器的历史记录（默认为 true，这意味着浏览器的前进/后退按钮可用于导航）\n\n\nhash-type\n用于幻灯片的 URL 哈希的类型（默认为 title，即根据幻灯片标题计算得到，也可以指定为 number）\n\n\n\n例如，以下设置隐藏进度条并指定我们要使用浏览器历史记录：\n---\ntitle: \"演示文档\"\nformat:\n  revealjs:\n    progress: false\n    history: true\n---"
-  },
-  {
-    "objectID": "readings/revealjs/presenting.html#板书",
-    "href": "readings/revealjs/presenting.html#板书",
-    "title": "Reveal 演示",
-    "section": "板书",
-    "text": "板书\nQuarto 包含一个内置版本的 Reveal.js-chalkboard 插件。指定 chalkboard: true 将启用该插件。该插件使你能够在幻灯片上层的笔记画布上进行板书和/或在演示文稿中打开一个空白黑板：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n    chalkboard: true\n---\n\n\n\n\n\n\n请注意，Reveal的 Chalkboard 插件与 embed-resources 输出不兼容—— 当启用 Chalkboard 插件后，设置 embed-resources: true 将导致错误。\n\n\n\n以下是笔记画布和黑板激活后的样子：\n\n\n\n\n\n\n\n\n\n\n要打开和关闭笔记画布，请使用按钮  或者 C键。\n要打开和关闭黑板，请使用按钮  或者 B键。。\n以下是与笔记画布和黑板相关的全部快捷键：\n\n\n\n行为\n键盘快捷键\n\n\n\n\n打开/关闭笔记画布\nC\n\n\n打开/关闭黑板\nB\n\n\n重置全部板书\nBACKSPACE\n\n\n清除幻灯片上的板书\nDEL\n\n\n向前循环板书颜色\nX\n\n\n向后循环板书颜色\nY\n\n\n下载板书\nD\n\n\n\n以下鼠标和触摸手势可用于与板书交互：\n\n单击左下角的按钮可切换笔记画布或黑板\n单击左侧的颜色选择器可更改颜色（仅当笔记画布或黑板处于活动状态时，颜色选择器才可见）\n点击右侧上/下箭头可切换多个黑板（上/下箭头仅适用于黑板）\n单击鼠标左键并拖动以在笔记画布或黑板上书写\n单击鼠标右键并拖动以擦除以前的绘图\n触摸并移动以在笔记画布或黑板上书写\n触摸并按住半秒钟，然后移动以擦除之前的板书\n\n\n恢复板书\n按 D 键会将当前的活动板书下载到 JSON 文件中。然后，你可以通过设置 src 选项在展示演示文稿时恢复这些板书。例如：\n---\ntitle: \"展示文稿\"\nformat:\n  revealjs:\n    chalkboard:\n      src: drawings.json\n---\n\n\n板书选项\n以下选项可用于自定义板书的行为和外观：\n\n\n\n\n\n\n\n选项\n说明\n\n\n\n\ntheme\n可设置为 chalkboard（默认值）或者 whiteboard\n\n\nboardmarker-width\n记号笔粗细（值越大，线越粗，默认为3）\n\n\nchalk-width\n粉笔粗细（值越大，线越粗，默认为7）\n\n\nchalk-effect\n粉笔效果（取值范围 [0.0, 1.0]，默认为全效的 1.0）\n\n\nsrc\n之前下载板书的文件名（按 D键 下载）\n\n\nread-only\n是否可更改板书文件（默认为 false）\n\n\nbuttons\n在幻灯片底部增加板书按钮（默认为 true）\n\n\ntransition\n幻灯片切换的持续时间（以毫秒为单位），切换完成后可在笔记画布上板书\n\n\n\n例如，以下设置指定要使用 whiteboard 主题并用较粗的记号笔，同时隐藏每页幻灯片底部的板书按钮：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n    chalkboard:\n      theme: whiteboard\n      boardmarker-width: 5\n      buttons: false\n---\n如果已全局禁用板书按钮，你仍然可以使用 chalkboard-buttons 属性有选择地为特定幻灯片启用板书按钮。例如：\n## 幻灯片标题 {chalkboard-buttons=\"true\"}\n你还可以用 chalkboard-buttons=\"false\" 来关闭单个幻灯片的板书按钮。"
-  },
-  {
-    "objectID": "readings/revealjs/presenting.html#同步演示",
-    "href": "readings/revealjs/presenting.html#同步演示",
-    "title": "Reveal 演示",
-    "section": "同步演示",
-    "text": "同步演示\nQuarto 包含 Reveal Multiplex 插件的内置版本。multiplex 插件允许你的让观众在他们各自的手机、平板或笔记本电脑上跟随由你控制的演示节奏。当你更改主演示文稿中的幻灯片时，每个人都会跟随并在自己的设备上看到相同的内容。\n创建支持 multiplex 的 Reveal 演示文稿非常简单，你只需设定 multiplex: true 选项：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n    multiplex: true\n---\nQuarto 渲染演示文稿将创建两个 HTML 文件：\n\n\n\n\n\n\n\n文件\n说明\n\n\n\n\npresentation.html\n这是你在线发布给目标受众查看的文件\n\n\npresentation-speaker.html\n这是给你展示用的文件，该文件可以保存在你的计算机上而无需发布\n\n\n\n演示文稿的两个版本将会保持同步，即当演示者切换幻灯片时，观众也会切换到同一页幻灯片。\n\n同步演示服务器\nmultiplex服务器在幕后发挥作用，用来在演示文稿的观众版本和演示者版本之间同步幻灯片放映事件。注意，同步服务器实际上并不会看到任何幻灯片内容，它仅用来同步事件。\n在默认情况下，由 Revealjs 团队创建和托管的 服务器 被用来实现同步演示。当你设定 multiplex: true 时，将默认使用此服务器。\n\n运行自己的服务器\n如果你想运行自己的服务器版本，其源代码位于：https://github.com/reveal/Multiplex/blob/master/index.js。\n安装后你就可以将 multiplex 配置为使用该替代服务器，如下所示：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n    multiplex: \n      url: 'https://myserver.example.com/\n---\n请注意，Quarto 在后台调用 multiplex 服务器来为你的演示文稿提供 ID 和密钥。如果你想设置自己的 ID 和密钥，可以在 https://reveal-Multiplex.glitch.me/（或使用你的自定义托管服务器 URL）执行此操作，并在 YAML 中明确提供它们：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n    multiplex: \n      id: '1ea875674b17ca76'\n      secret: '13652805320794272084'\n---\n请注意，secret 值将仅包含在演示文稿的演示者版本中。"
-  },
-  {
-    "objectID": "readings/revealjs/presenting.html#了解更多",
-    "href": "readings/revealjs/presenting.html#了解更多",
-    "title": "Reveal 演示",
+    "objectID": "readings/revealjs/advanced.html#了解更多",
+    "href": "readings/revealjs/advanced.html#了解更多",
+    "title": "高级 Reveal",
     "section": "了解更多",
-    "text": "了解更多\n参阅以下文章以了解有关 Reveal 使用的更多信息：\n\nReveal基础 涵盖了创建演示文稿的基本流程。\n高级Reveal 深入研究 切换、动画、高级布局与定位以及可用于自定义演示文稿的其他选项。\nReveal主题 讨论如何使用和自定义现有主题以及如何创建全新主题。"
-  },
-  {
-    "objectID": "readings/revealjs/index.html",
-    "href": "readings/revealjs/index.html",
-    "title": "Revealjs 演示文稿",
-    "section": "",
-    "text": "你可以使用 revealjs 格式来创建 Revealjs演示文稿。了解 Revealjs 功能的最佳方式是通过这个 示例 演示文稿：\n\n\n\n\n如果你喜欢在独立浏览器窗口中查看演示，你可以直接点击链接。你还可以进一步查看演示的源代码以了解该示例幻灯片是如何创建的。\n有关 Revealjs 输出格式支持的所有选项的全面概述，请参阅 Revealjs格式参考。"
-  },
-  {
-    "objectID": "readings/revealjs/index.html#概览",
-    "href": "readings/revealjs/index.html#概览",
-    "title": "Revealjs 演示文稿",
-    "section": "",
-    "text": "你可以使用 revealjs 格式来创建 Revealjs演示文稿。了解 Revealjs 功能的最佳方式是通过这个 示例 演示文稿：\n\n\n\n\n如果你喜欢在独立浏览器窗口中查看演示，你可以直接点击链接。你还可以进一步查看演示的源代码以了解该示例幻灯片是如何创建的。\n有关 Revealjs 输出格式支持的所有选项的全面概述，请参阅 Revealjs格式参考。"
-  },
-  {
-    "objectID": "readings/revealjs/index.html#创建幻灯片",
-    "href": "readings/revealjs/index.html#创建幻灯片",
-    "title": "Revealjs 演示文稿",
-    "section": "创建幻灯片",
-    "text": "创建幻灯片\n在 markdown 中，幻灯片用标题来进行划分。例如，这是一个包含两张幻灯片的简单幻灯片文档（每张幻灯片都用2级标题 ## 定义）：\n---\ntitle: \"习惯\"\nauthor: \"张三\"\nformat: revealjs\n---\n\n## 早起\n\n- 关闭闹钟\n- 起床\n\n## 晚睡\n\n- 上床\n- 数羊\n你还可以使用 1级标题幻灯片（以#标识）将幻灯片划分为不同的节（section）。例如：\n---\ntitle: \"习惯\"\nauthor: \"张三\"\nformat: revealjs\n---\n\n# 早晨\n\n## 早起\n\n- 关闭闹钟\n- 起床\n\n## 早餐\n\n- 吃鸡蛋\n- 喝咖啡\n\n# 晚上\n\n## 晚餐\n\n- 吃面\n- 饮酒\n\n## 睡觉\n\n- 上床\n- 数羊\n最后，你还可以使用水平线（---）来定义幻灯片（例如，你需要一张没有标题的幻灯片）：\n---\ntitle: \"习惯\"\nauthor: \"张三\"\nformat: revealjs\n---\n\n- 关闭闹钟\n- 起床\n\n---\n\n- 上床\n- 数羊\n上述示例均使用2级标题来定义幻灯片，并用1级标题来定义节和标题幻灯片。你可以利用选项进行自定义（详情请参阅Pandoc官方文档关于构建幻灯片的内容）。\n\n标题幻灯片\n你在上面的示例中应该已经注意到，Quarto 会基于文档 YAML 选项中提供的title 和 author 字段自动创建。有时你并不需要显性的标题幻灯片（例如第一张幻灯片完全由背景图构成），此时只需删除 title 和 author 选项，从而创建没有标题幻灯片的演示文稿：\n---\nformat: revealjs\n---\n\n## 早起\n\n- 关闭闹钟\n- 起床\n\n## 晚睡\n\n- 上床\n- 数羊"
-  },
-  {
-    "objectID": "readings/revealjs/index.html#增量列表",
-    "href": "readings/revealjs/index.html#增量列表",
-    "title": "Revealjs 演示文稿",
-    "section": "增量列表",
-    "text": "增量列表\n默认情况下，幻灯片中的编号列表 / 项目符号列表会一次性同时显示。你可以通过设定 incremental 选项来全局修改其默认行为。例如：\ntitle: \"演示文档\"\nformat:\n  revealjs:\n    incremental: true   \n你还可以通过直接指定包围在 div块（以 ::: 标识） 中列表的显性类而使其成为增量或非增量列表。要使得列表成为增量列表，可执行以下设定：\n::: {.incremental}\n- 吃面\n- 饮酒\n:::\n要使列表成为非增量列表，可执行以下设定：\n::: {.nonincremental}\n- 吃面\n- 饮酒\n:::\n你还可以通过插入三个用空格分隔的点（即 . . .）在幻灯片中插入暂停（即隐藏暂停后的内容）：\n## 幻灯片（带有暂停）\n\n暂停之前的内容\n\n. . .\n\n暂停之后的内容"
-  },
-  {
-    "objectID": "readings/revealjs/index.html#多栏",
-    "href": "readings/revealjs/index.html#多栏",
-    "title": "Revealjs 演示文稿",
-    "section": "多栏",
-    "text": "多栏\n要将展示内容放在并排的多栏中，你可以使用指定类为 .columns 的 div 容器，其中嵌套两个或多个带有 .column 类和 width 属性的 div 容器：\n:::: {.columns}\n\n::: {.column width=\"40%\"}\n左栏内容\n:::\n\n::: {.column width=\"60%\"}\n右栏内容\n:::\n\n::::"
-  },
-  {
-    "objectID": "readings/revealjs/index.html#内容溢出",
-    "href": "readings/revealjs/index.html#内容溢出",
-    "title": "Revealjs 演示文稿",
-    "section": "内容溢出",
-    "text": "内容溢出\n如果幻灯片中的内容多于单个页面上可以显示的内容，那么可以使用两个幻灯片级别的类设定来缓解这一情况：\n\n设定 .smaller 类使用较小的字体，以便幻灯片上可以容纳更多文本。例如：\n## 幻灯片标题 {.smaller}\n设定 .scrollable 类，通过滚动来查看幻灯片外的内容。例如：\n## 幻灯片标题 {.scrollable}\n\n这两个选项也可以全局应用于所有幻灯片，如下所示：\n---\nformat:\n  revealjs:\n    smaller: true\n    scrollable: true\n---"
-  },
-  {
-    "objectID": "readings/revealjs/index.html#演讲者备注",
-    "href": "readings/revealjs/index.html#演讲者备注",
-    "title": "Revealjs 演示文稿",
-    "section": "演讲者备注",
-    "text": "演讲者备注\n你可以使用指定类为 .note 的 div块将演讲者备注添加到幻灯片中。例如：\n## 附有演讲者备注的幻灯片\n\n幻灯片内容\n\n::: {.notes}\n演讲者备注内容（吧啦吧啦 ~~）\n:::\n按 S 键（或使用导航菜单）来显示演示者视图，图示如下：\n\n你通常会在一个屏幕（例如笔记本电脑）上使用演示者视图，同时在另一个屏幕上演示幻灯片。"
-  },
-  {
-    "objectID": "readings/revealjs/index.html#主题",
-    "href": "readings/revealjs/index.html#主题",
-    "title": "Revealjs 演示文稿",
-    "section": "主题",
-    "text": "主题\nReveal 演示文档内置有 11 个主题（当然你也可以创建自己的主题）。主题 default 和 dark 使用相当经典的版式和配色方案，是你创建 Reveal 演示文档时一个很好的起始点。\nQuarto|revealjs 会自动套用主题 default ，你可以通过设定 theme 选项切换到其他备选主题，例如：\n---\ntitle: \"演示文档\"\nformat:\n  revealjs: \n    theme: dark\n---\n以下是可用主题的完整列表：\n\nbeige\nblood\ndark\ndefault\nleague\nmoon\nnight\nserif\nsimple\nsky\nsolarized\n\n有关自定义主题和创建全新主题的更多详细信息，请参阅 Revealjs 主题。"
-  },
-  {
-    "objectID": "readings/revealjs/index.html#批注和脚注",
-    "href": "readings/revealjs/index.html#批注和脚注",
-    "title": "Revealjs 演示文稿",
-    "section": "批注和脚注",
-    "text": "批注和脚注\n批注用来展示次要信息，以更小、更浅的字体显示在幻灯片底部。使用指定类为 aside 的 div块来创建批注。例如：\n## 幻灯片标题\n\n幻灯片内容\n\n::: aside\n用来展示更多次要信息的批注（吧啦吧啦 ~~）\n:::\n脚注与批注有着类似的视觉处理，但包括脚注编号。例如，我们在单页幻灯片上同时使用脚注和批注：\n## 附有脚注和批准的幻灯片\n\n- 绿色 ^[脚注内容]\n- 棕色\n- 紫色\n\n::: aside\n含有更多边缘信息的附加批注（吧啦吧啦 ~~）\n:::\n如果你希望在文档末尾包含脚注，请指定选项 reference-location: document：\n---\nformat:\n  revealjs:\n    reference-location: document\n---\n请注意，指定此选项，你可以通过将鼠标悬停在脚注编号上来查看相应的脚注内容。"
-  },
-  {
-    "objectID": "readings/revealjs/index.html#页脚和徽标",
-    "href": "readings/revealjs/index.html#页脚和徽标",
-    "title": "Revealjs 演示文稿",
-    "section": "页脚和徽标",
-    "text": "页脚和徽标\n你可以使用 footer 和 logo 选项在每页幻灯片的底部添加页脚文本和徽标。例如：\n---\nformat:\n  revealjs:\n    logo: logo.png\n    footer: \"页脚文本\"\n---\n你还可以通过在特定幻灯片底部添加页脚div块来为该页幻灯片添加自定义的页脚文本：\n## 幻灯片标题\n\n幻灯片内容\n\n::: footer\n自定义的页脚文本\n:::"
-  },
-  {
-    "objectID": "readings/revealjs/index.html#代码块",
-    "href": "readings/revealjs/index.html#代码块",
-    "title": "Revealjs 演示文稿",
-    "section": "代码块",
-    "text": "代码块\nQuarto HTML代码块的大多数核心功能均适用于 Reveal 演示文稿，包括代码折叠、代码复制以及选择自定义语法突显主题的功能。请注意，如果你选择深色的 Reveal 主题，则将使用默认的 Quarto 深色语法突显主题。\n\n行突出显示\n你可能想要突出显示代码输出块的特定行（或者甚至突出显示一系列演示步骤中的不同行），此时你可通过设置代码块的 code-line-numbers 属性来达到这一目的。例如：\n```{.python code-line-numbers=\"6-8\"}\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\n你还可以通过用逗号分隔来突出显示不同范围的行。例如：\n```{.python code-line-numbers=\"7,9\"}\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\n最后，你可以通过 | 分隔来渐进增量突出显示不同的代码行。例如，在下面代码中我们首先显示所有行，然后突出显示第 6 行，最后突出显示第 9 行：\n```{.python code-line-numbers=\"|6|9\"}\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\n你也可以在可执行单元格中使用相同的 code-line-numbers 选项来达到相同的效果：\n```{python}\n#| code-line-numbers: \"|6|9\"\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```"
-  },
-  {
-    "objectID": "readings/revealjs/index.html#可执行代码",
-    "href": "readings/revealjs/index.html#可执行代码",
-    "title": "Revealjs 演示文稿",
-    "section": "可执行代码",
-    "text": "可执行代码\n你可以在幻灯片上包含可执行代码块的输出，就像使用其他 Quato 文档一样。具体工作原理与其他格式输出基本相同，但也有一些特殊注意事项，说明如下：\n\n图形尺寸\n你往往需要自定义为幻灯片创建的图形的大小，以便它们能够填充整个幻灯片或者指定区域。Quarto 在这里提供了一些帮助：对于 Python 来说，Matplotlib 和 Plotly Express 的图形大小被设置为填满标题下方的幻灯片区域，而对于 R 来说，Knitr 生成图形的宽度和高度也采用类似的默认值。\n尽管如此，你可能还是需要更改给定图片尺寸的这些默认值，具体做法因图形库的不同而有所差异。以下是显性调整 Altair 图片大小的示例：\nalt.Chart(cars).mark_point().encode(\n    x='Horsepower',\n    y='Miles_per_Gallon',\n    color='Origin',\n).properties(\n    width=700,\n    height=300\n).interactive()\n\n\n显示代码\n与普通文档不同，Quarto 演示文稿中的可执行代码块在默认情况下并不显示源代码（这是由于这些代码通常会生成需要占据尽可能多垂直空间的图形）。你可以通过设置 echo 选项修改这一默认做法，如下所示：\n```{python}\n#| echo: true\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={\"projection\": \"polar\"})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\n\n\n输出位置\n默认情况下，可执行代码块的输出结果直接显示在代码之后。你可以通过设置 output-location 选项来修改此行为，具体选项如下所示：\n\n\n\n\n\n\n\nfragment\n将输出结果显示为分片（会延迟显示并随着幻灯片推进而增量展示）\n\n\nslide\n将输出结果显示在下一页幻灯片\n\n\ncolumn\n将输出结果显示为与源代码并列的分栏\n\n\ncolumn-fragment\n将输出结果显示为与源代码并列的分栏并延迟显示它，随着幻灯片的推进而增量展示\n\n\n\n例如，我们将可执行单元格的输出结果在单独的幻灯片上展示：\n```{r}\n#| echo: true\n#| output-location: slide\nlibrary(ggplot2)\nggplot(airquality, aes(Temp, Ozone)) + \n  geom_point() + \n  geom_smooth(method = \"loess\")\n```\n关于设置代码块执行结果输出方式的其他方法的更多详细信息，请参阅文档 执行选项。"
-  },
-  {
-    "objectID": "readings/revealjs/index.html#标签页",
-    "href": "readings/revealjs/index.html#标签页",
-    "title": "Revealjs 演示文稿",
-    "section": "标签页",
-    "text": "标签页\n你可以使用 Quarto 设置 标签页 的标准语法 将标签页添加到幻灯片中。例如：\n::: {.panel-tabset}\n\n### 标签页A\n\n`标签页A`的内容\n\n### 标签页B\n\n`标签页B`的内容\n\n:::\n需要注意的是，标签页幻灯片的一个突出缺点是打印为 PDF 时只有第一个标签页是可见的。"
-  },
-  {
-    "objectID": "readings/revealjs/index.html#幻灯片背景",
-    "href": "readings/revealjs/index.html#幻灯片背景",
-    "title": "Revealjs 演示文稿",
-    "section": "幻灯片背景",
-    "text": "幻灯片背景\n默认情况下，幻灯片显示在屏幕的限定区域内并允许它们均匀缩放以适应不同显示屏的尺寸。你可以通过向幻灯片标题添加 background 相关属性来给幻灯片增加满幅的背景。Quarto | Revealjs 支持四种不同类型的背景：颜色、图像、视频和 iframe（内联框架）。\n支持所有 CSS 颜色格式，包括十六进制值、关键字、rgba() 和 hsl()。例如：\n## 幻灯片标题 {background-color=\"aquamarine\"}\n你还可以使用各种类型的媒体（图像、视频或内联框架等）作为幻灯片背景，具体如下所述：\n\n\n\n\n\n\n注意，如果嵌入媒体的背景颜色与演示文稿的主题不同（例如，在浅色主题时使用深色图像），那么你还应该明确设置 background-color 选项，以便在深色背景上面的文本能以正确的颜色显示（例如，深色背景上的浅色文本）。\n\n\n\n\n图像背景\n默认情况下，背景图像会自动调整大小以覆盖整个页面。可用选项包括：\n\n\n\n属性\n默认值\n说明\n\n\n\n\nbackground-image\n\n图像的 URL；打开幻灯片时，GIF 会重新开始\n\n\nbackground-size\ncover\n参见 MDN 上的 background-size\n\n\nbackground-position\ncenter\n参见 MDN 上的 background-position\n\n\nbackground-repeat\nno-repeat\n参见 MDN 上的 background-repeat\n\n\nbackground-opacity\n1\n背景图像的不透明度（0-1 级，0为透明，1为完全不透明）\n\n\n\n示例如下：\n## 幻灯片标题 {background-color=\"black\" background-image=\"https://placekitten.com/100/100\" background-size=\"100px\" background-repeat=\"repeat\"}\n\n该幻灯片的背景图像的大小将调整为 100 像素并重复。\n由于背景图像的颜色为深色，而幻灯片的默认主题为浅色，因此我们需要把背景颜色 background-color 显性设置为黑色，以便将在叠加其上的文本显示成浅色。\n\n\n视频背景\nQuarto|Revealjs 会自动全屏播放背景视频。\n\n\n\n\n\n\n\n\n属性\n默认值\n说明\n\n\n\n\nbackground-video\n\n单个视频源或以逗号分隔的视频源列表\n\n\nbackground-video-loop\nfalse\n标识是否重复播放视频\n\n\nbackground-video-muted\nfalse\n标识是否静音播放视频\n\n\nbackground-size\ncover\ncover：等比缩放填充（必要时剪裁），contain：缩放填充（必要时填补背景色）\n\n\nbackground-opacity\n1\n不透明度（0-1级，0为透明，1为完全不透明）\n\n\n\n示例如下：\n## 幻灯片标题 {background-video=\"video.mp4\" background-video-loop=\"true\" background-video-muted=\"true\"}\n\n这个幻灯片的背景视频将会循环静音播放。\n\n\n内联框架背景\n将网页嵌入为幻灯片背景，覆盖 100% 的 reveal.js 宽度和高度。iframe 位于幻灯片后面的背景层中，因此默认情况下演示者无法与其交互。要使背景具备交互性，你需要修改 background-interactive 属性。\n\n\n\n\n\n\n\n\n属性\n默认值\n说明\n\n\n\n\nbackground-iframe\n\n拟加载内联框架的 URL 地址\n\n\nbackground-interactive\nfalse\n标识是否可与 iframe 内容进行交互（启用此功能将阻止演示者与幻灯片内容进行交互）\n\n\n\n示例如下：\n## 幻灯片标题 {background-iframe=\"https://example.com\"}\n\n\n没有标题的幻灯片背景\n你可以省略标题文本，而仅仅指定幻灯片背景信息，如：\n## {background-color=\"aquamarine\"}\n\n（没有标题的一页幻灯片）\n\n## {background-color=\"black\" background-image=\"https://placekitten.com/100/100\" background-size=\"100px\" background-repeat=\"repeat\"}\n\n（没有标题的另一页幻灯片）\n\n\n主标题幻灯片背景\n主标题幻灯片是第一页幻灯片，它是通过文档的 YAML 选项自动生成的。因此，上述方法无法为主标题幻灯片提供背景。相反，你需要执行以下操作：\n\n增加主标题幻灯片的背景选项 title-slide-attributes\n在相应背景选项的前面增加 data-\n\n例如：\n---\ntitle: My Slide Show\ntitle-slide-attributes:\n    data-background-image: /path/to/title_image.png\n    data-background-size: contain\n    data-background-opacity: \"0.5\"\n---"
-  },
-  {
-    "objectID": "readings/revealjs/index.html#了解更多",
-    "href": "readings/revealjs/index.html#了解更多",
-    "title": "Revealjs 演示文稿",
-    "section": "了解更多",
-    "text": "了解更多\n请参阅以下文章了解关于 Revealjs 的更多高级功能：\n\n幻灯片演示 介绍了幻灯片导航、打印为 PDF、使用板书工具以及创建同步演示幻灯片。\n高级Reveal 深入研究 切换、动画、高级布局与定位以及可用于自定义演示文稿的其他选项。\nReveal主题 讨论如何使用和自定义现有主题以及如何创建全新主题。"
+    "text": "了解更多\n参阅以下文章以了解有关 Reveal 使用的更多信息：\n\nReveal基础 涵盖了创建演示文稿的基本流程。\n幻灯片演示 介绍了幻灯片导航、打印为 PDF、使用板书工具以及创建同步演示幻灯片。\nReveal主题 讨论如何使用和自定义现有主题以及如何创建全新主题。"
   },
   {
     "objectID": "readings/revealjs/demo/index.html#hello-there",
@@ -875,108 +483,535 @@
     "text": "And More…\n\nTouch optimized (presentations look great on mobile, swipe to navigate slides)\nFooter & Logo (optionally specify custom footer per-slide)\nAuto-Slide (step through slides automatically, without any user input)\nMultiplex (allows your audience to follow the slides of the presentation you are controlling on their own phone, tablet or laptop).\n\n\nLearn more: Quarto Presentations\n\n\n\nhttps://quarto.org"
   },
   {
-    "objectID": "readings/revealjs/advanced.html",
-    "href": "readings/revealjs/advanced.html",
-    "title": "高级 Reveal",
+    "objectID": "hw/hw-07.html",
+    "href": "hw/hw-07.html",
+    "title": "第9周课后作业",
     "section": "",
-    "text": "主标题幻灯片是演示文稿的第一页幻灯片，其内容是根据各种文档选项（标题、副标题、日期、作者、机构等）生成的。\n\n\n如果你想为标题幻灯片提供自定义背景，请执行以下操作：\n\n使用 title-slide-attributes 键提供背景选项。\n在此键中，指定任何受支持的幻灯片背景选项，但要在它们前面添加 data- 前缀。\n\n例如：\n---\ntitle: 我的幻灯片演示\ntitle-slide-attributes:\n  data-background-image: /path/to/title_image.png\n  data-background-size: contain\n  data-background-opacity: \"0.5\"\n---\n\n\n\n你可以使用自己的模板完全替换默认标题幻灯片。为此，请指定一份名为 title-slide.html 的 模板构件。例如：\ntitle: 我的幻灯片演示\nformat:\n  revealjs:\n    template-partials:\n      - title-slide.html\n这是默认标题幻灯片模板部分的 源代码链接。根据需要自定义此模板，然后将结果保存为 title-slide.html并放在你创建的演示文稿的同一文件夹中。"
+    "text": "1. 复习 📖 {{R for Data Science, 2e}} 一书的以下章节：\n\n28 A field guide to base R 的 28.1-28.3\n26 Functions\n\n2. 自学 📖 {{R for Data Science, 2e}} 一书第4部分 Transform 的以下章节：\n\n12 Logical vectors\n13 Numbers\n14 Strings\n15 Regular expressions\n16 Factors\n17 Dates and times\n18 Missing values\n\n\n\n\n\n\n\n希望同学们能自觉完成自学任务，若遇到什么问题或难解之处，可在课程QQ群上贴出并讨论"
   },
   {
-    "objectID": "readings/revealjs/advanced.html#标题幻灯片",
-    "href": "readings/revealjs/advanced.html#标题幻灯片",
-    "title": "高级 Reveal",
+    "objectID": "hw/hw-04.html",
+    "href": "hw/hw-04.html",
+    "title": "第5周课后作业",
     "section": "",
-    "text": "主标题幻灯片是演示文稿的第一页幻灯片，其内容是根据各种文档选项（标题、副标题、日期、作者、机构等）生成的。\n\n\n如果你想为标题幻灯片提供自定义背景，请执行以下操作：\n\n使用 title-slide-attributes 键提供背景选项。\n在此键中，指定任何受支持的幻灯片背景选项，但要在它们前面添加 data- 前缀。\n\n例如：\n---\ntitle: 我的幻灯片演示\ntitle-slide-attributes:\n  data-background-image: /path/to/title_image.png\n  data-background-size: contain\n  data-background-opacity: \"0.5\"\n---\n\n\n\n你可以使用自己的模板完全替换默认标题幻灯片。为此，请指定一份名为 title-slide.html 的 模板构件。例如：\ntitle: 我的幻灯片演示\nformat:\n  revealjs:\n    template-partials:\n      - title-slide.html\n这是默认标题幻灯片模板部分的 源代码链接。根据需要自定义此模板，然后将结果保存为 title-slide.html并放在你创建的演示文稿的同一文件夹中。"
+    "text": "1. 复习 📖 {{R for Data Science, 2e}} 一书第一部分 Whole game 中关于数据处理的章节，即 4 Data transformation 并（结队）完成课后练习。\n\n\n\n\n\n\n\n课后动手编程实操是掌握一门编程语言的必由之路，r4ds一书配套练习都很不错，尽管并未要求同学们提交课后编程实操作业，但希望同学们都能自觉完成，也正好检验下自己对 dplyr 包核心函数和关键知识的掌握情况\n课后习题参考答案链接\n\n📖 R for Data Science (2e): Solutions to Exercise\n📖 R for Data Science: Exercise Solutions\n\n若在课后编程实操中遇到什么问题或难解之处，也可在课程QQ群上贴出并讨论\n\n\n\n\n2. 下载（打印） 📰 {{dplyr的cheatsheet}} 并阅读之\n3. browseVignettes(package = \"dplyr\") 📝，阅读：\n\nIntroduction to dplyr\nColumn-wise operations\nGrouped data\nRow-wise operations\nWindow functions"
   },
   {
-    "objectID": "readings/revealjs/advanced.html#幻灯片切换",
-    "href": "readings/revealjs/advanced.html#幻灯片切换",
-    "title": "高级 Reveal",
-    "section": "幻灯片切换",
-    "text": "幻灯片切换\nReveal 支持切换幻灯片和更改幻灯片背景的多种动画过渡效果。默认情况下不使用过渡，但是你可以使用下面描述的选项在全局或特定幻灯片上启用它们。\n以下是可用的过渡类型：\n\n\n\n过渡\n说明\n\n\n\n\nnone\n无过渡效果（立即切换）\n\n\nfade\n淡入/淡出\n\n\nslide\n水平切入\n\n\nconvex\n凸角切入\n\n\nconcave\n凹角切入\n\n\nzoom\n缩放进入的幻灯片，使其从屏幕中心逐渐增大\n\n\n\n以下是设置幻灯片和背景的全局过渡样式的方法：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n    transition: slide\n    background-transition: fade\n---\n你还可以将 transition-speed 选项设定为 default、fast 或 slow：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n    transition: slide\n    transition-speed: fast\n---\n你还可以为单页幻灯片指定 transition 和/或transition-speed 选项：\n## 幻灯片标题 {transition=\"fade\" transition-speed=\"fast\"}\n你还可以分开指定进入和退出的过渡效果，例如：\n## 幻灯片标题 {transition=\"fade-in slide-out\"}"
+    "objectID": "hw/hw-02.html#footnotes",
+    "href": "hw/hw-02.html#footnotes",
+    "title": "第2周课后复习与作业",
+    "section": "脚注",
+    "text": "脚注\n\n\n若英文看起来实在吃力 😵， 这本书的第一版有中文翻译版，请同学们自行学习对应章节。我个人建议同学们（等网上商城打折时）购买实体书，放在案头作学习参考。↩︎"
   },
   {
-    "objectID": "readings/revealjs/advanced.html#幻灯片可见性",
-    "href": "readings/revealjs/advanced.html#幻灯片可见性",
-    "title": "高级 Reveal",
-    "section": "幻灯片可见性",
-    "text": "幻灯片可见性\n你可以通过给幻灯片标题增加 visibility=\"hidden\" 属性来隐藏幻灯片。例如：\n## 幻灯片标题 {visibility=\"hidden\"}\n\n幻灯片计数\n在创建演示文稿时，你可能需要提前准备些根据时间安排再决定是否展示的备选幻灯片。通过在演示文稿末尾附加几页幻灯片就可以轻松达到这一目的，但这意味着 Reveal 进度条和幻灯片编号会暗示这些备选幻灯片的存在。\n要从幻灯片编号系统中“隐藏”这些幻灯片，你可以设定 visibility=\"uncounted\"。例如：\n## 幻灯片1\n\n## 幻灯片2\n\n## 幻灯片3 {visibility=\"uncounted\"}"
+    "objectID": "hw/hw-03.html",
+    "href": "hw/hw-03.html",
+    "title": "第4周课后作业",
+    "section": "",
+    "text": "注释\n\n\n\n必做部分，需在截止日期前完成上传！\n\n\n\n自由组队，两人一组，共同完成课后作业：\n\n从 L02 课件中挑出 3 ~ 4 个你们感兴趣的数据可视化代码段，就其制作两种类型的展示文档：\n\n{{Quarto|HTML}} 或 {{prettydoc}} -&gt; 📂 L03_HW/docs/\n{{Quarto|Revealjs}} 或 {{xaringan}} -&gt; 📂 L03_HW/slides/\n\n记得多尝试各种选项设置，同时在文档内加上相应的说明性文字（如解释代码或输出图形，其余内容可自由发挥，丰俭由人啦 😁）\n作业共同署名（author: 姓名 + 姓名）\n确认两份文档运行无误后将文件夹📂 L03_HW 打包为 .zip 格式压缩文档，由其中一位同学于2023年10月15日22:00前将压缩包提交至 {{坚果云链接}}\n\n\n\n\n\n\n\n\n\n注释\n\n\n\n相信同学们现在对 rmarkdown 和 Quarto 有了初步的认识，下面列出一些学习资料，同学们可进一步学习精进 🏆\n\n\n\n📖 教材 {{R for Data Science, 2e}} 一书关于 Quarto 的第29章和第30章 （大致对应中文翻译版《R数据科学》的第20、22和23章）\n🏡 官网 {{Quarto}} / {{R Markdown}}\n📝 速查 {{Quarto}} / {{R Markdown}}\n📖 {{R Markdown: The Definitive Guide}} 和 {{R Markdown Cookbook}}"
   },
   {
-    "objectID": "readings/revealjs/advanced.html#演示尺寸",
-    "href": "readings/revealjs/advanced.html#演示尺寸",
-    "title": "高级 Reveal",
-    "section": "演示尺寸",
-    "text": "演示尺寸\n所有演示文稿都有着“正常”尺寸，即创作它们时的分辨率。默认的“正常”尺寸为 1050 x 700，用于尽可能匹配大多数笔记本电脑的宽高比。\nReveal 将根据正常大小自动等比缩放演示文稿，以确保所有内容适合给定的显示器或视窗大小，而无需更改内容的宽高比或布局。\n你可以使用以下选项更改幻灯片尺寸、内容周围的边距以及设置内容缩放限制：\n\n\n\n\n\n\n\n选项\n说明\n\n\n\n\nwidth\n正常宽度（默认为1050）\n\n\nheight\n正常高度（默认为700）\n\n\nmargin\n内容周围显示为空白的尺寸系数（默认为 0.1）\n\n\nmin-scale\n应用于内容的最小可能缩放比例（默认为 0.2）\n\n\nmax-scale\n应用于内容的最大可能缩放比例（默认为 2.0）"
+    "objectID": "hw/hw-01.html",
+    "href": "hw/hw-01.html",
+    "title": "第1周课后作业",
+    "section": "",
+    "text": "🕐 明确是否选修这门课程\n\n若不选修，请尽快在 {{厦门大学教学服务平台}} 上提出退课（申请）\n若确定选修本门课程，请于2023年9月17日24:00前通过 {{坚果云链接}} 回答几道问题\n\n\n\n\n🕑 初步了解 RStudio 的工作界面，并大致浏览下 {{rstudio-IDE-cheatsheet}}\n🕒 在 RStudio 命令窗口中键入 help(mean) 和 help(files)，了解 R 帮助文档的整体结构\n🕓 到前面课件中提到的那些 {{网络社区}} 随意逛逛\n\n\n\n🕔 完成课前预习（具体任务下周一前我会在 QQ 课程群上通知）"
   },
   {
-    "objectID": "readings/revealjs/advanced.html#绝对定位",
-    "href": "readings/revealjs/advanced.html#绝对定位",
-    "title": "高级 Reveal",
-    "section": "绝对定位",
-    "text": "绝对定位\n类 absolute 允许你将元素放置在幻灯片上的任意位置。这些元素具有 CSS 声明 position: absolute并且可基于幻灯片 top、left、bottom 和/或 right 边缘进行定位。\n例如，在这里我们给三个图像添加 .absolute 类，并分别指定一个不同的幻灯片位置（请注意，我们还使用 width 和 height 属性来控制它们的尺寸）：\n![](image1.png){.absolute top=200 left=0 width=\"350\" height=\"300\"}\n\n![](image2.png){.absolute top=50 right=50 width=\"450\" height=\"250\"}\n\n![](image3.png){.absolute bottom=0 right=50 width=\"300\" height=\"300\"}\n以下属性可以和 absolute 类一起使用。所有这些值都可以用 CSS 单位（如 px、em 等），如果仅指定数字而没有单位（如上面的示例），则默认为像素 px。\n\n\n\n属性\n说明\n\n\n\n\nwidth\n元素的宽度\n\n\nheight\n元素的高度\n\n\ntop\n到幻灯片顶端的距离\n\n\nleft\n到幻灯片左侧的距离\n\n\nbottom\n到幻灯片右侧的距离\n\n\nright\n到幻灯片底端的距离\n\n\n\n请注意，演示文稿幻灯片的默认大小为 1050 x 700。有关自定义幻灯片尺寸的详细信息，请参阅演示尺寸。"
+    "objectID": "hw/hw-06.html",
+    "href": "hw/hw-06.html",
+    "title": "第7周课后作业",
+    "section": "",
+    "text": "1. 复习 📖 {{R for Data Science, 2e}} 一书第一部分 Whole game 中关于数据导入（8 Data import）、数据齐整（6 Data tidying）以及 {{第四部分 Import}} 中的五个章节（分别为 Spreadsheets、Databases、Arrow、Hierarchical data 和 Web scraping）并（结队）完成课后练习\n\n\n\n\n\n\n\n课后动手编程实操是掌握一门编程语言的必由之路，r4ds一书配套练习都很不错，尽管并未要求同学们提交课后编程实操作业，但希望同学们都能自觉完成，也正好检验下自己对 readr、tidyr 包核心函数和关键知识的掌握情况\n👉 课后习题参考答案：R for Data Science (2e): Solutions to Exercises 之 8 Data importing / 6 Data tidying\n👉 直接搜索：在 {{R for Data Science, 2e}} 上搜索相应函数（如read_excel、separate_wider_delim等）并进行针对性学习\n若在课后编程实操中遇到什么问题或难解之处，也可在课程QQ群上贴出并讨论\n\n\n\n\n2. 下载（打印） 📰 {{Data Import的cheatsheet}} 和 {{Data Tidying的cheatsheet}} 并阅读之\n3. browseVignettes(package = c(\"readr\", \"tidyr\")) 📝\n4. 👨‍🏫 {{启动小组作业}}"
   },
   {
-    "objectID": "readings/revealjs/advanced.html#布局辅助类",
-    "href": "readings/revealjs/advanced.html#布局辅助类",
-    "title": "高级 Reveal",
-    "section": "布局辅助类",
-    "text": "布局辅助类\nReveal 提供了一些用于控制幻灯片内容布局的辅助类。\n\n堆叠\nr-stack 类允许你将多个元素居中并堆叠在彼此之上。它旨在与 分片 一起使用从而增量显示各个元素。\n例如，这里我们创建一个指定类为 .r-stack 的 div块，然后包含 3 个图像（每个图像都设定为 .fragment类，以便增量显示）：\n::: {.r-stack}\n![](image1.png){.fragment width=\"450\" height=\"300\"}\n\n![](image2.png){.fragment width=\"300\" height=\"450\"}\n\n![](image3.png){.fragment width=\"400\" height=\"400\"}\n:::\n\n\n适合文本\nr-fit-text 类使文本在不溢出幻灯片的前提下尽可能地大。当你想要大文本而又不想手动找到正确的字体大小时，这非常有用。例如：\n::: {.r-fit-text}\n巨大文本\n:::\n\n\n垂直居中\n当将 center 类应用于幻灯片时，将通过在幻灯片顶部添加适当的间距来垂直居中幻灯片内容。元素之间的垂直距离不会被修改。例如：\n## 调整至垂直居中的标题文本 {.center}\n\n这些文本也会一起移动\n\n\n自动缩放\nr-stretch 布局辅助类会调整元素（如图像或视频）的大小，以覆盖幻灯片中剩余的垂直空间。例如，以下示例中的图像将自动调整大小以适应幻灯片标题及其前后文本之外的剩余空间：\n## 幻灯片标题\n\n这里有个图片：\n\n![](image.png){.r-stretch}\n\n这是图片之后的文本。\n对于仅包含单个顶级图像的幻灯片，.r-stretch 类会自动应用于该图像。你可以通过设置 auto-stretch: false 选项来禁用这一默认做法：\nformat:\n  revealjs:\n    auto-stretch: false\n你也可以通过添加 .nostretch 类来禁用单页幻灯片的自动缩放功能：\n## 幻灯片标题 {.nostretch}\nauto-stretch 选项仅适用于非嵌套图像，这意味着功能块（如分片、布局面板、分栏等）或自定义 div 块中的图像将被忽略。对于自定义的 div 块，你可以通过将 .r-stretch 类添加到外层 div 从而获得 auto-stretch 功能（此时块内的图像将自动缩放）。"
+    "objectID": "hw/hw-05.html",
+    "href": "hw/hw-05.html",
+    "title": "第6周课后作业",
+    "section": "",
+    "text": "1. 学习 📝 {{Markdown基础}} 和 {{Revealjs 演示文稿}}，完善第4周的课后作业，并增加部分篇幅说明具体改进之处，于2023年10月26日22:00前将压缩包提交至 {{坚果云链接}}。\n2. 复习 📖 {{R for Data Science, 2e}} 一书第三部分 Transform 中关于连接数据集的章节，即 20 Joins 并（结队）完成课后练习。\n\n\n\n\n\n\n\n课后动手编程实操是掌握一门编程语言的必由之路，r4ds一书配套练习都很不错，尽管并未要求同学们提交课后编程实操作业，但希望同学们都能自觉完成，也正好检验下自己对 dplyr 包核心函数和关键知识的掌握情况\n课后习题参考答案链接\n\n📖 R for Data Science (2e): Solutions to Exercise\n📖 R for Data Science: Exercise Solutions\n\n若在课后编程实操中遇到什么问题或难解之处，也可在课程QQ群上贴出并讨论\n\n\n\n\n3. 下载（打印） 📰 {{dplyr的cheatsheet}} 并阅读之\n4. browseVignettes(package = \"dplyr\") 📝，阅读：\n\nRow-wise operations\nTwo-table verbs\n\n\n\n\n\n\n\n\n以下是第4周课后作业的初始要求（备忘）\n\n\n\n\n自由组队，两人一组，共同完成课后作业：\n\n从 L02 课件中挑出 3 ~ 4 个你们感兴趣的数据可视化代码段，就其制作两种类型的展示文档：\n\n{{Quarto|HTML}} 或 {{prettydoc}} -&gt; 📂 L03_HW/docs/\n{{Quarto|Revealjs}} 或 {{xaringan}} -&gt; 📂 L03_HW/slides/\n\n记得多尝试各种选项设置，同时在文档内加上相应的说明性文字（如解释代码或输出图形，其余内容可自由发挥，丰俭由人啦 😁）\n作业共同署名（author: 姓名 + 姓名）\n确认两份文档运行无误后将文件夹📂 L03_HW 打包为 .zip 格式压缩文档，由其中一位同学于2023年10月15日22:00前将压缩包提交至坚果云链接"
   },
   {
-    "objectID": "readings/revealjs/advanced.html#自动动画",
-    "href": "readings/revealjs/advanced.html#自动动画",
-    "title": "高级 Reveal",
-    "section": "自动动画",
-    "text": "自动动画\nRevealjs 可以自动为不同幻灯片中的元素设置动画。你所需要做的就是将 auto-animate 属性添加到两个相邻的幻灯片中，自动动画将为两页幻灯片之间的所有匹配元素添加动画效果。\n以下是一个简单的示例，可以让你更好地了解如何使用该功能。请注意，本示例中的幻灯片没有标题（而只有属性 auto-animate），但这些幻灯片也可以有标题。\n## {auto-animate=true}\n\n::: {style=\"margin-top: 100px;\"}\n动画内容\n:::\n\n## {auto-animate=true}\n\n::: {style=\"margin-top: 200px; font-size: 3em; color: red;\"}\n动画内容\n:::\n此示例使用 margin-top 属性来移动元素，但 Reveal 在内部将使用 CSS 转换来保证元素之间的平滑变化。相同的动画方法适用于大多数可动画化的 CSS 属性，这意味着你可以转换诸如 position、font-size、line-height、color、background-color 和 padding 等属性。\n\n代码动画\n你还可以在代码块之间设置动画以显示代码的变化。例如：\n## {auto-animate=\"true\"}\n\n```r\n# 创建图片填充预设位置\noutput$phonePlot &lt;- renderPlot({\n  # 生成柱状图\n})\n```\n\n## {auto-animate=true}\n\n```r\n# 创建图片填充预设位置\noutput$phonePlot &lt;- renderPlot({\n  # 生成柱状图\n  barplot(WorldPhones[,input$region]*1000, \n          main=input$region,\n          ylab=\"Number of Telephones\",\n          xlab=\"Year\")\n})\n```\n\n\n运动动画\n动画不仅限于风格的变化，自动动画还可以用于在幻灯片上添加、删除或重新排列内容时自动将元素移动到新位置——完成这些任务无需编写一行内联 CSS！例如，以下示例中两页幻灯片上的内容之间的增量显示呈现（隐性）动画效果：\n## {auto-animate=true}\n\n动画\n\n## {auto-animate=true}\n\n隐性\n\n动画\n\n\n元素匹配\n当演示者在两页自动动画的幻灯片之间导航时，Quarto 将尽力在两页幻灯片中查找匹配的元素。对于文本来说，如果文本内容和节点类型相同，Quarto 就认为它是匹配的。对于图像、视频和 iframe 来说，Quarto 将比较 src 属性。Quarto 还考虑元素在 DOM 中出现的顺序。\n在自动匹配不可行的情况下，你可以为需要自动动画效果的对象提供匹配的 data-id 值，其优先级自动匹配。\n以下是个示例，由于没有内容供 Quarto 自动匹配，我们转而赋予色块匹配的 ID。示例还使用了一些附加动画属性，如 auto-animate-easing 和 auto-animate-delay，我们将在下一小节中说明它们的用法。\n## {auto-animate=true auto-animate-easing=\"ease-in-out\"}\n\n::: {.r-hstack}\n::: {data-id=\"box1\" auto-animate-delay=\"0\" style=\"background: #2780e3; width: 200px; height: 150px; margin: 10px;\"}\n:::\n\n::: {data-id=\"box2\" auto-animate-delay=\"0.1\" style=\"background: #3fb618; width: 200px; height: 150px; margin: 10px;\"}\n:::\n\n::: {data-id=\"box3\" auto-animate-delay=\"0.2\" style=\"background: #e83e8c; width: 200px; height: 150px; margin: 10px;\"}\n:::\n:::\n\n## {auto-animate=true auto-animate-easing=\"ease-in-out\"}\n\n::: {.r-stack}\n::: {data-id=\"box1\" style=\"background: #2780e3; width: 350px; height: 350px; border-radius: 200px;\"}\n:::\n\n::: {data-id=\"box2\" style=\"background: #3fb618; width: 250px; height: 250px; border-radius: 200px;\"}\n:::\n\n::: {data-id=\"box3\" style=\"background: #e83e8c; width: 150px; height: 150px; border-radius: 200px;\"}\n:::\n:::\n\n\n动画设置\n你可以覆盖整个演示文稿、每页幻灯片或每个元素的特定动画设置，例如缓动和持续时间。以下配置属性可用于更改特定幻灯片或元素的动画设置：\n\n\n\n属性\n默认值\n说明\n\n\n\n\nauto-animate-easing\nease\nCSS 缓动函数\n\n\nauto-animate-unmatched\ntrue\n确定没有匹配的自动动画元素是否应该淡入（false 则为立即出现）\n\n\nauto-animate-duration\n1.0\n动画持续时间（单位为秒）\n\n\nauto-animate-delay\n0\n动画延迟时间（单位为秒），只能应用于特定元素，而非整个幻灯片级别\n\n\nauto-animate-id\n空值\n绑定自动动画幻灯片的 id\n\n\nauto-animate-restart\n空值\n解构两个相邻的自动动画幻灯片（即使具有相同的 id）\n\n\n\n你可以覆盖自动动画 -easing、-unmatched 和 -duration 的全局默认值，如下所示：\n---\ntitle: \"我的演示文稿\"\nformat:\n  revealjs:\n    auto-animate-easing: ease-in-out\n    auto-animate-unmatched: false\n    auto-animate-duration: 0.8\n---"
+    "objectID": "readings/revealjs/index.html",
+    "href": "readings/revealjs/index.html",
+    "title": "Revealjs 演示文稿",
+    "section": "",
+    "text": "你可以使用 revealjs 格式来创建 Revealjs演示文稿。了解 Revealjs 功能的最佳方式是通过这个 示例 演示文稿：\n\n\n\n\n如果你喜欢在独立浏览器窗口中查看演示，你可以直接点击链接。你还可以进一步查看演示的源代码以了解该示例幻灯片是如何创建的。\n有关 Revealjs 输出格式支持的所有选项的全面概述，请参阅 Revealjs格式参考。"
   },
   {
-    "objectID": "readings/revealjs/advanced.html#分片",
-    "href": "readings/revealjs/advanced.html#分片",
-    "title": "高级 Reveal",
-    "section": "分片",
-    "text": "分片\n分片（fragment）用于突出显示或增量显示幻灯片上的各个元素。在进入下一页幻灯片之前，需要增量完成 fragment 类元素的展示。\n注意，此处讨论的分片是增量内容显示的相对高级形式——请参阅文档 增量列表 以获取创建增量项目符号列表和在幻灯片中插入内容暂停的相关信息。\n默认的分片样式是开始不可见并淡入，可以通过向分片添加不同的类来更改样式。例如：\n::: {.fragment}\n淡入\n:::\n\n::: {.fragment .fade-out}\n淡出\n:::\n\n::: {.fragment .highlight-red}\n红色突显\n:::\n\n::: {.fragment .fade-in-then-out}\n淡入，然后淡出\n:::\n\n::: {.fragment .fade-up}\n淡入的同时向上切入\n:::\n\n分片类\n以下是全部可用的分片类：\n\n\n\n\n\n\n\n类名\n效果\n\n\n\n\nfade-out\n淡入（开始时不可见）\n\n\nfade-up\n淡入的同时向上切入\n\n\nfade-down\n淡入的同时向下切入\n\n\nfade-left\n淡入的同时向左切入\n\n\nfade-right\n淡入的同时向右切入\n\n\nfade-in-then-out\n淡入，然后再淡出\n\n\nfade-in-then-semi-out\n淡入，然后再淡出至 50% 透明度\n\n\ngrow\n放大\n\n\nsemi-fade-out\n淡出至 50% 透明度\n\n\nshrink\n缩小\n\n\nstrike\n删除线\n\n\nhighlight-red\n突显效果，将文本变成红色\n\n\nhighlight-green\n突显效果，将文本变成绿色\n\n\nhighlight-blue\n突显效果，将文本变成蓝色\n\n\nhighlight-current-red\n突显效果，将文本变成红色，然后再恢复原来颜色\n\n\nhighlight-current-green\n突显效果，将文本变成绿色，然后再恢复原来颜色\n\n\nhighlight-current-blue\n突显效果，将文本变成蓝色，然后再恢复原来颜色\n\n\n\n\n\n套嵌分片\n通过包裹可将多个分片依次应用于同一个元素。在下面示例中，第一步将淡入文本，第二步将其变成红色，第三步部分淡出：\n::: {.fragment .fade-in}\n::: {.fragment .highlight-red}\n::: {.fragment .semi-fade-out}\n淡入 &gt; 变红 &gt; 部分淡出\n:::\n:::\n:::\n\n\n分片顺序\n默认情况下，分片将按照它们在 DOM 中出现的顺序逐步呈现。可以使用 fragment-index 属性更改显示顺序（注意，多个元素也可以出现在同一索引处）。\n::: {.fragment fragment-index=3}\n最后出现\n:::\n\n::: {.fragment fragment-index=1}\n最先出现\n:::\n\n::: {.fragment fragment-index=2}\n第二次序出现\n:::"
+    "objectID": "readings/revealjs/index.html#概览",
+    "href": "readings/revealjs/index.html#概览",
+    "title": "Revealjs 演示文稿",
+    "section": "",
+    "text": "你可以使用 revealjs 格式来创建 Revealjs演示文稿。了解 Revealjs 功能的最佳方式是通过这个 示例 演示文稿：\n\n\n\n\n如果你喜欢在独立浏览器窗口中查看演示，你可以直接点击链接。你还可以进一步查看演示的源代码以了解该示例幻灯片是如何创建的。\n有关 Revealjs 输出格式支持的所有选项的全面概述，请参阅 Revealjs格式参考。"
   },
   {
-    "objectID": "readings/revealjs/advanced.html#视差背景",
-    "href": "readings/revealjs/advanced.html#视差背景",
-    "title": "高级 Reveal",
-    "section": "视差背景",
-    "text": "视差背景\n如果你想使用视差滚动背景，请添加 parallax-background-image 和 parallax-background-size 选项。例如：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n     parallax-background-image: background.png\n     parallax-background-size: \"2100px 900px\"\n     parallax-background-horizontal: 200\n     parallax-background-vertical: 50\n---\n注意，parallax-background-horizontal 和 parallax-background-vertical 选项并不是必需的（如果未指定，将使用上面显示的默认值）。"
+    "objectID": "readings/revealjs/index.html#创建幻灯片",
+    "href": "readings/revealjs/index.html#创建幻灯片",
+    "title": "Revealjs 演示文稿",
+    "section": "创建幻灯片",
+    "text": "创建幻灯片\n在 markdown 中，幻灯片用标题来进行划分。例如，这是一个包含两张幻灯片的简单幻灯片文档（每张幻灯片都用2级标题 ## 定义）：\n---\ntitle: \"习惯\"\nauthor: \"张三\"\nformat: revealjs\n---\n\n## 早起\n\n- 关闭闹钟\n- 起床\n\n## 晚睡\n\n- 上床\n- 数羊\n你还可以使用 1级标题幻灯片（以#标识）将幻灯片划分为不同的节（section）。例如：\n---\ntitle: \"习惯\"\nauthor: \"张三\"\nformat: revealjs\n---\n\n# 早晨\n\n## 早起\n\n- 关闭闹钟\n- 起床\n\n## 早餐\n\n- 吃鸡蛋\n- 喝咖啡\n\n# 晚上\n\n## 晚餐\n\n- 吃面\n- 饮酒\n\n## 睡觉\n\n- 上床\n- 数羊\n最后，你还可以使用水平线（---）来定义幻灯片（例如，你需要一张没有标题的幻灯片）：\n---\ntitle: \"习惯\"\nauthor: \"张三\"\nformat: revealjs\n---\n\n- 关闭闹钟\n- 起床\n\n---\n\n- 上床\n- 数羊\n上述示例均使用2级标题来定义幻灯片，并用1级标题来定义节和标题幻灯片。你可以利用选项进行自定义（详情请参阅Pandoc官方文档关于构建幻灯片的内容）。\n\n标题幻灯片\n你在上面的示例中应该已经注意到，Quarto 会基于文档 YAML 选项中提供的title 和 author 字段自动创建。有时你并不需要显性的标题幻灯片（例如第一张幻灯片完全由背景图构成），此时只需删除 title 和 author 选项，从而创建没有标题幻灯片的演示文稿：\n---\nformat: revealjs\n---\n\n## 早起\n\n- 关闭闹钟\n- 起床\n\n## 晚睡\n\n- 上床\n- 数羊"
   },
   {
-    "objectID": "readings/revealjs/advanced.html#纵向幻灯片",
-    "href": "readings/revealjs/advanced.html#纵向幻灯片",
-    "title": "高级 Reveal",
-    "section": "纵向幻灯片",
-    "text": "纵向幻灯片\nReveal 默认使用经典的线性幻灯片导航。如果你愿意，也可以通过设置幻灯片导航将多页幻灯片嵌套在单页顶级幻灯片中从而创建纵向幻灯片堆栈。\n使用 navigation-mode 选项来调整 Reveal 导航行为：\n\n\n\n\n\n\n\n导航模式\n行为\n\n\n\n\nlinear\n通过左/右箭头依次展示全部幻灯片（包括横向和纵向）\n\n\nvertical\n通过左/右箭头（上/下箭头）依次展示横向幻灯片（纵向幻灯片），\n\n\n而空格键则会依次展示全部幻灯片（包括横向和纵向）\n\n\n\ngrid\n从纵向堆栈向左/向右步进到相邻的纵向堆栈将处于相同的纵向索引处\n\n\n\n如果你使用 vertical 或 grid 导航，则应使用横向轴的 1 级标题和纵向轴的 2 级标题来构建幻灯片。例如：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n    navigation-mode: vertical\n---\n\n# 幻灯片 1\n\n## 幻灯片 1.1\n\n## 幻灯片 1.2\n\n# 幻灯片 2\n\n## 幻灯片 2.1\n\n## 幻灯片 2.2\n\n幻灯片控件\n当你启用 vertical 或 grid 导航时，控件将为你提供视觉提示，显示在演示文稿中所处位置（例如，如果下面有纵向幻灯片，你将看到向下控件）。\n默认情况下，这些控件显示在演示文稿的边缘，你可以使用 controls-layout 选项将它们放置在右下角。你还可以设置 controls-tutorial 选项向演示者提供额外的视觉提示。例如：\n---\ntitle: \"演示文稿\"\nformat: \n  revealjs:\n    navigation-mode: vertical\n    controls-layout: bottom-right\n    controls-tutorial: true\n---\n注意，由于徽标也出现在右下角，使用 controls-layout: bottom-right 与 logo 选项不兼容。\n你还可以设置 controls: false 完全禁用控件。\n\n\n\n\n\n\n警告\n\n\n\n相比传统线性模式，纵向幻灯片确实提供了一些额外的灵活性，但实际上常常让最终用户感到困惑（通常由于其出现出乎意料）。由于用户根本不知道纵向幻灯片的存在，他们经常会跳过这些内容。\n如果你的内容受益于纵向安排（例如，你不想在演示文稿的主流程中展示可选的枝节性内容），那么你就可以使用纵向模式。你只需要知道，如果你将幻灯片分发给用户，他们很有可能不会查看任何纵向内容。"
+    "objectID": "readings/revealjs/index.html#增量列表",
+    "href": "readings/revealjs/index.html#增量列表",
+    "title": "Revealjs 演示文稿",
+    "section": "增量列表",
+    "text": "增量列表\n默认情况下，幻灯片中的编号列表 / 项目符号列表会一次性同时显示。你可以通过设定 incremental 选项来全局修改其默认行为。例如：\ntitle: \"演示文档\"\nformat:\n  revealjs:\n    incremental: true   \n你还可以通过直接指定包围在 div块（以 ::: 标识） 中列表的显性类而使其成为增量或非增量列表。要使得列表成为增量列表，可执行以下设定：\n::: {.incremental}\n- 吃面\n- 饮酒\n:::\n要使列表成为非增量列表，可执行以下设定：\n::: {.nonincremental}\n- 吃面\n- 饮酒\n:::\n你还可以通过插入三个用空格分隔的点（即 . . .）在幻灯片中插入暂停（即隐藏暂停后的内容）：\n## 幻灯片（带有暂停）\n\n暂停之前的内容\n\n. . .\n\n暂停之后的内容"
   },
   {
-    "objectID": "readings/revealjs/advanced.html#触控导航",
-    "href": "readings/revealjs/advanced.html#触控导航",
-    "title": "高级 Reveal",
-    "section": "触控导航",
-    "text": "触控导航\n你可以在任何支持触控的设备上滑动以导航演示文稿。水平滑动将导致横向幻灯片之间切换，垂直滑动在纵向幻灯片之间切换。\n如果你想禁用此功能，可以将 touch 选项设置为 false：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n    touch: false\n    controls: true\n---\n注意，我们也会同时启用 controls 选项（因为手机或平板电脑上的用户无法使用键盘）。"
+    "objectID": "readings/revealjs/index.html#多栏",
+    "href": "readings/revealjs/index.html#多栏",
+    "title": "Revealjs 演示文稿",
+    "section": "多栏",
+    "text": "多栏\n要将展示内容放在并排的多栏中，你可以使用指定类为 .columns 的 div 容器，其中嵌套两个或多个带有 .column 类和 width 属性的 div 容器：\n:::: {.columns}\n\n::: {.column width=\"40%\"}\n左栏内容\n:::\n\n::: {.column width=\"60%\"}\n右栏内容\n:::\n\n::::"
   },
   {
-    "objectID": "readings/revealjs/advanced.html#reveal插件",
-    "href": "readings/revealjs/advanced.html#reveal插件",
-    "title": "高级 Reveal",
-    "section": "Reveal插件",
-    "text": "Reveal插件\n想要使用 Revealjs插件，你需要将它们打包到带有配置文件（plugin.yml）的目录中。配置文件让 Quarto 知道如何将插件注入到演示文稿中（例如，要包含哪些脚本和/或 css 文件以及默认配置等）。\n有关示例，请参阅 Quarto Reveal 中内置插件的源代码：\nhttps://github.com/quarto-dev/quarto-cli/tree/main/src/resources/formats/revealjs/plugins\n要使用某个插件，只需在 revealjs-plugins 选项列表中包含对该插件目录的引用即可。例如：\n---\ntitle: \"Presentation\"\nformat:\n  revealjs:\n    revealjs-plugins:\n      - myplugin\n---\n注意，许多最流行的 Reveal 插件已包含在 Quarto|Reveal 中，因此无需单独包含它们。内置插件包括：\n\n同步演示\nReveal菜单\nReveal黑板\n导出为PDF\n\n\n示例\n让我们展示一个关于 全屏插件 的示例。以下是在 Quarto HTML 演示文稿捆绑并使用此插件的步骤：\n\n使用你想要的插件名称创建一个文件夹，这里我们将其命名为 fullscreen。\n将插件文件下载到创建的文件夹中。该插件只有一个名为 plugin.js 的 JS 文件（你可以在 github repo rajgoel/reveal.js-plugins 中找到该文件）。你可以保留原文件名或重命名它，例如 fullscreen.js。\n在该文件夹中添加一个 plugin.yml 文件，如 Quarto Reveal 示例 中所示。\n\nname 是必填字段，应该是 JS 插件中定义的 JS 函数的名称。打开你下载的 JS 脚本来查找它。\n其他字段用于标识要使用的资源。在我们的示例中，只需一个 JS 脚本，因此我们将使用 script。\n\n修改后的 plugin.yml 如下：\nname: RevealFullscreen\nscript: [fullscreen.js]\n现在将你在之前步骤创建的文件夹路径添加到文档 YAML 头的 revealjs-plugins 选项列表中：\nformat: \n revealjs:\n   revealjs-plugins:\n     - fullscreen\n自定义插件将自动加载到你的演示文稿中，你可以在文稿中使用它。全屏插件 的文档显示如何通过给幻灯片上的地图元素设置 fullscreen 属性，对内容进行拉伸从而达到全屏效果。转换后的 .qmd 文件将包含全屏地图幻灯片：\n## {fullscreen=true}\n\n&lt;iframe class=\"stretch\" data-src=\"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d61206.89156051744!2d-151.77366863890407!3d-16.50433878928727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sde!4v1467468929561\"&gt;&lt;/iframe&gt;"
+    "objectID": "readings/revealjs/index.html#内容溢出",
+    "href": "readings/revealjs/index.html#内容溢出",
+    "title": "Revealjs 演示文稿",
+    "section": "内容溢出",
+    "text": "内容溢出\n如果幻灯片中的内容多于单个页面上可以显示的内容，那么可以使用两个幻灯片级别的类设定来缓解这一情况：\n\n设定 .smaller 类使用较小的字体，以便幻灯片上可以容纳更多文本。例如：\n## 幻灯片标题 {.smaller}\n设定 .scrollable 类，通过滚动来查看幻灯片外的内容。例如：\n## 幻灯片标题 {.scrollable}\n\n这两个选项也可以全局应用于所有幻灯片，如下所示：\n---\nformat:\n  revealjs:\n    smaller: true\n    scrollable: true\n---"
   },
   {
-    "objectID": "readings/revealjs/advanced.html#了解更多",
-    "href": "readings/revealjs/advanced.html#了解更多",
-    "title": "高级 Reveal",
+    "objectID": "readings/revealjs/index.html#演讲者备注",
+    "href": "readings/revealjs/index.html#演讲者备注",
+    "title": "Revealjs 演示文稿",
+    "section": "演讲者备注",
+    "text": "演讲者备注\n你可以使用指定类为 .note 的 div块将演讲者备注添加到幻灯片中。例如：\n## 附有演讲者备注的幻灯片\n\n幻灯片内容\n\n::: {.notes}\n演讲者备注内容（吧啦吧啦 ~~）\n:::\n按 S 键（或使用导航菜单）来显示演示者视图，图示如下：\n\n你通常会在一个屏幕（例如笔记本电脑）上使用演示者视图，同时在另一个屏幕上演示幻灯片。"
+  },
+  {
+    "objectID": "readings/revealjs/index.html#主题",
+    "href": "readings/revealjs/index.html#主题",
+    "title": "Revealjs 演示文稿",
+    "section": "主题",
+    "text": "主题\nReveal 演示文档内置有 11 个主题（当然你也可以创建自己的主题）。主题 default 和 dark 使用相当经典的版式和配色方案，是你创建 Reveal 演示文档时一个很好的起始点。\nQuarto|revealjs 会自动套用主题 default ，你可以通过设定 theme 选项切换到其他备选主题，例如：\n---\ntitle: \"演示文档\"\nformat:\n  revealjs: \n    theme: dark\n---\n以下是可用主题的完整列表：\n\nbeige\nblood\ndark\ndefault\nleague\nmoon\nnight\nserif\nsimple\nsky\nsolarized\n\n有关自定义主题和创建全新主题的更多详细信息，请参阅 Revealjs 主题。"
+  },
+  {
+    "objectID": "readings/revealjs/index.html#批注和脚注",
+    "href": "readings/revealjs/index.html#批注和脚注",
+    "title": "Revealjs 演示文稿",
+    "section": "批注和脚注",
+    "text": "批注和脚注\n批注用来展示次要信息，以更小、更浅的字体显示在幻灯片底部。使用指定类为 aside 的 div块来创建批注。例如：\n## 幻灯片标题\n\n幻灯片内容\n\n::: aside\n用来展示更多次要信息的批注（吧啦吧啦 ~~）\n:::\n脚注与批注有着类似的视觉处理，但包括脚注编号。例如，我们在单页幻灯片上同时使用脚注和批注：\n## 附有脚注和批准的幻灯片\n\n- 绿色 ^[脚注内容]\n- 棕色\n- 紫色\n\n::: aside\n含有更多边缘信息的附加批注（吧啦吧啦 ~~）\n:::\n如果你希望在文档末尾包含脚注，请指定选项 reference-location: document：\n---\nformat:\n  revealjs:\n    reference-location: document\n---\n请注意，指定此选项，你可以通过将鼠标悬停在脚注编号上来查看相应的脚注内容。"
+  },
+  {
+    "objectID": "readings/revealjs/index.html#页脚和徽标",
+    "href": "readings/revealjs/index.html#页脚和徽标",
+    "title": "Revealjs 演示文稿",
+    "section": "页脚和徽标",
+    "text": "页脚和徽标\n你可以使用 footer 和 logo 选项在每页幻灯片的底部添加页脚文本和徽标。例如：\n---\nformat:\n  revealjs:\n    logo: logo.png\n    footer: \"页脚文本\"\n---\n你还可以通过在特定幻灯片底部添加页脚div块来为该页幻灯片添加自定义的页脚文本：\n## 幻灯片标题\n\n幻灯片内容\n\n::: footer\n自定义的页脚文本\n:::"
+  },
+  {
+    "objectID": "readings/revealjs/index.html#代码块",
+    "href": "readings/revealjs/index.html#代码块",
+    "title": "Revealjs 演示文稿",
+    "section": "代码块",
+    "text": "代码块\nQuarto HTML代码块的大多数核心功能均适用于 Reveal 演示文稿，包括代码折叠、代码复制以及选择自定义语法突显主题的功能。请注意，如果你选择深色的 Reveal 主题，则将使用默认的 Quarto 深色语法突显主题。\n\n行突出显示\n你可能想要突出显示代码输出块的特定行（或者甚至突出显示一系列演示步骤中的不同行），此时你可通过设置代码块的 code-line-numbers 属性来达到这一目的。例如：\n```{.python code-line-numbers=\"6-8\"}\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\n你还可以通过用逗号分隔来突出显示不同范围的行。例如：\n```{.python code-line-numbers=\"7,9\"}\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\n最后，你可以通过 | 分隔来渐进增量突出显示不同的代码行。例如，在下面代码中我们首先显示所有行，然后突出显示第 6 行，最后突出显示第 9 行：\n```{.python code-line-numbers=\"|6|9\"}\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\n你也可以在可执行单元格中使用相同的 code-line-numbers 选项来达到相同的效果：\n```{python}\n#| code-line-numbers: \"|6|9\"\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```"
+  },
+  {
+    "objectID": "readings/revealjs/index.html#可执行代码",
+    "href": "readings/revealjs/index.html#可执行代码",
+    "title": "Revealjs 演示文稿",
+    "section": "可执行代码",
+    "text": "可执行代码\n你可以在幻灯片上包含可执行代码块的输出，就像使用其他 Quato 文档一样。具体工作原理与其他格式输出基本相同，但也有一些特殊注意事项，说明如下：\n\n图形尺寸\n你往往需要自定义为幻灯片创建的图形的大小，以便它们能够填充整个幻灯片或者指定区域。Quarto 在这里提供了一些帮助：对于 Python 来说，Matplotlib 和 Plotly Express 的图形大小被设置为填满标题下方的幻灯片区域，而对于 R 来说，Knitr 生成图形的宽度和高度也采用类似的默认值。\n尽管如此，你可能还是需要更改给定图片尺寸的这些默认值，具体做法因图形库的不同而有所差异。以下是显性调整 Altair 图片大小的示例：\nalt.Chart(cars).mark_point().encode(\n    x='Horsepower',\n    y='Miles_per_Gallon',\n    color='Origin',\n).properties(\n    width=700,\n    height=300\n).interactive()\n\n\n显示代码\n与普通文档不同，Quarto 演示文稿中的可执行代码块在默认情况下并不显示源代码（这是由于这些代码通常会生成需要占据尽可能多垂直空间的图形）。你可以通过设置 echo 选项修改这一默认做法，如下所示：\n```{python}\n#| echo: true\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={\"projection\": \"polar\"})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\n\n\n输出位置\n默认情况下，可执行代码块的输出结果直接显示在代码之后。你可以通过设置 output-location 选项来修改此行为，具体选项如下所示：\n\n\n\n\n\n\n\nfragment\n将输出结果显示为分片（会延迟显示并随着幻灯片推进而增量展示）\n\n\nslide\n将输出结果显示在下一页幻灯片\n\n\ncolumn\n将输出结果显示为与源代码并列的分栏\n\n\ncolumn-fragment\n将输出结果显示为与源代码并列的分栏并延迟显示它，随着幻灯片的推进而增量展示\n\n\n\n例如，我们将可执行单元格的输出结果在单独的幻灯片上展示：\n```{r}\n#| echo: true\n#| output-location: slide\nlibrary(ggplot2)\nggplot(airquality, aes(Temp, Ozone)) + \n  geom_point() + \n  geom_smooth(method = \"loess\")\n```\n关于设置代码块执行结果输出方式的其他方法的更多详细信息，请参阅文档 执行选项。"
+  },
+  {
+    "objectID": "readings/revealjs/index.html#标签页",
+    "href": "readings/revealjs/index.html#标签页",
+    "title": "Revealjs 演示文稿",
+    "section": "标签页",
+    "text": "标签页\n你可以使用 Quarto 设置 标签页 的标准语法 将标签页添加到幻灯片中。例如：\n::: {.panel-tabset}\n\n### 标签页A\n\n`标签页A`的内容\n\n### 标签页B\n\n`标签页B`的内容\n\n:::\n需要注意的是，标签页幻灯片的一个突出缺点是打印为 PDF 时只有第一个标签页是可见的。"
+  },
+  {
+    "objectID": "readings/revealjs/index.html#幻灯片背景",
+    "href": "readings/revealjs/index.html#幻灯片背景",
+    "title": "Revealjs 演示文稿",
+    "section": "幻灯片背景",
+    "text": "幻灯片背景\n默认情况下，幻灯片显示在屏幕的限定区域内并允许它们均匀缩放以适应不同显示屏的尺寸。你可以通过向幻灯片标题添加 background 相关属性来给幻灯片增加满幅的背景。Quarto | Revealjs 支持四种不同类型的背景：颜色、图像、视频和 iframe（内联框架）。\n支持所有 CSS 颜色格式，包括十六进制值、关键字、rgba() 和 hsl()。例如：\n## 幻灯片标题 {background-color=\"aquamarine\"}\n你还可以使用各种类型的媒体（图像、视频或内联框架等）作为幻灯片背景，具体如下所述：\n\n\n\n\n\n\n注意，如果嵌入媒体的背景颜色与演示文稿的主题不同（例如，在浅色主题时使用深色图像），那么你还应该明确设置 background-color 选项，以便在深色背景上面的文本能以正确的颜色显示（例如，深色背景上的浅色文本）。\n\n\n\n\n图像背景\n默认情况下，背景图像会自动调整大小以覆盖整个页面。可用选项包括：\n\n\n\n属性\n默认值\n说明\n\n\n\n\nbackground-image\n\n图像的 URL；打开幻灯片时，GIF 会重新开始\n\n\nbackground-size\ncover\n参见 MDN 上的 background-size\n\n\nbackground-position\ncenter\n参见 MDN 上的 background-position\n\n\nbackground-repeat\nno-repeat\n参见 MDN 上的 background-repeat\n\n\nbackground-opacity\n1\n背景图像的不透明度（0-1 级，0为透明，1为完全不透明）\n\n\n\n示例如下：\n## 幻灯片标题 {background-color=\"black\" background-image=\"https://placekitten.com/100/100\" background-size=\"100px\" background-repeat=\"repeat\"}\n\n该幻灯片的背景图像的大小将调整为 100 像素并重复。\n由于背景图像的颜色为深色，而幻灯片的默认主题为浅色，因此我们需要把背景颜色 background-color 显性设置为黑色，以便将在叠加其上的文本显示成浅色。\n\n\n视频背景\nQuarto|Revealjs 会自动全屏播放背景视频。\n\n\n\n\n\n\n\n\n属性\n默认值\n说明\n\n\n\n\nbackground-video\n\n单个视频源或以逗号分隔的视频源列表\n\n\nbackground-video-loop\nfalse\n标识是否重复播放视频\n\n\nbackground-video-muted\nfalse\n标识是否静音播放视频\n\n\nbackground-size\ncover\ncover：等比缩放填充（必要时剪裁），contain：缩放填充（必要时填补背景色）\n\n\nbackground-opacity\n1\n不透明度（0-1级，0为透明，1为完全不透明）\n\n\n\n示例如下：\n## 幻灯片标题 {background-video=\"video.mp4\" background-video-loop=\"true\" background-video-muted=\"true\"}\n\n这个幻灯片的背景视频将会循环静音播放。\n\n\n内联框架背景\n将网页嵌入为幻灯片背景，覆盖 100% 的 reveal.js 宽度和高度。iframe 位于幻灯片后面的背景层中，因此默认情况下演示者无法与其交互。要使背景具备交互性，你需要修改 background-interactive 属性。\n\n\n\n\n\n\n\n\n属性\n默认值\n说明\n\n\n\n\nbackground-iframe\n\n拟加载内联框架的 URL 地址\n\n\nbackground-interactive\nfalse\n标识是否可与 iframe 内容进行交互（启用此功能将阻止演示者与幻灯片内容进行交互）\n\n\n\n示例如下：\n## 幻灯片标题 {background-iframe=\"https://example.com\"}\n\n\n没有标题的幻灯片背景\n你可以省略标题文本，而仅仅指定幻灯片背景信息，如：\n## {background-color=\"aquamarine\"}\n\n（没有标题的一页幻灯片）\n\n## {background-color=\"black\" background-image=\"https://placekitten.com/100/100\" background-size=\"100px\" background-repeat=\"repeat\"}\n\n（没有标题的另一页幻灯片）\n\n\n主标题幻灯片背景\n主标题幻灯片是第一页幻灯片，它是通过文档的 YAML 选项自动生成的。因此，上述方法无法为主标题幻灯片提供背景。相反，你需要执行以下操作：\n\n增加主标题幻灯片的背景选项 title-slide-attributes\n在相应背景选项的前面增加 data-\n\n例如：\n---\ntitle: My Slide Show\ntitle-slide-attributes:\n    data-background-image: /path/to/title_image.png\n    data-background-size: contain\n    data-background-opacity: \"0.5\"\n---"
+  },
+  {
+    "objectID": "readings/revealjs/index.html#了解更多",
+    "href": "readings/revealjs/index.html#了解更多",
+    "title": "Revealjs 演示文稿",
     "section": "了解更多",
-    "text": "了解更多\n参阅以下文章以了解有关 Reveal 使用的更多信息：\n\nReveal基础 涵盖了创建演示文稿的基本流程。\n幻灯片演示 介绍了幻灯片导航、打印为 PDF、使用板书工具以及创建同步演示幻灯片。\nReveal主题 讨论如何使用和自定义现有主题以及如何创建全新主题。"
+    "text": "了解更多\n请参阅以下文章了解关于 Revealjs 的更多高级功能：\n\n幻灯片演示 介绍了幻灯片导航、打印为 PDF、使用板书工具以及创建同步演示幻灯片。\n高级Reveal 深入研究 切换、动画、高级布局与定位以及可用于自定义演示文稿的其他选项。\nReveal主题 讨论如何使用和自定义现有主题以及如何创建全新主题。"
   },
   {
-    "objectID": "weeks.html",
-    "href": "weeks.html",
-    "title": "每周列表",
+    "objectID": "readings/revealjs/presenting.html",
+    "href": "readings/revealjs/presenting.html",
+    "title": "Reveal 演示",
     "section": "",
-    "text": "以下是每周授课相关资料 / 资源（包括课前准备/预习、讲义、练习、课后作业等）的信息列表， 同学们既可以随意浏览或者用主题进行筛选，也可以直接根据目标周数点击打开对应的网页一探究竟。\n\n\n\n   \n     \n     \n       排序方式\n       缺省\n         \n          日期 - 日期升序\n        \n         \n          日期 - 日期降序\n        \n         \n          标题\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\n第 9 周\n\n\n向量与函数\n\n\n\n\n预习\n\n\n讲义\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-11-10\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 7 周\n\n\n数据导入与齐整\n\n\n\n\n预习\n\n\n随堂练习\n\n\n讲义\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-10-27\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 6 周\n\n\ndplyr数据处理 II\n\n\n\n\n预习\n\n\n随堂练习\n\n\n讲义\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-10-20\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 5 周\n\n\ndplyr数据处理 I\n\n\n\n\n预习\n\n\n随堂练习\n\n\n讲义\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-10-13\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 4 周\n\n\nrmarkdown 与 Quarto\n\n\n\n\n预习\n\n\n讲义\n\n\n随堂练习\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-10-08\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 2 周\n\n\nggplot2数据可视化\n\n\n\n\n预习\n\n\n讲义\n\n\n随堂练习\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-09-22\n\n\n曾永艺\n\n\n\n\n\n\n  \n\n\n\n\n第 1 周\n\n\n课程简介\n\n\n\n\n准备\n\n\n讲义\n\n\n作业\n\n\n\n\n\n\n\n\n\n\n\n2023-09-15\n\n\n曾永艺\n\n\n\n\n\n\n无匹配项"
+    "text": "本文介绍进行 Reveal 幻灯片演示的方法。演示者可使用以下键盘快捷键完成基本的导航：\n\n\n\n动作\n快捷键\n\n\n\n\n下一页幻灯片\n→ SPACE N\n\n\n前一页幻灯片\n← P\n\n\n无增量分片的导航\nAlt → Alt ←\n\n\n跳到首页 / 末页幻灯片\nShift → Shift ←\n\n\n\n\n\n\n\n\n\n在演示时，你可通过按 F 键进入全屏演示模式。\n\n\n\n除了基本的键盘导航之外，Reveal 还支持多种高级功能，包括：\n\n导航菜单和概览模式\n演示者视图（带有演示者备注、计时器和下一页幻灯片的预览）\n打印为 PDF 或者发布为自包含的单个 HTML 文件\n在幻灯片和黑板 / 白板模式上板书\n同步演示（即让观众在他们各自的手机、平板或笔记本电脑上跟随由你控制的演示节奏）\n\n这些功能如下所述。"
+  },
+  {
+    "objectID": "readings/revealjs/presenting.html#概述",
+    "href": "readings/revealjs/presenting.html#概述",
+    "title": "Reveal 演示",
+    "section": "",
+    "text": "本文介绍进行 Reveal 幻灯片演示的方法。演示者可使用以下键盘快捷键完成基本的导航：\n\n\n\n动作\n快捷键\n\n\n\n\n下一页幻灯片\n→ SPACE N\n\n\n前一页幻灯片\n← P\n\n\n无增量分片的导航\nAlt → Alt ←\n\n\n跳到首页 / 末页幻灯片\nShift → Shift ←\n\n\n\n\n\n\n\n\n\n在演示时，你可通过按 F 键进入全屏演示模式。\n\n\n\n除了基本的键盘导航之外，Reveal 还支持多种高级功能，包括：\n\n导航菜单和概览模式\n演示者视图（带有演示者备注、计时器和下一页幻灯片的预览）\n打印为 PDF 或者发布为自包含的单个 HTML 文件\n在幻灯片和黑板 / 白板模式上板书\n同步演示（即让观众在他们各自的手机、平板或笔记本电脑上跟随由你控制的演示节奏）\n\n这些功能如下所述。"
+  },
+  {
+    "objectID": "readings/revealjs/presenting.html#导航菜单",
+    "href": "readings/revealjs/presenting.html#导航菜单",
+    "title": "Reveal 演示",
+    "section": "导航菜单",
+    "text": "导航菜单\nQuarto 包含一个内置版本的 reveal.js-menu 插件。你可以使用演示文稿左下角的按钮  访问导航菜单。单击该按钮将打开一个幻灯片导航菜单，使得你可以轻松跳转到任何幻灯片：\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n你也可以通过按下 M键 打开导航菜单。\n\n\n\n导航菜单还包括工具窗格（Tools），可通过该窗格访问各种其他导航工具，包括全屏、演示者视图、概览模式和打印为 PDF 文档。\n使用以下选项自定义菜单的外观和行为：\n\n\n\n\n\n\n\n选项\n说明\n\n\n\n\nside\n将菜单显示在演示文稿的左侧或右侧（left或right，默认为 left）\n\n\nwidth\n菜单的宽度（normal、wide、third、half、full 或任何有效的 css 长度值，默认为 normal）\n\n\nnumbers\n将幻灯片编号添加到菜单项\n\n\n\n示例如下：\nformat:\n  revealjs:\n    menu:\n      side: right\n      width: wide\n你可以通过指定选项 menu: false 来隐藏导航菜单按钮：\nformat:\n  revealjs:\n    menu: false\n注意，即使导航菜单按钮被隐藏，你仍然可以使用 M键 打开导航菜单。"
+  },
+  {
+    "objectID": "readings/revealjs/presenting.html#概览模式",
+    "href": "readings/revealjs/presenting.html#概览模式",
+    "title": "Reveal 演示",
+    "section": "概览模式",
+    "text": "概览模式\n概览模式提供了另一种视图，显示每张幻灯片的缩略图：\n\n\n\n\n\n\n\n你可以通过按下 O键来启用概览模式。"
+  },
+  {
+    "objectID": "readings/revealjs/presenting.html#幻灯片缩放",
+    "href": "readings/revealjs/presenting.html#幻灯片缩放",
+    "title": "Reveal 演示",
+    "section": "幻灯片缩放",
+    "text": "幻灯片缩放\n按住 Alt键（或者 Linux中的 Ctrl 键）并单击任意元素可对其进行缩放。尝试放大以下图像之一：\n\n按住 Alt（或者 Ctrl），再次单击可恢复缩放。"
+  },
+  {
+    "objectID": "readings/revealjs/presenting.html#演示者视图",
+    "href": "readings/revealjs/presenting.html#演示者视图",
+    "title": "Reveal 演示",
+    "section": "演示者视图",
+    "text": "演示者视图\n演示者视图显示当前幻灯片以及即将播放的幻灯片、计时器以及与当前幻灯片关联的任何演示者备注：\n\n\n\n\n\n\n\n你可以通过按 S 键启用演示者视图。\n\n\n\n你可以使用类为.notes的div块将演示者备注添加到幻灯片中。例如：\n## 含有演示者备注的幻灯片\n\n幻灯片内容\n\n::: {.notes}\n此次为演示者备注\n:::"
+  },
+  {
+    "objectID": "readings/revealjs/presenting.html#幻灯片编号",
+    "href": "readings/revealjs/presenting.html#幻灯片编号",
+    "title": "Reveal 演示",
+    "section": "幻灯片编号",
+    "text": "幻灯片编号\n你可以使用 slide-number 选项将幻灯片编号添加到演示文稿中。你还可以使用 show-slide-number 选项控制幻灯片编号在哪些环境下显示。例如，我们可设置仅用于打印输出的幻灯片编号：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n    slide-number: true\n    show-slide-number: print\n---\n除了设定为简单的 true 或者 false 之外，slide-number 选项还可以指定格式。可用的格式包括：\n\n\n\n选项值\n说明\n\n\n\n\nc/t\n当前幻灯片编号 / 总幻灯片数（默认值）\n\n\nc\n只显示当前幻灯片编号\n\n\nh/v\n横向编号/纵向编号\n\n\nh.v\n横向编号.纵向编号\n\n\n\n参见 纵向幻灯片 获取更多信息。\nshow-slide-number 选项支持以下取值：\n\n\n\n选项值\n说明\n\n\n\n\nall\n在所有环境下显示幻灯片编号（默认值）\n\n\nprint\n只在打印为 PDF 文档时显示幻灯片编号\n\n\nspeaker\n只在演示者视图下显示幻灯片编号"
+  },
+  {
+    "objectID": "readings/revealjs/presenting.html#打印为pdf",
+    "href": "readings/revealjs/presenting.html#打印为pdf",
+    "title": "Reveal 演示",
+    "section": "打印为PDF",
+    "text": "打印为PDF\nReveal 演示文稿可以通过特殊的打印样式表导出为 PDF 文档。\n\n\n\n\n\n\n注释\n\n\n\n注意：此功能使用仅在 Google Chrome 和 Chromium 中得到过验证。\n\n\n要打印为 PDF 文档，请执行以下操作：\n\n使用 E键（或使用导航菜单）切换到打印视图\n打开浏览器内的打印对话框 (CTRL/CMD+P)。\n将目标打印机（Destination）设置更改为另存为 PDF（Save as PDF）。\n将布局（Layout）更改为横向（Landscape）。\n将边距（Margins）更改为无（None）。\n启用背景图形选项（Background graphics）。\n点击保存按钮（Save）🎉\n\n启用上述设置后，Chrome 打印对话框如下所示：\n\n\n打印选项\n有许多选项会影响打印输出，你可能需要在打印之前设置这些选项：\n\n\n\n\n\n\n\n选项\n说明\n\n\n\n\nshow-notes\n包括演示者备注（true、false 或 separate-page）\n\n\nslide-number\n包含幻灯片编号（true 或者 false）\n\n\npdf-max-pages-per-slide\n太高而无法容纳在单个页面中的幻灯片将扩展到多个页面，你可使用该选项限制幻灯片可以扩展的最多页数\n\n\npdf-separate-fragments\n默认情况下，具有多增量分片的幻灯片将打印在单页上，如果要为每个分片创建一个页面，需将此选项设置为 true\n\n\n\n例如，以下选项设定打印幻灯片时包含幻灯片编号并在单独页面上打印演示者备注：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n    show-notes: separate-page\n    slide-number: true\n---"
+  },
+  {
+    "objectID": "readings/revealjs/presenting.html#预览链接",
+    "href": "readings/revealjs/presenting.html#预览链接",
+    "title": "Reveal 演示",
+    "section": "预览链接",
+    "text": "预览链接\nReveal 通过设置 preview-links 选项可以轻松地将对外部网站的导航嵌入到幻灯片演示流程中。\n当你点击一个设定 preview-links: true 的超链接时，你将在遮盖幻灯片的 iframe 中直接导航到该链接。在下面示例图中，我们点击 Matplotlib链接，网站在幻灯片顶层打开（此时，你可以单击右上角的关闭按钮将其隐藏）：\n\npreview-link 选项的可用设置值包括：\n\n\n\n选项值\n说明\n\n\n\n\nauto\n在全屏演示时直接预览链接（否则以正常方式导航到新链接）\n\n\ntrue\n总是预览链接\n\n\nfalse\n从不预览链接（默认值）\n\n\n\n例如，我们将 preview-links 选项设置为 auto：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n    preview-links: auto\n---\n你还可以针对每个链接设置此选项。如下两个链接分别启用和禁用预览模式：\n[预览链接模式](https://example.com){preview-link=\"true\"}\n\n[非预览链接模式](https://example.com){preview-link=\"false\"}"
+  },
+  {
+    "objectID": "readings/revealjs/presenting.html#幻灯片音效",
+    "href": "readings/revealjs/presenting.html#幻灯片音效",
+    "title": "Reveal 演示",
+    "section": "幻灯片音效",
+    "text": "幻灯片音效\n在启用幻灯片音效后，当你切换幻灯片时，幻灯片会发出微妙的声音。该功能是应一位盲人用户的要求而设计的，使得演示者能够听到幻灯片播放进度的听觉信号。启用幻灯片音效的方式如下：\nformat:\n  revealjs:\n    slide-tone: true\n随着幻灯片切换，幻灯片音调逐渐从低音C提高至高音C。对于增量幻灯片，音调保持不变。\n幻灯片音效的实现改编自 xaringanExtra 包中的幻灯片音效插件。"
+  },
+  {
+    "objectID": "readings/revealjs/presenting.html#自动放映",
+    "href": "readings/revealjs/presenting.html#自动放映",
+    "title": "Reveal 演示",
+    "section": "自动放映",
+    "text": "自动放映\n演示文稿可以配置为自动放映幻灯片，无需任何用户的输入。要启用此功能，你需要设置 auto-slide 选项为指定幻灯片切换的间隔（间隔以毫秒为单位）。还可以设置 loop 选项来指定在全部幻灯片放映完毕后是否继续循环放映。\n例如，我们在这里指定每 5 秒前进一页幻灯片并循环放映：\n---\ntitle: \"演示文稿\"\nformat: \n  revealjs: \n    auto-slide: 5000\n    loop: true\n---\n对于自动放映的幻灯片，将会出现播放/暂停的控制按钮。如果用户与平台进行交互，自动放映会暂停。你还可以通过按 A 键来暂停或恢复自动放映。\n你可以通过设定 auto-slide-stoppable: false 来禁用自动放映控件并防止放映暂停。\n\n幻灯片计时\n我们还可以通过设置特定幻灯片的 autoslide 属性来修改切换的持续时间，这一设置也适用于 分片)。例如，我们在此将该页幻灯片的自动放映时长设置为2秒：\n## 幻灯片标题 {autoslide=2000}"
+  },
+  {
+    "objectID": "readings/revealjs/presenting.html#发布",
+    "href": "readings/revealjs/presenting.html#发布",
+    "title": "Reveal 演示",
+    "section": "发布",
+    "text": "发布\n发布 Reveal 演示文稿有两种主要方式：\n\n发布为 PDF 文档——参阅前述 打印为 PDF 一节，了解有关如何执行此操作的详细信息。\n发布为 HTML 文件。对于 HTML 文档，将演示文稿作为自包含单个文件分发通常最为方便。为此，可指定 embed-resources 选项：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n    embed-resources: true\n---\n文档所依赖的图像、CSS 样式和其他资源都将包含在 Quarto 创建的 HTML 文件中。\n\n\n\n\n\n\n\n请注意，设定 embed-resources 选项可能会使幻灯片文档的渲染速度慢几秒钟，因此你最好在准备发布时才启用 embed-resources 选项。另请注意，Reveal 插件 Chalkboard 不兼容 embed-resources——启用 Chalkboard 插件后，embed-resources: true 将导致错误。\n\n\n\n有关发布 Reveal 演示文稿（包括 GitHub Pages 和 Posit Connect）的其他方法的详细信息，请参阅发布 HTML文档。"
+  },
+  {
+    "objectID": "readings/revealjs/presenting.html#导航选项",
+    "href": "readings/revealjs/presenting.html#导航选项",
+    "title": "Reveal 演示",
+    "section": "导航选项",
+    "text": "导航选项\nReveal 演示文稿提供了多个导航提示以及控制它们的相应选项：\n\n\n\n\n\n\n\n选项\n说明\n\n\n\n\ncontrols\n显示用于浏览幻灯片的箭头控件（默认为 auto，即当存在纵向幻灯片或幻灯片嵌入到 iframe 中时显示控件）。\n\n\nprogress\n在底部显示进度条（默认为 true）\n\n\nhistory\n将幻灯片页面切换推送到浏览器的历史记录（默认为 true，这意味着浏览器的前进/后退按钮可用于导航）\n\n\nhash-type\n用于幻灯片的 URL 哈希的类型（默认为 title，即根据幻灯片标题计算得到，也可以指定为 number）\n\n\n\n例如，以下设置隐藏进度条并指定我们要使用浏览器历史记录：\n---\ntitle: \"演示文档\"\nformat:\n  revealjs:\n    progress: false\n    history: true\n---"
+  },
+  {
+    "objectID": "readings/revealjs/presenting.html#板书",
+    "href": "readings/revealjs/presenting.html#板书",
+    "title": "Reveal 演示",
+    "section": "板书",
+    "text": "板书\nQuarto 包含一个内置版本的 Reveal.js-chalkboard 插件。指定 chalkboard: true 将启用该插件。该插件使你能够在幻灯片上层的笔记画布上进行板书和/或在演示文稿中打开一个空白黑板：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n    chalkboard: true\n---\n\n\n\n\n\n\n请注意，Reveal的 Chalkboard 插件与 embed-resources 输出不兼容—— 当启用 Chalkboard 插件后，设置 embed-resources: true 将导致错误。\n\n\n\n以下是笔记画布和黑板激活后的样子：\n\n\n\n\n\n\n\n\n\n\n要打开和关闭笔记画布，请使用按钮  或者 C键。\n要打开和关闭黑板，请使用按钮  或者 B键。。\n以下是与笔记画布和黑板相关的全部快捷键：\n\n\n\n行为\n键盘快捷键\n\n\n\n\n打开/关闭笔记画布\nC\n\n\n打开/关闭黑板\nB\n\n\n重置全部板书\nBACKSPACE\n\n\n清除幻灯片上的板书\nDEL\n\n\n向前循环板书颜色\nX\n\n\n向后循环板书颜色\nY\n\n\n下载板书\nD\n\n\n\n以下鼠标和触摸手势可用于与板书交互：\n\n单击左下角的按钮可切换笔记画布或黑板\n单击左侧的颜色选择器可更改颜色（仅当笔记画布或黑板处于活动状态时，颜色选择器才可见）\n点击右侧上/下箭头可切换多个黑板（上/下箭头仅适用于黑板）\n单击鼠标左键并拖动以在笔记画布或黑板上书写\n单击鼠标右键并拖动以擦除以前的绘图\n触摸并移动以在笔记画布或黑板上书写\n触摸并按住半秒钟，然后移动以擦除之前的板书\n\n\n恢复板书\n按 D 键会将当前的活动板书下载到 JSON 文件中。然后，你可以通过设置 src 选项在展示演示文稿时恢复这些板书。例如：\n---\ntitle: \"展示文稿\"\nformat:\n  revealjs:\n    chalkboard:\n      src: drawings.json\n---\n\n\n板书选项\n以下选项可用于自定义板书的行为和外观：\n\n\n\n\n\n\n\n选项\n说明\n\n\n\n\ntheme\n可设置为 chalkboard（默认值）或者 whiteboard\n\n\nboardmarker-width\n记号笔粗细（值越大，线越粗，默认为3）\n\n\nchalk-width\n粉笔粗细（值越大，线越粗，默认为7）\n\n\nchalk-effect\n粉笔效果（取值范围 [0.0, 1.0]，默认为全效的 1.0）\n\n\nsrc\n之前下载板书的文件名（按 D键 下载）\n\n\nread-only\n是否可更改板书文件（默认为 false）\n\n\nbuttons\n在幻灯片底部增加板书按钮（默认为 true）\n\n\ntransition\n幻灯片切换的持续时间（以毫秒为单位），切换完成后可在笔记画布上板书\n\n\n\n例如，以下设置指定要使用 whiteboard 主题并用较粗的记号笔，同时隐藏每页幻灯片底部的板书按钮：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n    chalkboard:\n      theme: whiteboard\n      boardmarker-width: 5\n      buttons: false\n---\n如果已全局禁用板书按钮，你仍然可以使用 chalkboard-buttons 属性有选择地为特定幻灯片启用板书按钮。例如：\n## 幻灯片标题 {chalkboard-buttons=\"true\"}\n你还可以用 chalkboard-buttons=\"false\" 来关闭单个幻灯片的板书按钮。"
+  },
+  {
+    "objectID": "readings/revealjs/presenting.html#同步演示",
+    "href": "readings/revealjs/presenting.html#同步演示",
+    "title": "Reveal 演示",
+    "section": "同步演示",
+    "text": "同步演示\nQuarto 包含 Reveal Multiplex 插件的内置版本。multiplex 插件允许你的让观众在他们各自的手机、平板或笔记本电脑上跟随由你控制的演示节奏。当你更改主演示文稿中的幻灯片时，每个人都会跟随并在自己的设备上看到相同的内容。\n创建支持 multiplex 的 Reveal 演示文稿非常简单，你只需设定 multiplex: true 选项：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n    multiplex: true\n---\nQuarto 渲染演示文稿将创建两个 HTML 文件：\n\n\n\n\n\n\n\n文件\n说明\n\n\n\n\npresentation.html\n这是你在线发布给目标受众查看的文件\n\n\npresentation-speaker.html\n这是给你展示用的文件，该文件可以保存在你的计算机上而无需发布\n\n\n\n演示文稿的两个版本将会保持同步，即当演示者切换幻灯片时，观众也会切换到同一页幻灯片。\n\n同步演示服务器\nmultiplex服务器在幕后发挥作用，用来在演示文稿的观众版本和演示者版本之间同步幻灯片放映事件。注意，同步服务器实际上并不会看到任何幻灯片内容，它仅用来同步事件。\n在默认情况下，由 Revealjs 团队创建和托管的 服务器 被用来实现同步演示。当你设定 multiplex: true 时，将默认使用此服务器。\n\n运行自己的服务器\n如果你想运行自己的服务器版本，其源代码位于：https://github.com/reveal/Multiplex/blob/master/index.js。\n安装后你就可以将 multiplex 配置为使用该替代服务器，如下所示：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n    multiplex: \n      url: 'https://myserver.example.com/\n---\n请注意，Quarto 在后台调用 multiplex 服务器来为你的演示文稿提供 ID 和密钥。如果你想设置自己的 ID 和密钥，可以在 https://reveal-Multiplex.glitch.me/（或使用你的自定义托管服务器 URL）执行此操作，并在 YAML 中明确提供它们：\n---\ntitle: \"演示文稿\"\nformat:\n  revealjs:\n    multiplex: \n      id: '1ea875674b17ca76'\n      secret: '13652805320794272084'\n---\n请注意，secret 值将仅包含在演示文稿的演示者版本中。"
+  },
+  {
+    "objectID": "readings/revealjs/presenting.html#了解更多",
+    "href": "readings/revealjs/presenting.html#了解更多",
+    "title": "Reveal 演示",
+    "section": "了解更多",
+    "text": "了解更多\n参阅以下文章以了解有关 Reveal 使用的更多信息：\n\nReveal基础 涵盖了创建演示文稿的基本流程。\n高级Reveal 深入研究 切换、动画、高级布局与定位以及可用于自定义演示文稿的其他选项。\nReveal主题 讨论如何使用和自定义现有主题以及如何创建全新主题。"
+  },
+  {
+    "objectID": "readings/markdown-basics.html",
+    "href": "readings/markdown-basics.html",
+    "title": "Markdown 基础",
+    "section": "",
+    "text": "John Gruber 首创的 Markdown 让你用纯文本的方式来撰写带有简单格式标识的文档（当然这也使得文档更容易阅读）。Markdown 的设计哲学为：\n\nMarkdown 格式文档可按其自身样式以纯文本的方式直接发布，而不应看起来有着各式各样标签或格式化指令的标注（marked up）。— John Gruber\n\nMarkdown 存在很多种的方言（如 CommonMark、Github-Flavored Markdown 等），Quarto 主要基于 Pandoc 小幅修改并扩展的 Markdown 语法。以下将简要介绍常用的 Markdown 语法并展示其经过渲染（render）和格式化后的网页呈现结果，更多内容请参见 Pandoc 的官方文档 Markdown 。"
+  },
+  {
+    "objectID": "readings/markdown-basics.html#引言",
+    "href": "readings/markdown-basics.html#引言",
+    "title": "Markdown 基础",
+    "section": "",
+    "text": "John Gruber 首创的 Markdown 让你用纯文本的方式来撰写带有简单格式标识的文档（当然这也使得文档更容易阅读）。Markdown 的设计哲学为：\n\nMarkdown 格式文档可按其自身样式以纯文本的方式直接发布，而不应看起来有着各式各样标签或格式化指令的标注（marked up）。— John Gruber\n\nMarkdown 存在很多种的方言（如 CommonMark、Github-Flavored Markdown 等），Quarto 主要基于 Pandoc 小幅修改并扩展的 Markdown 语法。以下将简要介绍常用的 Markdown 语法并展示其经过渲染（render）和格式化后的网页呈现结果，更多内容请参见 Pandoc 的官方文档 Markdown 。"
+  },
+  {
+    "objectID": "readings/markdown-basics.html#段落",
+    "href": "readings/markdown-basics.html#段落",
+    "title": "Markdown 基础",
+    "section": "段落",
+    "text": "段落\n\n呈现结果Markdown语法\n\n\n段落是指后面跟着一行或多行空白行作为分隔的文本块。\n每一行文本最后的换行符将被视作空格， 所以你可以按你的意愿在段内随意换行1。\n如果你不想换行符被视为空格，而想要在行末强制换行，则需要在该行文字的最后输入两个及以上的空格（你也可以用在行末换行符的前面输入 \\ 进行转义从而得到硬换行符——这里采用的就是这种处理方式，在“如果”前一行的最后有个 \\）。\n\n\n段落是指后面跟着一行或多行空白行作为分隔的文本块。\n\n每一行文本最后的换行符将被视作空格，\n所以你可以按你的意愿在段内随意换行^[对中文可能不太合适，这一行中“所以”的前面将出现一个多余的空格）]。\\\n如果你不想换行符被视为空格，而想要在行末强制换行，则需要在该行文字的最后输入两个及以上的空格（你也可以用在行末换行符的前面输入 `\\` 进行转义从而得到硬换行符——这里采用的就是这种处理方式，在“如果”前一行的最后有个 `\\`）。"
+  },
+  {
+    "objectID": "readings/markdown-basics.html#标题",
+    "href": "readings/markdown-basics.html#标题",
+    "title": "Markdown 基础",
+    "section": "标题",
+    "text": "标题\n\n\n\n\n\n\n\nMarkdown语法\n呈现结果\n\n\n\n\n# 一级标题\n一级标题\n\n\n## 二级标题\n二级标题\n\n\n### 三级标题\n三级标题\n\n\n#### 四级标题\n四级标题\n\n\n##### 五级标题\n五级标题\n\n\n###### 六级标题\n六级标题"
+  },
+  {
+    "objectID": "readings/markdown-basics.html#行内格式化",
+    "href": "readings/markdown-basics.html#行内格式化",
+    "title": "Markdown 基础",
+    "section": "行内格式化",
+    "text": "行内格式化\n\n\n\n\n\n\n\nMarkdown语法\n呈现结果\n\n\n\n\n*斜体* / **加粗**\n斜体 / 加粗\n\n\n上标^2^ / 下标~2~\n上标2 / 下标2\n\n\n~~删除线~~\n删除线\n\n\n[下划线]{.underline}\n下划线\n\n\n`行内代码 a + b`\n行内代码 a + b"
+  },
+  {
+    "objectID": "readings/markdown-basics.html#链接-图像",
+    "href": "readings/markdown-basics.html#链接-图像",
+    "title": "Markdown 基础",
+    "section": "链接 & 图像",
+    "text": "链接 & 图像\n\n\n\nMarkdown语法\n呈现结果\n\n\n\n\n&lt;https://quarto.org&gt;\nhttps://quarto.org\n\n\n[Quarto](https://quarto.org)\nQuarto\n\n\n[段落]\n段落\n\n\n[文档内链接至段落标题](#段落)\n文档内链接至段落标题\n\n\n![Logo](imgs/logo.png)\n\n\n\n[![Logo](imgs/logo.png)](https://quarto.org)\n\n\n\n[![Logo](imgs/logo.png)](https://quarto.org \"quarto-logo\")\n\n\n\n[![](imgs/logo.png){fig-alt=\"logo of Q\"}](https://quarto.org)"
+  },
+  {
+    "objectID": "readings/markdown-basics.html#列表",
+    "href": "readings/markdown-basics.html#列表",
+    "title": "Markdown 基础",
+    "section": "列表",
+    "text": "列表\n\n无序列表\n\n\nMarkdown语法\n* 项目 1\n  + 子项目 1\n  + 子项目 2\n    - 子子项目 1\n* 项目 2                \n  连续文字 (缩进)\n\n呈现结果\n\n项目 1\n\n子项目 1\n子项目 2\n\n子子项目 1\n\n\n项目 2\n连续文字 (缩进)\n\n\n\n\n\n有序列表 1\n\n\nMarkdown语法\n1. 项目 1\n\n   连续文字 (缩进)\n\n2. 项目 2\n   i) 子项目 1\n      A.  子子项目 1\n   i) 子项目 2\n\n呈现结果\n\n项目 1\n连续文字 (缩进)\n项目 2\n\n子项目 1\n\n子子项目 1\n\n子项目 2\n\n\n\n\n\n\n有序列表 2\n\n\nMarkdown语法\n(@) 项目 1\n\n可在其他文字后连续编号的\n\n(@) 项目 2\n    i) 子项目 1\n\n呈现结果\n\n项目 1\n\n可在其他文字后连续编号的\n\n项目 2\n\n子项目 1"
+  },
+  {
+    "objectID": "readings/markdown-basics.html#表格",
+    "href": "readings/markdown-basics.html#表格",
+    "title": "Markdown 基础",
+    "section": "表格",
+    "text": "表格\n\nMarkdown语法呈现结果\n\n\n| 右对齐 | 左对齐 | 默认    |  居中  |\n|-------:|:-------|---------|:------:|\n|   12   |   12   |    12   |    12  |\n|  123   |  123   |   123   |   123  |\n|    1   |    1   |     1   |     1  |\n\n\n\n\n\n右对齐\n左对齐\n默认\n居中\n\n\n\n\n12\n12\n12\n12\n\n\n123\n123\n123\n123\n\n\n1\n1\n1\n1\n\n\n\n\n\n\n关于更多表格制作的 Markdown 语法可参见 Quarto 的官方文档 Tables。"
+  },
+  {
+    "objectID": "readings/markdown-basics.html#代码块",
+    "href": "readings/markdown-basics.html#代码块",
+    "title": "Markdown 基础",
+    "section": "代码块",
+    "text": "代码块\n在 Markdown 文档中使用 ``` 来分隔代码块：\n```\n1 + 1\n```\n还可以通过加上语言标识（如 python）来给代码块增加语法高亮（syntax highlight）功能：\n```python\n1 + 1\n```\nPandoc 支持超过 140 种语言的语法高亮。如果你使用的语言未被支持，可设定为 default：\n```default\n1 + 1\n```\n如果文档的输出格式为 HTML，代码块输出还存在额外的设定选项（如代码折叠、样式主题、增加复制按钮、代码链接、代码工具等），进一步细节可参见 Quarto 官方文档 HTML Code。"
+  },
+  {
+    "objectID": "readings/markdown-basics.html#公式",
+    "href": "readings/markdown-basics.html#公式",
+    "title": "Markdown 基础",
+    "section": "公式",
+    "text": "公式\n你可以使用 $（$$）分隔符来创建行内的（独显的）数学公式，例如：\n\n\n\n\n\n\n\nMarkdown语法\n呈现结果\n\n\n\n\n行内数学公式：$E = mc^{2}$\n行内数学公式：\\(E=mc^{2}\\)\n\n\n独显数学公式：\n\n$$E = mc^{2}$$\n独显数学公式：\n\\[E = mc^{2}\\]\n\n\n\n如果你想要自定义 TeX 宏，可以用 $$ 分隔符包裹相应的宏定义，并将其设定为 .hidden 代码块，示例如下：\n::: {.hidden}\n$$\n \\def\\RR{{\\bf R}}\n \\def\\bold#1{{\\bf #1}}\n$$\n:::\nHTML 数学公式采用默认的 MathJax 引擎 ，此时你可以用 \\def、 \\newcommand、 \\renewcommand、 \\newenvironment、 \\renewenvironment 和 \\let 等命令来创建宏和环境。"
+  },
+  {
+    "objectID": "readings/markdown-basics.html#图示",
+    "href": "readings/markdown-basics.html#图示",
+    "title": "Markdown 基础",
+    "section": "图示",
+    "text": "图示\nQuarto 内生支持 Mermaid 和 Graphviz 图示（diagram），这使得你很容易使用类似 markdown 的纯文本语法创建流程图、序贯图、状态图、甘特图等。例如，这里我们插入一份由 Mermaid 创建的流程图：\n\n```{mermaid}\nflowchart LR\n  A[方角矩形] --&gt; B(圆角矩形)\n  B --&gt; C{决策}\n  C --&gt; D[分支 1]\n  C --&gt; E[分支 2]\n```\n\n\n\nflowchart LR\n  A[方角矩形] --&gt; B(圆角矩形)\n  B --&gt; C{决策}\n  C --&gt; D[分支 1]\n  C --&gt; E[分支 2]\n\n\n\n\n\n你可通过 Quarto 官方文档 Diagrams 了解更多关于图示的信息。"
+  },
+  {
+    "objectID": "readings/markdown-basics.html#分页符",
+    "href": "readings/markdown-basics.html#分页符",
+    "title": "Markdown 基础",
+    "section": "分页符",
+    "text": "分页符\npagebreak 短代码让你在文档中插入原生的分页符（LaTeX 为 \\newpage，MS Word为分页符，而 HTML 为 page-break-after: always CSS 指令）：\n第1页\n\n{{&lt; pagebreak &gt;}}\n\n第2页"
+  },
+  {
+    "objectID": "readings/markdown-basics.html#块级-行内元素",
+    "href": "readings/markdown-basics.html#块级-行内元素",
+    "title": "Markdown 基础",
+    "section": "块级 / 行内元素",
+    "text": "块级 / 行内元素\n\n块级元素\n块级元素以至少三个连续的冒号 : 的围栏行作为开始（可通过 {} 加上额外的属性）并以至少三个连续的冒号 : 行作为结束。块级元素允许套嵌，但前后必须有空行作为分隔。额外的属性包括由 # 指定的唯一标识、. 指定的类以及其它由 key=\"val\" 指定的属性。示例如下：\n::::: {#special style=\"text-align:center\"}\n一些内容。\n\n::: {.warning .border}\n这里为应用 border 和 warning 类样式的文本。\n:::\n\n更多内容。\n:::::\n\n\n行内元素\n[] 包围的文本在正常情况下用来定义 链接，但如果还附加有额外的属性，那么这些文本将被视作行内元素，例如：\n[这是具有指定类 class 和属性取值 key=\"val\" 的 **行内** 文本]{.class key=\"val\"}\n当然在自定义块级元素和行内元素之后，我们通常需要进一步使用 HTML 的 CSS（层叠样式表）和/或 过滤器 来给渲染后的块级元素和行内元素增加相应的样式和/或行为。\n关于块级元素和行内元素的更多信息可参见 Pandoc 官方文档 Divs and Spans。"
+  },
+  {
+    "objectID": "readings/markdown-basics.html#标注块",
+    "href": "readings/markdown-basics.html#标注块",
+    "title": "Markdown 基础",
+    "section": "标注块",
+    "text": "标注块\n标注块有助于吸引读者关注特定内容或者清楚标明某些内容仅适用于某些特定情形。Quarto 基于 块级元素 Markdown 语法内置支持五种类型的标注：\nMarkdown语法\n::: {.callout-note appearance=\"simple\"}\nQuarto 内置五种类型的标注，包括：`note`、`tip`、`warning`、`caution`和`important`。\n:::\n呈现结果\n\n\n\n\n\n\nQuarto 内置五种类型的标注，包括：note、tip、warning、caution和important。\n\n\n\n你可通过 Quarto 官方文档 Callout Blocks 了解更多关于标注块的信息。"
+  },
+  {
+    "objectID": "readings/markdown-basics.html#脚注",
+    "href": "readings/markdown-basics.html#脚注",
+    "title": "Markdown 基础",
+    "section": "脚注",
+    "text": "脚注\n在本文 段落 一节中你们已经看到脚注的出现。Quarto 支持两种方式的脚注（可自由混合使用）：\n\n普通脚注\n脚注标识和脚注内容分开列示，支持多段落的脚注文本内容（需空格缩进）。示例如下：\n\n呈现结果Markdown语法\n\n\n正文内容有点复杂，所以这里需要有个脚注2。希望借助长脚注我能把这个问题解释明白3。\n\n\n正文内容有点复杂，所以这里需要有个脚注[^1]。希望借助长脚注我能把这个问题解释明白[^more]。\n\n[^1]: 嗯\\~\\~ 要解释的东西确实有点复杂，在脚注内也一时半会儿说不清楚啦。\n\n[^more]: 恐怕得加上必要的公式和代码才说得明白：\n\n    $$E = mc^{2}$$\n    \n    这是用 R 代码实现的计算过程：\n\n    ```r\n    E &lt;- m * c^2\n    ```\n\n\n\n\n\n行内脚注\n直接将脚注文本内容放在脚注 Markdown 语法标记 ^[] 的 [] 内，不支持多段落的脚注文本内容。示例如下：\n\n呈现结果Markdown语法\n\n\n正文内容有点复杂，所以这里需要有个行内注释4。我说明白了吗？\n\n\n正文内容有点复杂，所以这里需要有个行内注释^[嗯\\~\\~ 要解释的东西确实有点复杂，用行内脚注肯定说不清楚啦。]。我说明白了吗？"
+  },
+  {
+    "objectID": "readings/markdown-basics.html#其它",
+    "href": "readings/markdown-basics.html#其它",
+    "title": "Markdown 基础",
+    "section": "其它",
+    "text": "其它\n\n引用和线文本块\n\n\n\n\n\n\n\nMarkdown语法\n输出\n\n\n\n\n&gt; 引用 \\\n&gt; 子在川上曰 \\\n&gt; 逝者如斯夫\n\n引用\n子在川上曰\n逝者如斯夫\n\n\n\n| 线文本块\n|   保留文本中的起始空格和\n|     换行符\n线文本块\n  保留文本中的起始空格和\n    换行符\n\n\n\n\n\n原始 HTML 和 TeX\nMarkdown 语法允许你在文档中绝大多数的地方插入原始的 HTML（如插入 &lt;br&gt; 来强制换行、&lt;a href=\"https://bing.com\"&gt;Bing&lt;/a&gt; 等）和 TeX 的内容，并在输出文档中得到渲染支持（或忽略）。\n\n\n特殊字符\n\n\n\n\n\n\n\nMarkdown语法\n输出\n\n\n\n\n连接号 (en-dash)：--\n连接号 (en-dash)：–\n\n\n破折号 (em-dash)：---\n破折号 (em-dash)：—"
+  },
+  {
+    "objectID": "readings/markdown-basics.html#footnotes",
+    "href": "readings/markdown-basics.html#footnotes",
+    "title": "Markdown 基础",
+    "section": "脚注",
+    "text": "脚注\n\n\n对中文可能不太合适，这一行中“所以”的前面出现一个多余的空格。↩︎\n嗯~~ 要解释的东西确实有点复杂，在脚注内也一时半会儿说不清楚啦。↩︎\n恐怕得加上必要的公式和代码才说得明白：\n\\[E = mc^{2}\\]\n这是用 R 代码实现的计算过程：\nE &lt;- m * c^2\n↩︎\n嗯~~ 要解释的东西确实有点复杂，用行内脚注肯定说不清楚啦。↩︎"
+  },
+  {
+    "objectID": "project/team-project.html",
+    "href": "project/team-project.html",
+    "title": "小组研究项目说明",
+    "section": "",
+    "text": "重要\n\n\n\n随着小组研究项目进度的推进，会调整 / 更新 / 补充相关内容。\n\n\n\n1. 小组成员\n\n\n1.1 设计目标\n\n每个小组 ~ 4 名同学\n小组成员构成多样性（如男女搭配、专业搭配等）\n促进合作，惩罚“搭便车”行为\n\n\n\n1.2 分组流程\n本学期最终选课名单上共有 23 位同学，其中：\n\n财务学系：21 位\n非财务学系：2 位\n\n本次小组分组采用自由分组方式，即由同学们自由组合，搭建研究小组：\n\n每个小组 ~ 4 名同学，男女搭配；\n小组讨论选出组长并确认组名\n将分组信息（和小组集体照一张）提交至坚果云\n\n\n\n1.3 分组结果\n根据各小组于 11月08日 反馈的信息，最终分组情况见 表 2。\n\n\n\n2. 评分规则\n\n为了让每位同学最终得到的小组研究项目成绩能更好体现小组研究项目的完成质量及其对小组研究项目的态度、投入与贡献，同时尽可能避免小组作业中可能出现的“搭便车”现象，在小组作业成绩评定方面引入小组成员互评机制。\n在完成小组研究项目之后，老师会发放问卷，要求同学们对自身及小组其他成员在小组研究项目中的表现进行评分。最终老师会在小组项目得分的基础上根据小组作业完成情况和成员互评结果进行增/减分处理，从而得到该同学小组作业的最终得分。示例说明如下：\n假设某个小组由 A、B、C、D、E 五位成员组成，小组项目得分为88分（即基准分），小组成员互评情况（+ 表示一次正面评价，- 表示一次负面评价）、加 / 减分及最终得分如 表 1 所示：\n\n\n表 1: 小组成员互评、加减分 注1 与小组作业最终得分示例\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n基准分\n加/减分\n最终得分\n\n\nA\n+\n+\n\n\n-\n88\n+0\n88\n\n\nB\n+\n+\n+\n+\n+\n88\n+12\n100\n\n\nC\n\n+\n\n-\n\n88\n+0\n88\n\n\nD\n-\n-\n-\n-\n-\n88\n-20\n68\n\n\nE\n\n\n+\n+\n\n88\n+4\n92\n\n\n\n\n注1：在确定 表 1 中的加/减分项时，老师保留根据（全班）小组作业完成情况和成员互评结果确定每个小组中每一位同学的每一个 + / - 的具体加 / 减分值的权力。\n\n\n3. 研究选题\n\n\n3.1 自选研究项目\n各小组可参考借鉴 2022-2023 学年秋季学期本门课程小组研究项目选题（见下），通过资料收集和小组讨论等方式自行确定拟研究项目并形成初步研究思路与计划。\n\n投资组合（天真）分散化\n周日效应（DoW effect）\n金融工程 App\n指数基金定投策略 App\n基于技术指标的量化投资策略\n基本面量化投资策略\n网络数据抓取与分析\n\n\n\n3.2 小组最终选题\n根据各小组于 11月08日 反馈的信息，最终小组选题（及小组相关信息）如 表 2 所示：\n\n\n表 2: 小组分组、选题及相关信息\n\n\n\n\n\n\n\n\n\n\n\n分组\n小组名\n选题\n组长\n组员1\n组员2\n组员3\n\n\n\n\n1\n畅通无组\n机器学习×期货市场交易\n程*昂\n刘*\n杨*舒\n\n\n\n2\n大家都拿高分组\n神经网络×股票高频交易\n何*冰\n谢*露\n王*颖\n巢*韬\n\n\n3\nQuantumFinance\nApp: Black-Litterman\n刘*杨\n屈*\n丁*\n周*\n\n\n4\n欢乐斗地组\nApp: 投资组合优化器\n吴*韵\n裴*缘\n危*\n牛*喻\n\n\n5\n我的未来我做组\nApp: VolPro\n王*凤\n林*晴\n朱*坤\n卓*益\n\n\n6\n股指通\nApp: 股指天气\n赵*羚\n陈*\n宋*鸣\n\n\n\n\n\n\n\n\n4. 时间安排\n\n🕐 老师说明小组分组方式、小组研究项目的构想、选题、要求和时间安排等方面的信息 [注：已完成]\n🕑 各组长于 11月08日晚24:00前 提交以下信息至 {{坚果云}} [注：已完成]\n\n小组名、组长姓名\n项目选题、研究思路与预期成果\n小组成员集体照一张（标注姓名）\n\n🕒 小组制定研究计划，分工协作，积极展开项目研究 [注：待完成]\n🕓 各小组于 12月1日 上台简要报告中期研究进展 [注：待完成]\n🕔 各小组于 12月15日前 完成项目研究，提交研究成果（如研究报告、展示文档、App等） [注：待完成]\n🕕 12月29日 上台展示 / 分享小组研究项目 [注：待完成]\n\n\n5. 作业提交与展示\n[注：待补充完善，同学们若有什么问题或建议请及时向我反馈]\n\n\n5.1 中期进展汇报\n\n\n5.1.1 展示内容\n\n核心任务\n分工协作\n目前进展与下阶段安排\n问题与困难\n\n\n各组组长于 11月26日（星期日）前 将展示幻灯片打包发给我：zzyy@xmu.edu.cn\n\n\n\n5.1.2 形式\n\n上台展示\n每个小组 1 人上台\n\n\n\n5.1.3 时间\n\n12月01日随堂进行\n每组 8 分钟左右，控制好时间\n\n\n\n\n5.2 最终研究成果提交说明\n\n截止时间：12月17日（星期日）24:00\n提交至邮箱：zzyy@xmu.edu.cn\n提交内容：将下列内容放在同一个项目文件夹下，压缩为“小组研究项目_[替换为小组名].zip”， 作为邮件附件提交至指定邮箱\n\nApp (Dashboard) 和 / 或 研究报告（独立文件夹，内含运行无误的数据和代码）\n幻灯片展示报告（独立文件夹，内含运行无误的数据和代码）\n\n\n\n\n5.3 展示与分享\n\n\n5.3.1 时间\n2023年12月29日\n\n\n5.3.2 安排\n\n随堂进行\n全部小组均需上台展示，每个小组 1~2 位同学上台\n每组展示时间 &lt; 10 分钟，上台的同学需要通过提前排练控制好时间\n展示\n\n文档：qmd - Revealjs 格式 或 xaringan 格式\n篇幅：20个幻灯片左右\n内容 1. 小组如何分工协作完成任务\n内容 2. 研究成果 / 结果展示\n内容 3. 问题与经验分享"
+  },
+  {
+    "objectID": "weeks/week-11.html",
+    "href": "weeks/week-11.html",
+    "title": "第 11 周",
+    "section": "",
+    "text": "由于 R 中的很多内置函数都支持向量化操作，我们对已读入内存的数据进行简单的数据处理时通常不需要用到显性的 for 循环。但在某些特定情况下（如不存在相应的向量化函数、分组计算数据框的列汇总统计量、导入 / 输出多个文档等），循环迭代操作可能难以完全避免。R 支持传统命令式编程语言的 for、while、if 等控制结构，同时还支持函数式迭代范式（如 apply 族函数）。\ntidyverse 通过核心操作函数的语法设计（如 readr 包的 vroom 引擎、dplyr 包的 group_by()、.by/by 参数（?dplyr_by）、rowwise()、across() 和实验性的 group_map()/group_modify()/group_walk()/group_nest()/group_split()/nest_by()、ggplot2 包的 aes() 美学映射和 facet_*() 分面等），进一步减少需要我们手动编写显性循环迭代操作的场合。\n此外，tidyverse 下的 purrr 包提供更一致、易用、灵活且强大的函数式迭代工具，并可和 R 语言核心数据结构数据框（tidyverse 下为 tibble）的列表列（list-column）配合使用来完成更为复杂的数据处理 / 分析工作。\n本讲主要涵盖以下几方面的内容："
+  },
+  {
+    "objectID": "weeks/week-11.html#课前准备",
+    "href": "weeks/week-11.html#课前准备",
+    "title": "第 11 周",
+    "section": "1. 课前准备",
+    "text": "1. 课前准备\n\n\n📖 预习 R for Data Science, 2e 第五部分 Program 中关于 迭代 和 基础 R 的章节，即 26 Iteration 和 27 A field guide to base R 的 27.4-27.5。\n\n\n\n\n\n\n此书第1版有中文翻译版 《R数据科学》出版，对应章节为“第16章 使用 purrr 实现迭代”和“第19章 使用 purrr 和 broom 处理多个模型”（很遗憾，翻译版的第19章出现大量删减🙃，建议参阅英文原著）。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。\n\n\n\n\n\n\n\n\n\n由于上课内容较多，而上课时间有限（45分钟 × 2），上课节奏预计较快，有些内容甚至会一带而过，请同学们务必腾出时间来过一遍上述预习章节的内容。\n\n\n\n\n\n\n\n\n\n🖥️ 我准备的基于 xaringan包 的 网页版讲义，供同学们参考。"
+  },
+  {
+    "objectID": "weeks/week-11.html#课堂讲义",
+    "href": "weeks/week-11.html#课堂讲义",
+    "title": "第 11 周",
+    "section": "2. 课堂讲义",
+    "text": "2. 课堂讲义\n🖥️ [第7讲 迭代]"
+  },
+  {
+    "objectID": "weeks/week-11.html#随堂练习",
+    "href": "weeks/week-11.html#随堂练习",
+    "title": "第 11 周",
+    "section": "3. 随堂练习",
+    "text": "3. 随堂练习\n⌨️ [见课堂讲义]"
+  },
+  {
+    "objectID": "weeks/week-11.html#课后作业",
+    "href": "weeks/week-11.html#课后作业",
+    "title": "第 11 周",
+    "section": "4. 课后作业",
+    "text": "4. 课后作业\n✍️ [课后作业]"
+  },
+  {
+    "objectID": "weeks/week-07.html",
+    "href": "weeks/week-07.html",
+    "title": "第 7 周",
+    "section": "",
+    "text": "“问渠那得清如许？为有源头活水来。” 在上一讲中我们主要讲述 dplyr 包基于数据操作语法（A Grammar of Data Manipulation）的核心函数，并利用 nycflights13 包提供的数据集作为示例。数据操作语法想要达到其预期目标依赖于其所操作的 tibble 对象为“齐整的数据”（tidy data），而在数据科学实践中我们往往会从不同来源读取 / 导入形形色色的数据集，这就需要我们掌握 tidyverse 中与数据导入和数据齐整有关的 R 包及其核心函数。\n本讲主要涵盖以下几方面的内容：\n1. 数据导入\n2. 数据齐整"
+  },
+  {
+    "objectID": "weeks/week-07.html#课前准备",
+    "href": "weeks/week-07.html#课前准备",
+    "title": "第 7 周",
+    "section": "1. 课前准备",
+    "text": "1. 课前准备\n\n\n📖 预习 R for Data Science, 2e 第一部分 Whole game 中关于数据导入和数据齐整的章节，即 8 Data import 和 6 Data tidying。\n\n\n\n\n\n\n此书第1版有中文翻译版 《R数据科学》出版，对应章节为“第7章 使用tibble实现简单数据框”和“第8章 使用readr进行数据导入”（很遗憾，原书关于 tidyr 包的第12章在翻译版中并未出现，🙃）。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。\n\n\n\n\n\n\n\n\n\n由于上课内容较多，而上课时间有限，上课节奏预计较快，有些内容甚至会一带而过，请同学们务必腾出时间来过一遍上述预习章节的内容。\n\n\n\n\n\n\n\n\n\n🖥️ 我准备的基于 xaringan包 的 网页版讲义，供同学们参考。"
+  },
+  {
+    "objectID": "weeks/week-07.html#课堂讲义",
+    "href": "weeks/week-07.html#课堂讲义",
+    "title": "第 7 周",
+    "section": "2. 课堂讲义",
+    "text": "2. 课堂讲义\n🖥️ 第5讲 数据导入与齐整"
+  },
+  {
+    "objectID": "weeks/week-07.html#随堂练习",
+    "href": "weeks/week-07.html#随堂练习",
+    "title": "第 7 周",
+    "section": "3. 随堂练习",
+    "text": "3. 随堂练习\n⌨️ [见课堂讲义]"
+  },
+  {
+    "objectID": "weeks/week-07.html#课后作业",
+    "href": "weeks/week-07.html#课后作业",
+    "title": "第 7 周",
+    "section": "4. 课后作业",
+    "text": "4. 课后作业\n✍️ 课后作业"
+  },
+  {
+    "objectID": "weeks/week-01.html",
+    "href": "weeks/week-01.html",
+    "title": "第 1 周",
+    "section": "",
+    "text": "作为“量化金融与金融编程”课程的开学第一课，本讲的主要目的在于向学生介绍为什么要开设本门课程、教学设计以及如何才能学好这门课程，方便同学们作出理性的选课决定。授课将主要涵盖以下三方面的内容："
+  },
+  {
+    "objectID": "weeks/week-01.html#课前准备",
+    "href": "weeks/week-01.html#课前准备",
+    "title": "第 1 周",
+    "section": "1. 课前准备",
+    "text": "1. 课前准备\n🖥️ 请同学们依照如下幻灯片的步骤说明完成 R、RStudio、R 包等相关软件的安装及配置工作："
+  },
+  {
+    "objectID": "weeks/week-01.html#课堂讲义",
+    "href": "weeks/week-01.html#课堂讲义",
+    "title": "第 1 周",
+    "section": "2. 课堂讲义",
+    "text": "2. 课堂讲义\n🖥️ 第1讲 课程简介\n\n\n\n\n\n\n注释\n\n\n\n同学们可根据需要自行从以上 网页格式 的讲义打印生成 PDF 版 讲义。"
+  },
+  {
+    "objectID": "weeks/week-01.html#随堂练习",
+    "href": "weeks/week-01.html#随堂练习",
+    "title": "第 1 周",
+    "section": "3. 随堂练习",
+    "text": "3. 随堂练习\n无"
+  },
+  {
+    "objectID": "weeks/week-01.html#课后作业",
+    "href": "weeks/week-01.html#课后作业",
+    "title": "第 1 周",
+    "section": "4. 课后作业",
+    "text": "4. 课后作业\n✍️ 课后作业"
+  },
+  {
+    "objectID": "weeks/week-09.html",
+    "href": "weeks/week-09.html",
+    "title": "第 9-10 周",
+    "section": "",
+    "text": "前面几讲中我们主要遨游于“净土宇宙 🌌”（tidyverse）中，收获探索“数据可视化”（ggplot2 包）、“动态文档”（rmarkdown -&gt; Quarto）、数据导入（readr 包）-齐整（tidyr 包）-转换（dplyr 包）等领域带来的超酷体验 😎。在这一讲中我们将“稍事休整”，返回头去学习 R 语言编程方面的核心知识：向量与函数。掌握这些知识也有助于我们更好理解“净土宇宙 🌌”。\n本讲主要涵盖以下几方面的内容："
+  },
+  {
+    "objectID": "weeks/week-09.html#课前准备",
+    "href": "weeks/week-09.html#课前准备",
+    "title": "第 9-10 周",
+    "section": "1. 课前准备",
+    "text": "1. 课前准备\n\n\n📖 预习 R for Data Science, 2e 第五部分 Program 中关于 基础 R 和 函数 的章节，即 27 A field guide to base R 的 27.1-27.3 和 25 Functions 的 。\n\n\n\n\n\n\n此书第1版有中文翻译版 《R数据科学》出版，对应章节为“第14章 函数”和“第15章 向量”。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。\n\n\n\n\n\n\n\n\n\n由于上课内容较多，而上课时间有限（45分钟 × 2），上课节奏预计较快，有些内容甚至会一带而过，请同学们务必腾出时间来过一遍上述预习章节的内容。\n\n\n\n\n\n\n\n\n\n🖥️ 我准备的基于 xaringan包 的 网页版讲义，供同学们参考。"
+  },
+  {
+    "objectID": "weeks/week-09.html#课堂讲义",
+    "href": "weeks/week-09.html#课堂讲义",
+    "title": "第 9-10 周",
+    "section": "2. 课堂讲义",
+    "text": "2. 课堂讲义\n🖥️ 第6讲 向量与函数"
+  },
+  {
+    "objectID": "weeks/week-09.html#随堂练习",
+    "href": "weeks/week-09.html#随堂练习",
+    "title": "第 9-10 周",
+    "section": "3. 随堂练习",
+    "text": "3. 随堂练习\n⌨️ [见课堂讲义]"
+  },
+  {
+    "objectID": "weeks/week-09.html#课后作业",
+    "href": "weeks/week-09.html#课后作业",
+    "title": "第 9-10 周",
+    "section": "4. 课后作业",
+    "text": "4. 课后作业\n✍️ 课后作业"
   }
 ]
