@@ -1,5 +1,5 @@
 ---
-title: "第 9 周"
+title: "第 9-10 周"
 subtitle: "向量与函数"
 author: 曾永艺
 date: 2023-11-10
@@ -37,7 +37,7 @@ image: /slides/lec-06-prep/imgs/vector-R.png
 
 ::::{.column width="60%"}
 
-📖 预习 [*R for Data Science, 2e*](https://r4ds.hadley.nz/) 第五部分 _Program_ 中关于 _基础 R_ 和 _函数_ 的章节，即 [**28  A field guide to base R**](https://r4ds.hadley.nz/base-r) 的 **28.1-28.3** 和 [**26 Functions**](https://r4ds.hadley.nz/functions) 的 。
+📖 预习 [*R for Data Science, 2e*](https://r4ds.hadley.nz/) 第五部分 _Program_ 中关于 _基础 R_ 和 _函数_ 的章节，即 [**27  A field guide to base R**](https://r4ds.hadley.nz/base-r) 的 **27.1-27.3** 和 [**25 Functions**](https://r4ds.hadley.nz/functions) 的 。
 
 :::{.callout-tip appearance="simple"}
 此书第1版有中文翻译版 [《R数据科学》](https://www.ituring.com.cn/book/2113)出版，对应章节为“第14章 函数”和“第15章 向量”。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。
