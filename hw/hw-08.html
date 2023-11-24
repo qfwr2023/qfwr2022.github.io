@@ -8,7 +8,7 @@
 
 <meta name="author" content="曾永艺">
 
-<title>Quantitative Finance with R - 第 11 周</title>
+<title>Quantitative Finance with R - 第11周课后作业</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../weeks/week-09.html" rel="prev">
 <link href="../favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -131,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week-11.html">第11周 迭代</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">第11周课后作业</li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -199,7 +198,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-11.html" class="sidebar-item-text sidebar-link active">
+  <a href="../weeks/week-11.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">第11周 迭代</span></a>
   </div>
 </li>
@@ -254,30 +253,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">该页面内容</h2>
-   
-  <ul>
-  <li><a href="#课前准备" id="toc-课前准备" class="nav-link active" data-scroll-target="#课前准备">1. 课前准备</a></li>
-  <li><a href="#课堂讲义" id="toc-课堂讲义" class="nav-link" data-scroll-target="#课堂讲义">2. 课堂讲义</a></li>
-  <li><a href="#随堂练习" id="toc-随堂练习" class="nav-link" data-scroll-target="#随堂练习">3. 随堂练习</a></li>
-  <li><a href="#课后作业" id="toc-课后作业" class="nav-link" data-scroll-target="#课后作业">4. 课后作业</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">第 11 周</h1>
-<p class="subtitle lead">迭代</p>
-  <div class="quarto-categories">
-    <div class="quarto-category">预习</div>
-    <div class="quarto-category">讲义</div>
-    <div class="quarto-category">作业</div>
-  </div>
-  </div>
+<h1 class="title">第11周课后作业</h1>
+</div>
 
 
 
@@ -293,7 +277,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">发布日期</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2023年11月25日</p>
+      <p class="date">2023年11月24日</p>
     </div>
   </div>
   
@@ -304,71 +288,30 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <hr>
-<p>由于 R 中的很多内置函数都支持向量化操作，我们对已读入内存的数据进行简单的数据处理时通常不需要用到显性的 <code>for</code> 循环。但在某些特定情况下（如不存在相应的向量化函数、分组计算数据框的列汇总统计量、导入 / 输出多个文档等），循环迭代操作可能难以完全避免。R 支持传统命令式编程语言的 <code>for</code>、<code>while</code>、<code>if</code> 等控制结构，同时还支持函数式迭代范式（如 <code>apply</code> 族函数）。</p>
-<p>tidyverse 通过核心操作函数的语法设计（如 <code>readr</code> 包的 <code>vroom</code> 引擎、<code>dplyr</code> 包的 <code>group_by()</code>、<code>.by</code>/<code>by</code> 参数（<code>?dplyr_by</code>）、<code>rowwise()</code>、<code>across()</code> 和实验性的 <code>group_map()</code>/<code>group_modify()</code>/<code>group_walk()</code>/<code>group_nest()</code>/<code>group_split()</code>/<code>nest_by()</code>、<code>ggplot2</code> 包的 <code>aes()</code> 美学映射和 <code>facet_*()</code> 分面等），进一步减少需要我们手动编写显性循环迭代操作的场合。</p>
-<p>此外，tidyverse 下的 <code>purrr</code> 包提供更一致、易用、灵活且强大的函数式迭代工具，并可和 R 语言核心数据结构数据框（tidyverse 下为 tibble）的列表列（list-column）配合使用来完成更为复杂的数据处理 / 分析工作。</p>
-<p>本讲主要涵盖以下几方面的内容：</p>
-<ol type="1">
-<li><p>通常你并不需要手写循环</p></li>
-<li><p>控制流结构</p></li>
-<li><p>函数式编程</p></li>
-<li><p><code>purrr</code> 包</p></li>
-<li><p><code>purrr</code> 包 与 列表列</p></li>
-<li><p><code>purrr</code> -&gt; <code>furrr</code></p></li>
-</ol>
-<br>
-<hr>
-<section id="课前准备" class="level2">
-<h2 class="anchored" data-anchor-id="课前准备">1. 课前准备</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>📖 预习 <a href="https://r4ds.hadley.nz/"><em>R for Data Science, 2e</em></a> 第五部分 <em>Program</em> 中关于 <em>迭代</em> 和 <em>基础 R</em> 的章节，即 <a href="https://r4ds.hadley.nz/iteration"><strong>26 Iteration</strong></a> 和 <a href="https://r4ds.hadley.nz/base-r"><strong>27 A field guide to base R</strong></a> 的 <strong>27.4-27.5</strong>。</p>
-<div class="callout callout-style-simple callout-tip">
+<p><span style="font-size:1.2rem; font-weight:bold">1. 复习 📖 <a href="https://r4ds.had.nz/"><strong>{{<em>R for Data Science, 2e</em>}}</strong></a> 一书第五部分 <em>Program</em> 的以下章节：</span></p>
+<ul>
+<li><p><a href="https://r4ds.hadley.nz/Iteration">26 Iteration</a></p></li>
+<li><p><a href="https://r4ds.hadley.nz/base-r">27 A field guide to base R</a> 的 27.4-27.5</p></li>
+</ul>
+<p><span style="font-size:1.2rem; font-weight:bold">2. 下载（打印） 📰 <a href="../slides/lec-07/docs/purrr-cheatsheet.pdf"><strong>{{purrr 包的cheatsheet}}</strong></a> 并阅读之</span></p>
+<p><span style="font-size:1.2rem; font-weight:bold">3. 根据课程讲义的打印稿，在 📑 Qmd 中键入、运行、理解第 2-6 节中代码</span></p>
+<ul>
+<li><p>文档统一取名为：<code>L07_coding_practice.qmd</code></p></li>
+<li><p>可结队编写代码，共同署名，分别提交，<strong>但注意控制雷同比例</strong></p></li>
+<li><p>于 <strong>2023年11月30日24:00前</strong> 将该 Qmd 文档上传至 <a href="https://send2me.cn/gQF26dfz/QfyP8qIv5Tu4MQ">{{坚果云收件箱}}</a></p></li>
+</ul>
+<div class="callout callout-style-simple callout-note">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-body-container">
-<p>此书第1版有中文翻译版 <a href="https://www.ituring.com.cn/book/2113">《R数据科学》</a>出版，对应章节为“第16章 使用 <code>purrr</code> 实现迭代”和“第19章 使用 <code>purrr</code> 和 <code>broom</code> 处理多个模型”（很遗憾，翻译版的第19章出现大量删减🙃，建议参阅英文原著）。若同学们觉得直接阅读英文原版教材有点吃力 / 费时，可参阅中文翻译版。</p>
+<p>希望同学们能自觉完成自学任务，若遇到什么问题或难解之处，可在课程QQ群上贴出并讨论</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple callout-warning">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>由于上课内容较多，而上课时间有限（45分钟 × 2），上课节奏预计较快，有些内容甚至会一带而过，请同学们务必腾出时间来过一遍上述预习章节的内容。</p>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:40%;">
-<div style="text-align:right">
-<p><img src="https://r4ds.hadley.nz/cover.jpg" class="cover" width="80%"></p>
-</div>
-</div>
-</div>
-<p>🖥️ 我准备的基于 <code>xaringan</code>包 的 <a href="../slides/lec-07-prep/L07_Iteration_Prep.html">网页版讲义</a>，供同学们参考。</p>
-</section>
-<section id="课堂讲义" class="level2">
-<h2 class="anchored" data-anchor-id="课堂讲义">2. 课堂讲义</h2>
-<p>🖥️ <a href="../slides/lec-07/L07_Iteration.html">第7讲 迭代</a></p>
-</section>
-<section id="随堂练习" class="level2">
-<h2 class="anchored" data-anchor-id="随堂练习">3. 随堂练习</h2>
-<p>⌨️ [未安排随堂练习]</p>
-</section>
-<section id="课后作业" class="level2">
-<h2 class="anchored" data-anchor-id="课后作业">4. 课后作业</h2>
-<p>✍️ <a href="../hw/hw-08.html">课后作业</a></p>
-<p><br></p>
-<!-- ::: {style="font-size:0.875em; text-align:right"} -->
-<!-- 回到 [课程安排](../schedule.qmd) ⏎ -->
-<!-- ::: -->
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -735,15 +678,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../weeks/week-09.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">第9-10周 向量与函数</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
