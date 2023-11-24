@@ -1,0 +1,28 @@
+---
+title: "第11周课后作业"
+author: 曾永艺
+date: 2023-11-24
+# editor: visual
+---
+
+<hr>
+
+[1. 复习 📖 [**{{_R for Data Science, 2e_}}**](https://r4ds.had.nz/) 一书第五部分 _Program_ 的以下章节：]{style="font-size:1.2rem; font-weight:bold"}
+
+  - [26 Iteration](https://r4ds.hadley.nz/Iteration)
+  
+  - [27 A field guide to base R](https://r4ds.hadley.nz/base-r) 的 27.4-27.5
+
+[2. 下载（打印） 📰 [**{{purrr 包的cheatsheet}}**](/slides/lec-07/docs/purrr-cheatsheet.pdf) 并阅读之]{style="font-size:1.2rem; font-weight:bold"}
+
+[3. 根据课程讲义的打印稿，在 📑 Qmd 中键入、运行、理解第 2-6 节中代码]{style="font-size:1.2rem; font-weight:bold"}
+
+  - 文档统一取名为：`L07_coding_practice.qmd`
+  
+  - 可结队编写代码，共同署名，分别提交，**但注意控制雷同比例**
+  
+  - 于 **2023年11月30日24:00前** 将该 Qmd 文档上传至 [{{坚果云收件箱}}](https://send2me.cn/gQF26dfz/QfyP8qIv5Tu4MQ)
+
+:::{.callout-note appearance="simple"}
+希望同学们能自觉完成自学任务，若遇到什么问题或难解之处，可在课程QQ群上贴出并讨论
+:::

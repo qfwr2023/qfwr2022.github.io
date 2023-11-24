@@ -135,7 +135,7 @@ language:
 - 问题与困难
 
 :::{.callout-message appearance="simple"}
-各组组长于 **11月26日（星期日）前** 将展示幻灯片打包发给我：<zzyy@xmu.edu.cn>
+各组组长于 **11月26日（星期日）前** 将展示幻灯片（使用 `Quarto|Revealjs` 或者 `xaringan` 制作）打包发给我：<zzyy@xmu.edu.cn>
 :::
 
 ##### 5.1.2 形式
