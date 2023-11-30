@@ -8,7 +8,7 @@
 
 <meta name="author" content="曾永艺">
 
-<title>Quantitative Finance with R - 第6周课后作业</title>
+<title>Quantitative Finance with R - 第 12 周</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,6 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../weeks/week-11.html" rel="prev">
 <link href="../favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -130,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">第6周课后作业</li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week-12.html">第12周 shiny &amp; *dashboard</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="切换侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -204,7 +205,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week-12.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week-12.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">第12周 shiny &amp; *dashboard</span></a>
   </div>
 </li>
@@ -259,15 +260,28 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">该页面内容</h2>
+   
+  <ul>
+  <li><a href="#课前准备" id="toc-课前准备" class="nav-link active" data-scroll-target="#课前准备">1. 课前准备</a></li>
+  <li><a href="#课堂讲义" id="toc-课堂讲义" class="nav-link" data-scroll-target="#课堂讲义">2. 课堂讲义</a></li>
+  <li><a href="#随堂练习" id="toc-随堂练习" class="nav-link" data-scroll-target="#随堂练习">3. 随堂练习</a></li>
+  <li><a href="#课后作业" id="toc-课后作业" class="nav-link" data-scroll-target="#课后作业">4. 课后作业</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">第6周课后作业</h1>
-</div>
+<h1 class="title">第 12 周</h1>
+<p class="subtitle lead">shiny &amp; *dashboard</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">讲义</div>
+  </div>
+  </div>
 
 
 
@@ -283,7 +297,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">发布日期</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2023年10月20日</p>
+      <p class="date">2023年12月1日</p>
     </div>
   </div>
   
@@ -294,59 +308,54 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <hr>
-<p><span style="font-size:1.2rem">1. 学习 📝 <a href="../readings/markdown-basics.html"><strong>{{Markdown基础}}</strong></a> 和 <a href="../readings/revealjs"><strong>{{Revealjs 演示文稿}}</strong></a>，<strong>完善<a href="https://qfwr2023.netlify.app/hw/hw-03">第4周的课后作业</a></strong>，并增加部分篇幅说明具体改进之处，于<strong>2023年10月26日22:00前</strong>将压缩包提交至 <a href="https://send2me.cn/rAnWP-yK/RjqyWTleU7stqA">{{坚果云链接}}</a>。</span></p>
-<p><span style="font-size:1.2rem">2. 复习 📖 <a href="https://r4ds.had.nz/"><strong>{{<em>R for Data Science, 2e</em>}}</strong></a> 一书第三部分 <em>Transform</em> 中关于连接数据集的章节，即 <a href="https://r4ds.hadley.nz/joins"><strong>20 Joins</strong></a> 并<strong>（结队）完成课后练习</strong>。</span></p>
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<ul>
-<li><span style="color:red"><strong>课后动手编程实操是掌握一门编程语言的必由之路，r4ds一书配套练习都很不错，尽管并未要求同学们提交课后编程实操作业，但希望同学们都能自觉完成，也正好检验下自己对 dplyr 包核心函数和关键知识的掌握情况</strong></span></li>
-<li><strong>课后习题参考答案链接</strong>
-<ul>
-<li>📖 <a href="https://mine-cetinkaya-rundel.github.io/r4ds-solutions/joins.html"><em><del>R for Data Science (2e): Solutions to Exercise</del></em></a></li>
-<li>📖 <a href="https://jrnold.github.io/r4ds-exercise-solutions/relational-data.html"><em>R for Data Science: Exercise Solutions</em></a></li>
-</ul></li>
-<li>若在课后编程实操中遇到什么问题或难解之处，也可在课程QQ群上贴出并讨论</li>
-</ul>
-</div>
-</div>
-</div>
-<p><span style="font-size:1.2rem">3. 下载（打印） 📰 <a href="../slides/lec-04/docs/dplyr-cheatsheet.pdf">{{dplyr的cheatsheet}}</a> 并阅读之</span></p>
-<p><span style="font-size:1.2rem">4. <code>browseVignettes(package = "dplyr")</code> 📝，阅读：</span></p>
-<blockquote style="margin-left: 1.2rem; font-size: 1.2rem; color: black" class="blockquote">
-<strong>Row-wise operations</strong><br>
-<strong>Two-table verbs</strong>
-</blockquote>
-<hr>
-<div class="callout callout-style-simple callout-note">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>以下是<strong>第4周课后作业</strong>的初始要求（备忘）</p>
-</div>
-</div>
-</div>
-<ul>
-<li><p><strong>自由组队，两人一组，共同完成课后作业：</strong></p>
+<p>根据本学期教学方案中关于小组研究项目的设计，作为项目研究最终成果，各小组不仅要提交 Quarto 或 RMarkdown 格式的静态报告 / 展示幻灯片（本学期<a href="../weeks/week-04.html">第3讲</a>的教学内容），可能还要根据各自研究项目的特点提交基于 <a href="https://shiny.posit.co/"><code>shiny</code></a> 包和 <a href="http://www.htmlwidgets.org/"><code>htmlwidgets</code></a> 衍生包制作的动态或交互文档（如网页 App 和仪表盘工具）。本讲将介绍与此有关的知识（包括 <code>shiny</code> 包和用来制作仪表盘工具的3个R包），主要内容如下：</p>
 <ol type="1">
-<li><p><strong>从 L02 课件中挑出 3 ~ 4 个你们感兴趣的数据可视化代码段，就其制作两种类型的展示文档：</strong></p>
+<li>shiny 包（<em>Web Application Framework for R</em>）
 <ul>
-<li><a href="https://quarto.org/docs/output-formats/html-basics.html">{{<code>Quarto|HTML</code>}}</a> 或 <a href="https://prettydoc.statr.me/themes.html">{{<code>prettydoc</code>}}</a> -&gt; 📂 <em>L03_HW/docs/</em></li>
-<li><a href="https://quarto.org/docs/presentations/revealjs/">{{<code>Quarto|Revealjs</code>}}</a> 或 <a href="https://slides.yihui.org/xaringan/zh-CN.html">{{<code>xaringan</code>}}</a> -&gt; 📂 <em>L03_HW/slides/</em></li>
+<li>shiny Workflow</li>
+<li>shiny Basics</li>
+<li>示例</li>
 </ul></li>
-<li><p>记得<strong>多尝试各种选项设置</strong>，同时<strong>在文档内加上相应的说明性文字</strong>（如解释代码或输出图形，其余内容可自由发挥，丰俭由人啦 😁）</p></li>
-<li><p>作业共同署名（<code>author: 姓名 + 姓名</code>）</p></li>
-<li><p>确认两份文档运行无误后将文件夹📂 <em>L03_HW</em> <strong>打包为 .zip 格式压缩文档</strong>，由其中<strong>一位</strong>同学<strong>于2023年10月15日22:00前</strong>将压缩包提交至坚果云链接</p></li>
-</ol></li>
-</ul>
+<li>shinydashboard 包 -&gt; bs4Dash 包（<em>Create Dashboards with Shiny</em>）
+<ul>
+<li>shinydashboard Structure</li>
+<li><code>dashboardHeader()</code></li>
+<li><code>dashboardSidebar()</code></li>
+<li><code>dashboardBody()</code></li>
+<li>示例</li>
+</ul></li>
+<li>flexdashboard 包（<em>R Markdown Format for Flexible Dashboards</em>）
+<ul>
+<li>flexdashboard Template</li>
+<li>flexdashboard Layouts</li>
+<li>flexdashboard Components</li>
+<li>示例</li>
+</ul></li>
+</ol>
+<br>
 <hr>
+<section id="课前准备" class="level2">
+<h2 class="anchored" data-anchor-id="课前准备">1. 课前准备</h2>
+<p>由于本讲的内容在 📖 <a href="https://r4ds.hadley.nz/"><em>R for Data Science, 2e</em></a> 一书中基本未涉及，在此不布置课前准备任务。</p>
+</section>
+<section id="课堂讲义" class="level2">
+<h2 class="anchored" data-anchor-id="课堂讲义">2. 课堂讲义</h2>
+<p>🖥️ <a href="../slides/lec-08/L08_shiny_dashboard.html">第8讲 shiny &amp; *dashboard</a></p>
+</section>
+<section id="随堂练习" class="level2">
+<h2 class="anchored" data-anchor-id="随堂练习">3. 随堂练习</h2>
+<p>⌨️ [未安排随堂练习时间]</p>
+</section>
+<section id="课后作业" class="level2">
+<h2 class="anchored" data-anchor-id="课后作业">4. 课后作业</h2>
+<p>✍️ <a href="../hw/hw-09.html">只列出进一步精进学习的参考资源清单，并未布置需要提交的课后作业</a></p>
+<p><br></p>
+<!-- ::: {style="font-size:0.875em; text-align:right"} -->
+<!-- 回到 [课程安排](../schedule.qmd) ⏎ -->
+<!-- ::: -->
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -713,6 +722,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../weeks/week-11.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">第11周 迭代</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
