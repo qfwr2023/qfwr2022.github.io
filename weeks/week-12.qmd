@@ -1,0 +1,55 @@
+---
+title: "第 12 周"
+subtitle: "shiny & *dashboard"
+author: 曾永艺
+date: 2023-12-01
+categories: [讲义]
+image: /slides/lec-08/imgs/shiny_dashboard.png
+# editor: visual
+---
+
+<hr>
+
+根据本学期教学方案中关于小组研究项目的设计，作为项目研究最终成果，各小组不仅要提交 Quarto 或 RMarkdown 格式的静态报告 / 展示幻灯片（本学期[第3讲](/weeks/week-04.qmd)的教学内容），可能还要根据各自研究项目的特点提交基于 [`shiny`](https://shiny.posit.co/) 包和 [`htmlwidgets`](http://www.htmlwidgets.org/) 衍生包制作的动态或交互文档（如网页 App 和仪表盘工具）。本讲将介绍与此有关的知识（包括 `shiny` 包和用来制作仪表盘工具的3个R包），主要内容如下：
+
+1. shiny 包（_Web Application Framework for R_）
+    - shiny Workflow
+    - shiny Basics
+    - 示例
+
+2. shinydashboard 包 -> bs4Dash 包（_Create Dashboards with Shiny_）
+    - shinydashboard Structure
+    - `dashboardHeader()`
+    - `dashboardSidebar()`
+    - `dashboardBody()`
+    - 示例
+
+3. flexdashboard 包（_R Markdown Format for Flexible Dashboards_）
+    - flexdashboard Template
+    - flexdashboard Layouts
+    - flexdashboard Components
+    - 示例
+
+<br><hr>
+
+## 1. 课前准备
+
+由于本讲的内容在 📖 [*R for Data Science, 2e*](https://r4ds.hadley.nz/) 一书中基本未涉及，在此不布置课前准备任务。
+
+## 2. 课堂讲义
+
+🖥️ [第8讲 shiny & *dashboard](/slides/lec-08/L08_shiny_dashboard.html)
+
+## 3. 随堂练习
+
+⌨️ [未安排随堂练习时间]
+
+## 4. 课后作业
+
+✍️ [只列出进一步精进学习的参考资源清单，并未布置需要提交的课后作业](/hw/hw-09.qmd)
+
+<br>
+
+<!-- ::: {style="font-size:0.875em; text-align:right"} -->
+<!-- 回到 [课程安排](../schedule.qmd) ⏎ -->
+<!-- ::: -->

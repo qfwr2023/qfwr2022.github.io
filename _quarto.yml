@@ -81,6 +81,8 @@ website:
           href: weeks/week-09.qmd
         - text: "第11周 迭代"
           href: weeks/week-11.qmd
+        - text: "第12周 shiny & *dashboard"
+          href: weeks/week-12.qmd
         - text: "......<br><br>"
         - text: "---"
         - text: "<br>阅读资料一：Markdown 基础"
