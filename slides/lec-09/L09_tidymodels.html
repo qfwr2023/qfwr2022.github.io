@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>量化金融与金融编程</title>
+    <meta charset="utf-8" />
+    <meta name="author" content=" 曾永艺" />
+    <meta name="date" content="2023-12-08" />
+    <script src="../libs/header-attrs/header-attrs.js"></script>
+    <link href="../libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="../libs/tile-view/tile-view.js"></script>
+    <link href="../libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <link href="../libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="../libs/panelset/panelset.js"></script>
+    <link href="../libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <script src="../libs/clipboard/clipboard.min.js"></script>
+    <link href="../libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="../libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"<i class=\"fa fa-copy\"><\/i>","success":"<i class=\"fa fa-check\" style=\"color: #90BE6D\"><\/i>","error":"<i class=\"fa fa-times-circle\" style=\"color: #F94144\"><\/i>"})</script>
+    <link href="../libs/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="../libs/font-awesome/css/v4-shims.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../libs/zen-styles-v2.3-rev.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# 量化金融与金融编程
+]
+.subtitle[
+## L09 <code>tidymodels</code> suite
+]
+.author[
+### <br>曾永艺
+]
+.institute[
+### 厦门大学管理学院
+]
+.date[
+### <br>2023-12-08
+]
+
+---
+
+class: center, middle
+
+
+
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 50px;
+height: 50px;
+z-index: 0;
+background-image: url(imgs/logo-sm.png);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:0.5em;right:0.5em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
+        .forEach(function (slide) {
+          const logo = document.createElement('div')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = null
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
+
+&lt;img src="imgs/tidyverse.png" width="85%" style="display: block; margin: auto;" /&gt;
+
+---
+
+### &gt;&gt; 为什么要在 <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> 中进行机器学习分析 <svg aria-hidden="true" role="img" viewBox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M80 160c0-35.3 28.7-64 64-64h32c35.3 0 64 28.7 64 64v3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74V320c0 17.7 14.3 32 32 32s32-14.3 32-32v-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7V160c0-70.7-57.3-128-128-128H144C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/></svg>
+
+--
+
+&lt;br&gt;
+
+.pull-left.font150.bold[
+
+&amp;#x1F4AA; R 和 R 包大多是由统计学家和数据分析专家开发的
+
+&amp;#x1F4AA; R 有着异常丰富且紧跟前沿的 [.red[{{统计建模和机器学习包}}]](https://cran.r-project.org/web/views/)
+
+&amp;#x1F4AA; R 容易接口或调用其他应用软件（如 C++、python、Spark、TensorFlow 等）
+
+&amp;#x1F4AA; 有大量学习参考资料
+
+]
+
+--
+
+.pull-right[
+&lt;img src="imgs/MLwR.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+### &gt;&gt; 在 <svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> 中进行机器学习分析面临哪些问题 <svg aria-hidden="true" role="img" viewBox="0 0 320 512" style="height:1em;width:0.62em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M80 160c0-35.3 28.7-64 64-64h32c35.3 0 64 28.7 64 64v3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74V320c0 17.7 14.3 32 32 32s32-14.3 32-32v-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7V160c0-70.7-57.3-128-128-128H144C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/></svg>
+
+--
+
+&lt;br&gt;
+
+.pull-left.font150.bold[
+
+&amp;#x1F630; 作为解析型的数据分析语言，R 的运行效率低于 C、C++、JAVA 等编译语言
+
+&amp;#x1F630; R 操作数据的规模往往受限于计算机内存的大小
+
+.red[&amp;#x1F630; 各式 R 包的接口并不统一]
+]
+
+--
+
+.pull-right.code80[
+
+|Function       |Code                                         |
+|:--------------|:--------------------------------------------|
+|`MASS::lda`    |`predict(obj)`                               |
+|`stats::glm`   |`predict(obj, type = "response")`            |
+|`gbm::gbm`     |`predict(obj, type = "response", n.trees)`   |
+|`rpart::rpart` |`predict(obj, type = "prob")`                |
+|`RWeka::Weka`  |`predict(obj, type = "probability")`         |
+]
+
+--
+&lt;br&gt;
+.right.bold.font120[
+[`caret`](https://topepo.github.io/caret/) -&gt; .font150[&amp;#x1F449;  .red[[`tidymodels`!](https://www.tidymodels.org/)]]&lt;br&gt;
+[`mlr`](https://mlr.mlr-org.com/) -&gt; [`mlr3`!](https://mlr3.mlr-org.com/)
+]
+
+---
+layout: false
+
+&lt;img src="imgs/ds.png" width="40%" style="display: block; margin: auto auto auto 0;" /&gt;
+
+&lt;hr&gt;
+
+&lt;img src="imgs/tidymodels-flow.svg" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+class: inverse, center, middle, hide_logo
+background-image: url(imgs/logo-rsample.svg)
+background-size: 4em
+background-position: 12% 45%
+
+# 1. 数据重采样 -&gt; `rsample` .font60[&lt;sup&gt;v1.2.0&lt;/sup&gt;]
+
+.font150[(_General Resampling Infrastructure_)]
+
+---
+layout: true
+
+### &gt;&gt; 数据重采样 -&gt; `rsample` 包
+
+---
+
+.code90[
+
+```r
+# 先安装并加载 tidymodels 元包（meta package） 
+# install.package("tidymodels")
+library(tidymodels)  # v1.0.0 @ 2022-07-13
+```
+
+```
+#&gt; ── Attaching packages ────────────────────────────────────── tidymodels 1.1.1 ──
+```
+
+```
+#&gt; ✔ broom        1.0.5     ✔ recipes      1.0.8
+#&gt; ✔ dials        1.2.0     ✔ rsample      1.2.0
+#&gt; ✔ dplyr        1.1.4     ✔ tibble       3.2.1
+#&gt; ✔ ggplot2      3.4.4     ✔ tidyr        1.3.0
+#&gt; ✔ infer        1.0.5     ✔ tune         1.1.2
+#&gt; ✔ modeldata    1.2.0     ✔ workflows    1.1.3
+#&gt; ✔ parsnip      1.1.1     ✔ workflowsets 1.0.1
+#&gt; ✔ purrr        1.0.2     ✔ yardstick    1.2.0
+```
+
+```
+#&gt; ── Conflicts ───────────────────────────────────────── tidymodels_conflicts() ──
+#&gt; ✖ purrr::discard() masks scales::discard()
+#&gt; ✖ dplyr::filter()  masks stats::filter()
+#&gt; ✖ dplyr::lag()     masks stats::lag()
+#&gt; ✖ recipes::step()  masks stats::step()
+#&gt; • Use suppressPackageStartupMessages() to eliminate package startup messages
+```
+]
+
+---
+
+.pull-left.code95[
+
+
+```r
+# 设定随机数种子
+set.seed(1234)
+# 随机抽样分成训练组和试验组
+iris_split &lt;- initial_split(iris)
+# initial_split(data, prop = 3/4,
+#               strata = NULL,
+#               breaks = 4, 
+#               pool = 0.1, ...)
+```
+
+
+```r
+# 查看分组情况
+iris_split
+```
+
+```
+#&gt; &lt;Training/Testing/Total&gt;
+#&gt; &lt;112/38/150&gt;
+```
+
+```r
+# 查看iris_split的类
+iris_split %&gt;% class()
+```
+
+```
+#&gt; [1] "initial_split" "mc_split"     
+#&gt; [3] "rsplit"
+```
+
+]
+
+--
+
+.pull-right.code85[
+
+
+```r
+# 查看 rsplit 类的底层结构
+iris_split %&gt;% str(vec.len = 1.5)
+```
+
+```
+*#&gt; List of 4
+*#&gt;  $ data  :'data.frame':	150 obs. of  5 variables:
+#&gt;   ..$ Sepal.Length: num [1:150] 5.1 4.9 4.7 4.6 ...
+#&gt;   ..$ Sepal.Width : num [1:150] 3.5 3 3.2 3.1 ...
+#&gt;   ..$ Petal.Length: num [1:150] 1.4 1.4 1.3 1.5 ...
+#&gt;   ..$ Petal.Width : num [1:150] 0.2 0.2 0.2 0.2 ...
+#&gt;   ..$ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 ...
+*#&gt;  $ in_id : int [1:112] 28 80 101 111 ...
+#&gt;  $ out_id: logi NA
+#&gt;  $ id    : tibble [1 × 1] (S3: tbl_df/tbl/data.frame)
+#&gt;   ..$ id: chr "Resample1"
+#&gt;  - attr(*, "class")= chr [1:3] "initial_split" "mc_split" ...
+```
+
+
+```r
+# 提取训练组样本（Q：测试组样本用哪个函数？）
+iris_split %&gt;% training() %&gt;% 
+  glimpse(width = 40)
+```
+
+```
+#&gt; Rows: 112
+#&gt; Columns: 5
+#&gt; $ Sepal.Length &lt;dbl&gt; 5.2, 5.7, 6.3, 6.…
+#&gt; $ Sepal.Width  &lt;dbl&gt; 3.5, 2.6, 3.3, 3.…
+#&gt; $ Petal.Length &lt;dbl&gt; 1.5, 3.5, 6.0, 5.…
+#&gt; $ Petal.Width  &lt;dbl&gt; 0.2, 1.0, 2.5, 2.…
+#&gt; $ Species      &lt;fct&gt; setosa, versicolo…
+```
+
+]
+
+---
+layout: false
+class: inverse, center, middle, hide_logo
+background-image: url(imgs/logo-recipes.svg)
+background-size: 4em
+background-position: 12% 45%
+
+# 2. 数据预处理 -&gt; `recipes` .font60[&lt;sup&gt;v1.0.8&lt;/sup&gt;]
+
+.font120[(_Preprocessing and Feature Engineering Steps for Modeling_)]
+
+---
+
+### &gt;&gt; 2.1 定义菜单
+
+--
+
+.pull-left.code85[
+
+
+```r
+iris_recipe &lt;- 
+  recipe(Species ~ ., data = iris) %&gt;% 
+  step_corr(all_predictors()) %&gt;% 
+  step_center(all_predictors()) %&gt;% 
+  step_scale(all_predictors())
+
+iris_recipe
+```
+
+.code80[
+```
+#&gt; ── Recipe ────────────────────────────────
+#&gt; 
+#&gt; ── Inputs 
+#&gt; Number of variables by role
+#&gt; outcome:   1
+#&gt; predictor: 4
+#&gt; 
+#&gt; ── Operations 
+#&gt; • Correlation filter on: all_predictors()
+#&gt; • Centering for: all_predictors()
+#&gt; • Scaling for: all_predictors()
+```
+]
+]
+
+--
+
+.pull-right.font100[
+
+.bold.info[复杂的recipe类，`View()`它！]
+
+.bold.info[`recipes` 包中共计有 98 个数据预处理步骤函数，示例如下：]
+
+.code80[
+
+```
+[1] "step_arrange"    "..."            
+[3] "step_corr"       "..."            
+[5] "step_YeoJohnson" "step_zv"        
+```
+]
+
+.bold.info[你可以用以下五种方式（及其组合）在 `step_*()` 中指定拟作用的变量：]
+- 直接使用变量名枚举相关变量
+- 以 `dplyr` 包的方式，如 `starts_with()`
+- 以 `all_outcomes()`、`all_predictors()` 或 `has_role()` 指定角色的方式
+- 以 `all_numeric()`、`all_nominal()` 或 `has_type()` 指定类型的方式
+- 以指定类型+角色复合的方式，如 `all_numeric_predictors()`
+
+`?recipes::selections`
+]
+
+---
+
+### &gt;&gt; 2.2 准备菜单
+
+--
+
+.pull-left.code90[
+
+
+```r
+iris_recipe &lt;- 
+  iris_recipe %&gt;% 
+  prep(training(iris_split),
+       verbose = TRUE)
+```
+
+```
+#&gt; oper 1 step corr [training] 
+#&gt; oper 2 step center [training] 
+#&gt; oper 3 step scale [training] 
+#&gt; The retained training set is ~ 0 Mb  in memory.
+```
+
+```r
+# prep(x, 
+#      training = NULL, 
+#      fresh = FALSE, 
+#      verbose = FALSE, 
+#      retain = TRUE, 
+#      log_change = FALSE, 
+#      strings_as_factors = TRUE, 
+#      ...)
+```
+
+]
+
+--
+
+.pull-right.code90[
+
+
+```r
+iris_recipe
+```
+
+.code75[
+```
+#&gt; ── Recipe ───────────────────────────────────────────────────────
+#&gt; 
+#&gt; ── Inputs 
+#&gt; Number of variables by role
+#&gt; outcome:   1
+#&gt; predictor: 4
+#&gt; 
+#&gt; ── Training information 
+#&gt; Training data contained 112 data points and no incomplete rows.
+#&gt; 
+#&gt; ── Operations 
+#&gt; • Correlation filter on: Petal.Length | Trained
+#&gt; • Centering for: Sepal.Length, Sepal.Width, Petal.Width | Trained
+#&gt; • Scaling for: Sepal.Length, Sepal.Width, Petal.Width | Trained
+
+```
+]
+
+]
+
+---
+
+### &gt;&gt; 2.3 应用菜单
+
+--
+
+.pull-left.code90[
+
+
+```r
+# 训练组
+# 可直接提取准备阶段 retain 的数据
+iris_training &lt;- iris_recipe %&gt;% 
+* bake(new_data = NULL)
+
+# bake(object, 
+#      new_data, 
+#      ..., 
+#      composition = "tibble")
+
+iris_training
+```
+
+```
+#&gt; # A tibble: 112 × 4
+#&gt;   Sepal.Length Sepal.Width Petal.Width Species   
+#&gt;          &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;     
+#&gt; 1       -0.805       1.09       -1.36  setosa    
+#&gt; 2       -0.212      -1.07       -0.316 versicolor
+#&gt; 3        0.500       0.607       1.64  virginica 
+#&gt; # ℹ 109 more rows
+```
+
+]
+
+--
+
+.pull-right.code85[
+
+
+```r
+# 测试组
+# 用 bake() 进行预处理
+iris_testing &lt;- iris_recipe %&gt;% 
+* bake(new_data = testing(iris_split))
+
+iris_testing
+```
+
+```
+#&gt; # A tibble: 38 × 4
+#&gt;   Sepal.Length Sepal.Width Petal.Width Species
+#&gt;          &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;  
+#&gt; 1       -0.924       1.09        -1.36 setosa 
+#&gt; 2       -1.52        0.847       -1.23 setosa 
+#&gt; 3       -1.28        0.847       -1.36 setosa 
+#&gt; # ℹ 35 more rows
+```
+
+]
+
+---
+layout: false
+class: inverse, center, middle, hide_logo
+background-image: url(imgs/logo-parsnip.svg)
+background-size: 4em
+background-position: 12% 45%
+
+# 3. 模型训练 -&gt; `parsnip` .font60[&lt;sup&gt;v1.1.1&lt;/sup&gt;]
+
+.font130[(_A Common API to Modeling and Analysis Functions_)]
+
+---
+layout: true
+
+### &gt;&gt; 3.1 模型设定
+
+---
+
+--
+
+.pull-left.code90[
+
+```r
+# 随机森林模型的统一 API
+iris_rf &lt;- rand_forest(
+  mode = "classification", 
+  trees = 100
+)
+# rand_forest(
+#   mode = "unknown",
+#   engine = "ranger",
+#   mtry = NULL, trees = NULL,
+#   min_n = NULL)
+
+# 设定随机森林模型的计算引擎
+# show_engines("rand_forest")
+(iris_rf &lt;- iris_rf %&gt;% 
+    set_engine("ranger"))
+```
+
+```
+#&gt; Random Forest Model Specification (classification)
+#&gt; 
+#&gt; Main Arguments:
+#&gt;   trees = 100
+#&gt; 
+#&gt; Computational engine: ranger
+```
+]
+
+--
+
+.pull-right.code85[
+
+```r
+# 查看 iris_rf 的类
+iris_rf %&gt;% class()
+```
+
+```
+#&gt; [1] "rand_forest" "model_spec"
+```
+
+```r
+# 查看 iris_rf 的底层结构
+iris_rf %&gt;% str()
+```
+
+```
+#&gt; List of 7
+#&gt;  $ args                 :List of 3
+#&gt;   ..$ mtry : language ~NULL
+#&gt;   .. ..- attr(*, ".Environment")=&lt;environment: R_EmptyEnv&gt; 
+#&gt;   ..$ trees: language ~100
+#&gt;   .. ..- attr(*, ".Environment")=&lt;environment: R_EmptyEnv&gt; 
+#&gt;   ..$ min_n: language ~NULL
+#&gt;   .. ..- attr(*, ".Environment")=&lt;environment: R_EmptyEnv&gt; 
+#&gt;  $ eng_args             : Named list()
+#&gt;   ..- attr(*, "class")= chr [1:2] "quosures" "list"
+#&gt;  $ mode                 : chr "classification"
+#&gt;  $ user_specified_mode  : logi TRUE
+#&gt;  $ method               : NULL
+#&gt;  $ engine               : chr "ranger"
+#&gt;  $ user_specified_engine: logi TRUE
+#&gt;  - attr(*, "class")= chr [1:2] "rand_forest" "model_spec"
+```
+]
+
+---
+layout: true
+
+### &gt;&gt; 3.2 模型拟合
+
+---
+
+.pull-left.code85[
+
+```r
+# 拟合随机森林模型
+(iris_fit &lt;- iris_rf %&gt;% 
+  fit( # ?parsnip::fit.model_spec()
+*   formula = Species ~ .,
+    data = iris_training
+  ))
+```
+
+```
+#&gt; parsnip model object
+#&gt; 
+#&gt; Ranger result
+#&gt; 
+#&gt; Call:
+#&gt;  ranger::ranger(x = maybe_data_frame(x), y = y, num.trees = ~100,      num.threads = 1, verbose = FALSE, seed = sample.int(10^5,          1), probability = TRUE) 
+#&gt; 
+#&gt; Type:                             Probability estimation 
+#&gt; Number of trees:                  100 
+#&gt; Sample size:                      112 
+#&gt; Number of independent variables:  3 
+#&gt; Mtry:                             1 
+#&gt; Target node size:                 10 
+#&gt; Variable importance mode:         none 
+#&gt; Splitrule:                        gini 
+#&gt; OOB prediction error (Brier s.):  0.0563
+```
+]
+
+--
+
+.pull-right.code90[
+
+
+```r
+# 查看 iris_fit 的类
+iris_fit %&gt;% class()
+```
+
+```
+#&gt; [1] "_ranger"   "model_fit"
+```
+
+
+```r
+# 查看 iris_fit 的底层结构
+iris_fit %&gt;% str(max.level = 1)
+```
+
+```
+#&gt; List of 6
+#&gt;  $ lvl         : chr [1:3] "setosa" "versicolor" "virginica"
+*#&gt;  $ spec        :List of 8
+#&gt;   ..- attr(*, "class")= chr [1:2] "rand_forest" "model_spec"
+*#&gt;  $ fit         :List of 13
+#&gt;   ..- attr(*, "class")= chr "ranger"
+#&gt;  $ preproc     :List of 4
+#&gt;  $ elapsed     :List of 1
+#&gt;  $ censor_probs: list()
+#&gt;  - attr(*, "class")= chr [1:2] "_ranger" "model_fit"
+```
+]
+
+---
+layout: true
+
+### &gt;&gt; 3.3 模型预测
+
+---
+
+.pull-left.code90[
+
+```r
+# 将拟合模型应用于测试组
+iris_fit %&gt;% 
+  predict(
+    new_data = iris_testing
+  )
+```
+
+```
+#&gt; # A tibble: 38 × 1
+#&gt;   .pred_class
+#&gt;   &lt;fct&gt;      
+#&gt; 1 setosa     
+#&gt; 2 setosa     
+#&gt; 3 setosa     
+#&gt; # ℹ 35 more rows
+```
+
+```r
+# ? parsnip::predict.model_fit()
+# predict(object, new_data, 
+#   type = NULL,  
+#     # "numeric", "class", "prob", 
+#     # "conf_int", "pred_int", 
+#     # "quantile", "time", 
+#     # "hazard", "survival", "raw"
+#   opts = list(), ...)
+```
+]
+
+--
+
+.pull-right.code95[
+
+```r
+# 合并原数据集
+iris_class &lt;- iris_fit %&gt;% 
+  predict(
+    new_data = iris_testing
+  ) %&gt;% 
+* bind_cols(iris_testing)
+
+iris_class %&gt;% 
+  glimpse(width = 40)
+```
+
+```
+#&gt; Rows: 38
+#&gt; Columns: 5
+#&gt; $ .pred_class  &lt;fct&gt; setosa, setosa, s…
+#&gt; $ Sepal.Length &lt;dbl&gt; -0.9241, -1.5176,…
+#&gt; $ Sepal.Width  &lt;dbl&gt; 1.087, 0.847, 0.8…
+#&gt; $ Petal.Width  &lt;dbl&gt; -1.359, -1.229, -…
+#&gt; $ Species      &lt;fct&gt; setosa, setosa, s…
+```
+]
+
+---
+layout: false
+class: inverse, center, middle, hide_logo
+background-image: url(imgs/logo-yardstick.svg)
+background-size: 4em
+background-position: 12% 45%
+
+# 4. 模型表现 -&gt; `yardstick` .font60[&lt;sup&gt;v1.2.0&lt;/sup&gt;]
+
+.font130[(_Tidy Characterizations of Model Performance_)]
+
+---
+layout: true
+
+### &gt;&gt; 4.1 模型表现：`metrics()`
+
+---
+
+.pull-left.code90[
+
+```r
+iris_class %&gt;% glimpse(width = 40)
+```
+
+```
+#&gt; Rows: 38
+#&gt; Columns: 5
+#&gt; $ .pred_class  &lt;fct&gt; setosa, setosa, s…
+#&gt; $ Sepal.Length &lt;dbl&gt; -0.9241, -1.5176,…
+#&gt; $ Sepal.Width  &lt;dbl&gt; 1.087, 0.847, 0.8…
+#&gt; $ Petal.Width  &lt;dbl&gt; -1.359, -1.229, -…
+#&gt; $ Species      &lt;fct&gt; setosa, setosa, s…
+```
+
+```r
+iris_class %&gt;% 
+* metrics( # 计算模型表现指标
+*   truth = Species,
+*   estimate = .pred_class
+* )
+```
+
+```
+#&gt; # A tibble: 2 × 3
+#&gt;   .metric  .estimator .estimate
+#&gt;   &lt;chr&gt;    &lt;chr&gt;          &lt;dbl&gt;
+#&gt; 1 accuracy multiclass     0.947
+#&gt; 2 kap      multiclass     0.920
+```
+]
+
+--
+
+.pull-right.code85[
+
+```r
+# 提取各分类的预测概率
+iris_probs &lt;- iris_fit %&gt;% 
+  predict(
+    new_data = iris_testing,
+*   type = "prob"
+  ) %&gt;% 
+  bind_cols(iris_class)
+
+# 模型表现指标：基于分类预测概率
+iris_probs %&gt;% 
+  metrics(
+    truth = Species, 
+    estimate = .pred_class,
+*   .pred_setosa:.pred_virginica
+  )
+```
+
+```
+#&gt; # A tibble: 4 × 3
+#&gt;   .metric     .estimator .estimate
+#&gt;   &lt;chr&gt;       &lt;chr&gt;          &lt;dbl&gt;
+#&gt; 1 accuracy    multiclass     0.947
+#&gt; 2 kap         multiclass     0.920
+*#&gt; 3 mn_log_loss multiclass     0.199
+*#&gt; 4 roc_auc     hand_till      0.979
+```
+]
+
+---
+layout: true
+
+### &gt;&gt; 4.2 模型表现：`*_curve()`
+
+---
+
+.pull-left.code90[
+
+```r
+# 接收器操作特征曲线
+iris_roc &lt;- iris_probs %&gt;% 
+  roc_curve(
+    truth = Species, 
+    .pred_setosa:.pred_virginica
+  )    
+# iris_roc -&gt; a "roc_df"
+
+iris_roc %&gt;% autoplot()
+```
+
+&lt;img src="L09_tidymodels_files/figure-html/unnamed-chunk-27-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+--
+
+.pull-right.code90[
+
+```r
+# 增益曲线
+iris_gain &lt;- iris_probs %&gt;% 
+* gain_curve(
+    truth = Species, 
+    .pred_setosa:.pred_virginica
+  )
+# iris_gain   # a "gain_df"
+
+iris_gain %&gt;% autoplot()
+```
+
+&lt;img src="L09_tidymodels_files/figure-html/unnamed-chunk-28-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+layout: false
+class: inverse, center, middle
+
+# 5. 一个较复杂的案例
+
+.font150[(_Case Study_)]
+
+---
+### &gt;&gt; 5.0 数据
+
+.code75[
+
+```r
+modeldata::ames %&gt;% str()
+```
+
+```
+#&gt; tibble [2,930 × 74] (S3: tbl_df/tbl/data.frame)
+#&gt;  $ MS_SubClass       : Factor w/ 16 levels "One_Story_1946_and_Newer_All_Styles",..: 1 1 1 1 6 6 12 12 12 6 ...
+#&gt;  $ MS_Zoning         : Factor w/ 7 levels "Floating_Village_Residential",..: 3 2 3 3 3 3 3 3 3 3 ...
+#&gt;  $ Lot_Frontage      : num [1:2930] 141 80 81 93 74 78 41 43 39 60 ...
+#&gt;  $ Lot_Area          : int [1:2930] 31770 11622 14267 11160 13830 9978 4920 5005 5389 7500 ...
+#&gt;  $ Street            : Factor w/ 2 levels "Grvl","Pave": 2 2 2 2 2 2 2 2 2 2 ...
+#&gt;  $ Alley             : Factor w/ 3 levels "Gravel","No_Alley_Access",..: 2 2 2 2 2 2 2 2 2 2 ...
+#&gt;  $ Lot_Shape         : Factor w/ 4 levels "Regular","Slightly_Irregular",..: 2 1 2 1 2 2 1 2 2 1 ...
+#&gt;  $ Land_Contour      : Factor w/ 4 levels "Bnk","HLS","Low",..: 4 4 4 4 4 4 4 2 4 4 ...
+#&gt;  $ Utilities         : Factor w/ 3 levels "AllPub","NoSeWa",..: 1 1 1 1 1 1 1 1 1 1 ...
+#&gt;  $ Lot_Config        : Factor w/ 5 levels "Corner","CulDSac",..: 1 5 1 1 5 5 5 5 5 5 ...
+#&gt;  $ Land_Slope        : Factor w/ 3 levels "Gtl","Mod","Sev": 1 1 1 1 1 1 1 1 1 1 ...
+#&gt;  $ Neighborhood      : Factor w/ 29 levels "North_Ames","College_Creek",..: 1 1 1 1 7 7 17 17 17 7 ...
+#&gt;  $ Condition_1       : Factor w/ 9 levels "Artery","Feedr",..: 3 2 3 3 3 3 3 3 3 3 ...
+#&gt;  $ Condition_2       : Factor w/ 8 levels "Artery","Feedr",..: 3 3 3 3 3 3 3 3 3 3 ...
+#&gt;  $ Bldg_Type         : Factor w/ 5 levels "OneFam","TwoFmCon",..: 1 1 1 1 1 1 5 5 5 1 ...
+#&gt;  $ House_Style       : Factor w/ 8 levels "One_and_Half_Fin",..: 3 3 3 3 8 8 3 3 3 8 ...
+#&gt;  $ Overall_Cond      : Factor w/ 10 levels "Very_Poor","Poor",..: 5 6 6 5 5 6 5 5 5 5 ...
+#&gt;  $ Year_Built        : int [1:2930] 1960 1961 1958 1968 1997 1998 2001 1992 1995 1999 ...
+#&gt;  $ Year_Remod_Add    : int [1:2930] 1960 1961 1958 1968 1998 1998 2001 1992 1996 1999 ...
+#&gt;  $ Roof_Style        : Factor w/ 6 levels "Flat","Gable",..: 4 2 4 4 2 2 2 2 2 2 ...
+#&gt;  $ Roof_Matl         : Factor w/ 8 levels "ClyTile","CompShg",..: 2 2 2 2 2 2 2 2 2 2 ...
+#&gt;  $ Exterior_1st      : Factor w/ 16 levels "AsbShng","AsphShn",..: 4 14 15 4 14 14 6 7 6 14 ...
+#&gt;  $ Exterior_2nd      : Factor w/ 17 levels "AsbShng","AsphShn",..: 11 15 16 4 15 15 6 7 6 15 ...
+#&gt;  $ Mas_Vnr_Type      : Factor w/ 5 levels "BrkCmn","BrkFace",..: 5 4 2 4 4 2 4 4 4 4 ...
+#&gt;  $ Mas_Vnr_Area      : num [1:2930] 112 0 108 0 0 20 0 0 0 0 ...
+#&gt;  $ Exter_Cond        : Factor w/ 5 levels "Excellent","Fair",..: 5 5 5 5 5 5 5 5 5 5 ...
+#&gt;  $ Foundation        : Factor w/ 6 levels "BrkTil","CBlock",..: 2 2 2 2 3 3 3 3 3 3 ...
+#&gt;  $ Bsmt_Cond         : Factor w/ 6 levels "Excellent","Fair",..: 3 6 6 6 6 6 6 6 6 6 ...
+#&gt;  $ Bsmt_Exposure     : Factor w/ 5 levels "Av","Gd","Mn",..: 2 4 4 4 4 4 3 4 4 4 ...
+#&gt;  $ BsmtFin_Type_1    : Factor w/ 7 levels "ALQ","BLQ","GLQ",..: 2 6 1 1 3 3 3 1 3 7 ...
+#&gt;  $ BsmtFin_SF_1      : num [1:2930] 2 6 1 1 3 3 3 1 3 7 ...
+#&gt;  $ BsmtFin_Type_2    : Factor w/ 7 levels "ALQ","BLQ","GLQ",..: 7 4 7 7 7 7 7 7 7 7 ...
+#&gt;  $ BsmtFin_SF_2      : num [1:2930] 0 144 0 0 0 0 0 0 0 0 ...
+#&gt;  $ Bsmt_Unf_SF       : num [1:2930] 441 270 406 1045 137 ...
+#&gt;  $ Total_Bsmt_SF     : num [1:2930] 1080 882 1329 2110 928 ...
+#&gt;  $ Heating           : Factor w/ 6 levels "Floor","GasA",..: 2 2 2 2 2 2 2 2 2 2 ...
+#&gt;  $ Heating_QC        : Factor w/ 5 levels "Excellent","Fair",..: 2 5 5 1 3 1 1 1 1 3 ...
+#&gt;  $ Central_Air       : Factor w/ 2 levels "N","Y": 2 2 2 2 2 2 2 2 2 2 ...
+#&gt;  $ Electrical        : Factor w/ 6 levels "FuseA","FuseF",..: 5 5 5 5 5 5 5 5 5 5 ...
+#&gt;  $ First_Flr_SF      : int [1:2930] 1656 896 1329 2110 928 926 1338 1280 1616 1028 ...
+#&gt;  $ Second_Flr_SF     : int [1:2930] 0 0 0 0 701 678 0 0 0 776 ...
+#&gt;  $ Gr_Liv_Area       : int [1:2930] 1656 896 1329 2110 1629 1604 1338 1280 1616 1804 ...
+#&gt;  $ Bsmt_Full_Bath    : num [1:2930] 1 0 0 1 0 0 1 0 1 0 ...
+#&gt;  $ Bsmt_Half_Bath    : num [1:2930] 0 0 0 0 0 0 0 0 0 0 ...
+#&gt;  $ Full_Bath         : int [1:2930] 1 1 1 2 2 2 2 2 2 2 ...
+#&gt;  $ Half_Bath         : int [1:2930] 0 0 1 1 1 1 0 0 0 1 ...
+#&gt;  $ Bedroom_AbvGr     : int [1:2930] 3 2 3 3 3 3 2 2 2 3 ...
+#&gt;  $ Kitchen_AbvGr     : int [1:2930] 1 1 1 1 1 1 1 1 1 1 ...
+#&gt;  $ TotRms_AbvGrd     : int [1:2930] 7 5 6 8 6 7 6 5 5 7 ...
+#&gt;  $ Functional        : Factor w/ 8 levels "Maj1","Maj2",..: 8 8 8 8 8 8 8 8 8 8 ...
+#&gt;  $ Fireplaces        : int [1:2930] 2 0 0 2 1 1 0 0 1 1 ...
+#&gt;  $ Garage_Type       : Factor w/ 7 levels "Attchd","Basment",..: 1 1 1 1 1 1 1 1 1 1 ...
+#&gt;  $ Garage_Finish     : Factor w/ 4 levels "Fin","No_Garage",..: 1 4 4 1 1 1 1 3 3 1 ...
+#&gt;  $ Garage_Cars       : num [1:2930] 2 1 1 2 2 2 2 2 2 2 ...
+#&gt;  $ Garage_Area       : num [1:2930] 528 730 312 522 482 470 582 506 608 442 ...
+#&gt;  $ Garage_Cond       : Factor w/ 6 levels "Excellent","Fair",..: 6 6 6 6 6 6 6 6 6 6 ...
+#&gt;  $ Paved_Drive       : Factor w/ 3 levels "Dirt_Gravel",..: 2 3 3 3 3 3 3 3 3 3 ...
+#&gt;  $ Wood_Deck_SF      : int [1:2930] 210 140 393 0 212 360 0 0 237 140 ...
+#&gt;  $ Open_Porch_SF     : int [1:2930] 62 0 36 0 34 36 0 82 152 60 ...
+#&gt;  $ Enclosed_Porch    : int [1:2930] 0 0 0 0 0 0 170 0 0 0 ...
+#&gt;  $ Three_season_porch: int [1:2930] 0 0 0 0 0 0 0 0 0 0 ...
+#&gt;  $ Screen_Porch      : int [1:2930] 0 120 0 0 0 0 0 144 0 0 ...
+#&gt;  $ Pool_Area         : int [1:2930] 0 0 0 0 0 0 0 0 0 0 ...
+#&gt;  $ Pool_QC           : Factor w/ 5 levels "Excellent","Fair",..: 4 4 4 4 4 4 4 4 4 4 ...
+#&gt;  $ Fence             : Factor w/ 5 levels "Good_Privacy",..: 5 3 5 5 3 5 5 5 5 5 ...
+#&gt;  $ Misc_Feature      : Factor w/ 6 levels "Elev","Gar2",..: 3 3 2 3 3 3 3 3 3 3 ...
+#&gt;  $ Misc_Val          : int [1:2930] 0 0 12500 0 0 0 0 0 0 0 ...
+#&gt;  $ Mo_Sold           : int [1:2930] 5 6 6 4 3 6 4 1 3 6 ...
+#&gt;  $ Year_Sold         : int [1:2930] 2010 2010 2010 2010 2010 2010 2010 2010 2010 2010 ...
+#&gt;  $ Sale_Type         : Factor w/ 10 levels "COD","Con","ConLD",..: 10 10 10 10 10 10 10 10 10 10 ...
+#&gt;  $ Sale_Condition    : Factor w/ 6 levels "Abnorml","AdjLand",..: 5 5 5 5 5 5 5 5 5 5 ...
+#&gt;  $ Sale_Price        : int [1:2930] 215000 105000 172000 244000 189900 195500 213500 191500 236500 189000 ...
+#&gt;  $ Longitude         : num [1:2930] -93.6 -93.6 -93.6 -93.6 -93.6 ...
+#&gt;  $ Latitude          : num [1:2930] 42.1 42.1 42.1 42.1 42.1 ...
+```
+]
+
+---
+### &gt;&gt; 5.1 数据重采样 -&gt; `rsample` 包
+
+.pull-left.code90[
+&lt;img src="imgs/resampling.svg" width="100%" style="display: block; margin: auto;" /&gt;
+
+
+```r
+set.seed(1234)
+data_split &lt;- 
+  initial_split(
+    ames, strata = "Sale_Price")
+ames_train &lt;- training(data_split)
+ames_test  &lt;- testing(data_split)
+nrow(ames_train) / nrow(ames)
+```
+
+```
+#&gt; [1] 0.75
+```
+]
+
+--
+
+.pull-right.code85[
+
+```r
+# v折交叉验证
+(cv_splits &lt;- vfold_cv(ames_train))
+```
+
+```
+#&gt; #  10-fold cross-validation 
+#&gt; # A tibble: 10 × 2
+#&gt;   splits             id    
+#&gt;   &lt;list&gt;             &lt;chr&gt; 
+#&gt; 1 &lt;split [1977/220]&gt; Fold01
+#&gt; 2 &lt;split [1977/220]&gt; Fold02
+#&gt; 3 &lt;split [1977/220]&gt; Fold03
+#&gt; # ℹ 7 more rows
+```
+
+```r
+cv_splits$splits[[1]]
+```
+
+```
+#&gt; &lt;Analysis/Assess/Total&gt;
+#&gt; &lt;1977/220/2197&gt;
+```
+
+```r
+cv_splits$splits[[1]] %&gt;% 
+  analysis() %&gt;% dim()
+```
+
+```
+#&gt; [1] 1977   74
+```
+
+`vignette("Common_Patterns", package = "rsample")`
+]
+
+---
+layout: true
+
+### &gt;&gt; 5.2 数据预处理 -&gt; `recipes` 包
+
+---
+
+
+```r
+# 1. 定义数据预处理菜单
+ames_rec &lt;- 
+  recipe(Sale_Price ~ Bldg_Type + Neighborhood + Year_Built + Gr_Liv_Area + 
+           Full_Bath + Year_Sold + Lot_Area + Central_Air + Longitude + Latitude,
+         data = ames_train) %&gt;%
+  step_log(Sale_Price, base = 10) %&gt;%
+  step_BoxCox(Lot_Area, Gr_Liv_Area) %&gt;%
+  step_other(Neighborhood, threshold = 0.05)  %&gt;%
+  step_dummy(all_nominal()) %&gt;%
+  step_interact(~ starts_with("Central_Air"):Year_Built) %&gt;%
+  step_bs(Longitude, Latitude, options = list(df = 5))
+
+ames_rec %&gt;% tidy()
+```
+
+```
+#&gt; # A tibble: 6 × 6
+#&gt;   number operation type   trained skip  id          
+#&gt;    &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;  &lt;lgl&gt;   &lt;lgl&gt; &lt;chr&gt;       
+#&gt; 1      1 step      log    FALSE   FALSE log_YNFHa   
+#&gt; 2      2 step      BoxCox FALSE   FALSE BoxCox_vCuOq
+#&gt; 3      3 step      other  FALSE   FALSE other_0nogs 
+#&gt; # ℹ 3 more rows
+```
+
+---
+.pull-left.code85[
+
+```r
+# 2. 准备数据预处理
+cv_splits &lt;- cv_splits %&gt;% 
+  mutate(
+    recipes = map(splits, prepper,
+                  recipe = ames_rec)
+  )
+cv_splits
+```
+
+```
+#&gt; #  10-fold cross-validation 
+#&gt; # A tibble: 10 × 3
+#&gt;   splits             id     recipes 
+#&gt;   &lt;list&gt;             &lt;chr&gt;  &lt;list&gt;  
+#&gt; 1 &lt;split [1977/220]&gt; Fold01 &lt;recipe&gt;
+#&gt; 2 &lt;split [1977/220]&gt; Fold02 &lt;recipe&gt;
+#&gt; 3 &lt;split [1977/220]&gt; Fold03 &lt;recipe&gt;
+#&gt; # ℹ 7 more rows
+```
+
+```r
+# prepper
+# function(split_obj, recipe, ...) {
+#   prep(recipe, 
+#        training = rsample::analysis(split_obj), 
+#        fresh = TRUE, ...)
+# }
+```
+]
+
+--
+
+.pull-right.code90[
+
+```r
+# 相同的菜单 + 
+# 不同的训练数据集 -&gt; 
+# 不同的准备结果
+cv_splits$recipes %&gt;% 
+  map(\(x) tidy(x, number = 2)) %&gt;% 
+  list_rbind() %&gt;% 
+  filter(terms == "Lot_Area")
+```
+
+```
+#&gt; # A tibble: 10 × 3
+#&gt;   terms     value id          
+#&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;       
+#&gt; 1 Lot_Area 0.0836 BoxCox_vCuOq
+#&gt; 2 Lot_Area 0.0777 BoxCox_vCuOq
+#&gt; 3 Lot_Area 0.104  BoxCox_vCuOq
+#&gt; # ℹ 7 more rows
+```
+
+```r
+# ?recipes:::tidy.recipe
+```
+]
+
+---
+layout: true
+
+### &gt;&gt; 5.3 拟合模型 -&gt; `parsnip` 包
+
+---
+
+--
+.pull-left.code85[
+
+```r
+# 1. 设定模型
+knn_mod &lt;- 
+  nearest_neighbor(
+    mode = "regression",
+    neighbors = 5) %&gt;%
+  set_engine("kknn") # 默认，可不设置
+
+# 2. 拟合模型
+# 2.1 定义辅助函数
+parsnip_fit &lt;- function(rec, model) {
+  fit(model, Sale_Price ~ ., 
+      data = bake(rec, new_data= NULL))
+}
+# 2.2 应用辅助函数
+cv_splits &lt;- cv_splits %&gt;% 
+  mutate(
+    knn = map(
+      recipes, 
+      parsnip_fit, 
+      model = knn_mod
+    )
+  )
+```
+]
+
+--
+.pull-right.code85[
+
+```r
+# 查看结果
+cv_splits %&gt;% select(-id)
+```
+
+```
+#&gt; # A tibble: 10 × 3
+#&gt;   splits             recipes  knn     
+#&gt;   &lt;list&gt;             &lt;list&gt;   &lt;list&gt;  
+#&gt; 1 &lt;split [1977/220]&gt; &lt;recipe&gt; &lt;fit[+]&gt;
+#&gt; 2 &lt;split [1977/220]&gt; &lt;recipe&gt; &lt;fit[+]&gt;
+#&gt; 3 &lt;split [1977/220]&gt; &lt;recipe&gt; &lt;fit[+]&gt;
+#&gt; # ℹ 7 more rows
+```
+
+```r
+cv_splits$knn[[1]] %&gt;% 
+  str(max.level = 1)
+```
+
+```
+#&gt; List of 6
+#&gt;  $ lvl         : NULL
+#&gt;  $ spec        :List of 7
+#&gt;   ..- attr(*, "class")= chr [1:2] "nearest_neighbor" "model_spec"
+#&gt;  $ fit         :List of 10
+#&gt;   ..- attr(*, "class")= chr [1:2] "train.kknn" "kknn"
+#&gt;  $ preproc     :List of 1
+#&gt;  $ elapsed     :List of 1
+#&gt;  $ censor_probs: list()
+#&gt;  - attr(*, "class")= chr [1:2] "_train.kknn" "model_fit"
+```
+]
+
+---
+layout: true
+
+### &gt;&gt; 5.4 评估模型表现 -&gt; `parsnip` 包 + `yardstick` 包
+
+---
+
+--
+.pull-left.code80[
+
+```r
+# 定义模型表现函数
+pf_metrics &lt;- metric_set(rmse, rsq, ccc)
+
+# 定义辅助函数
+parsnip_metrics &lt;- 
+  function(split, recipe, model) {
+    raw &lt;- assessment(split)
+    processed &lt;- bake(recipe, 
+                      new_data = raw)
+    model %&gt;%
+      predict(new_data = processed) %&gt;%
+      bind_cols(processed) %&gt;% 
+      pf_metrics(Sale_Price, .pred)
+  }
+# 应用辅助函数
+cv_splits &lt;- cv_splits %&gt;%
+  mutate(
+    metrics = pmap(
+      list(
+        split  = splits, 
+        recipe = recipes, 
+        model  = knn
+      ),
+      parsnip_metrics 
+    )
+  )
+```
+]
+
+--
+.pull-right.code80[
+
+```r
+cv_splits$metrics[[1]]
+```
+
+```
+#&gt; # A tibble: 3 × 3
+#&gt;   .metric .estimator .estimate
+#&gt;   &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;
+#&gt; 1 rmse    standard      0.0839
+#&gt; 2 rsq     standard      0.761 
+#&gt; 3 ccc     standard      0.871
+```
+
+```r
+# 汇总计算模型表现指标
+cv_splits %&gt;%
+  unnest(cols = metrics) %&gt;%
+  group_by(.metric) %&gt;%
+  summarise(
+    mean = mean(.estimate),
+    std_err = sd(.estimate)/sqrt(n())
+  )
+```
+
+```
+#&gt; # A tibble: 3 × 3
+#&gt;   .metric   mean std_err
+#&gt;   &lt;chr&gt;    &lt;dbl&gt;   &lt;dbl&gt;
+#&gt; 1 ccc     0.869  0.00519
+#&gt; 2 rmse    0.0870 0.00245
+#&gt; 3 rsq     0.764  0.00889
+```
+]
+
+---
+layout: true
+
+### &gt;&gt; 5.5 模型调参：手动模式
+
+---
+
+&lt;br&gt;
+
+&lt;img src="imgs/TrainAlgo.svg" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+.pull-left.code80[
+
+```r
+# 定义辅助函数
+m_metrics &lt;- function(split, recipe, fit) {
+  holdout &lt;- bake(
+    recipe, 
+    new_data = assessment(split))
+  resample_name &lt;- labels(split)$id
+  multi_predict(fit,
+                new_data = holdout,
+                neighbors = 1:50) %&gt;%
+    bind_cols(., 
+      holdout %&gt;% select(Sale_Price)) %&gt;%
+    unnest(cols = .pred) %&gt;% 
+    group_by(neighbors) %&gt;% 
+    pf_metrics(Sale_Price, .pred) %&gt;%
+    mutate(resample = resample_name)
+}
+# 应用辅助函数
+cv_splits &lt;- cv_splits %&gt;% 
+  mutate(
+    tuning_metrics = 
+      pmap(
+        list(splits, recipes, knn), 
+        m_metrics
+      )
+  )
+```
+]
+
+--
+.pull-right.code85[
+
+```r
+cv_splits$tuning_metrics[[1]]
+```
+
+```
+#&gt; # A tibble: 150 × 5
+#&gt;   neighbors .metric .estimator .estimate resample
+#&gt;       &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;   
+#&gt; 1         1 rmse    standard      0.101  Fold01  
+#&gt; 2         2 rmse    standard      0.0951 Fold01  
+#&gt; 3         3 rmse    standard      0.0898 Fold01  
+#&gt; # ℹ 147 more rows
+```
+
+```r
+# 汇总计算模型表现指标
+(rs_rmse &lt;- cv_splits %&gt;% 
+  unnest(tuning_metrics) %&gt;% 
+  filter(.metric == "rmse") %&gt;% 
+  group_by(neighbors) %&gt;% 
+  summarize(rmse = mean(.estimate)))
+```
+
+```
+#&gt; # A tibble: 50 × 2
+#&gt;   neighbors   rmse
+#&gt;       &lt;int&gt;  &lt;dbl&gt;
+#&gt; 1         1 0.104 
+#&gt; 2         2 0.0972
+#&gt; 3         3 0.0921
+#&gt; # ℹ 47 more rows
+```
+]
+
+---
+
+.pull-left.code85[
+
+```r
+(min_rmse &lt;- rs_rmse %&gt;% 
+  arrange(rmse) %&gt;% slice(1))
+```
+
+```
+#&gt; # A tibble: 1 × 2
+#&gt;   neighbors   rmse
+#&gt;       &lt;int&gt;  &lt;dbl&gt;
+#&gt; 1        11 0.0837
+```
+
+```r
+ggplot(rs_rmse, 
+    aes(x = neighbors, y = rmse)) + 
+  geom_point() + geom_path() + 
+  geom_point(data = min_rmse, 
+          size = 3, color = "red")
+```
+
+&lt;img src="L09_tidymodels_files/figure-html/unnamed-chunk-42-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+--
+.pull-right.code90[
+
+```r
+# 最终模型
+ames_rec_final &lt;- prep(ames_rec)
+knn_mod_final &lt;- 
+  update(knn_mod, 
+         neighbors = 11) %&gt;% 
+  fit(Sale_Price ~ ., 
+      data = bake(ames_rec_final,
+                  new_data = NULL))
+
+# 评估最终模型在测试集上的表现
+parsnip_metrics(data_split, 
+                ames_rec_final,
+                knn_mod_final)
+```
+
+```
+#&gt; # A tibble: 3 × 3
+#&gt;   .metric .estimator .estimate
+#&gt;   &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;
+#&gt; 1 rmse    standard      0.0754
+#&gt; 2 rsq     standard      0.813 
+#&gt; 3 ccc     standard      0.894
+```
+]
+
+---
+layout: true
+
+### &gt;&gt; 5.6 模型调参：`workflows` .font80[&lt;sup&gt;v1.1.3&lt;/sup&gt;] + `tune` .font80[&lt;sup&gt;v1.1.2&lt;/sup&gt;]
+
+---
+
+.pull-left[
+
+```r
+# 重新定义模型：设定需调校的参数
+knn_mod &lt;- 
+  nearest_neighbor(
+    mode = "regression",
+*   neighbors = tune()) %&gt;%
+  set_engine("kknn")
+
+# 定义流程
+ames_wf &lt;- 
+  workflow() %&gt;% 
+  add_model(knn_mod) %&gt;% 
+  add_recipe(ames_rec)
+
+# 基于参数网格计算模型表现指标
+ames_res &lt;- 
+  ames_wf %&gt;% 
+* tune_grid(
+    cv_splits %&gt;% select(splits, id),
+*   grid = tibble(neighbors = 1:50),
+    metrics = metric_set(rmse, rsq, ccc)
+  )
+```
+]
+
+--
+
+.pull-right[
+
+```r
+ames_res
+```
+
+```
+#&gt; # Tuning results
+#&gt; # 10-fold cross-validation 
+#&gt; # A tibble: 10 × 4
+#&gt;   splits             id     .metrics           .notes          
+#&gt;   &lt;list&gt;             &lt;chr&gt;  &lt;list&gt;             &lt;list&gt;          
+#&gt; 1 &lt;split [1977/220]&gt; Fold01 &lt;tibble [150 × 5]&gt; &lt;tibble [0 × 3]&gt;
+#&gt; 2 &lt;split [1977/220]&gt; Fold02 &lt;tibble [150 × 5]&gt; &lt;tibble [0 × 3]&gt;
+#&gt; 3 &lt;split [1977/220]&gt; Fold03 &lt;tibble [150 × 5]&gt; &lt;tibble [1 × 3]&gt;
+#&gt; # ℹ 7 more rows
+#&gt; 
+#&gt; There were issues with some computations:
+#&gt; 
+#&gt;   - Warning(s) x2: some 'x' values beyond boundary knots may cause ill-conditioned bases
+#&gt; 
+#&gt; Run `show_notes(.Last.tune.result)` for more information.
+```
+
+```r
+ames_res %&gt;% collect_metrics() %&gt;% 
+  glimpse(width = 40)
+```
+
+```
+#&gt; Rows: 150
+#&gt; Columns: 7
+#&gt; $ neighbors  &lt;int&gt; 1, 1, 1, 2, 2, 2, 3…
+#&gt; $ .metric    &lt;chr&gt; "ccc", "rmse", "rsq…
+#&gt; $ .estimator &lt;chr&gt; "standard", "standa…
+#&gt; $ mean       &lt;dbl&gt; 0.8276, 0.1042, 0.6…
+#&gt; $ n          &lt;int&gt; 10, 10, 10, 10, 10,…
+#&gt; $ std_err    &lt;dbl&gt; 0.00943, 0.00302, 0…
+#&gt; $ .config    &lt;chr&gt; "Preprocessor1_Mode…
+```
+]
+
+---
+
+
+```r
+ames_res %&gt;% 
+* collect_metrics() %&gt;%
+  filter(.metric == "rmse") %&gt;% 
+  ggplot(aes(x = neighbors, y = mean)) + 
+  geom_point() + geom_line() + 
+  geom_point(size = 2, color = 'red', 
+             data = . %&gt;% slice_min(mean)) + 
+  ylab("rmse")
+```
+
+&lt;img src="L09_tidymodels_files/figure-html/unnamed-chunk-45-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+
+```r
+(best_knn &lt;- 
+    ames_res %&gt;% select_best("rmse"))
+```
+
+```
+#&gt; # A tibble: 1 × 2
+#&gt;   neighbors .config              
+#&gt;       &lt;int&gt; &lt;chr&gt;                
+#&gt; 1        11 Preprocessor1_Model11
+```
+
+
+```r
+ames_fit_test &lt;- ames_wf %&gt;% 
+* finalize_workflow(best_knn) %&gt;%
+* last_fit(
+    split = data_split,
+    metrics = metric_set(rmse, rsq, ccc)
+  )
+ames_fit_test %&gt;% glimpse()
+```
+
+```
+#&gt; Rows: 1
+#&gt; Columns: 6
+#&gt; $ splits       &lt;list&gt; [&lt;initial_split[2197 x 733 x 2930 x 74]&gt;]
+#&gt; $ id           &lt;chr&gt; "train/test split"
+#&gt; $ .metrics     &lt;list&gt; [&lt;tbl_df[3 x 4]&gt;]
+#&gt; $ .notes       &lt;list&gt; [&lt;tbl_df[1 x 3]&gt;]
+#&gt; $ .predictions &lt;list&gt; [&lt;tbl_df[733 x 4]&gt;]
+#&gt; $ .workflow    &lt;list&gt; [Bldg_Type, Neighborhood, Year_Built, Gr_Liv_Area, Full_Bath, Year…
+```
+
+---
+
+.pull-left[
+
+
+```r
+ames_fit_test %&gt;% 
+  collect_metrics()
+```
+
+```
+#&gt; # A tibble: 3 × 4
+#&gt;   .metric .estimator .estimate .config  
+#&gt;   &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;    
+#&gt; 1 rmse    standard      0.0754 Preproce…
+#&gt; 2 rsq     standard      0.813  Preproce…
+#&gt; 3 ccc     standard      0.894  Preproce…
+```
+
+]
+
+--
+
+.pull-right[
+
+
+```r
+ames_fit_test %&gt;% 
+  collect_predictions() %&gt;%
+  ggplot(aes(Sale_Price, .pred)) +
+  geom_abline(lty = 2, size = 1.5,  
+              color = "gray50") + 
+  geom_point(alpha = 0.5) + 
+  coord_fixed()
+```
+
+&lt;img src="L09_tidymodels_files/figure-html/unnamed-chunk-49-1.png" width="100%" /&gt;
+
+]
+
+---
+layout: false
+
+### &gt;&gt; `tidymodels` 家族！
+
+&lt;img src="imgs/tidymodels-core.png" width="90%" style="display: block; margin: auto auto auto 0;" /&gt;
+
+--
+
+&lt;img src="imgs/tidymodels-more.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+layout: false
+class: inverse, center, middle
+
+# 课后作业
+
+---
+class: middle
+
+.font150[
+
+1. 在 📑 _qmd_ 中键入并运行本讲的代码（自觉完成，无需提交）
+
+1. 登录 .red[[{{`tidymodels`}}](https://www.tidymodels.org/)] 的主页 🏠，浏览并学习相关资料
+
+1. `tidymodels`子包的网站 &lt;https://&amp;lt;子包名&amp;gt;.tidymodels.org/&gt;
+
+1. [.bold[{{bilibili::简单的tidymodels}}]](https://space.bilibili.com/382769913/channel/collectiondetail?sid=920988)
+
+1. `tidymodels` 团队撰写的书 📖，供感兴趣的同学学习精进：
+  - [Tidy Modeling with R](https://www.tmwr.org/)
+  - [Feature Engineering and Selection](https://bookdown.org/max/FES/)
+  - [Supervised Machine Learning for Text Analysis in R](https://smltar.com/)
+
+]
+
+---
+class: center, middle, hide_logo
+background-image: url(imgs/xaringan.png)
+background-size: 12%
+background-position: 50% 40%
+
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;hr color='#f00' size='2px' width='80%'&gt;
+&lt;br&gt;
+.Large.red[_**本网页版讲义的制作由 R 包 [{{`xaringan`}}](https://github.com/yihui/xaringan) 赋能！**_]
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="../libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
