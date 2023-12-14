@@ -28,8 +28,9 @@ tbl-colwidths: [4,9,18,4,4,4,4,10]
 | [9](/weeks/week-09.qmd)  | 2023-11-10 | 向量与函数 I | [📖](/weeks/week-09.qmd#课前准备) | [🖥️](/slides/lec-06/L06_Vectors_Functions.html "第6讲 向量与函数") | [⌨️](/weeks/week-09.qmd#随堂练习) | [✍️](/hw/hw-07.qmd "课后作业") |   |
 | [10](/weeks/week-09.qmd)  | 2023-11-17 | 向量与函数 II |   | [🖥️](/slides/lec-06/L06_Vectors_Functions.html#79 "第6讲 向量与函数") | [⌨️](/weeks/week-09.qmd#随堂练习) | [✍️](/hw/hw-07.qmd "课后作业") |   |
 | [11](/weeks/week-11.qmd)  | 2023-11-24 | 迭代 | [📖](/weeks/week-11.qmd#课前准备) | [🖥️](/slides/lec-07/L07_Iteration.html "第7讲 迭代") |   | [✍️](/hw/hw-08.qmd "课后作业") |   |
-| [12](/weeks/week-12.qmd)  | 2023-12-01 | shiny & *dashboard |   | [🖥️](/slides/lec-08/L08_shiny_dashboard.html "第8讲 shiny & *dashboard") |   | [✍️](/hw/hw-09.qmd "课后作业") | 👨‍🏫 [报告进展](/project/team-project.html#研究进展汇报) |
+| [12](/weeks/week-12.qmd)  | 2023-12-01 | shiny & *dashboard |   | [🖥️](/slides/lec-08/L08_shiny_dashboard.html "第8讲 shiny & *dashboard") |   | [✍️](/hw/hw-09.qmd "课后作业") | 👨‍🏫 [报告进展](/project/team-project.html#中期进展汇报) |
 | [13](/weeks/week-13.qmd)  | 2023-12-08 | tidymodels机器学习 |   | [🖥️](/slides/lec-09/L09_tidymodels.html "第9讲 tidymodels机器学习") |   | [✍️](/hw/hw-10.qmd "课后作业") |   |
+| [14](/weeks/week-14.qmd)  | 2023-12-15 | tidyquant & Friends |   | [🖥️](/slides/lec-10/L10_tidyquant.html "第10讲 tidyquant & Friends") |   | [✍️](/hw/hw-11.qmd "课后作业") | 🏆[提交成果](/project/team-project.html#最终研究成果提交说明) |
 
 :::
 

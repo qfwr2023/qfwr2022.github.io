@@ -85,6 +85,8 @@ website:
           href: weeks/week-12.qmd
         - text: "第13周 tidymodels机器学习"
           href: weeks/week-13.qmd
+        - text: "第14周 tidyquant & Friends"
+          href: weeks/week-14.qmd
         - text: "......<br><br>"
         - text: "---"
         - text: "<br>阅读资料一：Markdown 基础"
